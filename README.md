@@ -20,4 +20,4 @@ make clean  # sterge fisierele compilate
 - `docs/` - documentatie
 
 ## Autor
-Numele Tau - Grupa 3122A
+Bucsa Mathias - Grupa 3122A
