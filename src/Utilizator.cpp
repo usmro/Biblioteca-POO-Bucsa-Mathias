@@ -2,11 +2,21 @@
 #include <iostream>
 #include <algorithm>
 
-Utilizator::Utilizator(string nume, int id) : nume(nume), id(id) {}
+Utilizator::Utilizator(string nume, int id, string username, string parola)
+    : nume(nume), id(id), username(username) {
+    // Parola e criptata automat la creare
+    parolaCriptata = Criptare::cripteaza(parola);
+}
 
 string Utilizator::getNume() const { return nume; }
 int Utilizator::getId() const { return id; }
+string Utilizator::getUsername() const { return username; }
+string Utilizator::getParolaCriptata() const { return parolaCriptata; }
 vector<string> Utilizator::getImprumuturi() const { return listaImprumuturi; }
+
+bool Utilizator::verificaParola(const string& parola) const {
+    return Criptare::verificaParola(parola, parolaCriptata);
+}
 
 void Utilizator::adaugaImprumut(const string& isbn) {
     listaImprumuturi.push_back(isbn);

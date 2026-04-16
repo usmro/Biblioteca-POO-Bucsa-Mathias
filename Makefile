@@ -1,13 +1,23 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
 
-SRCS = src/main.cpp src/Carte.cpp src/Utilizator.cpp src/Biblioteca.cpp src/Imprumut.cpp
+SRCS = src/main.cpp \
+       src/Carte.cpp \
+       src/Utilizator.cpp \
+       src/Biblioteca.cpp \
+       src/Imprumut.cpp \
+       src/Autentificare.cpp \
+       src/utils/Criptare.cpp \
+       src/utils/FisierHelper.cpp
 
 app: $(SRCS)
 	$(CXX) $(CXXFLAGS) -o app $(SRCS)
 
 test:
-	$(CXX) $(CXXFLAGS) -o test_runner tests/test_carte.cpp src/Carte.cpp src/Utilizator.cpp src/Biblioteca.cpp src/Imprumut.cpp
+	$(CXX) $(CXXFLAGS) -o test_runner tests/test_carte.cpp \
+	src/Carte.cpp src/Utilizator.cpp src/Biblioteca.cpp \
+	src/Imprumut.cpp src/utils/Criptare.cpp src/utils/FisierHelper.cpp \
+	src/Autentificare.cpp
 	./test_runner
 
 clean:

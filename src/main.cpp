@@ -1,47 +1,45 @@
 #include <iostream>
 #include "Biblioteca.h"
+#include "Autentificare.h"
+#include "utils/FisierHelper.h"
 
 int main() {
+    const string FISIER_UTILIZATORI = "date/utilizatori.txt";
+
     Biblioteca biblioteca;
 
-    // Carti fizice
-    biblioteca.adaugaCarte(new CarteFictiune("Dune", "Frank Herbert", "ISBN001", "SF"));
-    biblioteca.adaugaCarte(new CarteTehnica("Clean Code", "Robert Martin", "ISBN002", "Programare"));
+    // Incarcam utilizatorii din fisier
+    vector<Utilizator> utilizatori = 
+        FisierHelper::incarcaUtilizatori(FISIER_UTILIZATORI);
 
-    // Carti digitale
-    biblioteca.adaugaCarte(new CarteDigitala(
-        "Design Patterns", "Gang of Four", "ISBN003",
-        "PDF", "https://biblioteca.ro/design-patterns.pdf", 12.5
-    ));
-    biblioteca.adaugaCarte(new CarteDigitala(
-        "The Pragmatic Programmer", "David Thomas", "ISBN004",
-        "EPUB", "https://biblioteca.ro/pragmatic.epub", 8.2
-    ));
+    // Sistem autentificare
+    Autentificare auth(utilizatori);
 
-    // Audiobook-uri
-    biblioteca.adaugaCarte(new Audiobook(
-        "Atomic Habits", "James Clear", "ISBN005",
-        "Mike Chamberlain", 270  // 4h 30min
-    ));
-    biblioteca.adaugaCarte(new Audiobook(
-        "Sapiens", "Yuval Noah Harari", "ISBN006",
-        "Derek Perkins", 915  // 15h 15min
-    ));
+    // Cream conturi noi
+    auth.creeazaCont("Ion Popescu", "ion123", "parola123");
+    auth.creeazaCont("Maria Ionescu", "maria99", "test456");
+    auth.creeazaCont("ion123", "ion123", "altaparola"); // username duplicat!
 
-    // Utilizatori
-    biblioteca.adaugaUtilizator(Utilizator("Ion Popescu", 1));
-    biblioteca.adaugaUtilizator(Utilizator("Maria Ionescu", 2));
+    // Salvam utilizatorii in fisier
+    FisierHelper::salveazaUtilizatori(utilizatori, FISIER_UTILIZATORI);
 
-    // Afisam tot catalogul - polimorfism in actiune!
+    // Testam login
+    cout << "\n--- Testare Login ---" << endl;
+    Utilizator* user1 = auth.login("ion123", "parola123");   // corect
+    Utilizator* user2 = auth.login("maria99", "gresit");     // parola gresita
+    Utilizator* user3 = auth.login("inexistent", "ceva");    // user inexistent
+
+    if (user1) cout << "Bun venit, " << user1->getNume() << "!" << endl;
+
+    // Adaugam carti
+    biblioteca.adaugaCarte(new CarteFictiune("Dune", "Frank Herbert", 
+                                              "ISBN001", "SF"));
+    biblioteca.adaugaCarte(new CarteDigitala("Clean Code", "Robert Martin",
+                                              "ISBN002", "PDF", 
+                                              "https://lib.ro/clean.pdf", 8.5));
+    biblioteca.adaugaCarte(new Audiobook("Atomic Habits", "James Clear",
+                                          "ISBN003", "Mike Chamberlain", 270));
     biblioteca.afiseazaCarti();
-
-    // Imprumuturi
-    biblioteca.imprumutaCarte(1, "ISBN001", 14);
-    biblioteca.imprumutaCarte(2, "ISBN003", 30); // carte digitala - 30 zile
-    biblioteca.imprumutaCarte(1, "ISBN005", 7);  // audiobook - 7 zile
-
-    biblioteca.afiseazaCarti();
-    biblioteca.afiseazaRaportPenalitati();
 
     return 0;
 }
