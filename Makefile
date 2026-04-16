@@ -7,6 +7,7 @@ SRCS = src/main.cpp \
        src/Biblioteca.cpp \
        src/Imprumut.cpp \
        src/Autentificare.cpp \
+       src/Meniu.cpp \
        src/utils/Criptare.cpp \
        src/utils/FisierHelper.cpp
 
@@ -16,8 +17,8 @@ app: $(SRCS)
 test:
 	$(CXX) $(CXXFLAGS) -o test_runner tests/test_carte.cpp \
 	src/Carte.cpp src/Utilizator.cpp src/Biblioteca.cpp \
-	src/Imprumut.cpp src/utils/Criptare.cpp src/utils/FisierHelper.cpp \
-	src/Autentificare.cpp
+	src/Imprumut.cpp src/Autentificare.cpp \
+	src/utils/Criptare.cpp src/utils/FisierHelper.cpp
 	./test_runner
 
 clean:
