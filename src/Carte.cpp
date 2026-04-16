@@ -31,3 +31,39 @@ void CarteTehnica::afiseazaDetalii() const {
     cout << "[TEHNIC - " << domeniu << "] ";
     Carte::afiseazaDetalii();
 }
+// Implementare CarteDigitala
+CarteDigitala::CarteDigitala(string titlu, string autor, string isbn,
+                              string format, string linkDownload, double dimensiuneMB)
+    : Carte(titlu, autor, isbn), format(format), 
+      linkDownload(linkDownload), dimensiuneMB(dimensiuneMB) {}
+
+string CarteDigitala::getFormat() const { return format; }
+string CarteDigitala::getLinkDownload() const { return linkDownload; }
+double CarteDigitala::getDimensiuneMB() const { return dimensiuneMB; }
+
+void CarteDigitala::afiseazaDetalii() const {
+    cout << "[DIGITAL - " << format << " | "
+         << dimensiuneMB << "MB] ";
+    Carte::afiseazaDetalii();
+    cout << "  Download: " << linkDownload << endl;
+}
+
+// Implementare Audiobook
+Audiobook::Audiobook(string titlu, string autor, string isbn,
+                     string narator, int durataMinte)
+    : Carte(titlu, autor, isbn), narator(narator), durataMinte(durataMinte) {}
+
+string Audiobook::getNarator() const { return narator; }
+int Audiobook::getDurataMinute() const { return durataMinte; }
+
+string Audiobook::getDurataFormata() const {
+    int ore = durataMinte / 60;
+    int minute = durataMinte % 60;
+    return to_string(ore) + "h " + to_string(minute) + "min";
+}
+
+void Audiobook::afiseazaDetalii() const {
+    cout << "[AUDIOBOOK | " << getDurataFormata() 
+         << " | Narator: " << narator << "] ";
+    Carte::afiseazaDetalii();
+}

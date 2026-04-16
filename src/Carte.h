@@ -40,4 +40,39 @@ public:
     void afiseazaDetalii() const override;
 };
 
+// Clasa derivata - Carte Digitala
+class CarteDigitala : public Carte {
+private:
+    string format;   // PDF, EPUB, MOBI
+    string linkDownload;
+    double dimensiuneMB;
+
+public:
+    CarteDigitala(string titlu, string autor, string isbn, 
+                  string format, string linkDownload, double dimensiuneMB);
+    
+    string getFormat() const;
+    string getLinkDownload() const;
+    double getDimensiuneMB() const;
+    
+    void afiseazaDetalii() const override;
+};
+
+// Clasa derivata - Audiobook
+class Audiobook : public Carte {
+private:
+    string narator;
+    int durataMinte;   // durata in minute
+
+public:
+    Audiobook(string titlu, string autor, string isbn,
+              string narator, int durataMinte);
+    
+    string getNarator() const;
+    int getDurataMinute() const;
+    string getDurataFormata() const;  // ex: "2h 30min"
+    
+    void afiseazaDetalii() const override;
+};
+
 #endif
