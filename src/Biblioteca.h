@@ -24,6 +24,7 @@ public:
 
     // NOU - raport penalitati
     void afiseazaRaportPenalitati() const;
+    Utilizator* getUtilizator(int id);
 
     ~Biblioteca();
 };

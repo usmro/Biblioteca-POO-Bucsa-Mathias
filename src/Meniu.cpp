@@ -56,12 +56,19 @@ void Meniu::handleLogin() {
     cout << "Parola: ";
     cin >> parola;
 
-    utilizatorCurent = auth.login(username, parola);
+    Utilizator* authUser = auth.login(username, parola);
 
+if (!authUser) {
+    cout << "\nUsername sau parola incorecta!" << endl;
+    asteaptaEnter();
+} else {
+    // Luam utilizatorul din Biblioteca, nu din Autentificare
+    utilizatorCurent = biblioteca.getUtilizator(authUser->getId());
     if (!utilizatorCurent) {
-        cout << "\nUsername sau parola incorecta!" << endl;
+        cout << "\nEroare interna!" << endl;
         asteaptaEnter();
     }
+}
 }
 
 void Meniu::handleCreareCont() {

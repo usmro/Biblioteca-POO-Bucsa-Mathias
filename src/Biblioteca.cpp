@@ -94,3 +94,10 @@ void Biblioteca::afiseazaRaportPenalitati() const {
 Biblioteca::~Biblioteca() {
     for (auto& carte : carti) delete carte;
 }
+
+Utilizator* Biblioteca::getUtilizator(int id) {
+    for (auto& u : utilizatori)
+        if (u.getId() == id)
+            return &u;
+    return nullptr;
+}

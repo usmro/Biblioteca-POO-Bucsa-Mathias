@@ -5,8 +5,7 @@
 Utilizator::Utilizator(string nume, int id, string username, string parola)
     : nume(nume), id(id), username(username) {
     // Parola e criptata automat la creare
-    parolaCriptata = Criptare::cripteaza(parola);
-}
+    parolaCriptata = Criptare::sha256(parola);}
 
 string Utilizator::getNume() const { return nume; }
 int Utilizator::getId() const { return id; }
