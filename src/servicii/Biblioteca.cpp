@@ -1,4 +1,5 @@
 #include "Biblioteca.h"
+#include "../utils/Exceptii.h"
 #include <iostream>
 #include <algorithm>
 
@@ -8,11 +9,16 @@ void Biblioteca::adaugaCarte(Carte* carte) {
 }
 
 void Biblioteca::eliminaCarte(const string& isbn) {
-    carti.erase(remove_if(carti.begin(), carti.end(),
+    auto it = remove_if(carti.begin(), carti.end(),
         [&isbn](Carte* c) {
             if (c->getIsbn() == isbn) { delete c; return true; }
             return false;
-        }), carti.end());
+        });
+
+    if (it == carti.end())
+        throw CarteNegasitaException(isbn);
+
+    carti.erase(it, carti.end());
 }
 
 void Biblioteca::afiseazaCarti() const {
@@ -26,30 +32,54 @@ void Biblioteca::adaugaUtilizator(const Utilizator& utilizator) {
     utilizatori.push_back(utilizator);
 }
 
-bool Biblioteca::imprumutaCarte(int idUtilizator, const string& isbn, int zileLimita) {
+Utilizator* Biblioteca::getUtilizator(int id) {
+    for (auto& u : utilizatori)
+        if (u.getId() == id)
+            return &u;
+    return nullptr;
+}
+
+bool Biblioteca::imprumutaCarte(int idUtilizator, const string& isbn,
+                                  int zileLimita) {
+    // Cautam cartea
     Carte* carteGasita = nullptr;
+    bool existaIsbn = false;
+
     for (auto& carte : carti) {
-        if (carte->getIsbn() == isbn && carte->esteDisponibila()) {
-            carteGasita = carte;
-            break;
+        if (carte->getIsbn() == isbn) {
+            existaIsbn = true;
+            if (carte->esteDisponibila()) {
+                carteGasita = carte;
+                break;
+            }
         }
     }
-    if (!carteGasita) {
-        cout << "[LOG] EROARE: Cartea " << isbn << " nu este disponibila!" << endl;
-        return false;
-    }
+
+    if (!existaIsbn)
+        throw CarteNegasitaException(isbn);
+
+    if (!carteGasita)
+        throw CarteIndisponibilaException(isbn);
+
+    // Cautam utilizatorul
+    bool utilizatorGasit = false;
     for (auto& utilizator : utilizatori) {
         if (utilizator.getId() == idUtilizator) {
+            utilizatorGasit = true;
             carteGasita->setDisponibila(false);
             utilizator.adaugaImprumut(isbn);
-            imprumuturiActive.push_back(Imprumut(idUtilizator, isbn, zileLimita));
+            imprumuturiActive.push_back(
+                Imprumut(idUtilizator, isbn, zileLimita));
             cout << "[LOG] " << utilizator.getNume()
                  << " a imprumutat: " << isbn
                  << " (limita: " << zileLimita << " zile)" << endl;
             return true;
         }
     }
-    cout << "[LOG] EROARE: Utilizator " << idUtilizator << " negasit!" << endl;
+
+    if (!utilizatorGasit)
+        throw UtilizatorNegasitException(idUtilizator);
+
     return false;
 }
 
@@ -65,9 +95,10 @@ bool Biblioteca::returneazaCarte(int idUtilizator, const string& isbn) {
                     return true;
                 }
             }
+            throw UtilizatorNegasitException(idUtilizator);
         }
     }
-    return false;
+    throw ImprumutInexistentException(isbn);
 }
 
 void Biblioteca::afiseazaRaportPenalitati() const {
@@ -83,21 +114,14 @@ void Biblioteca::afiseazaRaportPenalitati() const {
         }
     }
 
-    if (!existaIntarzieri) {
+    if (!existaIntarzieri)
         cout << "  Nicio intarziere inregistrata." << endl;
-    } else {
+    else
         cout << "Total penalitati: " << totalPenalitati << " lei" << endl;
-    }
+
     cout << "=========================\n" << endl;
 }
 
 Biblioteca::~Biblioteca() {
     for (auto& carte : carti) delete carte;
-}
-
-Utilizator* Biblioteca::getUtilizator(int id) {
-    for (auto& u : utilizatori)
-        if (u.getId() == id)
-            return &u;
-    return nullptr;
 }

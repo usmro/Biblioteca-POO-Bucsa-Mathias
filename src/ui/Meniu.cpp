@@ -1,4 +1,5 @@
 #include "Meniu.h"
+#include "../utils/Exceptii.h"
 #include <iostream>
 #include <limits>
 using namespace std;
@@ -106,18 +107,15 @@ void Meniu::handleLogin() {
         return;
     }
 
-    Utilizator* authUser = auth.login(username, parola);
-    if (!authUser) {
-        cout << "\nUsername sau parola incorecta!" << endl;
-        asteaptaEnter();
-        return;
+    try {
+        Utilizator* authUser = auth.login(username, parola);
+        utilizatorCurent = biblioteca.getUtilizator(authUser->getId());
+        if (!utilizatorCurent)
+            cout << "\nEroare interna!" << endl;
+    } catch (BibliotecaException& e) {
+        cout << "\nEroare: " << e.what() << endl;
     }
-
-    utilizatorCurent = biblioteca.getUtilizator(authUser->getId());
-    if (!utilizatorCurent) {
-        cout << "\nEroare interna!" << endl;
-        asteaptaEnter();
-    }
+    asteaptaEnter();
 }
 
 void Meniu::handleCreareCont() {
@@ -133,10 +131,13 @@ void Meniu::handleCreareCont() {
     cout << "Username: "; cin >> username;
     cout << "Parola: "; cin >> parola;
 
-    if (auth.creeazaCont(nume, username, parola)) {
+    try {
+        auth.creeazaCont(nume, username, parola);
         biblioteca.adaugaUtilizator(utilizatori.back());
         FisierHelper::salveazaUtilizatori(utilizatori, FISIER_UTILIZATORI);
         cout << "\nCont creat cu succes!" << endl;
+    } catch (BibliotecaException& e) {
+        cout << "\nEroare: " << e.what() << endl;
     }
     asteaptaEnter();
 }
@@ -163,10 +164,11 @@ void Meniu::handleImprumut() {
     if (zile < 1) zile = 1;
     if (zile > 30) zile = 30;
 
-    if (biblioteca.imprumutaCarte(utilizatorCurent->getId(), isbn, zile)) {
+    try {
+        biblioteca.imprumutaCarte(utilizatorCurent->getId(), isbn, zile);
         cout << "\nCarte imprumutata cu succes!" << endl;
-    } else {
-        cout << "\nCartea nu este disponibila!" << endl;
+    } catch (BibliotecaException& e) {
+        cout << "\nEroare: " << e.what() << endl;
     }
     asteaptaEnter();
 }
@@ -182,10 +184,11 @@ void Meniu::handleReturnare() {
     string isbn;
     cout << "\nISBN-ul cartii de returnat: "; cin >> isbn;
 
-    if (biblioteca.returneazaCarte(utilizatorCurent->getId(), isbn)) {
+    try {
+        biblioteca.returneazaCarte(utilizatorCurent->getId(), isbn);
         cout << "\nCarte returnata cu succes!" << endl;
-    } else {
-        cout << "\nEroare la returnare!" << endl;
+    } catch (BibliotecaException& e) {
+        cout << "\nEroare: " << e.what() << endl;
     }
     asteaptaEnter();
 }
@@ -252,7 +255,11 @@ void Meniu::handleEliminaCarte() {
     biblioteca.afiseazaCarti();
     string isbn;
     cout << "ISBN-ul cartii de eliminat: "; cin >> isbn;
-    bibliotecar->eliminaCarte(biblioteca, isbn);
+    try {
+        bibliotecar->eliminaCarte(biblioteca, isbn);
+    } catch (BibliotecaException& e) {
+        cout << "\nEroare: " << e.what() << endl;
+    }
     asteaptaEnter();
 }
 
