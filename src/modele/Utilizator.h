@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "utils/Criptare.h"
+#include "../utils/Criptare.h"
 using namespace std;
 
 class Utilizator {

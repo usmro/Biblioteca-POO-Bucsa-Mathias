@@ -1,6 +1,6 @@
-#include "Biblioteca.h"
-#include "Autentificare.h"
-#include "Meniu.h"
+#include "servicii/Biblioteca.h"
+#include "servicii/Autentificare.h"
+#include "ui/Meniu.h"
 #include <vector>
 
 int main() {

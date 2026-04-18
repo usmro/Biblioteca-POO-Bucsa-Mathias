@@ -1,9 +1,9 @@
 #ifndef BIBLIOTECA_H
 #define BIBLIOTECA_H
 
-#include "Carte.h"
-#include "Utilizator.h"
-#include "Imprumut.h"
+#include "../modele/Carte.h"
+#include "../modele/Utilizator.h"
+#include "../modele/Imprumut.h"
 #include <vector>
 
 class Biblioteca {

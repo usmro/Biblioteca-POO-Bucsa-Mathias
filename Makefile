@@ -3,12 +3,15 @@ CXXFLAGS = -std=c++17 -Wall
 LIBS = -lssl -lcrypto
 
 SRCS = src/main.cpp \
-       src/Carte.cpp \
-       src/Utilizator.cpp \
-       src/Biblioteca.cpp \
-       src/Imprumut.cpp \
-       src/Autentificare.cpp \
-       src/Meniu.cpp \
+       src/modele/Carte.cpp \
+       src/modele/Utilizator.cpp \
+       src/modele/Imprumut.cpp \
+       src/modele/Angajat.cpp \
+       src/modele/Bibliotecar.cpp \
+       src/modele/Director.cpp \
+       src/servicii/Biblioteca.cpp \
+       src/servicii/Autentificare.cpp \
+       src/ui/Meniu.cpp \
        src/utils/Criptare.cpp \
        src/utils/FisierHelper.cpp
 
@@ -17,8 +20,9 @@ app: $(SRCS)
 
 test:
 	$(CXX) $(CXXFLAGS) -o test_runner tests/test_carte.cpp \
-	src/Carte.cpp src/Utilizator.cpp src/Biblioteca.cpp \
-	src/Imprumut.cpp src/Autentificare.cpp \
+	src/modele/Carte.cpp src/modele/Utilizator.cpp \
+	src/modele/Imprumut.cpp src/modele/Angajat.cpp \
+	src/servicii/Biblioteca.cpp src/servicii/Autentificare.cpp \
 	src/utils/Criptare.cpp src/utils/FisierHelper.cpp $(LIBS)
 	./test_runner
 

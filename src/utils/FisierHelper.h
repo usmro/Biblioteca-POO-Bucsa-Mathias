@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "../Utilizator.h"
+#include "../modele/Utilizator.h"
 using namespace std;
 
 class FisierHelper {
