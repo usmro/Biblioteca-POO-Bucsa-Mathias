@@ -32,8 +32,11 @@ public:
     string getDepartament() const;
     RolAngajat getRol() const;
     string getRolString() const;
+    void setNume(const string& numeNou);
 
     void setSalariu(double salariu);
+
+    void setParolaCriptata(const string& hash);
 
     bool verificaParola(const string& parola) const;
     virtual void afiseazaInfo() const;

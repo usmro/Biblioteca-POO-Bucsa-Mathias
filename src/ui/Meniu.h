@@ -7,12 +7,15 @@
 #include "../modele/Bibliotecar.h"
 #include "../modele/Director.h"
 
+
 class Meniu {
 private:
     Biblioteca& biblioteca;
     Autentificare& auth;
     vector<Utilizator>& utilizatori;
     const string FISIER_UTILIZATORI = "date/utilizatori.txt";
+    const string FISIER_CARTI = "date/carti.txt";
+    const string FISIER_ANGAJATI = "date/angajati.txt";
 
     Utilizator* utilizatorCurent = nullptr;
     Angajat* angajatCurent = nullptr;      // NOU
@@ -44,6 +47,12 @@ private:
 
     void clearScreen();
     void asteaptaEnter();
+    void handleCautare();
+    void afiseazaMenuCautare();
+    void handleFiltrareCatalog();
+    int citesteOptiune();
+    void handleStergeUtilizator();
+    void handleGestionareAngajati();
 
 public:
     Meniu(Biblioteca& biblioteca, Autentificare& auth,

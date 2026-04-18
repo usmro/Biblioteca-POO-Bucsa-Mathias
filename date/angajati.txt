@@ -1,0 +1,2 @@
+DIRECTOR|Bucsa Mathias|100|director|9e4d7bba246abe731743986c4dc50897b68b1d0249a066abb3530fcbaa33dab3|8100|Conducere
+BIBLIOTECAR|Mihai Ionescu|101|bibliotecar|9b47ddd6d203487fa9a67b2ed24a81179f1deef25113d4f43e07fa04f5319276|4000|Gestiune Carti

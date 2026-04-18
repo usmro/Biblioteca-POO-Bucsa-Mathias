@@ -13,6 +13,11 @@ private:
     vector<Imprumut> imprumuturiActive; // NOU
 
 public:
+// Cautare si filtrare
+void cautaDupaAutor(const string& autor) const;
+void cautaDupaTitlu(const string& titlu) const;
+void filtreazaDupaDisponibilitate(bool disponibile) const;
+void filtreazaDupaTip(const string& tip) const;
     void adaugaCarte(Carte* carte);
     void eliminaCarte(const string& isbn);
     void afiseazaCarti() const;
@@ -25,6 +30,11 @@ public:
     // NOU - raport penalitati
     void afiseazaRaportPenalitati() const;
     Utilizator* getUtilizator(int id);
+
+    void salveazaCarti(const string& caleFisier) const;
+    void incarcaCarti(const string& caleFisier);
+    int getNumarCarti() const;
+    bool stergeUtilizator(int id);
 
     ~Biblioteca();
 };

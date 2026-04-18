@@ -19,6 +19,10 @@ public:
     void afiseazaTotiUtilizatorii(const vector<Utilizator>& utilizatori) const;
 
     void afiseazaInfo() const override;
+    
+    void stergeUtilizator(Biblioteca& biblioteca,
+                       vector<Utilizator>& utilizatori,
+                       const string& fisierUtilizatori, int id);
 };
 
 #endif

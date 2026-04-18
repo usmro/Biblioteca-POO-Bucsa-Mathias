@@ -2,6 +2,17 @@
 #include "../utils/Exceptii.h"
 #include <iostream>
 #include <algorithm>
+#include "../utils/FisierHelper.h"
+
+void Biblioteca::salveazaCarti(const string& caleFisier) const {
+    FisierHelper::salveazaCarti(carti, caleFisier);
+}
+
+void Biblioteca::incarcaCarti(const string& caleFisier) {
+    vector<Carte*> cartiNoi = FisierHelper::incarcaCarti(caleFisier);
+    for (auto& carte : cartiNoi)
+        carti.push_back(carte);
+}
 
 void Biblioteca::adaugaCarte(Carte* carte) {
     carti.push_back(carte);
@@ -121,7 +132,98 @@ void Biblioteca::afiseazaRaportPenalitati() const {
 
     cout << "=========================\n" << endl;
 }
+void Biblioteca::cautaDupaAutor(const string& autor) const {
+    cout << "\n=== Carti de: " << autor << " ===" << endl;
+    bool gasit = false;
+    for (const auto& carte : carti) {
+        // cautare case-insensitive
+        string autorCarte = carte->getAutor();
+        string cautare = autor;
+        transform(autorCarte.begin(), autorCarte.end(),
+                  autorCarte.begin(), ::tolower);
+        transform(cautare.begin(), cautare.end(),
+                  cautare.begin(), ::tolower);
+        if (autorCarte.find(cautare) != string::npos) {
+            carte->afiseazaDetalii();
+            gasit = true;
+        }
+    }
+    if (!gasit) cout << "  Nicio carte gasita pentru autorul: " << autor << endl;
+    cout << "============================\n" << endl;
+}
+
+void Biblioteca::cautaDupaTitlu(const string& titlu) const {
+    cout << "\n=== Carti cu titlul: " << titlu << " ===" << endl;
+    bool gasit = false;
+    for (const auto& carte : carti) {
+        string titluCarte = carte->getTitlu();
+        string cautare = titlu;
+        transform(titluCarte.begin(), titluCarte.end(),
+                  titluCarte.begin(), ::tolower);
+        transform(cautare.begin(), cautare.end(),
+                  cautare.begin(), ::tolower);
+        if (titluCarte.find(cautare) != string::npos) {
+            carte->afiseazaDetalii();
+            gasit = true;
+        }
+    }
+    if (!gasit) cout << "  Nicio carte gasita cu titlul: " << titlu << endl;
+    cout << "============================\n" << endl;
+}
+
+void Biblioteca::filtreazaDupaDisponibilitate(bool disponibile) const {
+    cout << "\n=== Carti "
+         << (disponibile ? "disponibile" : "imprumutate") << " ===" << endl;
+    bool gasit = false;
+    for (const auto& carte : carti) {
+        if (carte->esteDisponibila() == disponibile) {
+            carte->afiseazaDetalii();
+            gasit = true;
+        }
+    }
+    if (!gasit) cout << "  Nicio carte gasita." << endl;
+    cout << "============================\n" << endl;
+}
+
+void Biblioteca::filtreazaDupaTip(const string& tip) const {
+    cout << "\n=== Carti de tip: " << tip << " ===" << endl;
+    bool gasit = false;
+    for (const auto& carte : carti) {
+        bool eCorect = false;
+        if (tip == "FICTIUNE" && dynamic_cast<const CarteFictiune*>(carte))
+            eCorect = true;
+        else if (tip == "TEHNICA" && dynamic_cast<const CarteTehnica*>(carte))
+            eCorect = true;
+        else if (tip == "DIGITAL" && dynamic_cast<const CarteDigitala*>(carte))
+            eCorect = true;
+        else if (tip == "AUDIOBOOK" && dynamic_cast<const Audiobook*>(carte))
+            eCorect = true;
+
+        if (eCorect) {
+            carte->afiseazaDetalii();
+            gasit = true;
+        }
+    }
+    if (!gasit) cout << "  Nicio carte gasita de tipul: " << tip << endl;
+    cout << "============================\n" << endl;
+}
 
 Biblioteca::~Biblioteca() {
     for (auto& carte : carti) delete carte;
+}
+
+int Biblioteca::getNumarCarti() const {
+    return carti.size();
+}
+
+bool Biblioteca::stergeUtilizator(int id) {
+    auto it = remove_if(utilizatori.begin(), utilizatori.end(),
+        [id](const Utilizator& u) { return u.getId() == id; });
+    
+    if (it == utilizatori.end())
+        throw UtilizatorNegasitException(id);
+    
+    utilizatori.erase(it, utilizatori.end());
+    cout << "[LOG] Utilizator cu ID " << id << " sters." << endl;
+    return true;
 }

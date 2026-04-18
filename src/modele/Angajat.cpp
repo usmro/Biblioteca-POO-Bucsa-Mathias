@@ -36,3 +36,11 @@ void Angajat::afiseazaInfo() const {
          << nume << " | Departament: " << departament
          << " | Salariu: " << salariu << " lei" << endl;
 }
+
+void Angajat::setParolaCriptata(const string& hash) {
+    parolaCriptata = hash;
+}
+
+void Angajat::setNume(const string& numeNou) {
+    nume = numeNou;
+}

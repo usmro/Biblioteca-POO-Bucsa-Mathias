@@ -7,6 +7,8 @@ Carte::Carte(string titlu, string autor, string isbn)
 string Carte::getTitlu() const { return titlu; }
 string Carte::getAutor() const { return autor; }
 string Carte::getIsbn() const { return isbn; }
+string CarteFictiune::getGen() const { return gen; }
+string CarteTehnica::getDomeniu() const { return domeniu; }
 bool Carte::esteDisponibila() const { return disponibila; }
 void Carte::setDisponibila(bool status) { disponibila = status; }
 

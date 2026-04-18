@@ -30,6 +30,7 @@ private:
 public:
     CarteFictiune(string titlu, string autor, string isbn, string gen);
     void afiseazaDetalii() const override;
+    string getGen() const;
 };
 
 class CarteTehnica : public Carte {
@@ -38,6 +39,7 @@ private:
 public:
     CarteTehnica(string titlu, string autor, string isbn, string domeniu);
     void afiseazaDetalii() const override;
+    string getDomeniu() const;
 };
 
 // Clasa derivata - Carte Digitala
