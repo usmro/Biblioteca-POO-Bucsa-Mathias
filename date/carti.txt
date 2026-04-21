@@ -1,31 +1,4 @@
-FICTIUNE|Dune|Frank Herbert|ISBN001|SF
-FICTIUNE|1984|George Orwell|ISBN002|Distopie
-FICTIUNE|Brave New World|Aldous Huxley|ISBN003|Distopie
-FICTIUNE|The Hobbit|J.R.R. Tolkien|ISBN004|Fantasy
-FICTIUNE|Harry Potter si Piatra Filozofala|J.K. Rowling|ISBN005|Fantasy
-FICTIUNE|The Name of the Wind|Patrick Rothfuss|ISBN006|Fantasy
-FICTIUNE|Fahrenheit 451|Ray Bradbury|ISBN007|SF
-FICTIUNE|Foundation|Isaac Asimov|ISBN008|SF
-FICTIUNE|The Martian|Andy Weir|ISBN009|SF
-FICTIUNE|Crime si Pedeapsa|Fyodor Dostoevsky|ISBN010|Clasic
-TEHNICA|Clean Code|Robert Martin|ISBN011|Programare
-TEHNICA|The Pragmatic Programmer|David Thomas|ISBN012|Programare
-TEHNICA|Design Patterns|Gang of Four|ISBN013|Programare
-TEHNICA|Introduction to Algorithms|Cormen et al|ISBN014|Algoritmi
-TEHNICA|Computer Networks|Andrew Tanenbaum|ISBN015|Retele
-TEHNICA|Operating System Concepts|Silberschatz|ISBN016|Sisteme de Operare
-TEHNICA|Artificial Intelligence|Stuart Russell|ISBN017|AI
-TEHNICA|Database System Concepts|Silberschatz|ISBN018|Baze de Date
-TEHNICA|Computer Organization|Patterson|ISBN019|Arhitectura
-TEHNICA|Calculus|James Stewart|ISBN020|Matematica
-DIGITAL|The Pragmatic Programmer Digital|David Thomas|ISBN021|PDF|https://lib.ro/pragmatic.pdf|8.5
-DIGITAL|Clean Architecture|Robert Martin|ISBN022|EPUB|https://lib.ro/clean-arch.epub|6.2
-DIGITAL|JavaScript The Good Parts|Douglas Crockford|ISBN023|PDF|https://lib.ro/js-good.pdf|4.1
-DIGITAL|Python Crash Course|Eric Matthes|ISBN024|PDF|https://lib.ro/python.pdf|12.3
-DIGITAL|Docker Deep Dive|Nigel Poulton|ISBN025|EPUB|https://lib.ro/docker.epub|5.8
-AUDIOBOOK|Atomic Habits|James Clear|ISBN026|Mike Chamberlain|270
-AUDIOBOOK|Sapiens|Yuval Noah Harari|ISBN027|Derek Perkins|915
-AUDIOBOOK|The 48 Laws of Power|Robert Greene|ISBN028|Richard Poe|1080
-AUDIOBOOK|Thinking Fast and Slow|Daniel Kahneman|ISBN029|Patrick Egan|720
-AUDIOBOOK|The Psychology of Money|Morgan Housel|ISBN030|Chris Hill|300
-AUDIOBOOK|BHO|Jordan Peterson|ISBN0031|Jordan|0
+FICTIUNE|Dune|Frank Herbert|ISBN001|SF|buna
+TEHNICA|Clean Code|Robert Martin|ISBN002|Programare|buna
+AUDIOBOOK|Atomic Habits|James Clear|ISBN004|Mike Chamberlain|270
+FICTIUNE|Cronicile din Narnia|Clive Staples Lewis|ISBN005|Fantasy|buna

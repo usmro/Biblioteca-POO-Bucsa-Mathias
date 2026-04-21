@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall
-LIBS = -lssl -lcrypto
+LIBS = -lssl -lcrypto -lcurl
 
 SRCS = src/main.cpp \
        src/modele/Carte.cpp \
@@ -13,6 +13,7 @@ SRCS = src/main.cpp \
        src/servicii/Autentificare.cpp \
        src/ui/Meniu.cpp \
        src/utils/Criptare.cpp \
+       src/utils/GoogleBooks.cpp \
        src/utils/FisierHelper.cpp
 
 app: $(SRCS)

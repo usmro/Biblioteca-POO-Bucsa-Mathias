@@ -35,6 +35,7 @@ void filtreazaDupaTip(const string& tip) const;
     void incarcaCarti(const string& caleFisier);
     int getNumarCarti() const;
     bool stergeUtilizator(int id);
+    string genereazaIsbnNou() const;
 
     ~Biblioteca();
 };

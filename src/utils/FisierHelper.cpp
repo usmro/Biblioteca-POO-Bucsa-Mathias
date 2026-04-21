@@ -58,51 +58,59 @@ vector<Utilizator> FisierHelper::incarcaUtilizatori(const string& caleFisier) {
 bool FisierHelper::salveazaCarti(const vector<Carte*>& carti,
                                   const string& caleFisier) {
     ofstream fisier(caleFisier);
-    if (!fisier.is_open()) {
-        cout << "[EROARE] Nu pot deschide fisierul: " << caleFisier << endl;
-        return false;
-    }
+    if (!fisier.is_open()) return false;
 
-    for (const auto& carte : carti) {
-        if (auto* cf = dynamic_cast<CarteFictiune*>(carte)) {
-            fisier << "FICTIUNE|" << cf->getTitlu() << "|"
-                   << cf->getAutor() << "|" << cf->getIsbn() << "|"
-                   << cf->getGen() << "\n";
-        } else if (auto* ct = dynamic_cast<CarteTehnica*>(carte)) {
-            fisier << "TEHNICA|" << ct->getTitlu() << "|"
-                   << ct->getAutor() << "|" << ct->getIsbn() << "|"
-                   << ct->getDomeniu() << "\n";
-        } else if (auto* cd = dynamic_cast<CarteDigitala*>(carte)) {
-            fisier << "DIGITAL|" << cd->getTitlu() << "|"
-                   << cd->getAutor() << "|" << cd->getIsbn() << "|"
-                   << cd->getFormat() << "|" << cd->getLinkDownload() << "|"
-                   << cd->getDimensiuneMB() << "\n";
-        } else if (auto* ab = dynamic_cast<Audiobook*>(carte)) {
-            fisier << "AUDIOBOOK|" << ab->getTitlu() << "|"
-                   << ab->getAutor() << "|" << ab->getIsbn() << "|"
-                   << ab->getNarator() << "|" << ab->getDurataMinute() << "\n";
-        }
+    for (const auto& c : carti) {
+        string tip = c->getTip();
+        fisier << tip << "|" << c->getTitlu() << "|"
+               << c->getAutor() << "|" << c->getIsbn() << "|";
+
+        if (auto* x = dynamic_cast<CarteFictiune*>(c))
+            fisier << x->getGen() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<CarteTehnica*>(c))
+            fisier << x->getDomeniu() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<Revista*>(c))
+            fisier << x->getNumar() << "|" << x->getLuna() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<Manga*>(c))
+            fisier << x->getVolum() << "|" << x->getMangaka() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<BenziDesonate*>(c))
+            fisier << x->getArtist() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<RomanGrafic*>(c))
+            fisier << x->getArtist() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<Biografie*>(c))
+            fisier << x->getSubiect() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<Stiinta*>(c))
+            fisier << x->getRamura() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<Istorie*>(c))
+            fisier << x->getPerioada() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<Filozofie*>(c))
+            fisier << x->getCurent() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<Manual*>(c))
+            fisier << x->getMaterie() << "|" << x->getNivel() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<Enciclopedie*>(c))
+            fisier << x->getDomeniu() << "|" << x->getStare();
+        else if (auto* x = dynamic_cast<CarteDigitala*>(c))
+            fisier << x->getFormat() << "|" << x->getLinkDownload()
+                   << "|" << x->getDimensiuneMB();
+        else if (auto* x = dynamic_cast<Audiobook*>(c))
+            fisier << x->getNarator() << "|" << x->getDurataMinute();
+
+        fisier << "\n";
     }
 
     fisier.close();
-    cout << "[LOG] " << carti.size() << " carti salvate in: "
-         << caleFisier << endl;
+    cout << "[LOG] " << carti.size() << " carti salvate." << endl;
     return true;
 }
 
 vector<Carte*> FisierHelper::incarcaCarti(const string& caleFisier) {
     vector<Carte*> carti;
     ifstream fisier(caleFisier);
-
-    if (!fisier.is_open()) {
-        cout << "[LOG] Fisierul " << caleFisier << " nu exista inca." << endl;
-        return carti;
-    }
+    if (!fisier.is_open()) return carti;
 
     string linie;
     while (getline(fisier, linie)) {
         if (linie.empty()) continue;
-
         stringstream ss(linie);
         string tip, titlu, autor, isbn;
 
@@ -111,37 +119,87 @@ vector<Carte*> FisierHelper::incarcaCarti(const string& caleFisier) {
         getline(ss, autor, '|');
         getline(ss, isbn, '|');
 
-        Carte* carte = nullptr;
+        Carte* c = nullptr;
 
         if (tip == "FICTIUNE") {
-            string gen;
-            getline(ss, gen, '|');
-            carte = new CarteFictiune(titlu, autor, isbn, gen);
+            string gen, stare;
+            getline(ss, gen, '|'); getline(ss, stare, '|');
+            auto* x = new CarteFictiune(titlu, autor, isbn, gen);
+            x->setStare(stare); c = x;
         } else if (tip == "TEHNICA") {
-            string domeniu;
-            getline(ss, domeniu, '|');
-            carte = new CarteTehnica(titlu, autor, isbn, domeniu);
+            string domeniu, stare;
+            getline(ss, domeniu, '|'); getline(ss, stare, '|');
+            auto* x = new CarteTehnica(titlu, autor, isbn, domeniu);
+            x->setStare(stare); c = x;
+        } else if (tip == "REVISTA") {
+            string nrStr, luna, stare;
+            getline(ss, nrStr, '|'); getline(ss, luna, '|');
+            getline(ss, stare, '|');
+            auto* x = new Revista(titlu, autor, isbn, stoi(nrStr), luna);
+            x->setStare(stare); c = x;
+        } else if (tip == "MANGA") {
+            string volStr, mangaka, stare;
+            getline(ss, volStr, '|'); getline(ss, mangaka, '|');
+            getline(ss, stare, '|');
+            auto* x = new Manga(titlu, autor, isbn, stoi(volStr), mangaka);
+            x->setStare(stare); c = x;
+        } else if (tip == "BENZI_DESENATE") {
+            string artist, stare;
+            getline(ss, artist, '|'); getline(ss, stare, '|');
+            auto* x = new BenziDesonate(titlu, autor, isbn, artist);
+            x->setStare(stare); c = x;
+        } else if (tip == "ROMAN_GRAFIC") {
+            string artist, stare;
+            getline(ss, artist, '|'); getline(ss, stare, '|');
+            auto* x = new RomanGrafic(titlu, autor, isbn, artist);
+            x->setStare(stare); c = x;
+        } else if (tip == "BIOGRAFIE") {
+            string subiect, stare;
+            getline(ss, subiect, '|'); getline(ss, stare, '|');
+            auto* x = new Biografie(titlu, autor, isbn, subiect);
+            x->setStare(stare); c = x;
+        } else if (tip == "STIINTA") {
+            string ramura, stare;
+            getline(ss, ramura, '|'); getline(ss, stare, '|');
+            auto* x = new Stiinta(titlu, autor, isbn, ramura);
+            x->setStare(stare); c = x;
+        } else if (tip == "ISTORIE") {
+            string perioada, stare;
+            getline(ss, perioada, '|'); getline(ss, stare, '|');
+            auto* x = new Istorie(titlu, autor, isbn, perioada);
+            x->setStare(stare); c = x;
+        } else if (tip == "FILOZOFIE") {
+            string curent, stare;
+            getline(ss, curent, '|'); getline(ss, stare, '|');
+            auto* x = new Filozofie(titlu, autor, isbn, curent);
+            x->setStare(stare); c = x;
+        } else if (tip == "MANUAL") {
+            string materie, nivel, stare;
+            getline(ss, materie, '|'); getline(ss, nivel, '|');
+            getline(ss, stare, '|');
+            auto* x = new Manual(titlu, autor, isbn, materie, nivel);
+            x->setStare(stare); c = x;
+        } else if (tip == "ENCICLOPEDIE") {
+            string domeniu, stare;
+            getline(ss, domeniu, '|'); getline(ss, stare, '|');
+            auto* x = new Enciclopedie(titlu, autor, isbn, domeniu);
+            x->setStare(stare); c = x;
         } else if (tip == "DIGITAL") {
             string format, link, dimStr;
-            getline(ss, format, '|');
-            getline(ss, link, '|');
+            getline(ss, format, '|'); getline(ss, link, '|');
             getline(ss, dimStr, '|');
-            double dim = stod(dimStr);
-            carte = new CarteDigitala(titlu, autor, isbn, format, link, dim);
+            c = new CarteDigitala(titlu, autor, isbn, format, link, stod(dimStr));
         } else if (tip == "AUDIOBOOK") {
-            string narator, durataStr;
-            getline(ss, narator, '|');
-            getline(ss, durataStr, '|');
-            int durata = stoi(durataStr);
-            carte = new Audiobook(titlu, autor, isbn, narator, durata);
+            string narator, durStr;
+            getline(ss, narator, '|'); getline(ss, durStr, '|');
+            c = new Audiobook(titlu, autor, isbn, narator, stoi(durStr));
         }
 
-        if (carte) carti.push_back(carte);
+        if (c) carti.push_back(c);
     }
 
     fisier.close();
-    cout << "[LOG] " << carti.size()
-         << " carti incarcate din fisier." << endl;
+    cout << "[LOG] " << carti.size() << " carti incarcate." << endl;
     return carti;
 }
 

@@ -227,3 +227,24 @@ bool Biblioteca::stergeUtilizator(int id) {
     cout << "[LOG] Utilizator cu ID " << id << " sters." << endl;
     return true;
 }
+
+string Biblioteca::genereazaIsbnNou() const {
+    int maxNr = 0;
+
+    for (const auto& carte : carti) {
+        string isbn = carte->getIsbn();
+        // Verificam daca ISBN-ul e in formatul nostru (ISBNxxx)
+        if (isbn.substr(0, 4) == "ISBN") {
+            try {
+                int nr = stoi(isbn.substr(4));
+                if (nr > maxNr) maxNr = nr;
+            } catch (...) {}
+        }
+    }
+
+    // Generam urmatorul ISBN cu zeros leading
+    int urmator = maxNr + 1;
+    string nrStr = to_string(urmator);
+    while (nrStr.length() < 3) nrStr = "0" + nrStr;
+    return "ISBN" + nrStr;
+}

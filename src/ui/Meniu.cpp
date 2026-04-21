@@ -3,6 +3,7 @@
 #include <iostream>
 #include <limits>
 #include "../utils/Criptare.h"
+#include "../utils/GoogleBooks.h"
 using namespace std;
 
 Meniu::Meniu(Biblioteca& biblioteca, Autentificare& auth,
@@ -299,41 +300,129 @@ void Meniu::handleAdaugaCarte() {
     cout << "========================================" << endl;
     cout << "          ADAUGA CARTE NOUA             " << endl;
     cout << "========================================" << endl;
-    cout << "Tip: 1=Fictiune, 2=Tehnica, 3=Digitala, 4=Audiobook" << endl;
-    int tip; cin >> tip;
-
-    string titlu, autor, isbn;
-    cout << "Titlu: "; cin.ignore(); getline(cin, titlu);
-    cout << "Autor: "; getline(cin, autor);
-    cout << "ISBN: "; cin >> isbn;
+    cout << "  1. Cauta pe Google Books" << endl;
+    cout << "  2. Introduce manual" << endl;
+    cout << "========================================" << endl;
+    cout << "Alege optiunea: ";
+    int optiune = citesteOptiune();
 
     Carte* carte = nullptr;
-    if (tip == 1) {
-        string gen;
-        cout << "Gen: "; cin >> gen;
-        carte = new CarteFictiune(titlu, autor, isbn, gen);
-    } else if (tip == 2) {
-        string domeniu;
-        cout << "Domeniu: "; cin >> domeniu;
-        carte = new CarteTehnica(titlu, autor, isbn, domeniu);
-    } else if (tip == 3) {
-        string format, link; double dim;
-        cout << "Format (PDF/EPUB): "; cin >> format;
-        cout << "Link: "; cin >> link;
-        cout << "Dimensiune MB: "; cin >> dim;
-        carte = new CarteDigitala(titlu, autor, isbn, format, link, dim);
-    } else if (tip == 4) {
-        string narator; int durata;
-        cout << "Narator: "; cin >> narator;
-        cout << "Durata (minute): "; cin >> durata;
-        carte = new Audiobook(titlu, autor, isbn, narator, durata);
+    string isbnNou = biblioteca.genereazaIsbnNou();
+
+    // Meniu tip - folosit in ambele variante
+    auto alegeTip = [&](string titlu, string autor) {
+        cout << "\nTip carte:" << endl;
+        cout << "  1. Fictiune    2. Tehnica     3. Revista" << endl;
+        cout << "  4. Manga       5. Benzi Des.  6. Roman Grafic" << endl;
+        cout << "  7. Biografie   8. Stiinta     9. Istorie" << endl;
+        cout << " 10. Filozofie  11. Manual     12. Enciclopedie" << endl;
+        cout << " 13. Digital    14. Audiobook" << endl;
+        cout << "Alege tipul: ";
+        int tip = citesteOptiune();
+
+        Carte* c = nullptr;
+        if (tip == 1) {
+            string gen; cout << "Gen: "; cin >> gen;
+            c = new CarteFictiune(titlu, autor, isbnNou, gen);
+        } else if (tip == 2) {
+            string domeniu; cout << "Domeniu: "; cin >> domeniu;
+            c = new CarteTehnica(titlu, autor, isbnNou, domeniu);
+        } else if (tip == 3) {
+            int nr; string luna;
+            cout << "Numar revista: "; cin >> nr;
+            cout << "Luna: "; cin >> luna;
+            c = new Revista(titlu, autor, isbnNou, nr, luna);
+        } else if (tip == 4) {
+            int vol; string mangaka;
+            cout << "Volum: "; cin >> vol;
+            cout << "Mangaka: "; cin >> mangaka;
+            c = new Manga(titlu, autor, isbnNou, vol, mangaka);
+        } else if (tip == 5) {
+            string artist; cout << "Artist: "; cin >> artist;
+            c = new BenziDesonate(titlu, autor, isbnNou, artist);
+        } else if (tip == 6) {
+            string artist; cout << "Artist: "; cin >> artist;
+            c = new RomanGrafic(titlu, autor, isbnNou, artist);
+        } else if (tip == 7) {
+            string subiect; cout << "Subiect: "; cin >> subiect;
+            c = new Biografie(titlu, autor, isbnNou, subiect);
+        } else if (tip == 8) {
+            string ramura; cout << "Ramura: "; cin >> ramura;
+            c = new Stiinta(titlu, autor, isbnNou, ramura);
+        } else if (tip == 9) {
+            string perioada; cout << "Perioada: "; cin >> perioada;
+            c = new Istorie(titlu, autor, isbnNou, perioada);
+        } else if (tip == 10) {
+            string curent; cout << "Curent filozofic: "; cin >> curent;
+            c = new Filozofie(titlu, autor, isbnNou, curent);
+        } else if (tip == 11) {
+            string materie, nivel;
+            cout << "Materie: "; cin >> materie;
+            cout << "Nivel (gimnaziu/liceu/facultate): "; cin >> nivel;
+            c = new Manual(titlu, autor, isbnNou, materie, nivel);
+        } else if (tip == 12) {
+            string domeniu; cout << "Domeniu: "; cin >> domeniu;
+            c = new Enciclopedie(titlu, autor, isbnNou, domeniu);
+        } else if (tip == 13) {
+            string format, link; double dim;
+            cout << "Format (PDF/EPUB): "; cin >> format;
+            cout << "Link: "; cin >> link;
+            cout << "Dimensiune MB: "; cin >> dim;
+            c = new CarteDigitala(titlu, autor, isbnNou, format, link, dim);
+        } else if (tip == 14) {
+            string narator; int durata;
+            cout << "Narator: "; cin >> narator;
+            cout << "Durata (minute): "; cin >> durata;
+            c = new Audiobook(titlu, autor, isbnNou, narator, durata);
+        }
+        return c;
+    };
+
+    if (optiune == 1) {
+        // Cautare Google Books
+        string query;
+        cout << "Titlul cartii: ";
+        cin.ignore();
+        getline(cin, query);
+
+        cout << "\nSe cauta pe Google Books..." << endl;
+        vector<RezultatCarte> rezultate = GoogleBooks::cauta(query);
+
+        if (rezultate.empty()) {
+            cout << "Niciun rezultat. Introduceti manual." << endl;
+            asteaptaEnter();
+            return;
+        }
+
+        GoogleBooks::afiseazaRezultate(rezultate);
+        cout << "Alege cartea (1-" << rezultate.size()
+             << ") sau 0 pentru anulare: ";
+        int alegere = citesteOptiune();
+
+        if (alegere < 1 || alegere > (int)rezultate.size()) {
+            cout << "Anulat." << endl;
+            asteaptaEnter();
+            return;
+        }
+
+        RezultatCarte& r = rezultate[alegere - 1];
+        cout << "\nISBN generat automat: " << isbnNou << endl;
+        carte = alegeTip(r.titlu, r.autor);
+
+    } else {
+        // Introducere manuala
+        string titlu, autor;
+        cout << "Titlu: "; cin.ignore(); getline(cin, titlu);
+        cout << "Autor: "; getline(cin, autor);
+        cout << "ISBN generat automat: " << isbnNou << endl;
+        carte = alegeTip(titlu, autor);
     }
 
     if (carte) {
         bibliotecar->adaugaCarte(biblioteca, carte);
-        cout << "\nCarte adaugata cu succes!" << endl;
+        biblioteca.salveazaCarti(FISIER_CARTI);
+        cout << "\nCarte adaugata cu succes! ISBN: " << isbnNou << endl;
     }
-    biblioteca.salveazaCarti(FISIER_CARTI);
     asteaptaEnter();
 }
 
