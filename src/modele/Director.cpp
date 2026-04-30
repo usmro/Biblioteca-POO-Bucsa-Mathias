@@ -53,3 +53,12 @@ void Director::afiseazaInfo() const {
 Director::~Director() {
     for (auto& a : echipa) delete a;
 }
+
+Angajat* Director::cautaAngajat(const string& username,
+                                  const string& parola) {
+    for (auto& a : echipa) {
+        if (a->getUsername() == username && a->verificaParola(parola))
+            return a;
+    }
+    return nullptr;
+}

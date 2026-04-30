@@ -46,7 +46,13 @@ vector<Utilizator> FisierHelper::incarcaUtilizatori(const string& caleFisier) {
         getline(ss, parolaCriptata, '|');
 
         int id = stoi(idStr);
-        utilizatori.push_back(Utilizator(nume, id, username, "LOADED"));
+
+        // Cream utilizatorul cu parola placeholder
+        Utilizator u(nume, id, username, "PLACEHOLDER");
+        // Setam direct hash-ul din fisier fara sa il rehasheze
+        u.setParolaCriptata(parolaCriptata);
+
+        utilizatori.push_back(u);
     }
 
     fisier.close();

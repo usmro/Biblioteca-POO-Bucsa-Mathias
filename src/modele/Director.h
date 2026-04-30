@@ -28,6 +28,8 @@ public:
 
     void afiseazaInfo() const override;
 
+    Angajat* cautaAngajat(const string& username, const string& parola);
+
     ~Director();
 };
 

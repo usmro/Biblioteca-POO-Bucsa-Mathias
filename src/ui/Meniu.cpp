@@ -17,7 +17,7 @@ Meniu::~Meniu() {
 }
 
 void Meniu::clearScreen() {
-    cout << "\033[2J\033[1;1H";
+    system("clear");
 }
 
 void Meniu::asteaptaEnter() {
@@ -94,72 +94,6 @@ void Meniu::afiseazaMenuDirector() {
     cout << "Alege optiunea: ";
 }
 
-void Meniu::afiseazaMenuCautare() {
-    clearScreen();
-    cout << "========================================" << endl;
-    cout << "         CAUTARE SI FILTRARE            " << endl;
-    cout << "========================================" << endl;
-    cout << "  1. Cauta dupa autor" << endl;
-    cout << "  2. Cauta dupa titlu" << endl;
-    cout << "  3. Vezi doar cartile disponibile" << endl;
-    cout << "  4. Vezi doar cartile imprumutate" << endl;
-    cout << "  5. Filtreaza dupa tip" << endl;
-    cout << "  6. Inapoi" << endl;
-    cout << "========================================" << endl;
-    cout << "Alege optiunea: ";
-}
-
-void Meniu::handleCautare() {
-    int optiune;
-    while (true) {
-        afiseazaMenuCautare();
-        optiune = citesteOptiune();
-
-        if (optiune == 6) return;
-
-        clearScreen();
-        switch (optiune) {
-            case 1: {
-                string autor;
-                cout << "Introdu autorul: ";
-                cin.ignore();
-                getline(cin, autor);
-                biblioteca.cautaDupaAutor(autor);
-                break;
-            }
-            case 2: {
-                string titlu;
-                cout << "Introdu titlul: ";
-                cin.ignore();
-                getline(cin, titlu);
-                biblioteca.cautaDupaTitlu(titlu);
-                break;
-            }
-            case 3:
-                biblioteca.filtreazaDupaDisponibilitate(true);
-                break;
-            case 4:
-                biblioteca.filtreazaDupaDisponibilitate(false);
-                break;
-            case 5: {
-                cout << "Tip: 1=Fictiune, 2=Tehnica, 3=Digital, 4=Audiobook" << endl;
-                int tip; cin >> tip;
-                string tipStr;
-                if (tip == 1) tipStr = "FICTIUNE";
-                else if (tip == 2) tipStr = "TEHNICA";
-                else if (tip == 3) tipStr = "DIGITAL";
-                else if (tip == 4) tipStr = "AUDIOBOOK";
-                else { cout << "Tip invalid!" << endl; break; }
-                biblioteca.filtreazaDupaTip(tipStr);
-                break;
-            }
-            default:
-                cout << "Optiune invalida!" << endl;
-        }
-        asteaptaEnter();
-    }
-}
-
 void Meniu::handleLogin() {
     clearScreen();
     cout << "========================================" << endl;
@@ -170,6 +104,7 @@ void Meniu::handleLogin() {
     cout << "Username: "; cin >> username;
     cout << "Parola: "; cin >> parola;
 
+    // Verificam directorul
     if (director && director->getUsername() == username &&
         director->verificaParola(parola)) {
         angajatCurent = director;
@@ -178,14 +113,16 @@ void Meniu::handleLogin() {
         return;
     }
 
-    if (bibliotecar && bibliotecar->getUsername() == username &&
-        bibliotecar->verificaParola(parola)) {
-        angajatCurent = bibliotecar;
-        cout << "\nBun venit, " << bibliotecar->getNume() << "!" << endl;
+    // Verificam toti angajatii din echipa directorului
+    Angajat* angajatGasit = director->cautaAngajat(username, parola);
+    if (angajatGasit) {
+        angajatCurent = angajatGasit;
+        cout << "\nBun venit, " << angajatGasit->getNume() << "!" << endl;
         asteaptaEnter();
         return;
     }
 
+    // Verificam utilizatorii normali
     try {
         Utilizator* authUser = auth.login(username, parola);
         utilizatorCurent = biblioteca.getUtilizator(authUser->getId());
@@ -222,7 +159,8 @@ void Meniu::handleCreareCont() {
 }
 
 void Meniu::handleVezeCatalog() {
-    handleFiltrareCatalog();
+    clearScreen();
+    biblioteca.afiseazaCarti();
     asteaptaEnter();
 }
 
@@ -429,19 +367,21 @@ void Meniu::handleAdaugaCarte() {
 void Meniu::handleFiltrareCatalog() {
     clearScreen();
     cout << "========================================" << endl;
-    cout << "            CATALOG CARTI               " << endl;
+    cout << "         CAUTARE SI FILTRARE            " << endl;
     cout << "========================================" << endl;
     cout << "  1. Vezi toate cartile" << endl;
     cout << "  2. Cauta dupa autor" << endl;
     cout << "  3. Cauta dupa titlu" << endl;
-    cout << "  4. Doar disponibile" << endl;
-    cout << "  5. Doar imprumutate" << endl;
-    cout << "  6. Filtreaza dupa tip" << endl;
+    cout << "  4. Cauta dupa gen/domeniu" << endl;
+    cout << "  5. Doar disponibile" << endl;
+    cout << "  6. Doar imprumutate" << endl;
+    cout << "  7. Filtreaza dupa tip" << endl;
+    cout << "  8. Inapoi" << endl;
     cout << "========================================" << endl;
     cout << "Alege optiunea: ";
 
-    int optiune;
-    optiune = citesteOptiune();
+    int optiune = citesteOptiune();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     clearScreen();
 
     switch (optiune) {
@@ -451,7 +391,6 @@ void Meniu::handleFiltrareCatalog() {
         case 2: {
             string autor;
             cout << "Autor: ";
-            cin.ignore();
             getline(cin, autor);
             biblioteca.cautaDupaAutor(autor);
             break;
@@ -459,33 +398,56 @@ void Meniu::handleFiltrareCatalog() {
         case 3: {
             string titlu;
             cout << "Titlu: ";
-            cin.ignore();
             getline(cin, titlu);
             biblioteca.cautaDupaTitlu(titlu);
             break;
         }
-        case 4:
+        case 4: {
+            string gen;
+            cout << "Gen/Domeniu (ex: SF, Fantasy, Programare): ";
+            getline(cin, gen);
+            biblioteca.cautaDupaGen(gen);
+            break;
+        }
+        case 5:
             biblioteca.filtreazaDupaDisponibilitate(true);
             break;
-        case 5:
+        case 6:
             biblioteca.filtreazaDupaDisponibilitate(false);
             break;
-        case 6: {
-            cout << "1=Fictiune  2=Tehnica  3=Digital  4=Audiobook" << endl;
+        case 7: {
+            cout << "Tip: 1=Fictiune  2=Tehnica    3=Revista" << endl;
+            cout << "     4=Manga     5=Benzi Des. 6=Roman Grafic" << endl;
+            cout << "     7=Biografie 8=Stiinta    9=Istorie" << endl;
+            cout << "    10=Filozofie 11=Manual   12=Enciclopedie" << endl;
+            cout << "    13=Digital   14=Audiobook" << endl;
             cout << "Alege tipul: ";
-            int tip; cin >> tip;
+            int tip = citesteOptiune();
             string tipStr;
-            if (tip == 1) tipStr = "FICTIUNE";
-            else if (tip == 2) tipStr = "TEHNICA";
-            else if (tip == 3) tipStr = "DIGITAL";
-            else if (tip == 4) tipStr = "AUDIOBOOK";
+            if (tip == 1)       tipStr = "FICTIUNE";
+            else if (tip == 2)  tipStr = "TEHNICA";
+            else if (tip == 3)  tipStr = "REVISTA";
+            else if (tip == 4)  tipStr = "MANGA";
+            else if (tip == 5)  tipStr = "BENZI_DESENATE";
+            else if (tip == 6)  tipStr = "ROMAN_GRAFIC";
+            else if (tip == 7)  tipStr = "BIOGRAFIE";
+            else if (tip == 8)  tipStr = "STIINTA";
+            else if (tip == 9)  tipStr = "ISTORIE";
+            else if (tip == 10) tipStr = "FILOZOFIE";
+            else if (tip == 11) tipStr = "MANUAL";
+            else if (tip == 12) tipStr = "ENCICLOPEDIE";
+            else if (tip == 13) tipStr = "DIGITAL";
+            else if (tip == 14) tipStr = "AUDIOBOOK";
             else { cout << "Tip invalid!" << endl; break; }
             biblioteca.filtreazaDupaTip(tipStr);
             break;
         }
+        case 8:
+            return;
         default:
             cout << "Optiune invalida!" << endl;
     }
+    asteaptaEnter();
 }
 
 void Meniu::handleEliminaCarte() {
@@ -637,7 +599,7 @@ if (dirLoaded && biblLoaded) {
             optiune = citesteOptiune();
             switch (optiune) {
                 case 1: handleVezeCatalog(); break;
-                case 2: handleCautare(); break;
+                case 2: handleFiltrareCatalog(); break;
                 case 3: handleImprumut(); break;
                 case 4: handleReturnare(); break;
                 case 5: handleImprumuturileMele(); break;

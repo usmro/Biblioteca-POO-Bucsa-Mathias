@@ -26,6 +26,7 @@ public:
     virtual void afiseazaDetalii() const;
     virtual string getTip() const { return "CARTE"; }
     virtual ~Carte() {}
+    virtual string getGen() const { return ""; }
 };
 
 // ============================================
@@ -47,6 +48,8 @@ public:
 
     void afiseazaDetalii() const override;
     string getTip() const override { return "DIGITAL"; }
+    string getGen() const override { return format; }
+    
 };
 
 // ============================================
@@ -96,9 +99,10 @@ private:
     string gen;
 public:
     CarteFictiune(string titlu, string autor, string isbn, string gen);
-    string getGen() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "FICTIUNE"; }
+    string getGen() const override { return gen; }
+
 };
 
 class CarteTehnica : public CarteFizica {
@@ -109,6 +113,8 @@ public:
     string getDomeniu() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "TEHNICA"; }
+    string getGen() const override { return domeniu; }
+
 };
 
 class Revista : public CarteFizica {
@@ -121,6 +127,8 @@ public:
     string getLuna() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "REVISTA"; }
+    string getGen() const override { return luna; }
+
 };
 
 class Manga : public CarteFizica {
@@ -133,6 +141,8 @@ public:
     string getMangaka() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "MANGA"; }
+    string getGen() const override { return mangaka; }
+
 };
 
 class BenziDesonate : public CarteFizica {
@@ -163,6 +173,8 @@ public:
     string getSubiect() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "BIOGRAFIE"; }
+    string getGen() const override { return subiect; }
+
 };
 
 class Stiinta : public CarteFizica {
@@ -173,6 +185,8 @@ public:
     string getRamura() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "STIINTA"; }
+    string getGen() const override { return ramura; }
+
 };
 
 class Istorie : public CarteFizica {
@@ -183,6 +197,8 @@ public:
     string getPerioada() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "ISTORIE"; }
+    string getGen() const override { return perioada; }
+
 };
 
 class Filozofie : public CarteFizica {
@@ -193,6 +209,8 @@ public:
     string getCurent() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "FILOZOFIE"; }
+    string getGen() const override { return curent; }
+
 };
 
 class Manual : public CarteFizica {
@@ -206,6 +224,8 @@ public:
     string getNivel() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "MANUAL"; }
+    string getGen() const override { return materie; }
+
 };
 
 class Enciclopedie : public CarteFizica {
@@ -216,6 +236,8 @@ public:
     string getDomeniu() const;
     void afiseazaDetalii() const override;
     string getTip() const override { return "ENCICLOPEDIE"; }
+    string getGen() const override { return domeniu; }
+
 };
 
 #endif

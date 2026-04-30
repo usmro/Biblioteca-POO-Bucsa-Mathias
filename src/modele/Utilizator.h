@@ -28,6 +28,7 @@ public:
     void adaugaImprumut(const string& isbn);
     void eliminaImprumut(const string& isbn);
     void afiseazaImprumuturi() const;
+    void setParolaCriptata(const string& hash);
 };
 
 #endif

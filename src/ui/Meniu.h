@@ -47,7 +47,6 @@ private:
 
     void clearScreen();
     void asteaptaEnter();
-    void handleCautare();
     void afiseazaMenuCautare();
     void handleFiltrareCatalog();
     int citesteOptiune();

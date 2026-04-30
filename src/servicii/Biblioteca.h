@@ -5,17 +5,25 @@
 #include "../modele/Utilizator.h"
 #include "../modele/Imprumut.h"
 #include <vector>
+#include <unordered_map>
 
 class Biblioteca {
 private:
     vector<Carte*> carti;
     vector<Utilizator> utilizatori;
-    vector<Imprumut> imprumuturiActive; // NOU
+    vector<Imprumut> imprumuturiActive;
+    
+    // Indexuri pentru cautare rapida
+    unordered_map<string, Carte*> indexIsbn;
+    unordered_map<string, vector<Carte*>> indexAutor;
+    unordered_map<string, vector<Carte*>> indexTip;
+    unordered_map<string, vector<Carte*>> indexGen;
 
 public:
 // Cautare si filtrare
 void cautaDupaAutor(const string& autor) const;
 void cautaDupaTitlu(const string& titlu) const;
+void cautaDupaGen(const string& gen) const;
 void filtreazaDupaDisponibilitate(bool disponibile) const;
 void filtreazaDupaTip(const string& tip) const;
     void adaugaCarte(Carte* carte);

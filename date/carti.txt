@@ -1,4 +1,100 @@
 FICTIUNE|Dune|Frank Herbert|ISBN001|SF|buna
-TEHNICA|Clean Code|Robert Martin|ISBN002|Programare|buna
-AUDIOBOOK|Atomic Habits|James Clear|ISBN004|Mike Chamberlain|270
-FICTIUNE|Cronicile din Narnia|Clive Staples Lewis|ISBN005|Fantasy|buna
+FICTIUNE|1984|George Orwell|ISBN002|Distopie|buna
+FICTIUNE|Brave New World|Aldous Huxley|ISBN003|Distopie|buna
+FICTIUNE|The Hobbit|J.R.R. Tolkien|ISBN004|Fantasy|buna
+FICTIUNE|Harry Potter si Piatra Filozofala|J.K. Rowling|ISBN005|Fantasy|buna
+FICTIUNE|The Name of the Wind|Patrick Rothfuss|ISBN006|Fantasy|buna
+FICTIUNE|Fahrenheit 451|Ray Bradbury|ISBN007|SF|buna
+FICTIUNE|Foundation|Isaac Asimov|ISBN008|SF|buna
+FICTIUNE|The Martian|Andy Weir|ISBN009|SF|buna
+FICTIUNE|Crime si Pedeapsa|Fyodor Dostoevsky|ISBN010|Clasic|buna
+FICTIUNE|Anna Karenina|Leo Tolstoy|ISBN011|Clasic|buna
+FICTIUNE|Razboie si Pace|Leo Tolstoy|ISBN012|Clasic|buna
+FICTIUNE|Stapanul Inelelor|J.R.R. Tolkien|ISBN013|Fantasy|buna
+FICTIUNE|The Witcher|Andrzej Sapkowski|ISBN014|Fantasy|buna
+FICTIUNE|Game of Thrones|George R.R. Martin|ISBN015|Fantasy|buna
+FICTIUNE|The Hunger Games|Suzanne Collins|ISBN016|Distopie|buna
+FICTIUNE|Divergent|Veronica Roth|ISBN017|Distopie|buna
+FICTIUNE|The Maze Runner|James Dashner|ISBN018|SF|buna
+FICTIUNE|Ender's Game|Orson Scott Card|ISBN019|SF|buna
+FICTIUNE|Neuromancer|William Gibson|ISBN020|Cyberpunk|buna
+TEHNICA|Clean Code|Robert Martin|ISBN021|Programare|buna
+TEHNICA|The Pragmatic Programmer|David Thomas|ISBN022|Programare|buna
+TEHNICA|Design Patterns|Gang of Four|ISBN023|Programare|buna
+TEHNICA|Introduction to Algorithms|Cormen et al|ISBN024|Algoritmi|buna
+TEHNICA|Computer Networks|Andrew Tanenbaum|ISBN025|Retele|buna
+TEHNICA|Operating System Concepts|Silberschatz|ISBN026|Sisteme de Operare|buna
+TEHNICA|Artificial Intelligence|Stuart Russell|ISBN027|AI|buna
+TEHNICA|Database System Concepts|Silberschatz|ISBN028|Baze de Date|buna
+TEHNICA|Computer Organization|Patterson|ISBN029|Arhitectura|buna
+TEHNICA|Calculus|James Stewart|ISBN030|Matematica|buna
+TEHNICA|Linear Algebra|Gilbert Strang|ISBN031|Matematica|buna
+TEHNICA|Discrete Mathematics|Kenneth Rosen|ISBN032|Matematica|buna
+TEHNICA|Computer Vision|Richard Szeliski|ISBN033|AI|buna
+TEHNICA|Deep Learning|Ian Goodfellow|ISBN034|AI|buna
+TEHNICA|Clean Architecture|Robert Martin|ISBN035|Programare|buna
+TEHNICA|The Art of Computer Programming|Donald Knuth|ISBN036|Algoritmi|buna
+TEHNICA|Structure and Interpretation|Abelson|ISBN037|Programare|buna
+TEHNICA|Code Complete|Steve McConnell|ISBN038|Programare|buna
+TEHNICA|Refactoring|Martin Fowler|ISBN039|Programare|buna
+TEHNICA|Test Driven Development|Kent Beck|ISBN040|Programare|buna
+DIGITAL|The Pragmatic Programmer Digital|David Thomas|ISBN041|PDF|https://lib.ro/pragmatic.pdf|8.5
+DIGITAL|Clean Architecture|Robert Martin|ISBN042|EPUB|https://lib.ro/clean-arch.epub|6.2
+DIGITAL|JavaScript The Good Parts|Douglas Crockford|ISBN043|PDF|https://lib.ro/js-good.pdf|4.1
+DIGITAL|Python Crash Course|Eric Matthes|ISBN044|PDF|https://lib.ro/python.pdf|12.3
+DIGITAL|Docker Deep Dive|Nigel Poulton|ISBN045|EPUB|https://lib.ro/docker.epub|5.8
+DIGITAL|Kubernetes in Action|Marko Luksa|ISBN046|PDF|https://lib.ro/k8s.pdf|15.2
+DIGITAL|Linux Command Line|William Shotts|ISBN047|PDF|https://lib.ro/linux.pdf|9.1
+DIGITAL|Git Pro|Scott Chacon|ISBN048|PDF|https://lib.ro/git.pdf|7.3
+DIGITAL|React Up and Running|Stoyan Stefanov|ISBN049|EPUB|https://lib.ro/react.epub|6.8
+DIGITAL|Node.js Design Patterns|Mario Casciaro|ISBN050|PDF|https://lib.ro/nodejs.pdf|11.4
+AUDIOBOOK|Atomic Habits|James Clear|ISBN051|Mike Chamberlain|270
+AUDIOBOOK|Sapiens|Yuval Noah Harari|ISBN052|Derek Perkins|915
+AUDIOBOOK|The 48 Laws of Power|Robert Greene|ISBN053|Richard Poe|1080
+AUDIOBOOK|Thinking Fast and Slow|Daniel Kahneman|ISBN054|Patrick Egan|720
+AUDIOBOOK|The Psychology of Money|Morgan Housel|ISBN055|Chris Hill|300
+AUDIOBOOK|Meditations|Marcus Aurelius|ISBN056|Duncan Steen|240
+AUDIOBOOK|How to Win Friends|Dale Carnegie|ISBN057|Andrew MacMillan|480
+AUDIOBOOK|The Power of Now|Eckhart Tolle|ISBN058|Eckhart Tolle|360
+AUDIOBOOK|Man's Search for Meaning|Viktor Frankl|ISBN059|Simon Vance|300
+AUDIOBOOK|The 7 Habits|Stephen Covey|ISBN060|Stephen Covey|810
+REVISTA|National Geographic|Various|ISBN061|42|Ianuarie|buna
+REVISTA|Science Today|Various|ISBN062|15|Februarie|buna
+REVISTA|Tech Monthly|Various|ISBN063|88|Martie|buna
+REVISTA|Nature|Various|ISBN064|33|Aprilie|buna
+REVISTA|Popular Science|Various|ISBN065|27|Mai|buna
+MANGA|Naruto Vol.1|Masashi Kishimoto|ISBN066|1|Kishimoto|buna
+MANGA|One Piece Vol.1|Eiichiro Oda|ISBN067|1|Oda|buna
+MANGA|Attack on Titan Vol.1|Hajime Isayama|ISBN068|1|Isayama|buna
+MANGA|Death Note Vol.1|Tsugumi Ohba|ISBN069|1|Ohba|buna
+MANGA|Dragon Ball Vol.1|Akira Toriyama|ISBN070|1|Toriyama|buna
+BENZI_DESENATE|Batman Year One|Frank Miller|ISBN071|Frank Miller|buna
+BENZI_DESENATE|Watchmen|Alan Moore|ISBN072|Dave Gibbons|buna
+BENZI_DESENATE|V for Vendetta|Alan Moore|ISBN073|David Lloyd|buna
+BENZI_DESENATE|Maus|Art Spiegelman|ISBN074|Art Spiegelman|buna
+BENZI_DESENATE|The Walking Dead|Robert Kirkman|ISBN075|Tony Moore|buna
+ROMAN_GRAFIC|Persepolis|Marjane Satrapi|ISBN076|Marjane Satrapi|buna
+ROMAN_GRAFIC|Fun Home|Alison Bechdel|ISBN077|Alison Bechdel|buna
+ROMAN_GRAFIC|Blankets|Craig Thompson|ISBN078|Craig Thompson|buna
+ROMAN_GRAFIC|Ghost World|Daniel Clowes|ISBN079|Daniel Clowes|buna
+ROMAN_GRAFIC|From Hell|Alan Moore|ISBN080|Eddie Campbell|buna
+BIOGRAFIE|Steve Jobs|Walter Isaacson|ISBN081|Steve Jobs|buna
+BIOGRAFIE|Elon Musk|Ashlee Vance|ISBN082|Elon Musk|buna
+BIOGRAFIE|Leonardo da Vinci|Walter Isaacson|ISBN083|Leonardo da Vinci|buna
+BIOGRAFIE|The Diary of a Young Girl|Anne Frank|ISBN084|Anne Frank|buna
+BIOGRAFIE|Long Walk to Freedom|Nelson Mandela|ISBN085|Nelson Mandela|buna
+STIINTA|A Brief History of Time|Stephen Hawking|ISBN086|Fizica|buna
+STIINTA|The Selfish Gene|Richard Dawkins|ISBN087|Biologie|buna
+STIINTA|Cosmos|Carl Sagan|ISBN088|Astronomie|buna
+STIINTA|The Origin of Species|Charles Darwin|ISBN089|Biologie|buna
+STIINTA|Relativity|Albert Einstein|ISBN090|Fizica|buna
+ISTORIE|Sapiens|Yuval Noah Harari|ISBN091|Preistorie|buna
+ISTORIE|The Art of War|Sun Tzu|ISBN092|Antichitate|buna
+ISTORIE|Guns Germs and Steel|Jared Diamond|ISBN093|Modernitate|buna
+MANUAL|Matematica Clasa 9|Ioan Petrica|ISBN094|Matematica|liceu
+MANUAL|Fizica Clasa 10|Mihai Pop|ISBN095|Fizica|liceu
+MANUAL|Informatica Clasa 11|Carmen Minca|ISBN096|Informatica|liceu
+FILOZOFIE|Republic|Platon|ISBN097|Idealism|buna
+FILOZOFIE|Nicomachean Ethics|Aristotel|ISBN098|Virtute|buna
+ENCICLOPEDIE|Britannica Vol.1|Various|ISBN099|General|buna
+ENCICLOPEDIE|Encyclopedia of Science|Various|ISBN100|Stiinta|buna

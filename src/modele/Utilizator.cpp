@@ -37,3 +37,7 @@ void Utilizator::afiseazaImprumuturi() const {
             cout << "  - ISBN: " << isbn << endl;
     }
 }
+
+void Utilizator::setParolaCriptata(const string& hash) {
+    parolaCriptata = hash;
+}

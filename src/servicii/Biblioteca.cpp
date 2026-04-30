@@ -11,25 +11,54 @@ void Biblioteca::salveazaCarti(const string& caleFisier) const {
 void Biblioteca::incarcaCarti(const string& caleFisier) {
     vector<Carte*> cartiNoi = FisierHelper::incarcaCarti(caleFisier);
     for (auto& carte : cartiNoi)
-        carti.push_back(carte);
+        adaugaCarte(carte);  // folosim adaugaCarte() ca sa actualizeze si indexurile!
 }
 
 void Biblioteca::adaugaCarte(Carte* carte) {
     carti.push_back(carte);
+
+    indexIsbn[carte->getIsbn()] = carte;
+
+    string autor = carte->getAutor();
+    transform(autor.begin(), autor.end(), autor.begin(), ::tolower);
+    indexAutor[autor].push_back(carte);
+
+    indexTip[carte->getTip()].push_back(carte);
+
+    // Index dupa gen
+    string gen = carte->getGen();
+    if (!gen.empty()) {
+        transform(gen.begin(), gen.end(), gen.begin(), ::tolower);
+        indexGen[gen].push_back(carte);
+    }
+
     cout << "[LOG] Carte adaugata: " << carte->getTitlu() << endl;
 }
 
 void Biblioteca::eliminaCarte(const string& isbn) {
-    auto it = remove_if(carti.begin(), carti.end(),
-        [&isbn](Carte* c) {
-            if (c->getIsbn() == isbn) { delete c; return true; }
-            return false;
-        });
+    auto it = find_if(carti.begin(), carti.end(),
+        [&isbn](Carte* c) { return c->getIsbn() == isbn; });
 
     if (it == carti.end())
         throw CarteNegasitaException(isbn);
 
-    carti.erase(it, carti.end());
+    Carte* carte = *it;
+
+    // Stergem din indexuri
+    indexIsbn.erase(isbn);
+
+    string autor = carte->getAutor();
+    transform(autor.begin(), autor.end(), autor.begin(), ::tolower);
+    auto& vecAutor = indexAutor[autor];
+    vecAutor.erase(remove(vecAutor.begin(), vecAutor.end(), carte),
+                   vecAutor.end());
+
+    auto& vecTip = indexTip[carte->getTip()];
+    vecTip.erase(remove(vecTip.begin(), vecTip.end(), carte),
+                 vecTip.end());
+
+    delete carte;
+    carti.erase(it);
 }
 
 void Biblioteca::afiseazaCarti() const {
@@ -52,31 +81,17 @@ Utilizator* Biblioteca::getUtilizator(int id) {
 
 bool Biblioteca::imprumutaCarte(int idUtilizator, const string& isbn,
                                   int zileLimita) {
-    // Cautam cartea
-    Carte* carteGasita = nullptr;
-    bool existaIsbn = false;
-
-    for (auto& carte : carti) {
-        if (carte->getIsbn() == isbn) {
-            existaIsbn = true;
-            if (carte->esteDisponibila()) {
-                carteGasita = carte;
-                break;
-            }
-        }
-    }
-
-    if (!existaIsbn)
+    // Cautare O(1) in loc de O(n)
+    auto it = indexIsbn.find(isbn);
+    if (it == indexIsbn.end())
         throw CarteNegasitaException(isbn);
 
-    if (!carteGasita)
+    Carte* carteGasita = it->second;
+    if (!carteGasita->esteDisponibila())
         throw CarteIndisponibilaException(isbn);
 
-    // Cautam utilizatorul
-    bool utilizatorGasit = false;
     for (auto& utilizator : utilizatori) {
         if (utilizator.getId() == idUtilizator) {
-            utilizatorGasit = true;
             carteGasita->setDisponibila(false);
             utilizator.adaugaImprumut(isbn);
             imprumuturiActive.push_back(
@@ -87,11 +102,7 @@ bool Biblioteca::imprumutaCarte(int idUtilizator, const string& isbn,
             return true;
         }
     }
-
-    if (!utilizatorGasit)
-        throw UtilizatorNegasitException(idUtilizator);
-
-    return false;
+    throw UtilizatorNegasitException(idUtilizator);
 }
 
 bool Biblioteca::returneazaCarte(int idUtilizator, const string& isbn) {
@@ -132,23 +143,21 @@ void Biblioteca::afiseazaRaportPenalitati() const {
 
     cout << "=========================\n" << endl;
 }
+
 void Biblioteca::cautaDupaAutor(const string& autor) const {
     cout << "\n=== Carti de: " << autor << " ===" << endl;
-    bool gasit = false;
-    for (const auto& carte : carti) {
-        // cautare case-insensitive
-        string autorCarte = carte->getAutor();
-        string cautare = autor;
-        transform(autorCarte.begin(), autorCarte.end(),
-                  autorCarte.begin(), ::tolower);
-        transform(cautare.begin(), cautare.end(),
-                  cautare.begin(), ::tolower);
-        if (autorCarte.find(cautare) != string::npos) {
+
+    string cautare = autor;
+    transform(cautare.begin(), cautare.end(), cautare.begin(), ::tolower);
+
+    // Cautare O(1) in index
+    auto it = indexAutor.find(cautare);
+    if (it == indexAutor.end() || it->second.empty()) {
+        cout << "  Nicio carte gasita pentru: " << autor << endl;
+    } else {
+        for (const auto& carte : it->second)
             carte->afiseazaDetalii();
-            gasit = true;
-        }
     }
-    if (!gasit) cout << "  Nicio carte gasita pentru autorul: " << autor << endl;
     cout << "============================\n" << endl;
 }
 
@@ -187,24 +196,36 @@ void Biblioteca::filtreazaDupaDisponibilitate(bool disponibile) const {
 
 void Biblioteca::filtreazaDupaTip(const string& tip) const {
     cout << "\n=== Carti de tip: " << tip << " ===" << endl;
+
+    auto it = indexTip.find(tip);
+    if (it == indexTip.end() || it->second.empty()) {
+        cout << "  Nicio carte de tipul: " << tip << endl;
+    } else {
+        for (const auto& carte : it->second)
+            carte->afiseazaDetalii();
+    }
+    cout << "============================\n" << endl;
+}
+
+void Biblioteca::cautaDupaGen(const string& gen) const {
+    cout << "\n=== Carti cu genul: " << gen << " ===" << endl;
+
+    string cautare = gen;
+    transform(cautare.begin(), cautare.end(), cautare.begin(), ::tolower);
+
     bool gasit = false;
     for (const auto& carte : carti) {
-        bool eCorect = false;
-        if (tip == "FICTIUNE" && dynamic_cast<const CarteFictiune*>(carte))
-            eCorect = true;
-        else if (tip == "TEHNICA" && dynamic_cast<const CarteTehnica*>(carte))
-            eCorect = true;
-        else if (tip == "DIGITAL" && dynamic_cast<const CarteDigitala*>(carte))
-            eCorect = true;
-        else if (tip == "AUDIOBOOK" && dynamic_cast<const Audiobook*>(carte))
-            eCorect = true;
-
-        if (eCorect) {
+        string genCarte = carte->getGen();
+        transform(genCarte.begin(), genCarte.end(),
+                  genCarte.begin(), ::tolower);
+        if (genCarte.find(cautare) != string::npos) {
             carte->afiseazaDetalii();
             gasit = true;
         }
     }
-    if (!gasit) cout << "  Nicio carte gasita de tipul: " << tip << endl;
+
+    if (!gasit)
+        cout << "  Nicio carte gasita cu genul: " << gen << endl;
     cout << "============================\n" << endl;
 }
 

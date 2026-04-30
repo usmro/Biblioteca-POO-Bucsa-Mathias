@@ -85,7 +85,6 @@ void CarteFizica::afiseazaDetalii() const {
 
 CarteFictiune::CarteFictiune(string titlu, string autor, string isbn, string gen)
     : CarteFizica(titlu, autor, isbn), gen(gen) {}
-string CarteFictiune::getGen() const { return gen; }
 void CarteFictiune::afiseazaDetalii() const {
     cout << "[FICTIUNE - " << gen << "] ";
     Carte::afiseazaDetalii();
