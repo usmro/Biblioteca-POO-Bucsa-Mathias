@@ -70,12 +70,13 @@ void Meniu::afiseazaMenuBibliotecar() {
     cout << "   PANOU BIBLIOTECAR - " << angajatCurent->getNume() << endl;
     cout << "========================================" << endl;
     cout << "  1. Vezi catalog carti" << endl;
-    cout << "  2. Adauga carte noua" << endl;
-    cout << "  3. Elimina carte din catalog" << endl;
-    cout << "  4. Vezi toti utilizatorii" << endl;
-    cout << "  5. Sterge cont utilizator" << endl;
-    cout << "  6. Raport penalitati" << endl;
-    cout << "  7. Logout" << endl;
+    cout << "  2. Cauta / Filtreaza carti" << endl;
+    cout << "  3. Adauga carte noua" << endl;
+    cout << "  4. Elimina carte" << endl;
+    cout << "  5. Vezi utilizatori" << endl;
+    cout << "  6. Sterge cont utilizator" << endl;
+    cout << "  7. Raport penalitati" << endl;
+    cout << "  8. Logout" << endl;
     cout << "========================================" << endl;
     cout << "Alege optiunea: ";
 }
@@ -578,12 +579,13 @@ if (dirLoaded && biblLoaded) {
             optiune = citesteOptiune();
             switch (optiune) {
                 case 1: handleVezeCatalog(); break;
-                case 2: handleAdaugaCarte(); break;
-                case 3: handleEliminaCarte(); break;
-                case 4: handleVeziUtilizatori(); break;
-                case 5: handleStergeUtilizator(); break;
-                case 6: handleRaportPenalitati(); break;
-                case 7:
+                case 2: handleFiltrareCatalog(); break;
+                case 3: handleAdaugaCarte(); break;
+                case 4: handleEliminaCarte(); break;
+                case 5: handleVeziUtilizatori(); break;
+                case 6: handleStergeUtilizator(); break;
+                case 7: handleRaportPenalitati(); break;
+                case 8:
                     cout << "La revedere, " << angajatCurent->getNume() << "!" << endl;
                     angajatCurent = nullptr;
                     asteaptaEnter();
