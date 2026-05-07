@@ -128,6 +128,7 @@ cors.global()
         result["id"] = user["id"];
         result["nume"] = user["nume"];
         result["username"] = user["username"];
+        result["rol"] = user["rol"];  // asigura-te ca e aceasta linie
         return crow::response(result);
     });
 
@@ -144,6 +145,7 @@ cors.global()
             result[i]["nume"] = u["nume"];
             result[i]["username"] = u["username"];
             result[i]["data_creare"] = u["data_creare"];
+            result[i]["rol"] = u["rol"];
             i++;
         }
         return crow::response(result);
@@ -198,6 +200,61 @@ cors.global()
         );
         return ok ? crow::response(200, "Carte returnata!")
                   : crow::response(400, "Eroare la returnare!");
+    });
+
+    // ==================== ANGAJATI ====================
+
+    CROW_ROUTE(app, "/api/angajati").methods("GET"_method)
+    ([&db]() {
+        auto angajati = db.getAngajati();
+        crow::json::wvalue result;
+        int i = 0;
+        for (auto& a : angajati) {
+            result[i]["id"] = a["id"];
+            result[i]["nume"] = a["nume"];
+            result[i]["username"] = a["username"];
+            result[i]["rol"] = a["rol"];
+            result[i]["salariu"] = a["salariu"];
+            result[i]["departament"] = a["departament"];
+            i++;
+        }
+        return crow::response(result);
+    });
+
+    CROW_ROUTE(app, "/api/angajati").methods("POST"_method)
+    ([&db](const crow::request& req) {
+        auto body = crow::json::load(req.body);
+        if (!body) return crow::response(400, "JSON invalid");
+        bool ok = db.adaugaAngajat(
+            body["nume"].s(), body["username"].s(),
+            body["parola"].s(), body["rol"].s(),
+            body["salariu"].d(), body["departament"].s()
+        );
+        return ok ? crow::response(200, "Angajat adaugat!")
+                  : crow::response(400, "Username deja existent!");
+    });
+
+    CROW_ROUTE(app, "/api/angajati/bonus").methods("PUT"_method)
+    ([&db](const crow::request& req) {
+        auto body = crow::json::load(req.body);
+        if (!body) return crow::response(400, "JSON invalid");
+        auto angajati = db.getAngajati();
+        for (auto& a : angajati) {
+            if (a["id"] == body["id"].s()) {
+                double salariuNou = stod(a["salariu"]) + body["bonus"].d();
+                bool ok = db.updateSalariu(stoi(a["id"]), salariuNou);
+                return ok ? crow::response(200, "Bonus acordat!")
+                          : crow::response(400, "Eroare!");
+            }
+        }
+        return crow::response(404, "Angajat negasit!");
+    });
+
+    CROW_ROUTE(app, "/api/angajati/<int>").methods("DELETE"_method)
+    ([&db](int id) {
+        bool ok = db.stergeAngajat(id);
+        return ok ? crow::response(200, "Angajat sters!")
+                  : crow::response(400, "Eroare!");
     });
 
     cout << "Server pornit pe http://localhost:8080" << endl;

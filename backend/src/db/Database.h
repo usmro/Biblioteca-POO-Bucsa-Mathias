@@ -40,6 +40,16 @@ public:
     vector<map<string, string>> getImprumuturi();
     vector<map<string, string>> getImprumuturiUtilizator(int idUtilizator);
     bool returneazaImprumut(int idUtilizator, const string& isbn);
+    bool adaugaUtilizatorCuRol(const string& nume, const string& username,
+                             const string& parola, const string& rol);
+    // Angajati
+    bool adaugaAngajat(const string& nume, const string& username,
+                   const string& parola, const string& rol,
+                   double salariu, const string& departament);
+    vector<map<string, string>> getAngajati();
+    bool updateSalariu(int id, double salariu);
+    bool stergeAngajat(int id);
+    map<string, string> getAngajatByUsername(const string& username);
 };
 
 #endif

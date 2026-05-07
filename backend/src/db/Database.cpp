@@ -1,4 +1,7 @@
 #include "Database.h"
+#include <openssl/sha.h>
+#include <sstream>
+#include <iomanip>
 #include <iostream>
 using namespace std;
 
@@ -35,14 +38,14 @@ void Database::initializeazaTabelele() {
 
     const char* sqlUtilizatori = R"(
         CREATE TABLE IF NOT EXISTS utilizatori (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nume TEXT NOT NULL,
-            username TEXT UNIQUE NOT NULL,
-            parola_hash TEXT NOT NULL,
-            data_creare DATETIME DEFAULT CURRENT_TIMESTAMP
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nume TEXT NOT NULL,
+        username TEXT UNIQUE NOT NULL,
+        parola_hash TEXT NOT NULL,
+        rol TEXT DEFAULT 'utilizator',
+        data_creare DATETIME DEFAULT CURRENT_TIMESTAMP
         );
     )";
-
     const char* sqlImprumuturi = R"(
         CREATE TABLE IF NOT EXISTS imprumuturi (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -56,10 +59,24 @@ void Database::initializeazaTabelele() {
         );
     )";
 
+    const char* sqlAngajati = R"(
+        CREATE TABLE IF NOT EXISTS angajati (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nume TEXT NOT NULL,
+            username TEXT UNIQUE NOT NULL,
+            parola_hash TEXT NOT NULL,
+            rol TEXT NOT NULL,
+            salariu REAL DEFAULT 0,
+            departament TEXT DEFAULT 'General'
+        );
+
+    )";
+    
     char* errMsg;
     sqlite3_exec(db, sqlCarti, nullptr, nullptr, &errMsg);
     sqlite3_exec(db, sqlUtilizatori, nullptr, nullptr, &errMsg);
     sqlite3_exec(db, sqlImprumuturi, nullptr, nullptr, &errMsg);
+    sqlite3_exec(db, sqlAngajati, nullptr, nullptr, &errMsg);
     cout << "[DB] Tabele initializate." << endl;
 }
 
@@ -127,6 +144,86 @@ vector<map<string, string>> Database::cautaCarti(const string& query) {
     return rezultat;
 }
 
+string sha256Local(const string& str); // forward declaration
+
+bool Database::adaugaAngajat(const string& nume, const string& username,
+                              const string& parola, const string& rol,
+                              double salariu, const string& departament) {
+    string hash = sha256Local(parola);
+    string sql = "INSERT OR IGNORE INTO angajati "
+                 "(nume, username, parola_hash, rol, salariu, departament) "
+                 "VALUES (?, ?, ?, ?, ?, ?);";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, nume.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 2, username.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 3, hash.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 4, rol.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_double(stmt, 5, salariu);
+    sqlite3_bind_text(stmt, 6, departament.c_str(), -1, SQLITE_STATIC);
+    int rc = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE;
+}
+
+vector<map<string, string>> Database::getAngajati() {
+    vector<map<string, string>> rezultat;
+    const char* sql = "SELECT id, nume, username, rol, salariu, departament FROM angajati;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string, string> rand;
+        rand["id"] = to_string(sqlite3_column_int(stmt, 0));
+        rand["nume"] = (const char*)sqlite3_column_text(stmt, 1);
+        rand["username"] = (const char*)sqlite3_column_text(stmt, 2);
+        rand["rol"] = (const char*)sqlite3_column_text(stmt, 3);
+        rand["salariu"] = to_string(sqlite3_column_double(stmt, 4));
+        rand["departament"] = (const char*)sqlite3_column_text(stmt, 5);
+        rezultat.push_back(rand);
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
+bool Database::updateSalariu(int id, double salariu) {
+    string sql = "UPDATE angajati SET salariu = ? WHERE id = ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_double(stmt, 1, salariu);
+    sqlite3_bind_int(stmt, 2, id);
+    int rc = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE;
+}
+
+bool Database::stergeAngajat(int id) {
+    string sql = "DELETE FROM angajati WHERE id = ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, id);
+    int rc = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE;
+}
+
+map<string, string> Database::getAngajatByUsername(const string& username) {
+    map<string, string> rezultat;
+    string sql = "SELECT id, nume, username, parola_hash, rol, salariu FROM angajati WHERE username = ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, username.c_str(), -1, SQLITE_STATIC);
+    if (sqlite3_step(stmt) == SQLITE_ROW) {
+        rezultat["id"] = to_string(sqlite3_column_int(stmt, 0));
+        rezultat["nume"] = (const char*)sqlite3_column_text(stmt, 1);
+        rezultat["username"] = (const char*)sqlite3_column_text(stmt, 2);
+        rezultat["parola_hash"] = (const char*)sqlite3_column_text(stmt, 3);
+        rezultat["rol"] = (const char*)sqlite3_column_text(stmt, 4);
+        rezultat["salariu"] = to_string(sqlite3_column_double(stmt, 5));
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
 bool Database::updateDisponibilitate(const string& isbn, bool disponibila) {
     string sql = "UPDATE carti SET disponibila = ? WHERE isbn = ?;";
     sqlite3_stmt* stmt;
@@ -163,7 +260,7 @@ bool Database::adaugaUtilizator(const string& nume, const string& username,
 
 vector<map<string, string>> Database::getUtilizatori() {
     vector<map<string, string>> rezultat;
-    const char* sql = "SELECT id, nume, username, data_creare FROM utilizatori;";
+    const char* sql = "SELECT id, nume, username, rol, data_creare FROM utilizatori;";
     sqlite3_stmt* stmt;
     sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
     while (sqlite3_step(stmt) == SQLITE_ROW) {
@@ -171,7 +268,9 @@ vector<map<string, string>> Database::getUtilizatori() {
         rand["id"] = to_string(sqlite3_column_int(stmt, 0));
         rand["nume"] = (const char*)sqlite3_column_text(stmt, 1);
         rand["username"] = (const char*)sqlite3_column_text(stmt, 2);
-        rand["data_creare"] = (const char*)sqlite3_column_text(stmt, 3);
+        rand["rol"] = sqlite3_column_text(stmt, 3) ?
+                      (const char*)sqlite3_column_text(stmt, 3) : "utilizator";
+        rand["data_creare"] = (const char*)sqlite3_column_text(stmt, 4);
         rezultat.push_back(rand);
     }
     sqlite3_finalize(stmt);
@@ -180,7 +279,7 @@ vector<map<string, string>> Database::getUtilizatori() {
 
 map<string, string> Database::getUtilizatorByUsername(const string& username) {
     map<string, string> rezultat;
-    string sql = "SELECT id, nume, username, parola_hash FROM utilizatori WHERE username = ?;";
+    string sql = "SELECT id, nume, username, parola_hash, rol FROM utilizatori WHERE username = ?;";
     sqlite3_stmt* stmt;
     sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
     sqlite3_bind_text(stmt, 1, username.c_str(), -1, SQLITE_STATIC);
@@ -189,10 +288,13 @@ map<string, string> Database::getUtilizatorByUsername(const string& username) {
         rezultat["nume"] = (const char*)sqlite3_column_text(stmt, 1);
         rezultat["username"] = (const char*)sqlite3_column_text(stmt, 2);
         rezultat["parola_hash"] = (const char*)sqlite3_column_text(stmt, 3);
+        rezultat["rol"] = sqlite3_column_text(stmt, 4) ?
+                          (const char*)sqlite3_column_text(stmt, 4) : "utilizator";
     }
     sqlite3_finalize(stmt);
     return rezultat;
 }
+
 
 bool Database::stergeUtilizator(int id) {
     string sql = "DELETE FROM utilizatori WHERE id = ?;";
@@ -280,4 +382,29 @@ bool Database::returneazaImprumut(int idUtilizator, const string& isbn) {
     if (rc == SQLITE_DONE)
         return updateDisponibilitate(isbn, true);
     return false;
+}
+
+string sha256Local(const string& str) {
+    unsigned char hash[SHA256_DIGEST_LENGTH];
+    SHA256((unsigned char*)str.c_str(), str.size(), hash);
+    stringstream ss;
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+        ss << hex << setw(2) << setfill('0') << (int)hash[i];
+    return ss.str();
+}
+
+bool Database::adaugaUtilizatorCuRol(const string& nume, const string& username,
+                                      const string& parola, const string& rol) {
+    string hash = sha256Local(parola);
+    string sql = "INSERT OR IGNORE INTO utilizatori (nume, username, parola_hash, rol) "
+                 "VALUES (?, ?, ?, ?);";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, nume.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 2, username.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 3, hash.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 4, rol.c_str(), -1, SQLITE_STATIC);
+    int rc = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE;
 }

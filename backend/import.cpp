@@ -34,5 +34,10 @@ int main() {
     }
 
     cout << count << " carti importate!" << endl;
+
+    db.adaugaAngajat("Ana Popescu", "director", "director123",
+                  "director", 8000, "Conducere");
+    db.adaugaAngajat("Mihai Ionescu", "bibliotecar", "biblio123",
+                  "bibliotecar", 4000, "Gestiune Carti");
     return 0;
 }
