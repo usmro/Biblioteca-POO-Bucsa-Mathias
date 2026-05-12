@@ -5,6 +5,8 @@
 #include <openssl/sha.h>
 #include <sstream>
 #include <iomanip>
+#include <map>
+#include <algorithm>
 using namespace std;
 
 // SHA256 helper
@@ -32,23 +34,50 @@ cors.global()
     // ==================== CARTI ====================
 
     // GET /api/carti - toate cartile
-    CROW_ROUTE(app, "/api/carti").methods("GET"_method)
-    ([&db]() {
-        auto carti = db.getCarti();
-        crow::json::wvalue result;
-        int i = 0;
-        for (auto& carte : carti) {
-            result[i]["id"] = carte["id"];
-            result[i]["titlu"] = carte["titlu"];
-            result[i]["autor"] = carte["autor"];
-            result[i]["isbn"] = carte["isbn"];
-            result[i]["tip"] = carte["tip"];
-            result[i]["extra1"] = carte["extra1"];
-            result[i]["disponibila"] = carte["disponibila"] == "1";
-            i++;
-        }
-        return crow::response(result);
-    });
+CROW_ROUTE(app, "/api/carti").methods("GET"_method)
+([&db](const crow::request& req) {
+    int pagina = 1;
+    int perPagina = 20;
+    string sortDupa = "titlu";
+    string ordine = "asc";
+    string tip = "";
+    string gen = "";
+
+    if (req.url_params.get("pagina"))
+        pagina = stoi(req.url_params.get("pagina"));
+    if (req.url_params.get("per_pagina"))
+        perPagina = stoi(req.url_params.get("per_pagina"));
+    if (req.url_params.get("sort"))
+        sortDupa = req.url_params.get("sort");
+    if (req.url_params.get("ordine"))
+        ordine = req.url_params.get("ordine");
+    if (req.url_params.get("tip"))
+        tip = req.url_params.get("tip");
+    if (req.url_params.get("gen"))
+        gen = req.url_params.get("gen");
+
+    auto carti = db.getCartiPaginat(pagina, perPagina, sortDupa, ordine, tip, gen);
+    auto total = db.getTotalCartiFiltrat(tip, gen);
+
+    crow::json::wvalue result;
+    result["total"] = total;
+    result["pagina"] = pagina;
+    result["per_pagina"] = perPagina;
+    result["total_pagini"] = (total + perPagina - 1) / perPagina;
+
+    int i = 0;
+    for (auto& carte : carti) {
+        result["carti"][i]["id"] = carte["id"];
+        result["carti"][i]["titlu"] = carte["titlu"];
+        result["carti"][i]["autor"] = carte["autor"];
+        result["carti"][i]["isbn"] = carte["isbn"];
+        result["carti"][i]["tip"] = carte["tip"];
+        result["carti"][i]["extra1"] = carte["extra1"];
+        result["carti"][i]["disponibila"] = carte["disponibila"] == "1";
+        i++;
+    }
+    return crow::response(result);
+});
 
     // GET /api/carti/cauta?q=query
     CROW_ROUTE(app, "/api/carti/cauta").methods("GET"_method)
@@ -91,6 +120,28 @@ cors.global()
         return ok ? crow::response(200, "Carte stearsa!")
                   : crow::response(400, "Eroare!");
     });
+
+    // GET /api/tipuri - returneaza tipurile disponibile
+CROW_ROUTE(app, "/api/tipuri").methods("GET"_method)
+([&db]() {
+    auto tipuri = db.getTipuriDisponibile();
+    crow::json::wvalue result;
+    int i = 0;
+    for (auto& tip : tipuri)
+        result[i++] = tip;
+    return crow::response(result);
+});
+
+// GET /api/genuri - returneaza genurile disponibile
+CROW_ROUTE(app, "/api/genuri").methods("GET"_method)
+([&db]() {
+    auto genuri = db.getGenuriDisponibile();
+    crow::json::wvalue result;
+    int i = 0;
+    for (auto& gen : genuri)
+        result[i++] = gen;
+    return crow::response(result);
+});
 
     // ==================== AUTH ====================
 
@@ -255,6 +306,61 @@ cors.global()
         bool ok = db.stergeAngajat(id);
         return ok ? crow::response(200, "Angajat sters!")
                   : crow::response(400, "Eroare!");
+    });
+
+    // GET /api/statistici
+    CROW_ROUTE(app, "/api/statistici").methods("GET"_method)
+    ([&db]() {
+        auto carti = db.getCarti();
+        auto utilizatori = db.getUtilizatori();
+        auto imprumuturi = db.getImprumuturi();
+
+    // Numara carti pe tip
+        map<string, int> peTip;
+        int disponibile = 0;
+        int imprumutate = 0;
+
+        for (auto& c : carti) {
+            peTip[c["tip"]]++;
+            if (c["disponibila"] == "1") disponibile++;
+            else imprumutate++;
+        }
+
+    // Numara carti pe autor (top autori)
+        map<string, int> peAutor;
+        for (auto& c : carti)
+            peAutor[c["autor"]]++;
+
+        crow::json::wvalue result;
+        result["total_carti"] = (int)carti.size();
+        result["disponibile"] = disponibile;
+        result["imprumutate"] = imprumutate;
+        result["total_utilizatori"] = (int)utilizatori.size();
+        result["total_imprumuturi_active"] = (int)imprumuturi.size();
+
+    // Carti pe tip
+        int i = 0;
+        for (auto& [tip, count] : peTip) {
+            result["pe_tip"][i]["tip"] = tip;
+            result["pe_tip"][i]["count"] = count;
+            i++;
+        }
+
+    // Top 5 autori
+        vector<pair<int, string>> autori;
+        for (auto& [autor, count] : peAutor)
+            autori.push_back({count, autor});
+        sort(autori.rbegin(), autori.rend());
+
+        int j = 0;
+        for (auto& [count, autor] : autori) {
+            if (j >= 5) break;
+            result["top_autori"][j]["autor"] = autor;
+            result["top_autori"][j]["count"] = count;
+            j++;
+        }
+
+        return crow::response(result);
     });
 
     cout << "Server pornit pe http://localhost:8080" << endl;

@@ -1,100 +1,1060 @@
-FICTIUNE|Dune|Frank Herbert|ISBN001|SF|buna
-FICTIUNE|1984|George Orwell|ISBN002|Distopie|buna
-FICTIUNE|Brave New World|Aldous Huxley|ISBN003|Distopie|buna
-FICTIUNE|The Hobbit|J.R.R. Tolkien|ISBN004|Fantasy|buna
-FICTIUNE|Harry Potter si Piatra Filozofala|J.K. Rowling|ISBN005|Fantasy|buna
-FICTIUNE|The Name of the Wind|Patrick Rothfuss|ISBN006|Fantasy|buna
-FICTIUNE|Fahrenheit 451|Ray Bradbury|ISBN007|SF|buna
-FICTIUNE|Foundation|Isaac Asimov|ISBN008|SF|buna
-FICTIUNE|The Martian|Andy Weir|ISBN009|SF|buna
-FICTIUNE|Crime si Pedeapsa|Fyodor Dostoevsky|ISBN010|Clasic|buna
-FICTIUNE|Anna Karenina|Leo Tolstoy|ISBN011|Clasic|buna
-FICTIUNE|Razboie si Pace|Leo Tolstoy|ISBN012|Clasic|buna
-FICTIUNE|Stapanul Inelelor|J.R.R. Tolkien|ISBN013|Fantasy|buna
-FICTIUNE|The Witcher|Andrzej Sapkowski|ISBN014|Fantasy|buna
-FICTIUNE|Game of Thrones|George R.R. Martin|ISBN015|Fantasy|buna
-FICTIUNE|The Hunger Games|Suzanne Collins|ISBN016|Distopie|buna
-FICTIUNE|Divergent|Veronica Roth|ISBN017|Distopie|buna
-FICTIUNE|The Maze Runner|James Dashner|ISBN018|SF|buna
-FICTIUNE|Ender's Game|Orson Scott Card|ISBN019|SF|buna
-FICTIUNE|Neuromancer|William Gibson|ISBN020|Cyberpunk|buna
-TEHNICA|Clean Code|Robert Martin|ISBN021|Programare|buna
-TEHNICA|The Pragmatic Programmer|David Thomas|ISBN022|Programare|buna
-TEHNICA|Design Patterns|Gang of Four|ISBN023|Programare|buna
-TEHNICA|Introduction to Algorithms|Cormen et al|ISBN024|Algoritmi|buna
-TEHNICA|Computer Networks|Andrew Tanenbaum|ISBN025|Retele|buna
-TEHNICA|Operating System Concepts|Silberschatz|ISBN026|Sisteme de Operare|buna
-TEHNICA|Artificial Intelligence|Stuart Russell|ISBN027|AI|buna
-TEHNICA|Database System Concepts|Silberschatz|ISBN028|Baze de Date|buna
-TEHNICA|Computer Organization|Patterson|ISBN029|Arhitectura|buna
-TEHNICA|Calculus|James Stewart|ISBN030|Matematica|buna
-TEHNICA|Linear Algebra|Gilbert Strang|ISBN031|Matematica|buna
-TEHNICA|Discrete Mathematics|Kenneth Rosen|ISBN032|Matematica|buna
-TEHNICA|Computer Vision|Richard Szeliski|ISBN033|AI|buna
-TEHNICA|Deep Learning|Ian Goodfellow|ISBN034|AI|buna
-TEHNICA|Clean Architecture|Robert Martin|ISBN035|Programare|buna
-TEHNICA|The Art of Computer Programming|Donald Knuth|ISBN036|Algoritmi|buna
-TEHNICA|Structure and Interpretation|Abelson|ISBN037|Programare|buna
-TEHNICA|Code Complete|Steve McConnell|ISBN038|Programare|buna
-TEHNICA|Refactoring|Martin Fowler|ISBN039|Programare|buna
-TEHNICA|Test Driven Development|Kent Beck|ISBN040|Programare|buna
-DIGITAL|The Pragmatic Programmer Digital|David Thomas|ISBN041|PDF|https://lib.ro/pragmatic.pdf|8.5
-DIGITAL|Clean Architecture|Robert Martin|ISBN042|EPUB|https://lib.ro/clean-arch.epub|6.2
-DIGITAL|JavaScript The Good Parts|Douglas Crockford|ISBN043|PDF|https://lib.ro/js-good.pdf|4.1
-DIGITAL|Python Crash Course|Eric Matthes|ISBN044|PDF|https://lib.ro/python.pdf|12.3
-DIGITAL|Docker Deep Dive|Nigel Poulton|ISBN045|EPUB|https://lib.ro/docker.epub|5.8
-DIGITAL|Kubernetes in Action|Marko Luksa|ISBN046|PDF|https://lib.ro/k8s.pdf|15.2
-DIGITAL|Linux Command Line|William Shotts|ISBN047|PDF|https://lib.ro/linux.pdf|9.1
-DIGITAL|Git Pro|Scott Chacon|ISBN048|PDF|https://lib.ro/git.pdf|7.3
-DIGITAL|React Up and Running|Stoyan Stefanov|ISBN049|EPUB|https://lib.ro/react.epub|6.8
-DIGITAL|Node.js Design Patterns|Mario Casciaro|ISBN050|PDF|https://lib.ro/nodejs.pdf|11.4
-AUDIOBOOK|Atomic Habits|James Clear|ISBN051|Mike Chamberlain|270
-AUDIOBOOK|Sapiens|Yuval Noah Harari|ISBN052|Derek Perkins|915
-AUDIOBOOK|The 48 Laws of Power|Robert Greene|ISBN053|Richard Poe|1080
-AUDIOBOOK|Thinking Fast and Slow|Daniel Kahneman|ISBN054|Patrick Egan|720
-AUDIOBOOK|The Psychology of Money|Morgan Housel|ISBN055|Chris Hill|300
-AUDIOBOOK|Meditations|Marcus Aurelius|ISBN056|Duncan Steen|240
-AUDIOBOOK|How to Win Friends|Dale Carnegie|ISBN057|Andrew MacMillan|480
-AUDIOBOOK|The Power of Now|Eckhart Tolle|ISBN058|Eckhart Tolle|360
-AUDIOBOOK|Man's Search for Meaning|Viktor Frankl|ISBN059|Simon Vance|300
-AUDIOBOOK|The 7 Habits|Stephen Covey|ISBN060|Stephen Covey|810
-REVISTA|National Geographic|Various|ISBN061|42|Ianuarie|buna
-REVISTA|Science Today|Various|ISBN062|15|Februarie|buna
-REVISTA|Tech Monthly|Various|ISBN063|88|Martie|buna
-REVISTA|Nature|Various|ISBN064|33|Aprilie|buna
-REVISTA|Popular Science|Various|ISBN065|27|Mai|buna
-MANGA|Naruto Vol.1|Masashi Kishimoto|ISBN066|1|Kishimoto|buna
-MANGA|One Piece Vol.1|Eiichiro Oda|ISBN067|1|Oda|buna
-MANGA|Attack on Titan Vol.1|Hajime Isayama|ISBN068|1|Isayama|buna
-MANGA|Death Note Vol.1|Tsugumi Ohba|ISBN069|1|Ohba|buna
-MANGA|Dragon Ball Vol.1|Akira Toriyama|ISBN070|1|Toriyama|buna
-BENZI_DESENATE|Batman Year One|Frank Miller|ISBN071|Frank Miller|buna
-BENZI_DESENATE|Watchmen|Alan Moore|ISBN072|Dave Gibbons|buna
-BENZI_DESENATE|V for Vendetta|Alan Moore|ISBN073|David Lloyd|buna
-BENZI_DESENATE|Maus|Art Spiegelman|ISBN074|Art Spiegelman|buna
-BENZI_DESENATE|The Walking Dead|Robert Kirkman|ISBN075|Tony Moore|buna
-ROMAN_GRAFIC|Persepolis|Marjane Satrapi|ISBN076|Marjane Satrapi|buna
-ROMAN_GRAFIC|Fun Home|Alison Bechdel|ISBN077|Alison Bechdel|buna
-ROMAN_GRAFIC|Blankets|Craig Thompson|ISBN078|Craig Thompson|buna
-ROMAN_GRAFIC|Ghost World|Daniel Clowes|ISBN079|Daniel Clowes|buna
-ROMAN_GRAFIC|From Hell|Alan Moore|ISBN080|Eddie Campbell|buna
-BIOGRAFIE|Steve Jobs|Walter Isaacson|ISBN081|Steve Jobs|buna
-BIOGRAFIE|Elon Musk|Ashlee Vance|ISBN082|Elon Musk|buna
-BIOGRAFIE|Leonardo da Vinci|Walter Isaacson|ISBN083|Leonardo da Vinci|buna
-BIOGRAFIE|The Diary of a Young Girl|Anne Frank|ISBN084|Anne Frank|buna
-BIOGRAFIE|Long Walk to Freedom|Nelson Mandela|ISBN085|Nelson Mandela|buna
-STIINTA|A Brief History of Time|Stephen Hawking|ISBN086|Fizica|buna
-STIINTA|The Selfish Gene|Richard Dawkins|ISBN087|Biologie|buna
-STIINTA|Cosmos|Carl Sagan|ISBN088|Astronomie|buna
-STIINTA|The Origin of Species|Charles Darwin|ISBN089|Biologie|buna
-STIINTA|Relativity|Albert Einstein|ISBN090|Fizica|buna
-ISTORIE|Sapiens|Yuval Noah Harari|ISBN091|Preistorie|buna
-ISTORIE|The Art of War|Sun Tzu|ISBN092|Antichitate|buna
-ISTORIE|Guns Germs and Steel|Jared Diamond|ISBN093|Modernitate|buna
-MANUAL|Matematica Clasa 9|Ioan Petrica|ISBN094|Matematica|liceu
-MANUAL|Fizica Clasa 10|Mihai Pop|ISBN095|Fizica|liceu
-MANUAL|Informatica Clasa 11|Carmen Minca|ISBN096|Informatica|liceu
-FILOZOFIE|Republic|Platon|ISBN097|Idealism|buna
-FILOZOFIE|Nicomachean Ethics|Aristotel|ISBN098|Virtute|buna
-ENCICLOPEDIE|Britannica Vol.1|Various|ISBN099|General|buna
-ENCICLOPEDIE|Encyclopedia of Science|Various|ISBN100|Stiinta|buna
+ROMAN_GRAFIC|Maus II|Daniel Clowes|ISBN0872|Daniel Clowes|buna
+FILOZOFIE|Principiile Pragmatism|Rousseau|ISBN0667|Pragmatism|buna
+BENZI_DESENATE|Tintin #37|Alan Moore|ISBN0783|Alan Moore|buna
+FICTIUNE|The Three Body Problem|Victor Hugo|ISBN0032|Cyberpunk|buna
+FICTIUNE|Slaughterhouse Five|George R.R. Martin|ISBN0065|SF|buna
+ROMAN_GRAFIC|American Splendor|Emil Ferris|ISBN0849|Emil Ferris|buna
+DIGITAL|Computer Networks (Digital)|Brandon Sanderson|ISBN0940|MOBI|https://biblioteca.ro/computer-networks-(d.mobi|20.8
+FICTIUNE|The Time Machine|Margaret Atwood|ISBN0130|Clasic|buna
+STIINTA|Bazele Astronomie|Michio Kaku|ISBN0369|Astronomie|buna
+BIOGRAFIE|Viata lui Julius Caesar|Robert Greene|ISBN0602|Julius Caesar|buna
+TEHNICA|Domain Driven Design 1th Edition|Donald Knuth|ISBN0304|Programare|buna
+FICTIUNE|Harry Potter|Victor Hugo|ISBN0171|Mister|buna
+BIOGRAFIE|Viata lui Nelson Mandela|Dale Carnegie|ISBN0536|Nelson Mandela|buna
+DIGITAL|Operating System Concepts (Digital)|Jon Kleinberg|ISBN0978|MOBI|https://biblioteca.ro/operating-system-con.mobi|9.1
+AUDIOBOOK|I Robot|Daniel Kahneman|ISBN0998|George Guidall|532
+FICTIUNE|Dune Vol.5|Ray Bradbury|ISBN0096|Horror|deteriorata
+ENCICLOPEDIE|Enciclopedia Stiinta|Various|ISBN1034|Stiinta|buna
+TEHNICA|Cryptography and Network Security|Andrew Tanenbaum|ISBN0237|Sisteme de Operare|buna
+STIINTA|Bazele Genetica|Brian Greene|ISBN0411|Genetica|buna
+TEHNICA|The Pragmatic Programmer 1th Edition|Stuart Russell|ISBN0223|Robotica|buna
+TEHNICA|Graph Theory 3th Edition|Peter Norvig|ISBN0213|Sisteme de Operare|buna
+FICTIUNE|Enders Game|Agatha Christie|ISBN0115|Distopie|buna
+FILOZOFIE|Empirism - O Analiza|Wittgenstein|ISBN0661|Empirism|buna
+REVISTA|National Geographic|Various|ISBN0901|15|August|buna
+TEHNICA|Test Driven Development|Jon Kleinberg|ISBN0225|Robotica|deteriorata
+BIOGRAFIE|Newton - O Biografie|Robert Caro|ISBN0532|Newton|buna
+MANUAL|Fizica Clasa 11|Maria Popa|ISBN0686|Fizica|liceu|buna
+ISTORIE|Revolutii si Schimbari - Renastere|Jared Diamond|ISBN0515|Renastere|buna
+STIINTA|Introducere in Biologie|Richard Dawkins|ISBN0431|Biologie|buna
+TEHNICA|Domain Driven Design|Stuart Russell|ISBN0333|Robotica|buna
+TEHNICA|Clean Code|Stuart Russell|ISBN0245|Baze de Date|buna
+FILOZOFIE|Filozofia Empirism|Nietzsche|ISBN0631|Empirism|buna
+BIOGRAFIE|Viata lui Shakespeare|Malcolm Gladwell|ISBN0534|Shakespeare|buna
+TEHNICA|Graph Theory|Martin Fowler|ISBN0310|Programare|buna
+FICTIUNE|Crime si Pedeapsa|Victor Hugo|ISBN0006|Romantism|buna
+TEHNICA|Discrete Mathematics 2th Edition|Peter Norvig|ISBN0251|Programare|buna
+REVISTA|Discovery|Various|ISBN0909|128|Iulie|buna
+AUDIOBOOK|Never Split the Difference|Philip K. Dick|ISBN1003|Patrick Egan|337
+DIGITAL|Clean Architecture Digital (Digital)|Martin Fowler|ISBN0953|EPUB|https://biblioteca.ro/clean-architecture-d.epub|19.4
+ENCICLOPEDIE|Enciclopedia Stiinta|Various|ISBN1054|Stiinta|buna
+FICTIUNE|Project Hail Mary|Patrick Rothfuss|ISBN0169|Clasic|deteriorata
+TEHNICA|Deep Learning|Stuart Russell|ISBN0246|Matematica|deteriorata
+FILOZOFIE|Principiile Idealism|Sartre|ISBN0628|Idealism|buna
+STIINTA|Ecologie Moderna|Erwin Schrodinger|ISBN0418|Ecologie|buna
+STIINTA|Bazele Chimie|Richard Dawkins|ISBN0437|Chimie|buna
+STIINTA|Tratat de Chimie|Michio Kaku|ISBN0448|Chimie|buna
+MANUAL|Matematica Clasa 4|Ana Ionescu|ISBN0706|Matematica|liceu|buna
+STIINTA|Tratat de Chimie|Richard Feynman|ISBN0403|Chimie|buna
+BIOGRAFIE|Napoleon Bonaparte - O Biografie|Robert Greene|ISBN0549|Napoleon Bonaparte|buna
+FICTIUNE|Dune Vol.4|Fyodor Dostoevsky|ISBN0053|Romantism|buna
+FICTIUNE|Foundation|William Gibson|ISBN0071|Fantasy|buna
+ROMAN_GRAFIC|American Splendor|Craig Thompson|ISBN0859|Craig Thompson|buna
+TEHNICA|Calculus|Peter Norvig|ISBN0305|Programare|buna
+MANUAL|Geografie Clasa 4|Carmen Minca|ISBN0675|Geografie|liceu|buna
+REVISTA|New Scientist|Various|ISBN0917|77|Iunie|buna
+BIOGRAFIE|Viata lui Leonardo da Vinci|Robert Greene|ISBN0574|Leonardo da Vinci|buna
+FICTIUNE|Do Androids Dream|George R.R. Martin|ISBN0157|Horror|buna
+BENZI_DESENATE|Avengers #45|Neil Gaiman|ISBN0819|Neil Gaiman|buna
+TEHNICA|Clean Architecture|Ian Goodfellow|ISBN0348|Sisteme de Operare|deteriorata
+MANUAL|Engleza Clasa 5|Alexandru Stan|ISBN0724|Engleza|gimnaziu|buna
+MANUAL|Matematica Anul 4|Vasile Munteanu|ISBN0721|Matematica|facultate|buna
+ISTORIE|Razboaiele Renastere|Howard Zinn|ISBN0477|Renastere|buna
+STIINTA|Genetica Aplicata|Brian Greene|ISBN0433|Genetica|buna
+ISTORIE|Cultura si Societate - Medievala|Jared Diamond|ISBN0529|Medievala|buna
+BIOGRAFIE|Steve Jobs - O Biografie|Ron Chernow|ISBN0599|Steve Jobs|buna
+AUDIOBOOK|Solaris|Suzanne Collins|ISBN0984|George Guidall|501
+ROMAN_GRAFIC|Habibi|Adrian Tomine|ISBN0835|Adrian Tomine|buna
+ROMAN_GRAFIC|Jerusalem|Emil Ferris|ISBN0842|Emil Ferris|buna
+FICTIUNE|Anna Karenina|Arthur C. Clarke|ISBN0136|Aventura|buna
+FICTIUNE|The Name of the Wind|Jules Verne|ISBN0134|Distopie|buna
+BIOGRAFIE|Shakespeare - O Biografie|David McCullough|ISBN0585|Shakespeare|buna
+FILOZOFIE|Introducere in Nihilism|Marx|ISBN0644|Nihilism|buna
+TEHNICA|Artificial Intelligence 3th Edition|Kent Beck|ISBN0279|Algoritmi|deteriorata
+BIOGRAFIE|Viata lui Nelson Mandela|Dale Carnegie|ISBN0548|Nelson Mandela|buna
+ROMAN_GRAFIC|Logicomix|Eddie Campbell|ISBN0856|Eddie Campbell|buna
+MANUAL|Romana Clasa 9|Maria Popa|ISBN0673|Romana|gimnaziu|buna
+BIOGRAFIE|Nikola Tesla - O Biografie|Robert Caro|ISBN0557|Nikola Tesla|buna
+STIINTA|Geologie Aplicata|Michio Kaku|ISBN0381|Geologie|buna
+TEHNICA|Design Patterns 1th Edition|Brian Kernighan|ISBN0221|Matematica|buna
+BIOGRAFIE|Viata lui Bill Gates|Malcolm Gladwell|ISBN0588|Bill Gates|buna
+TEHNICA|Database System Concepts 5th Edition|Niklaus Wirth|ISBN0335|Chimie|deteriorata
+TEHNICA|Domain Driven Design|Kent Beck|ISBN0271|Fizica|deteriorata
+DIGITAL|JavaScript The Good Parts (Digital)|Neal Stephenson|ISBN0975|EPUB|https://biblioteca.ro/javascript-the-good-.epub|6.1
+DIGITAL|Snow Crash (Digital)|J.R.R. Tolkien|ISBN0950|EPUB|https://biblioteca.ro/snow-crash-(digital).epub|4.7
+BENZI_DESENATE|Asterix #34|Dave Gibbons|ISBN0808|Dave Gibbons|buna
+AUDIOBOOK|The 7 Habits|Ursula K. Le Guin|ISBN1020|Mike Chamberlain|781
+ISTORIE|Civilizatia Renastere|Niall Ferguson|ISBN0472|Renastere|buna
+DIGITAL|Deep Learning (Digital)|Jon Kleinberg|ISBN0946|MOBI|https://biblioteca.ro/deep-learning-(digit.mobi|22.2
+REVISTA|Tech Monthly|Various|ISBN0922|43|Noiembrie|buna
+TEHNICA|Database System Concepts 5th Edition|Donald Knuth|ISBN0324|Chimie|deteriorata
+TEHNICA|Modern Operating Systems|Bjarne Stroustrup|ISBN0316|Robotica|deteriorata
+STIINTA|Fundamentele Genetica|Richard Dawkins|ISBN0426|Genetica|buna
+BENZI_DESENATE|Spider-Man #36|Brian K. Vaughan|ISBN0829|Brian K. Vaughan|buna
+MANGA|Dragon Ball Vol.23|Isayama|ISBN0745|23|Isayama|buna
+ROMAN_GRAFIC|American Splendor|Eddie Campbell|ISBN0871|Eddie Campbell|buna
+FILOZOFIE|Gandire si Pragmatism|Schopenhauer|ISBN0668|Pragmatism|buna
+MANUAL|Informatica Anul 3|Mihai Pop|ISBN0695|Informatica|facultate|buna
+AUDIOBOOK|Mistborn|Neil Gaiman|ISBN1011|Andrew MacMillan|763
+MANUAL|Chimie Clasa 11|Elena Dumitrescu|ISBN0697|Chimie|gimnaziu|buna
+BIOGRAFIE|Gandhi - O Biografie|Ron Chernow|ISBN0578|Gandhi|buna
+STIINTA|Introducere in Neurologie|Richard Dawkins|ISBN0400|Neurologie|buna
+TEHNICA|Modern Operating Systems 2th Edition|Ian Goodfellow|ISBN0202|Fizica|deteriorata
+FILOZOFIE|Principiile Stoicism|Aristotel|ISBN0618|Stoicism|buna
+FICTIUNE|Snow Crash Vol.5|Aldous Huxley|ISBN0091|Fantasy|buna
+STIINTA|Fundamentele Astronomie|Carl Sagan|ISBN0424|Astronomie|buna
+MANUAL|Matematica Clasa 11|Maria Popa|ISBN0710|Matematica|liceu|buna
+ISTORIE|Istoria Contemporana|Barbara Tuchman|ISBN0511|Contemporana|buna
+FICTIUNE|Razboi si Pace|J.K. Rowling|ISBN0150|Cyberpunk|buna
+FICTIUNE|Hyperion|Orson Scott Card|ISBN0067|Cyberpunk|deteriorata
+FILOZOFIE|Gandire si Empirism|Descartes|ISBN0655|Empirism|buna
+ISTORIE|Razboaiele Moderna|Yuval Noah Harari|ISBN0491|Moderna|buna
+STIINTA|Introducere in Genetica|Stephen Hawking|ISBN0413|Genetica|buna
+MANUAL|Fizica Clasa 12|Elena Dumitrescu|ISBN0685|Fizica|gimnaziu|buna
+MANGA|Dragon Ball Vol.8|Isayama|ISBN0741|8|Isayama|buna
+TEHNICA|Deep Learning|Robert Martin|ISBN0235|Chimie|buna
+ISTORIE|Revolutii si Schimbari - Imperiul Roman|Jared Diamond|ISBN0505|Imperiul Roman|buna
+DIGITAL|The Hobbit (Digital)|Arthur C. Clarke|ISBN0969|EPUB|https://biblioteca.ro/the-hobbit-(digital).epub|14.7
+MANUAL|Biologie Anul 1|Elena Dumitrescu|ISBN0689|Biologie|facultate|buna
+FICTIUNE|The Forever War|Neil Gaiman|ISBN0019|Horror|buna
+FICTIUNE|Harry Potter|Orson Scott Card|ISBN0173|Cyberpunk|buna
+MANGA|Death Note Vol.15|Miura|ISBN0762|15|Miura|buna
+REVISTA|Nature|Various|ISBN0883|42|Ianuarie|buna
+FICTIUNE|Crime si Pedeapsa|Andrzej Sapkowski|ISBN0014|Aventura|deteriorata
+FICTIUNE|The Martian Vol.2|Margaret Atwood|ISBN0082|Aventura|buna
+FILOZOFIE|Tratat de Existentialism|Platon|ISBN0611|Existentialism|buna
+ISTORIE|Cultura si Societate - Al Doilea Razboi Mondial|Howard Zinn|ISBN0525|Al Doilea Razboi Mondial|buna
+DIGITAL|Python Crash Course (Digital)|Cixin Liu|ISBN0977|MOBI|https://biblioteca.ro/python-crash-course-.mobi|15.3
+DIGITAL|Operating System Concepts (Digital)|Dan Brown|ISBN0935|EPUB|https://biblioteca.ro/operating-system-con.epub|2.4
+TEHNICA|Deep Learning 1th Edition|Donald Knuth|ISBN0321|AI|buna
+DIGITAL|Refactoring (Digital)|Kent Beck|ISBN0955|PDF|https://biblioteca.ro/refactoring-(digital.pdf|15.9
+TEHNICA|Code Complete|Thomas Cormen|ISBN0331|Fizica|buna
+FICTIUNE|Recursion Vol.4|Ursula K. Le Guin|ISBN0074|Mister|buna
+STIINTA|Introducere in Neurologie|Richard Dawkins|ISBN0432|Neurologie|buna
+BIOGRAFIE|Abraham Lincoln - O Biografie|Walter Isaacson|ISBN0560|Abraham Lincoln|buna
+REVISTA|Popular Science|Various|ISBN0918|198|Martie|buna
+MANUAL|Matematica Anul 4|Vasile Munteanu|ISBN0725|Matematica|facultate|buna
+BIOGRAFIE|Marie Curie - O Biografie|Dale Carnegie|ISBN0609|Marie Curie|buna
+FILOZOFIE|Tratat de Nihilism|Wittgenstein|ISBN0653|Nihilism|buna
+FILOZOFIE|Principiile Nihilism|Sartre|ISBN0646|Nihilism|buna
+FICTIUNE|2001 A Space Odyssey|J.R.R. Tolkien|ISBN0106|Horror|buna
+MANUAL|Matematica Anul 1|Carmen Minca|ISBN0687|Matematica|facultate|buna
+FICTIUNE|Harry Potter Vol.3|Arthur C. Clarke|ISBN0070|Mister|buna
+TEHNICA|Natural Language Processing|Stuart Russell|ISBN0258|Retele|deteriorata
+ISTORIE|Civilizatia Contemporana|Edward Gibbon|ISBN0466|Contemporana|buna
+MANGA|Fairy Tail Vol.1|Toriyama|ISBN0755|1|Toriyama|buna
+STIINTA|Introducere in Chimie|Stephen Hawking|ISBN0367|Chimie|buna
+FILOZOFIE|Principiile Umanism|Marx|ISBN0621|Umanism|buna
+BENZI_DESENATE|Batman #31|Todd McFarlane|ISBN0830|Todd McFarlane|buna
+BIOGRAFIE|Viata lui Beethoven|Ron Chernow|ISBN0531|Beethoven|buna
+TEHNICA|Modern Operating Systems 5th Edition|Kent Beck|ISBN0337|Sisteme de Operare|buna
+MANUAL|Chimie Anul 2|Mihai Pop|ISBN0704|Chimie|facultate|buna
+BENZI_DESENATE|Lucky Luke #41|Neil Gaiman|ISBN0795|Neil Gaiman|buna
+FILOZOFIE|Introducere in Idealism|Camus|ISBN0639|Idealism|buna
+BIOGRAFIE|Viata lui Napoleon Bonaparte|Dale Carnegie|ISBN0589|Napoleon Bonaparte|buna
+ROMAN_GRAFIC|Through the Woods|Craig Thompson|ISBN0843|Craig Thompson|buna
+ISTORIE|Marile Imperii - Moderna|Sun Tzu|ISBN0528|Moderna|buna
+ISTORIE|Civilizatia Moderna|Barbara Tuchman|ISBN0486|Moderna|buna
+TEHNICA|Computer Organization and Design 2th Edition|Donald Knuth|ISBN0291|Baze de Date|buna
+TEHNICA|Clean Code 1th Edition|Andrew Tanenbaum|ISBN0219|Chimie|buna
+FICTIUNE|1984 Vol.1|Orson Scott Card|ISBN0183|Thriller|buna
+TEHNICA|Clean Code|Thomas Cormen|ISBN0262|Chimie|buna
+FICTIUNE|Snow Crash|Andy Weir|ISBN0122|Romantism|buna
+FICTIUNE|Foundation|Neal Stephenson|ISBN0193|Fantasy|buna
+ISTORIE|Cultura si Societate - Razboiul Rece|Jared Diamond|ISBN0500|Razboiul Rece|buna
+STIINTA|Bazele Chimie|Neil deGrasse Tyson|ISBN0376|Chimie|buna
+MANUAL|Engleza Clasa 9|Ioan Petrica|ISBN0729|Engleza|liceu|buna
+TEHNICA|System Design Interview|Andrew Tanenbaum|ISBN0286|Fizica|buna
+AUDIOBOOK|How to Win Friends|George R.R. Martin|ISBN1008|Mike Chamberlain|898
+BIOGRAFIE|Viata lui Marie Curie|Dale Carnegie|ISBN0584|Marie Curie|buna
+FICTIUNE|The Time Machine|Aldous Huxley|ISBN0084|Distopie|buna
+TEHNICA|Introduction to Algorithms|Bjarne Stroustrup|ISBN0239|Chimie|deteriorata
+MANGA|Fairy Tail Vol.1|Ohba|ISBN0746|1|Ohba|buna
+FICTIUNE|Les Miserables Vol.2|George Orwell|ISBN0109|Distopie|deteriorata
+REVISTA|BYTE Magazine|Various|ISBN0916|64|Septembrie|buna
+TEHNICA|Calculus|Ian Goodfellow|ISBN0296|Matematica|buna
+BENZI_DESENATE|Maus #16|Robert Kirkman|ISBN0815|Robert Kirkman|buna
+FICTIUNE|The Name of the Wind Vol.1|Suzanne Collins|ISBN0135|SF|deteriorata
+FILOZOFIE|Tratat de Umanism|Rousseau|ISBN0622|Umanism|buna
+TEHNICA|Artificial Intelligence|Robert Martin|ISBN0292|Sisteme de Operare|buna
+MANGA|Jujutsu Kaisen Vol.3|Togashi|ISBN0766|3|Togashi|buna
+REVISTA|Tech Monthly|Various|ISBN0881|25|Octombrie|buna
+FICTIUNE|Project Hail Mary Vol.4|Andrzej Sapkowski|ISBN0051|Thriller|buna
+TEHNICA|Distributed Systems 3th Edition|Kent Beck|ISBN0248|Matematica|deteriorata
+ISTORIE|Cultura si Societate - Al Doilea Razboi Mondial|Barbara Tuchman|ISBN0484|Al Doilea Razboi Mondial|buna
+REVISTA|National Geographic|Various|ISBN0905|142|Februarie|buna
+FICTIUNE|Foundation|Leo Tolstoy|ISBN0187|Aventura|buna
+MANGA|Demon Slayer Vol.20|Oda|ISBN0749|20|Oda|buna
+ROMAN_GRAFIC|Through the Woods|Craig Thompson|ISBN0831|Craig Thompson|buna
+AUDIOBOOK|Enders Game|Brandon Sanderson|ISBN0989|Andrew MacMillan|765
+MANGA|Death Note Vol.19|Oda|ISBN0748|19|Oda|buna
+BIOGRAFIE|Elon Musk - O Biografie|Robert Caro|ISBN0605|Elon Musk|buna
+REVISTA|Tech Monthly|Various|ISBN0912|29|Martie|buna
+TEHNICA|Calculus|Martin Fowler|ISBN0276|Fizica|deteriorata
+FICTIUNE|Slaughterhouse Five|Suzanne Collins|ISBN0020|Mister|deteriorata
+BIOGRAFIE|Viata lui Mozart|David McCullough|ISBN0608|Mozart|buna
+ISTORIE|Razboaiele Renastere|Jared Diamond|ISBN0497|Renastere|buna
+TEHNICA|Modern Operating Systems 3th Edition|Steve McConnell|ISBN0293|Programare|buna
+AUDIOBOOK|Outliers|Ursula K. Le Guin|ISBN1026|George Guidall|869
+BIOGRAFIE|Nikola Tesla - O Biografie|Dale Carnegie|ISBN0547|Nikola Tesla|buna
+STIINTA|Neurologie Moderna|Erwin Schrodinger|ISBN0430|Neurologie|buna
+DIGITAL|1984 (Digital)|Arthur C. Clarke|ISBN0976|MOBI|https://biblioteca.ro/1984-(digital).mobi|3.1
+BENZI_DESENATE|Watchmen #35|Todd McFarlane|ISBN0801|Todd McFarlane|buna
+ROMAN_GRAFIC|Maus II|Daniel Clowes|ISBN0869|Daniel Clowes|buna
+FICTIUNE|The Time Machine|Aldous Huxley|ISBN0194|Mister|buna
+FICTIUNE|Les Miserables|Fyodor Dostoevsky|ISBN0081|Fantasy|buna
+TEHNICA|Cryptography and Network Security|Michael Sipser|ISBN0264|Matematica|buna
+MANGA|Dragon Ball Vol.1|Miura|ISBN0780|1|Miura|buna
+STIINTA|Introducere in Astronomie|Richard Feynman|ISBN0355|Astronomie|buna
+FICTIUNE|Fahrenheit 451|Frank Herbert|ISBN0133|Thriller|buna
+ENCICLOPEDIE|Dictionar de Sport|Various|ISBN1056|Sport|buna
+ENCICLOPEDIE|Enciclopedia Medicina|Various|ISBN1047|Medicina|buna
+STIINTA|Bazele Genetica|Richard Feynman|ISBN0410|Genetica|buna
+BENZI_DESENATE|Saga #33|Alan Moore|ISBN0805|Alan Moore|buna
+FICTIUNE|Fahrenheit 451|Andy Weir|ISBN0034|Thriller|deteriorata
+STIINTA|Fundamentele Biologie|Richard Feynman|ISBN0366|Biologie|buna
+FILOZOFIE|Tratat de Idealism|Sartre|ISBN0658|Idealism|buna
+TEHNICA|Calculus|Robert Martin|ISBN0294|Baze de Date|deteriorata
+MANUAL|Romana Clasa 2|Vasile Munteanu|ISBN0671|Romana|gimnaziu|buna
+TEHNICA|Refactoring 2th Edition|Steve McConnell|ISBN0255|Sisteme de Operare|buna
+BIOGRAFIE|Viata lui Darwin|Robert Greene|ISBN0596|Darwin|buna
+FILOZOFIE|Tratat de Empirism|Rousseau|ISBN0624|Empirism|buna
+MANUAL|Geografie Anul 3|Mihai Pop|ISBN0702|Geografie|facultate|buna
+BIOGRAFIE|Viata lui Leonardo da Vinci|Malcolm Gladwell|ISBN0598|Leonardo da Vinci|buna
+TEHNICA|Cracking the Coding Interview 5th Edition|Robert Martin|ISBN0212|Programare|buna
+DIGITAL|The Hobbit (Digital)|Margaret Atwood|ISBN0937|EPUB|https://biblioteca.ro/the-hobbit-(digital).epub|19.9
+FILOZOFIE|Principiile Stoicism|Camus|ISBN0635|Stoicism|buna
+FILOZOFIE|Filozofia Umanism|Wittgenstein|ISBN0662|Umanism|buna
+BENZI_DESENATE|Batman #35|Brian K. Vaughan|ISBN0782|Brian K. Vaughan|buna
+TEHNICA|Domain Driven Design 1th Edition|Kent Beck|ISBN0313|Programare|deteriorata
+FICTIUNE|Childhood End|Ray Bradbury|ISBN0047|Clasic|buna
+FICTIUNE|Harry Potter Vol.2|George Orwell|ISBN0172|Horror|buna
+REVISTA|Science Today|Various|ISBN0886|123|Decembrie|buna
+BIOGRAFIE|Bill Gates - O Biografie|Malcolm Gladwell|ISBN0541|Bill Gates|buna
+DIGITAL|Enders Game (Digital)|J.K. Rowling|ISBN0952|EPUB|https://biblioteca.ro/enders-game-(digital.epub|14.1
+FICTIUNE|Solaris|George R.R. Martin|ISBN0111|Fantasy|buna
+FICTIUNE|Dark Matter|Andy Weir|ISBN0026|Mister|buna
+ROMAN_GRAFIC|Logicomix|Adrian Tomine|ISBN0854|Adrian Tomine|buna
+FICTIUNE|Crime si Pedeapsa|Jules Verne|ISBN0062|Romantism|buna
+ISTORIE|Cultura si Societate - Antichitate|Jared Diamond|ISBN0453|Antichitate|buna
+TEHNICA|The Pragmatic Programmer 4th Edition|Thomas Cormen|ISBN0287|Retele|deteriorata
+BENZI_DESENATE|V for Vendetta #14|Robert Kirkman|ISBN0781|Robert Kirkman|buna
+STIINTA|Biologie Aplicata|Richard Feynman|ISBN0386|Biologie|buna
+TEHNICA|The Pragmatic Programmer|Robert Martin|ISBN0312|Fizica|buna
+TEHNICA|Clean Code 5th Edition|Thomas Cormen|ISBN0268|Algoritmi|buna
+AUDIOBOOK|1984|Victor Hugo|ISBN1022|Jim Dale|547
+ISTORIE|Razboaiele Renastere|Tony Judt|ISBN0470|Renastere|buna
+TEHNICA|Introduction to Algorithms|Jon Kleinberg|ISBN0259|Programare|buna
+FICTIUNE|Upgrade|Aldous Huxley|ISBN0101|Fantasy|buna
+TEHNICA|Natural Language Processing|Michael Sipser|ISBN0295|Chimie|deteriorata
+BIOGRAFIE|Napoleon Bonaparte - O Biografie|Robert Greene|ISBN0604|Napoleon Bonaparte|buna
+MANGA|Berserk Vol.16|Isayama|ISBN0768|16|Isayama|buna
+FICTIUNE|The Hobbit Vol.4|Dan Brown|ISBN0190|Mister|buna
+STIINTA|Tratat de Fizica|Richard Dawkins|ISBN0408|Fizica|buna
+FICTIUNE|Neuromancer Vol.3|Margaret Atwood|ISBN0132|SF|buna
+TEHNICA|Design Patterns|Martin Fowler|ISBN0250|Algoritmi|buna
+REVISTA|Nature|Various|ISBN0923|106|Decembrie|buna
+ISTORIE|Marile Imperii - Renastere|Howard Zinn|ISBN0475|Renastere|buna
+MANUAL|Biologie Anul 4|Vasile Munteanu|ISBN0690|Biologie|facultate|buna
+BIOGRAFIE|Beethoven - O Biografie|David McCullough|ISBN0556|Beethoven|buna
+BENZI_DESENATE|Superman #8|Alan Moore|ISBN0800|Alan Moore|buna
+ISTORIE|Istoria Renastere|Barbara Tuchman|ISBN0496|Renastere|buna
+FICTIUNE|Brave New World Vol.2|Brandon Sanderson|ISBN0037|Thriller|buna
+ENCICLOPEDIE|Enciclopedia Tehnologie|Various|ISBN1039|Tehnologie|buna
+FILOZOFIE|Gandire si Rationalism|Descartes|ISBN0666|Rationalism|buna
+TEHNICA|Design Patterns|Steve McConnell|ISBN0340|Programare|buna
+MANUAL|Fizica Clasa 1|Carmen Minca|ISBN0699|Fizica|gimnaziu|buna
+DIGITAL|React Up and Running (Digital)|Jon Kleinberg|ISBN0959|PDF|https://biblioteca.ro/react-up-and-running.pdf|19.7
+ROMAN_GRAFIC|Persepolis|Eddie Campbell|ISBN0832|Eddie Campbell|buna
+ENCICLOPEDIE|Dictionar de Tehnologie|Various|ISBN1057|Tehnologie|buna
+DIGITAL|Node.js Design Patterns (Digital)|Stuart Russell|ISBN0963|PDF|https://biblioteca.ro/node.js-design-patte.pdf|7.0
+STIINTA|Fundamentele Geologie|Richard Dawkins|ISBN0427|Geologie|buna
+BIOGRAFIE|Darwin - O Biografie|Walter Isaacson|ISBN0600|Darwin|buna
+FICTIUNE|The Hobbit|Jules Verne|ISBN0016|Distopie|buna
+TEHNICA|Cracking the Coding Interview 1th Edition|Steve McConnell|ISBN0308|Fizica|buna
+STIINTA|Ecologie Moderna|Erwin Schrodinger|ISBN0356|Ecologie|buna
+ISTORIE|Cultura si Societate - Antichitate|Sun Tzu|ISBN0471|Antichitate|buna
+TEHNICA|Database System Concepts|Michael Sipser|ISBN0209|Retele|buna
+STIINTA|Chimie Moderna|Neil deGrasse Tyson|ISBN0371|Chimie|buna
+FICTIUNE|Divergent|Neal Stephenson|ISBN0023|Fantasy|buna
+REVISTA|Scientific American|Various|ISBN0904|162|Aprilie|buna
+STIINTA|Fundamentele Neurologie|Michio Kaku|ISBN0423|Neurologie|buna
+BENZI_DESENATE|X-Men #16|Frank Miller|ISBN0806|Frank Miller|buna
+BENZI_DESENATE|Lucky Luke #16|Todd McFarlane|ISBN0799|Todd McFarlane|buna
+MANGA|Dragon Ball Vol.2|Miura|ISBN0753|2|Miura|buna
+TEHNICA|Deep Learning|Niklaus Wirth|ISBN0323|Chimie|buna
+REVISTA|Wired|Various|ISBN0889|130|Iunie|buna
+AUDIOBOOK|Outliers|Arthur C. Clarke|ISBN1000|Jim Dale|814
+STIINTA|Neurologie Moderna|Neil deGrasse Tyson|ISBN0434|Neurologie|buna
+BIOGRAFIE|Newton - O Biografie|David McCullough|ISBN0546|Newton|buna
+TEHNICA|Clean Architecture|Thomas Cormen|ISBN0299|Algoritmi|buna
+TEHNICA|Introduction to Algorithms|Thomas Cormen|ISBN0210|Sisteme de Operare|buna
+FILOZOFIE|Idealism - O Analiza|Rousseau|ISBN0627|Idealism|buna
+FICTIUNE|Slaughterhouse Five|William Gibson|ISBN0078|Aventura|buna
+TEHNICA|Computer Networks|Brian Kernighan|ISBN0265|Robotica|deteriorata
+MANUAL|Matematica Anul 1|Alexandru Stan|ISBN0707|Matematica|facultate|buna
+TEHNICA|Discrete Mathematics|Niklaus Wirth|ISBN0334|Fizica|buna
+FICTIUNE|Harry Potter|Andy Weir|ISBN0072|Thriller|buna
+BENZI_DESENATE|Spider-Man #9|Art Spiegelman|ISBN0820|Art Spiegelman|buna
+FICTIUNE|The Time Machine|Andrzej Sapkowski|ISBN0181|Horror|buna
+DIGITAL|Dune (Digital)|Donald Knuth|ISBN0942|MOBI|https://biblioteca.ro/dune-(digital).mobi|6.2
+STIINTA|Bazele Biologie|Michio Kaku|ISBN0438|Biologie|buna
+STIINTA|Introducere in Astronomie|Brian Greene|ISBN0364|Astronomie|buna
+MANUAL|Geografie Clasa 1|Ana Ionescu|ISBN0680|Geografie|gimnaziu|buna
+AUDIOBOOK|Solaris|Aldous Huxley|ISBN1007|Michael Kramer|592
+FICTIUNE|Razboi si Pace Vol.1|Cixin Liu|ISBN0117|Clasic|buna
+TEHNICA|Test Driven Development|Michael Sipser|ISBN0242|Baze de Date|buna
+MANUAL|Informatica Anul 2|Mihai Pop|ISBN0718|Informatica|facultate|buna
+STIINTA|Fizica Aplicata|Brian Greene|ISBN0353|Fizica|buna
+BIOGRAFIE|Viata lui Winston Churchill|Ron Chernow|ISBN0550|Winston Churchill|buna
+STIINTA|Bazele Geologie|Michio Kaku|ISBN0422|Geologie|buna
+FICTIUNE|The Hobbit Vol.5|Ursula K. Le Guin|ISBN0025|Horror|buna
+FICTIUNE|Snow Crash|Neal Stephenson|ISBN0087|Mister|buna
+FILOZOFIE|Tratat de Nihilism|Nietzsche|ISBN0637|Nihilism|buna
+AUDIOBOOK|Outliers|Arthur C. Clarke|ISBN1010|Patrick Egan|871
+ISTORIE|Razboaiele Medievala|Niall Ferguson|ISBN0512|Medievala|buna
+TEHNICA|Calculus|Thomas Cormen|ISBN0322|Matematica|buna
+FICTIUNE|Childhood End|Patrick Rothfuss|ISBN0118|SF|buna
+ROMAN_GRAFIC|Through the Woods|Charles Burns|ISBN0850|Charles Burns|buna
+ISTORIE|Revolutii si Schimbari - Antichitate|Edward Gibbon|ISBN0526|Antichitate|buna
+FILOZOFIE|Gandire si Empirism|Camus|ISBN0669|Empirism|buna
+STIINTA|Introducere in Fizica|Neil deGrasse Tyson|ISBN0399|Fizica|buna
+REVISTA|IEEE Spectrum|Various|ISBN0927|151|Iunie|buna
+FILOZOFIE|Principiile Rationalism|Kant|ISBN0629|Rationalism|buna
+BIOGRAFIE|Viata lui Steve Jobs|Walter Isaacson|ISBN0591|Steve Jobs|buna
+FICTIUNE|Childhood End|Orson Scott Card|ISBN0151|Distopie|deteriorata
+TEHNICA|Design Patterns|Ian Goodfellow|ISBN0228|Programare|buna
+TEHNICA|Graph Theory|Brian Kernighan|ISBN0252|AI|buna
+ENCICLOPEDIE|Enciclopedia Medicina|Various|ISBN1036|Medicina|buna
+ROMAN_GRAFIC|Habibi|Chris Ware|ISBN0877|Chris Ware|buna
+TEHNICA|Code Complete 2th Edition|Jon Kleinberg|ISBN0261|Retele|deteriorata
+FICTIUNE|The Maze Runner|Andy Weir|ISBN0125|Distopie|deteriorata
+AUDIOBOOK|Sapiens|Orson Scott Card|ISBN1006|Stephen Fry|1029
+ISTORIE|Razboaiele Al Doilea Razboi Mondial|Yuval Noah Harari|ISBN0460|Al Doilea Razboi Mondial|buna
+ISTORIE|Civilizatia Imperiul Roman|Niall Ferguson|ISBN0527|Imperiul Roman|buna
+DIGITAL|Clean Architecture Digital (Digital)|George R.R. Martin|ISBN0961|PDF|https://biblioteca.ro/clean-architecture-d.pdf|18.2
+STIINTA|Neurologie Moderna|Stephen Hawking|ISBN0370|Neurologie|buna
+FICTIUNE|Hyperion|Philip K. Dick|ISBN0041|Romantism|buna
+TEHNICA|Artificial Intelligence|Thomas Cormen|ISBN0319|Robotica|deteriorata
+AUDIOBOOK|The Martian|Andrzej Sapkowski|ISBN0991|Derek Perkins|827
+MANGA|My Hero Academia Vol.23|Ohba|ISBN0744|23|Ohba|buna
+TEHNICA|Design Patterns 4th Edition|Michael Sipser|ISBN0222|Robotica|deteriorata
+DIGITAL|1984 (Digital)|Aldous Huxley|ISBN0943|PDF|https://biblioteca.ro/1984-(digital).pdf|6.8
+ROMAN_GRAFIC|American Splendor|Eddie Campbell|ISBN0840|Eddie Campbell|buna
+FILOZOFIE|Introducere in Empirism|Nietzsche|ISBN0643|Empirism|buna
+FICTIUNE|The Three Body Problem Vol.1|Brandon Sanderson|ISBN0055|Distopie|buna
+BIOGRAFIE|Viata lui Steve Jobs|Ron Chernow|ISBN0565|Steve Jobs|buna
+BENZI_DESENATE|Lucky Luke #50|Frank Miller|ISBN0812|Frank Miller|buna
+ISTORIE|Civilizatia Moderna|Edward Gibbon|ISBN0463|Moderna|buna
+BENZI_DESENATE|Sandman #44|Dave Gibbons|ISBN0790|Dave Gibbons|buna
+FICTIUNE|The Forever War|Patrick Rothfuss|ISBN0056|SF|deteriorata
+MANGA|Demon Slayer Vol.20|Miura|ISBN0734|20|Miura|buna
+STIINTA|Astronomie Moderna|Neil deGrasse Tyson|ISBN0421|Astronomie|buna
+STIINTA|Bazele Chimie|Erwin Schrodinger|ISBN0428|Chimie|buna
+FICTIUNE|Hyperion|J.K. Rowling|ISBN0040|Horror|deteriorata
+FICTIUNE|Old Man War|Arthur C. Clarke|ISBN0170|Romantism|deteriorata
+ROMAN_GRAFIC|Fun Home|Chris Ware|ISBN0875|Chris Ware|buna
+FICTIUNE|I Robot|George R.R. Martin|ISBN0049|Horror|buna
+DIGITAL|The Hobbit (Digital)|Martin Fowler|ISBN0947|PDF|https://biblioteca.ro/the-hobbit-(digital).pdf|15.6
+FICTIUNE|Do Androids Dream|Agatha Christie|ISBN0121|Romantism|deteriorata
+FICTIUNE|The Hunger Games|Aldous Huxley|ISBN0200|Fantasy|buna
+BIOGRAFIE|Viata lui Warren Buffett|Robert Greene|ISBN0566|Warren Buffett|buna
+TEHNICA|Graph Theory|Donald Knuth|ISBN0243|Retele|buna
+FILOZOFIE|Principiile Existentialism|Wittgenstein|ISBN0654|Existentialism|buna
+ISTORIE|Cultura si Societate - Al Doilea Razboi Mondial|Barbara Tuchman|ISBN0522|Al Doilea Razboi Mondial|buna
+FICTIUNE|The Hobbit|Arthur C. Clarke|ISBN0010|Horror|deteriorata
+REVISTA|IEEE Spectrum|Various|ISBN0891|176|Iunie|buna
+FILOZOFIE|Principiile Umanism|Descartes|ISBN0648|Umanism|buna
+FICTIUNE|Crime si Pedeapsa|Andrzej Sapkowski|ISBN0142|Clasic|buna
+BENZI_DESENATE|Asterix #7|Frank Miller|ISBN0796|Frank Miller|buna
+FILOZOFIE|Filozofia Existentialism|Schopenhauer|ISBN0619|Existentialism|buna
+BIOGRAFIE|Warren Buffett - O Biografie|Robert Caro|ISBN0540|Warren Buffett|buna
+FICTIUNE|Hyperion|Alexandre Dumas|ISBN0159|Thriller|deteriorata
+TEHNICA|Computer Networks|Niklaus Wirth|ISBN0240|Retele|buna
+ISTORIE|Civilizatia Antichitate|Barbara Tuchman|ISBN0494|Antichitate|buna
+AUDIOBOOK|I Robot|Brandon Sanderson|ISBN0997|Nick Podehl|1117
+MANUAL|Informatica Clasa 10|Mihai Pop|ISBN0730|Informatica|liceu|buna
+FICTIUNE|Foundation Vol.2|Ursula K. Le Guin|ISBN0103|Romantism|buna
+BENZI_DESENATE|Maus #25|Brian K. Vaughan|ISBN0791|Brian K. Vaughan|buna
+FICTIUNE|Old Man War Vol.4|Dan Brown|ISBN0090|SF|deteriorata
+FICTIUNE|Solaris|Agatha Christie|ISBN0153|Mister|buna
+ISTORIE|Civilizatia Antichitate|Jared Diamond|ISBN0513|Antichitate|buna
+FILOZOFIE|Filozofia Stoicism|Sartre|ISBN0647|Stoicism|buna
+BIOGRAFIE|Bill Gates - O Biografie|Robert Caro|ISBN0581|Bill Gates|buna
+ISTORIE|Marile Imperii - Razboiul Rece|Sun Tzu|ISBN0461|Razboiul Rece|buna
+TEHNICA|Test Driven Development|Robert Martin|ISBN0253|Algoritmi|buna
+TEHNICA|Discrete Mathematics|Bjarne Stroustrup|ISBN0338|Fizica|buna
+TEHNICA|Machine Learning 1th Edition|Bjarne Stroustrup|ISBN0284|Fizica|deteriorata
+FICTIUNE|The Three Body Problem Vol.1|J.R.R. Tolkien|ISBN0005|Clasic|buna
+ROMAN_GRAFIC|Fun Home|Eddie Campbell|ISBN0837|Eddie Campbell|buna
+AUDIOBOOK|Brave New World|George Orwell|ISBN1017|Chris Hill|792
+ROMAN_GRAFIC|Maus II|Emil Ferris|ISBN0857|Emil Ferris|buna
+FICTIUNE|The Hobbit|Aldous Huxley|ISBN0176|Thriller|deteriorata
+ISTORIE|Civilizatia Imperiul Roman|Tony Judt|ISBN0452|Imperiul Roman|buna
+FICTIUNE|The Forever War Vol.1|J.R.R. Tolkien|ISBN0024|Fantasy|buna
+TEHNICA|Graph Theory|Niklaus Wirth|ISBN0249|AI|buna
+MANUAL|Biologie Clasa 2|Ioan Petrica|ISBN0672|Biologie|liceu|buna
+BENZI_DESENATE|Avengers #32|Dave Gibbons|ISBN0786|Dave Gibbons|buna
+STIINTA|Neurologie Moderna|Richard Feynman|ISBN0420|Neurologie|buna
+FICTIUNE|Old Man War Vol.2|J.K. Rowling|ISBN0139|Romantism|buna
+TEHNICA|Graph Theory 1th Edition|Andrew Tanenbaum|ISBN0298|Matematica|buna
+FILOZOFIE|Introducere in Empirism|Descartes|ISBN0636|Empirism|buna
+FICTIUNE|Foundation|Jules Verne|ISBN0050|Horror|buna
+BENZI_DESENATE|Asterix #20|Dave Gibbons|ISBN0822|Dave Gibbons|buna
+DIGITAL|Do Androids Dream (Digital)|Stuart Russell|ISBN0944|EPUB|https://biblioteca.ro/do-androids-dream-(d.epub|6.4
+MANGA|Fairy Tail Vol.15|Miura|ISBN0758|15|Miura|buna
+ROMAN_GRAFIC|Jerusalem|Chris Ware|ISBN0863|Chris Ware|buna
+FICTIUNE|The Martian|Patrick Rothfuss|ISBN0149|Mister|deteriorata
+ENCICLOPEDIE|Dictionar de Tehnologie|Various|ISBN1031|Tehnologie|buna
+ISTORIE|Marile Imperii - Contemporana|Edward Gibbon|ISBN0464|Contemporana|buna
+FICTIUNE|Ringworld|Dan Brown|ISBN0066|Thriller|buna
+FILOZOFIE|Principiile Rationalism|Hegel|ISBN0634|Rationalism|buna
+TEHNICA|Distributed Systems 5th Edition|Martin Fowler|ISBN0309|Sisteme de Operare|buna
+REVISTA|IEEE Spectrum|Various|ISBN0907|58|Noiembrie|buna
+FICTIUNE|Enders Game|Arthur C. Clarke|ISBN0182|Fantasy|buna
+TEHNICA|Design Patterns|Bjarne Stroustrup|ISBN0297|Chimie|buna
+ROMAN_GRAFIC|Blankets|Daniel Clowes|ISBN0864|Daniel Clowes|buna
+STIINTA|Fundamentele Ecologie|Erwin Schrodinger|ISBN0395|Ecologie|buna
+REVISTA|Scientific American|Various|ISBN0896|76|Ianuarie|buna
+DIGITAL|Computer Networks (Digital)|Ray Bradbury|ISBN0931|MOBI|https://biblioteca.ro/computer-networks-(d.mobi|4.1
+BENZI_DESENATE|Maus #49|Todd McFarlane|ISBN0826|Todd McFarlane|buna
+AUDIOBOOK|Foundation|Margaret Atwood|ISBN1029|Michael Kramer|1155
+FICTIUNE|The Hobbit Vol.1|Patrick Rothfuss|ISBN0192|Romantism|deteriorata
+BIOGRAFIE|Viata lui Gandhi|Walter Isaacson|ISBN0552|Gandhi|buna
+FILOZOFIE|Pragmatism - O Analiza|Hegel|ISBN0657|Pragmatism|buna
+TEHNICA|Computer Organization and Design|Niklaus Wirth|ISBN0341|Algoritmi|buna
+FILOZOFIE|Gandire si Pragmatism|Nietzsche|ISBN0614|Pragmatism|buna
+FICTIUNE|Recursion|William Gibson|ISBN0137|Cyberpunk|buna
+FICTIUNE|Dark Matter Vol.3|Suzanne Collins|ISBN0008|Cyberpunk|deteriorata
+BIOGRAFIE|Viata lui Darwin|Robert Caro|ISBN0573|Darwin|buna
+AUDIOBOOK|The Power of Now|Arthur C. Clarke|ISBN0983|Richard Poe|148
+FICTIUNE|Recursion|Suzanne Collins|ISBN0028|Thriller|buna
+FICTIUNE|Harry Potter Vol.1|Alexandre Dumas|ISBN0064|Thriller|deteriorata
+ISTORIE|Cultura si Societate - Medievala|Howard Zinn|ISBN0502|Medievala|buna
+ISTORIE|Revolutii si Schimbari - Medievala|Yuval Noah Harari|ISBN0492|Medievala|buna
+TEHNICA|Natural Language Processing 5th Edition|Michael Sipser|ISBN0277|Algoritmi|deteriorata
+BIOGRAFIE|Viata lui Gandhi|Malcolm Gladwell|ISBN0563|Gandhi|buna
+STIINTA|Fizica Aplicata|Neil deGrasse Tyson|ISBN0450|Fizica|buna
+FICTIUNE|Game of Thrones|Andy Weir|ISBN0080|Thriller|deteriorata
+TEHNICA|Calculus|Donald Knuth|ISBN0267|AI|buna
+MANUAL|Engleza Clasa 2|Elena Dumitrescu|ISBN0691|Engleza|gimnaziu|buna
+FICTIUNE|Razboi si Pace|Cixin Liu|ISBN0033|Horror|buna
+FICTIUNE|Dark Matter|Isaac Asimov|ISBN0164|SF|buna
+STIINTA|Fizica Aplicata|Stephen Hawking|ISBN0380|Fizica|buna
+MANUAL|Informatica Clasa 4|Mihai Pop|ISBN0693|Informatica|liceu|buna
+FICTIUNE|2001 A Space Odyssey|Leo Tolstoy|ISBN0110|Aventura|buna
+TEHNICA|Domain Driven Design 3th Edition|Martin Fowler|ISBN0203|Sisteme de Operare|deteriorata
+BIOGRAFIE|Viata lui Napoleon Bonaparte|Malcolm Gladwell|ISBN0542|Napoleon Bonaparte|buna
+BENZI_DESENATE|Batman #20|Todd McFarlane|ISBN0802|Todd McFarlane|buna
+MANUAL|Fizica Clasa 11|Elena Dumitrescu|ISBN0676|Fizica|liceu|buna
+TEHNICA|Cryptography and Network Security|Niklaus Wirth|ISBN0317|Chimie|buna
+DIGITAL|Test Driven Development (Digital)|Frank Herbert|ISBN0933|EPUB|https://biblioteca.ro/test-driven-developm.epub|2.8
+STIINTA|Bazele Astronomie|Michio Kaku|ISBN0392|Astronomie|buna
+MANGA|Death Note Vol.27|Miura|ISBN0752|27|Miura|buna
+STIINTA|Chimie Aplicata|Brian Greene|ISBN0404|Chimie|buna
+MANGA|Demon Slayer Vol.30|Arakawa|ISBN0743|30|Arakawa|buna
+AUDIOBOOK|Enders Game|James Clear|ISBN0987|Chris Hill|1154
+FICTIUNE|Childhood End|George R.R. Martin|ISBN0152|Distopie|buna
+DIGITAL|Python Crash Course (Digital)|J.R.R. Tolkien|ISBN0948|EPUB|https://biblioteca.ro/python-crash-course-.epub|13.7
+STIINTA|Bazele Astronomie|Neil deGrasse Tyson|ISBN0436|Astronomie|buna
+FICTIUNE|Razboi si Pace|Andrzej Sapkowski|ISBN0197|SF|buna
+FICTIUNE|Enders Game|Andrzej Sapkowski|ISBN0120|Clasic|buna
+REVISTA|Tech Monthly|Various|ISBN0903|139|Ianuarie|buna
+FICTIUNE|Divergent|Arthur C. Clarke|ISBN0180|Distopie|buna
+DIGITAL|Git Pro (Digital)|Neal Stephenson|ISBN0965|EPUB|https://biblioteca.ro/git-pro-(digital).epub|18.3
+TEHNICA|Discrete Mathematics|Thomas Cormen|ISBN0320|Baze de Date|deteriorata
+STIINTA|Astronomie Moderna|Brian Greene|ISBN0402|Astronomie|buna
+MANGA|Demon Slayer Vol.2|Toriyama|ISBN0750|2|Toriyama|buna
+ENCICLOPEDIE|Enciclopedia Stiinta|Various|ISBN1053|Stiinta|buna
+TEHNICA|Calculus|Thomas Cormen|ISBN0303|Matematica|buna
+TEHNICA|Database System Concepts|Stuart Russell|ISBN0254|Fizica|buna
+MANGA|My Hero Academia Vol.15|Toriyama|ISBN0776|15|Toriyama|buna
+FICTIUNE|Ringworld Vol.2|Leo Tolstoy|ISBN0148|Aventura|deteriorata
+TEHNICA|Deep Learning|Kent Beck|ISBN0329|Chimie|buna
+TEHNICA|Cracking the Coding Interview 5th Edition|Kent Beck|ISBN0230|AI|buna
+ISTORIE|Civilizatia Imperiul Roman|Edward Gibbon|ISBN0456|Imperiul Roman|buna
+MANUAL|Chimie Clasa 4|Maria Popa|ISBN0722|Chimie|gimnaziu|buna
+BENZI_DESENATE|Saga #1|Frank Miller|ISBN0784|Frank Miller|buna
+AUDIOBOOK|The Tipping Point|Jules Verne|ISBN0999|Kate Reading|354
+FICTIUNE|Enders Game Vol.4|Ursula K. Le Guin|ISBN0163|Mister|buna
+FICTIUNE|Old Man War|Isaac Asimov|ISBN0097|Distopie|buna
+ISTORIE|Istoria Contemporana|Niall Ferguson|ISBN0469|Contemporana|buna
+DIGITAL|Linux Command Line (Digital)|Neal Stephenson|ISBN0954|EPUB|https://biblioteca.ro/linux-command-line-(.epub|5.8
+FILOZOFIE|Principiile Empirism|Rousseau|ISBN0664|Empirism|buna
+BIOGRAFIE|Viata lui Nikola Tesla|Robert Caro|ISBN0569|Nikola Tesla|buna
+MANUAL|Biologie Anul 1|Carmen Minca|ISBN0694|Biologie|facultate|buna
+STIINTA|Fundamentele Geologie|Michio Kaku|ISBN0385|Geologie|buna
+BIOGRAFIE|Albert Einstein - O Biografie|Robert Greene|ISBN0567|Albert Einstein|buna
+MANGA|One Piece Vol.1|Ohba|ISBN0751|1|Ohba|buna
+FICTIUNE|Project Hail Mary|Arthur C. Clarke|ISBN0156|Distopie|buna
+MANUAL|Chimie Clasa 4|Maria Popa|ISBN0700|Chimie|liceu|buna
+ROMAN_GRAFIC|Ghost World|Chris Ware|ISBN0879|Chris Ware|buna
+FICTIUNE|Mistborn|Fyodor Dostoevsky|ISBN0155|Mister|buna
+FICTIUNE|The Way of Kings|Jules Verne|ISBN0015|Romantism|deteriorata
+FICTIUNE|The Forever War Vol.5|Dan Brown|ISBN0003|Horror|buna
+BIOGRAFIE|Viata lui Abraham Lincoln|David McCullough|ISBN0586|Abraham Lincoln|buna
+ISTORIE|Marile Imperii - Imperiul Roman|Sun Tzu|ISBN0520|Imperiul Roman|buna
+ROMAN_GRAFIC|Ghost World|Charles Burns|ISBN0848|Charles Burns|buna
+TEHNICA|Discrete Mathematics|Donald Knuth|ISBN0275|Retele|deteriorata
+AUDIOBOOK|Blink|Agatha Christie|ISBN0981|Andrew MacMillan|1084
+STIINTA|Bazele Astronomie|Michio Kaku|ISBN0394|Astronomie|buna
+FILOZOFIE|Tratat de Existentialism|Schopenhauer|ISBN0616|Existentialism|buna
+FICTIUNE|The Three Body Problem|Suzanne Collins|ISBN0165|Aventura|deteriorata
+BIOGRAFIE|Elon Musk - O Biografie|David McCullough|ISBN0577|Elon Musk|buna
+STIINTA|Bazele Genetica|Richard Feynman|ISBN0354|Genetica|buna
+TEHNICA|Code Complete 5th Edition|Ian Goodfellow|ISBN0315|Robotica|deteriorata
+ROMAN_GRAFIC|Persepolis|Daniel Clowes|ISBN0838|Daniel Clowes|buna
+FICTIUNE|Dark Matter|Brandon Sanderson|ISBN0126|Mister|buna
+BIOGRAFIE|Viata lui Leonardo da Vinci|Robert Caro|ISBN0537|Leonardo da Vinci|buna
+ENCICLOPEDIE|Enciclopedia Arta|Various|ISBN1058|Arta|buna
+AUDIOBOOK|Dune|J.K. Rowling|ISBN1004|Scott Brick|602
+FICTIUNE|Do Androids Dream|Brandon Sanderson|ISBN0018|Horror|buna
+FICTIUNE|Harry Potter|Jules Verne|ISBN0116|Fantasy|deteriorata
+ISTORIE|Razboaiele Contemporana|Tony Judt|ISBN0476|Contemporana|buna
+TEHNICA|Cryptography and Network Security|Ian Goodfellow|ISBN0217|Programare|buna
+BIOGRAFIE|Viata lui Winston Churchill|Malcolm Gladwell|ISBN0597|Winston Churchill|buna
+TEHNICA|Machine Learning|Brian Kernighan|ISBN0283|Baze de Date|buna
+ISTORIE|Istoria Antichitate|Tony Judt|ISBN0507|Antichitate|buna
+REVISTA|Nature|Various|ISBN0910|93|Mai|buna
+AUDIOBOOK|Blink|Victor Hugo|ISBN1028|Michael Kramer|186
+ISTORIE|Razboaiele Antichitate|Jared Diamond|ISBN0503|Antichitate|buna
+ISTORIE|Marile Imperii - Al Doilea Razboi Mondial|Sun Tzu|ISBN0468|Al Doilea Razboi Mondial|buna
+TEHNICA|Artificial Intelligence|Brian Kernighan|ISBN0290|AI|buna
+MANGA|Demon Slayer Vol.2|Oda|ISBN0779|2|Oda|buna
+TEHNICA|Design Patterns|Martin Fowler|ISBN0300|Matematica|buna
+FICTIUNE|Crime si Pedeapsa Vol.1|Stephen King|ISBN0105|Aventura|buna
+ISTORIE|Istoria Razboiul Rece|Howard Zinn|ISBN0483|Razboiul Rece|buna
+MANUAL|Matematica Clasa 10|Alexandru Stan|ISBN0726|Matematica|gimnaziu|buna
+TEHNICA|Graph Theory|Niklaus Wirth|ISBN0269|Robotica|deteriorata
+BENZI_DESENATE|Sandman #42|Alan Moore|ISBN0807|Alan Moore|buna
+FILOZOFIE|Tratat de Umanism|Camus|ISBN0620|Umanism|buna
+REVISTA|Popular Science|Various|ISBN0930|154|Iunie|buna
+ISTORIE|Cultura si Societate - Contemporana|Barbara Tuchman|ISBN0498|Contemporana|buna
+ROMAN_GRAFIC|Jerusalem|Daniel Clowes|ISBN0874|Daniel Clowes|buna
+MANUAL|Engleza Clasa 8|Carmen Minca|ISBN0674|Engleza|gimnaziu|buna
+ISTORIE|Cultura si Societate - Contemporana|Tony Judt|ISBN0517|Contemporana|buna
+MANGA|Dragon Ball Vol.7|Miura|ISBN0757|7|Miura|buna
+STIINTA|Bazele Astronomie|Stephen Hawking|ISBN0445|Astronomie|buna
+FICTIUNE|Brave New World Vol.5|Neil Gaiman|ISBN0128|Clasic|deteriorata
+BIOGRAFIE|Cleopatra - O Biografie|Robert Caro|ISBN0610|Cleopatra|buna
+TEHNICA|Test Driven Development|Bjarne Stroustrup|ISBN0347|Programare|deteriorata
+FILOZOFIE|Introducere in Stoicism|Schopenhauer|ISBN0640|Stoicism|buna
+MANGA|Fairy Tail Vol.21|Isayama|ISBN0737|21|Isayama|buna
+ISTORIE|Cultura si Societate - Contemporana|Howard Zinn|ISBN0488|Contemporana|buna
+AUDIOBOOK|Enders Game|Andy Weir|ISBN1005|Patrick Egan|984
+BIOGRAFIE|Steve Jobs - O Biografie|Robert Caro|ISBN0580|Steve Jobs|buna
+ROMAN_GRAFIC|From Hell|Craig Thompson|ISBN0845|Craig Thompson|buna
+MANGA|My Hero Academia Vol.1|Miura|ISBN0742|1|Miura|buna
+BIOGRAFIE|Shakespeare - O Biografie|David McCullough|ISBN0551|Shakespeare|buna
+FICTIUNE|Divergent|J.R.R. Tolkien|ISBN0092|Distopie|deteriorata
+ROMAN_GRAFIC|Habibi|Craig Thompson|ISBN0855|Craig Thompson|buna
+BIOGRAFIE|Viata lui Winston Churchill|Ron Chernow|ISBN0533|Winston Churchill|buna
+ISTORIE|Istoria Antichitate|Niall Ferguson|ISBN0519|Antichitate|buna
+FICTIUNE|The Name of the Wind Vol.1|Stephen King|ISBN0017|Clasic|buna
+FILOZOFIE|Gandire si Umanism|Schopenhauer|ISBN0632|Umanism|buna
+REVISTA|Tech Monthly|Various|ISBN0920|142|August|buna
+ENCICLOPEDIE|Dictionar de Muzica|Various|ISBN1045|Muzica|buna
+FILOZOFIE|Existentialism - O Analiza|Camus|ISBN0615|Existentialism|buna
+STIINTA|Tratat de Fizica|Carl Sagan|ISBN0396|Fizica|buna
+STIINTA|Biologie Aplicata|Stephen Hawking|ISBN0398|Biologie|buna
+STIINTA|Introducere in Ecologie|Stephen Hawking|ISBN0446|Ecologie|buna
+STIINTA|Introducere in Fizica|Neil deGrasse Tyson|ISBN0384|Fizica|buna
+BIOGRAFIE|Newton - O Biografie|Dale Carnegie|ISBN0561|Newton|buna
+BENZI_DESENATE|Superman #23|Robert Kirkman|ISBN0809|Robert Kirkman|buna
+ROMAN_GRAFIC|Logicomix|Craig Thompson|ISBN0870|Craig Thompson|buna
+BIOGRAFIE|Marie Curie - O Biografie|Dale Carnegie|ISBN0553|Marie Curie|buna
+FILOZOFIE|Tratat de Pragmatism|Hegel|ISBN0660|Pragmatism|buna
+FICTIUNE|Recursion Vol.2|Stephen King|ISBN0093|Thriller|deteriorata
+AUDIOBOOK|Solaris|Neal Stephenson|ISBN1015|Michael Kramer|967
+ROMAN_GRAFIC|Fun Home|Craig Thompson|ISBN0841|Craig Thompson|buna
+MANGA|Berserk Vol.28|Arakawa|ISBN0732|28|Arakawa|buna
+TEHNICA|Introduction to Algorithms|Robert Martin|ISBN0201|Retele|buna
+FICTIUNE|Harry Potter|Patrick Rothfuss|ISBN0141|Distopie|buna
+AUDIOBOOK|How to Win Friends|James Clear|ISBN1001|George Guidall|644
+TEHNICA|Design Patterns|Thomas Cormen|ISBN0216|Sisteme de Operare|buna
+STIINTA|Bazele Fizica|Stephen Hawking|ISBN0358|Fizica|buna
+MANGA|Bleach Vol.28|Arakawa|ISBN0739|28|Arakawa|buna
+STIINTA|Tratat de Ecologie|Carl Sagan|ISBN0419|Ecologie|buna
+FILOZOFIE|Tratat de Idealism|Camus|ISBN0651|Idealism|buna
+FICTIUNE|Foundation Vol.2|Isaac Asimov|ISBN0160|Cyberpunk|buna
+TEHNICA|Deep Learning 4th Edition|Bjarne Stroustrup|ISBN0343|Robotica|buna
+BENZI_DESENATE|Watchmen #17|Alan Moore|ISBN0804|Alan Moore|buna
+ROMAN_GRAFIC|Ghost World|Craig Thompson|ISBN0873|Craig Thompson|buna
+MANGA|Jujutsu Kaisen Vol.12|Oda|ISBN0735|12|Oda|buna
+ROMAN_GRAFIC|Habibi|Chris Ware|ISBN0846|Chris Ware|buna
+FICTIUNE|Slaughterhouse Five Vol.4|Fyodor Dostoevsky|ISBN0061|Aventura|buna
+STIINTA|Introducere in Ecologie|Neil deGrasse Tyson|ISBN0362|Ecologie|buna
+BENZI_DESENATE|X-Men #14|Dave Gibbons|ISBN0787|Dave Gibbons|buna
+ISTORIE|Cultura si Societate - Medievala|Howard Zinn|ISBN0521|Medievala|buna
+ENCICLOPEDIE|Enciclopedia Stiinta|Various|ISBN1051|Stiinta|buna
+ISTORIE|Cultura si Societate - Al Doilea Razboi Mondial|Tony Judt|ISBN0454|Al Doilea Razboi Mondial|buna
+AUDIOBOOK|Outliers|J.R.R. Tolkien|ISBN1014|Duncan Steen|834
+FICTIUNE|Neuromancer|Neil Gaiman|ISBN0108|Horror|buna
+FILOZOFIE|Empirism - O Analiza|Descartes|ISBN0641|Empirism|buna
+STIINTA|Neurologie Aplicata|Carl Sagan|ISBN0379|Neurologie|buna
+ISTORIE|Cultura si Societate - Antichitate|Barbara Tuchman|ISBN0490|Antichitate|buna
+DIGITAL|Neuromancer (Digital)|Alexandre Dumas|ISBN0980|EPUB|https://biblioteca.ro/neuromancer-(digital.epub|21.9
+BIOGRAFIE|Viata lui Bill Gates|Dale Carnegie|ISBN0544|Bill Gates|buna
+MANUAL|Informatica Clasa 8|Maria Popa|ISBN0677|Informatica|liceu|buna
+ROMAN_GRAFIC|Blankets|Adrian Tomine|ISBN0867|Adrian Tomine|buna
+FICTIUNE|Old Man War|Aldous Huxley|ISBN0089|Thriller|deteriorata
+FICTIUNE|Ringworld|George Orwell|ISBN0045|Clasic|buna
+REVISTA|BYTE Magazine|Various|ISBN0928|183|Mai|buna
+TEHNICA|Refactoring 2th Edition|Stuart Russell|ISBN0307|AI|buna
+FICTIUNE|Ready Player One|Orson Scott Card|ISBN0039|Aventura|buna
+ROMAN_GRAFIC|American Splendor|Daniel Clowes|ISBN0876|Daniel Clowes|buna
+STIINTA|Biologie Moderna|Michio Kaku|ISBN0378|Biologie|buna
+BENZI_DESENATE|Saga #18|Todd McFarlane|ISBN0811|Todd McFarlane|buna
+DIGITAL|Do Androids Dream (Digital)|Margaret Atwood|ISBN0968|EPUB|https://biblioteca.ro/do-androids-dream-(d.epub|12.8
+BENZI_DESENATE|Watchmen #48|Robert Kirkman|ISBN0828|Robert Kirkman|buna
+DIGITAL|Computer Networks (Digital)|Steve McConnell|ISBN0945|PDF|https://biblioteca.ro/computer-networks-(d.pdf|2.2
+FILOZOFIE|Principiile Empirism|Platon|ISBN0650|Empirism|buna
+FICTIUNE|2001 A Space Odyssey Vol.4|Fyodor Dostoevsky|ISBN0144|Cyberpunk|buna
+FILOZOFIE|Tratat de Umanism|Nietzsche|ISBN0659|Umanism|buna
+TEHNICA|Graph Theory|Andrew Tanenbaum|ISBN0350|Algoritmi|deteriorata
+FICTIUNE|Dune|Ursula K. Le Guin|ISBN0095|Clasic|buna
+ROMAN_GRAFIC|Fun Home|Emil Ferris|ISBN0865|Emil Ferris|buna
+FILOZOFIE|Introducere in Pragmatism|Sartre|ISBN0623|Pragmatism|buna
+STIINTA|Geologie Aplicata|Neil deGrasse Tyson|ISBN0365|Geologie|buna
+MANGA|Hunter x Hunter Vol.22|Togashi|ISBN0774|22|Togashi|buna
+FICTIUNE|Solaris|J.R.R. Tolkien|ISBN0166|Thriller|buna
+FICTIUNE|Solaris|Ursula K. Le Guin|ISBN0013|Aventura|deteriorata
+BENZI_DESENATE|Maus #28|Neil Gaiman|ISBN0814|Neil Gaiman|buna
+AUDIOBOOK|Slaughterhouse Five|Suzanne Collins|ISBN1009|Nick Podehl|604
+REVISTA|National Geographic|Various|ISBN0894|77|Martie|buna
+FICTIUNE|The Hobbit|George R.R. Martin|ISBN0073|Horror|buna
+STIINTA|Tratat de Biologie|Stephen Hawking|ISBN0443|Biologie|buna
+MANGA|Death Note Vol.22|Kishimoto|ISBN0731|22|Kishimoto|buna
+ISTORIE|Cultura si Societate - Imperiul Roman|Howard Zinn|ISBN0508|Imperiul Roman|buna
+MANUAL|Fizica Anul 3|Carmen Minca|ISBN0709|Fizica|facultate|buna
+MANUAL|Chimie Anul 3|Ana Ionescu|ISBN0682|Chimie|facultate|buna
+REVISTA|Scientific American|Various|ISBN0890|160|Ianuarie|buna
+FICTIUNE|Fahrenheit 451|Isaac Asimov|ISBN0127|Distopie|buna
+FICTIUNE|The Maze Runner|Dan Brown|ISBN0036|Thriller|buna
+FICTIUNE|Solaris|William Gibson|ISBN0042|Thriller|buna
+MANUAL|Biologie Anul 2|Carmen Minca|ISBN0717|Biologie|facultate|buna
+REVISTA|BYTE Magazine|Various|ISBN0919|3|Mai|buna
+ROMAN_GRAFIC|Through the Woods|Chris Ware|ISBN0833|Chris Ware|buna
+ROMAN_GRAFIC|Logicomix|Charles Burns|ISBN0851|Charles Burns|buna
+FICTIUNE|Neuromancer|Ursula K. Le Guin|ISBN0054|Horror|deteriorata
+BENZI_DESENATE|Spider-Man #50|Todd McFarlane|ISBN0816|Todd McFarlane|buna
+ISTORIE|Razboaiele Contemporana|Yuval Noah Harari|ISBN0514|Contemporana|buna
+MANGA|Death Note Vol.25|Arakawa|ISBN0756|25|Arakawa|buna
+MANUAL|Biologie Clasa 4|Alexandru Stan|ISBN0708|Biologie|gimnaziu|buna
+TEHNICA|Domain Driven Design 5th Edition|Robert Martin|ISBN0280|Fizica|buna
+ENCICLOPEDIE|Dictionar de Stiinta|Various|ISBN1052|Stiinta|buna
+ENCICLOPEDIE|Enciclopedia Drept|Various|ISBN1042|Drept|buna
+ROMAN_GRAFIC|Building Stories|Adrian Tomine|ISBN0878|Adrian Tomine|buna
+MANUAL|Chimie Clasa 12|Ioan Petrica|ISBN0698|Chimie|liceu|buna
+FICTIUNE|The Forever War|Leo Tolstoy|ISBN0069|Clasic|buna
+REVISTA|National Geographic|Various|ISBN0925|181|Octombrie|buna
+STIINTA|Tratat de Ecologie|Brian Greene|ISBN0359|Ecologie|buna
+FICTIUNE|The Maze Runner Vol.2|Fyodor Dostoevsky|ISBN0162|Horror|buna
+FICTIUNE|Snow Crash|Brandon Sanderson|ISBN0027|SF|buna
+MANUAL|Biologie Clasa 2|Alexandru Stan|ISBN0720|Biologie|liceu|buna
+MANGA|My Hero Academia Vol.22|Miura|ISBN0764|22|Miura|buna
+AUDIOBOOK|Crime si Pedeapsa|George R.R. Martin|ISBN0992|Mike Chamberlain|945
+TEHNICA|Domain Driven Design|Brian Kernighan|ISBN0302|Retele|buna
+ISTORIE|Marile Imperii - Medievala|Yuval Noah Harari|ISBN0504|Medievala|buna
+STIINTA|Introducere in Geologie|Erwin Schrodinger|ISBN0439|Geologie|buna
+TEHNICA|Calculus|Kent Beck|ISBN0234|Robotica|buna
+FICTIUNE|The Hobbit|Margaret Atwood|ISBN0063|Fantasy|deteriorata
+MANGA|Dragon Ball Vol.10|Toriyama|ISBN0736|10|Toriyama|buna
+TEHNICA|Introduction to Algorithms|Andrew Tanenbaum|ISBN0301|Retele|buna
+ROMAN_GRAFIC|Logicomix|Adrian Tomine|ISBN0862|Adrian Tomine|buna
+MANUAL|Engleza Anul 3|Ana Ionescu|ISBN0728|Engleza|facultate|buna
+FICTIUNE|Contele de Monte Cristo Vol.2|Neil Gaiman|ISBN0012|Mister|deteriorata
+MANUAL|Chimie Clasa 9|Alexandru Stan|ISBN0719|Chimie|liceu|buna
+FICTIUNE|Neuromancer|George Orwell|ISBN0131|Fantasy|buna
+TEHNICA|Graph Theory|Niklaus Wirth|ISBN0215|Fizica|deteriorata
+TEHNICA|Cracking the Coding Interview|Stuart Russell|ISBN0285|Algoritmi|buna
+MANUAL|Matematica Clasa 1|Alexandru Stan|ISBN0692|Matematica|gimnaziu|buna
+ISTORIE|Razboaiele Razboiul Rece|Edward Gibbon|ISBN0455|Razboiul Rece|buna
+STIINTA|Astronomie Aplicata|Brian Greene|ISBN0393|Astronomie|buna
+STIINTA|Biologie Aplicata|Richard Dawkins|ISBN0444|Biologie|buna
+BIOGRAFIE|Darwin - O Biografie|Dale Carnegie|ISBN0595|Darwin|buna
+FICTIUNE|Solaris Vol.4|Margaret Atwood|ISBN0099|Mister|buna
+FILOZOFIE|Tratat de Existentialism|Sartre|ISBN0652|Existentialism|buna
+DIGITAL|Design Patterns (Digital)|Thomas Cormen|ISBN0960|EPUB|https://biblioteca.ro/design-patterns-(dig.epub|4.7
+FICTIUNE|Divergent Vol.3|Stephen King|ISBN0094|Thriller|buna
+STIINTA|Tratat de Genetica|Richard Feynman|ISBN0401|Genetica|buna
+REVISTA|BYTE Magazine|Various|ISBN0895|115|Februarie|buna
+REVISTA|BYTE Magazine|Various|ISBN0898|16|August|buna
+FILOZOFIE|Principiile Nihilism|Aristotel|ISBN0642|Nihilism|buna
+FICTIUNE|The Name of the Wind Vol.1|William Gibson|ISBN0195|SF|deteriorata
+STIINTA|Fundamentele Astronomie|Neil deGrasse Tyson|ISBN0372|Astronomie|buna
+BIOGRAFIE|Viata lui Darwin|Robert Caro|ISBN0539|Darwin|buna
+FICTIUNE|Slaughterhouse Five Vol.5|Leo Tolstoy|ISBN0098|Romantism|buna
+STIINTA|Tratat de Chimie|Richard Dawkins|ISBN0389|Chimie|buna
+ISTORIE|Razboaiele Razboiul Rece|Yuval Noah Harari|ISBN0473|Razboiul Rece|buna
+ROMAN_GRAFIC|Persepolis|Daniel Clowes|ISBN0852|Daniel Clowes|buna
+REVISTA|BYTE Magazine|Various|ISBN0911|103|Aprilie|buna
+ISTORIE|Istoria Razboiul Rece|Howard Zinn|ISBN0516|Razboiul Rece|buna
+ISTORIE|Razboaiele Medievala|Barbara Tuchman|ISBN0481|Medievala|buna
+TEHNICA|Natural Language Processing|Steve McConnell|ISBN0273|Fizica|deteriorata
+TEHNICA|Computer Organization and Design|Kent Beck|ISBN0211|Sisteme de Operare|buna
+STIINTA|Tratat de Fizica|Brian Greene|ISBN0447|Fizica|buna
+BENZI_DESENATE|V for Vendetta #17|Robert Kirkman|ISBN0794|Robert Kirkman|buna
+MANUAL|Geografie Anul 1|Vasile Munteanu|ISBN0684|Geografie|facultate|buna
+MANGA|One Piece Vol.23|Kishimoto|ISBN0754|23|Kishimoto|buna
+DIGITAL|Linux Command Line (Digital)|Dan Brown|ISBN0964|EPUB|https://biblioteca.ro/linux-command-line-(.epub|15.6
+DIGITAL|Effective Java (Digital)|Ian Goodfellow|ISBN0934|MOBI|https://biblioteca.ro/effective-java-(digi.mobi|23.8
+STIINTA|Fundamentele Geologie|Richard Dawkins|ISBN0361|Geologie|buna
+MANGA|Bleach Vol.7|Oda|ISBN0767|7|Oda|buna
+BIOGRAFIE|Viata lui Darwin|Malcolm Gladwell|ISBN0543|Darwin|buna
+MANUAL|Matematica Clasa 7|Alexandru Stan|ISBN0713|Matematica|liceu|buna
+AUDIOBOOK|The Way of Kings|George Orwell|ISBN1021|George Guidall|226
+FICTIUNE|The Forever War Vol.5|Arthur C. Clarke|ISBN0154|Romantism|buna
+STIINTA|Tratat de Neurologie|Neil deGrasse Tyson|ISBN0442|Neurologie|buna
+DIGITAL|Test Driven Development (Digital)|Brian Kernighan|ISBN0956|PDF|https://biblioteca.ro/test-driven-developm.pdf|2.9
+ROMAN_GRAFIC|Habibi|Adrian Tomine|ISBN0853|Adrian Tomine|buna
+FICTIUNE|Snow Crash|George R.R. Martin|ISBN0104|Mister|buna
+BIOGRAFIE|Viata lui Marie Curie|Robert Greene|ISBN0562|Marie Curie|buna
+REVISTA|Science Today|Various|ISBN0892|110|Iulie|buna
+ISTORIE|Revolutii si Schimbari - Renastere|Barbara Tuchman|ISBN0458|Renastere|buna
+TEHNICA|Domain Driven Design 3th Edition|Stuart Russell|ISBN0247|Fizica|deteriorata
+TEHNICA|Database System Concepts|Jon Kleinberg|ISBN0218|AI|deteriorata
+BENZI_DESENATE|X-Men #13|Art Spiegelman|ISBN0813|Art Spiegelman|buna
+FICTIUNE|Old Man War|Margaret Atwood|ISBN0129|Romantism|deteriorata
+FICTIUNE|The Martian Vol.3|Arthur C. Clarke|ISBN0147|SF|buna
+TEHNICA|Computer Networks|Martin Fowler|ISBN0260|Retele|buna
+FICTIUNE|Foundation|Fyodor Dostoevsky|ISBN0009|Cyberpunk|deteriorata
+FICTIUNE|Project Hail Mary Vol.1|Isaac Asimov|ISBN0167|Cyberpunk|buna
+TEHNICA|Deep Learning|Peter Norvig|ISBN0349|Programare|buna
+MANGA|Dragon Ball Vol.29|Kishimoto|ISBN0763|29|Kishimoto|buna
+FICTIUNE|The Maze Runner|William Gibson|ISBN0058|Cyberpunk|buna
+FILOZOFIE|Filozofia Existentialism|Nietzsche|ISBN0626|Existentialism|buna
+ENCICLOPEDIE|Enciclopedia Economie|Various|ISBN1040|Economie|buna
+DIGITAL|JavaScript The Good Parts (Digital)|Thomas Cormen|ISBN0962|EPUB|https://biblioteca.ro/javascript-the-good-.epub|3.9
+FILOZOFIE|Introducere in Umanism|Sartre|ISBN0612|Umanism|buna
+FICTIUNE|Les Miserables|Orson Scott Card|ISBN0179|Distopie|buna
+TEHNICA|The Pragmatic Programmer|Donald Knuth|ISBN0311|Retele|deteriorata
+STIINTA|Fundamentele Chimie|Michio Kaku|ISBN0352|Chimie|buna
+FICTIUNE|Enders Game Vol.2|Victor Hugo|ISBN0088|Romantism|buna
+ISTORIE|Marile Imperii - Imperiul Roman|Jared Diamond|ISBN0489|Imperiul Roman|buna
+BENZI_DESENATE|Tintin #27|Todd McFarlane|ISBN0823|Todd McFarlane|buna
+ENCICLOPEDIE|Enciclopedia Muzica|Various|ISBN1037|Muzica|buna
+BIOGRAFIE|Gandhi - O Biografie|Walter Isaacson|ISBN0575|Gandhi|buna
+STIINTA|Fundamentele Neurologie|Erwin Schrodinger|ISBN0440|Neurologie|buna
+FICTIUNE|The Maze Runner|Frank Herbert|ISBN0143|Distopie|buna
+FICTIUNE|Project Hail Mary Vol.4|Neal Stephenson|ISBN0002|Clasic|buna
+ISTORIE|Revolutii si Schimbari - Razboiul Rece|Tony Judt|ISBN0506|Razboiul Rece|buna
+FICTIUNE|Upgrade Vol.3|Frank Herbert|ISBN0057|Cyberpunk|deteriorata
+TEHNICA|Operating System Concepts|Jon Kleinberg|ISBN0266|Baze de Date|buna
+FICTIUNE|Snow Crash|Victor Hugo|ISBN0044|Aventura|buna
+TEHNICA|Introduction to Algorithms|Jon Kleinberg|ISBN0256|Programare|buna
+TEHNICA|Graph Theory|Michael Sipser|ISBN0214|Matematica|buna
+TEHNICA|Operating System Concepts|Peter Norvig|ISBN0345|AI|buna
+STIINTA|Tratat de Genetica|Stephen Hawking|ISBN0435|Genetica|buna
+FICTIUNE|I Robot|Fyodor Dostoevsky|ISBN0158|Clasic|buna
+ISTORIE|Cultura si Societate - Imperiul Roman|Yuval Noah Harari|ISBN0523|Imperiul Roman|buna
+ISTORIE|Istoria Razboiul Rece|Howard Zinn|ISBN0530|Razboiul Rece|buna
+MANUAL|Engleza Anul 4|Ana Ionescu|ISBN0683|Engleza|facultate|buna
+TEHNICA|Linear Algebra 1th Edition|Michael Sipser|ISBN0236|AI|deteriorata
+ISTORIE|Revolutii si Schimbari - Razboiul Rece|Sun Tzu|ISBN0482|Razboiul Rece|buna
+ISTORIE|Marile Imperii - Renastere|Jared Diamond|ISBN0501|Renastere|buna
+FICTIUNE|The Three Body Problem Vol.1|Leo Tolstoy|ISBN0114|Clasic|buna
+ENCICLOPEDIE|Enciclopedia Stiinta|Various|ISBN1048|Stiinta|buna
+FICTIUNE|Harry Potter|J.R.R. Tolkien|ISBN0004|SF|deteriorata
+FICTIUNE|Project Hail Mary|Arthur C. Clarke|ISBN0191|Aventura|buna
+DIGITAL|Snow Crash (Digital)|Andy Weir|ISBN0974|EPUB|https://biblioteca.ro/snow-crash-(digital).epub|21.8
+FICTIUNE|The Name of the Wind Vol.3|Alexandre Dumas|ISBN0196|Clasic|buna
+TEHNICA|Calculus 4th Edition|Niklaus Wirth|ISBN0263|Retele|buna
+TEHNICA|Refactoring 4th Edition|Niklaus Wirth|ISBN0224|Fizica|deteriorata
+FILOZOFIE|Principiile Empirism|Schopenhauer|ISBN0633|Empirism|buna
+AUDIOBOOK|How to Win Friends|Margaret Atwood|ISBN1016|Patrick Egan|618
+ISTORIE|Civilizatia Contemporana|Barbara Tuchman|ISBN0451|Contemporana|buna
+FICTIUNE|Enders Game Vol.3|Aldous Huxley|ISBN0048|SF|buna
+TEHNICA|Machine Learning 2th Edition|Brian Kernighan|ISBN0272|Baze de Date|deteriorata
+MANUAL|Informatica Clasa 11|Carmen Minca|ISBN0716|Informatica|gimnaziu|buna
+FILOZOFIE|Gandire si Umanism|Platon|ISBN0613|Umanism|buna
+BIOGRAFIE|Darwin - O Biografie|Malcolm Gladwell|ISBN0558|Darwin|buna
+FILOZOFIE|Gandire si Empirism|Aristotel|ISBN0656|Empirism|buna
+AUDIOBOOK|Never Split the Difference|Orson Scott Card|ISBN0994|Michael Kramer|421
+AUDIOBOOK|Sapiens|Neal Stephenson|ISBN0993|Kate Reading|846
+MANGA|Vagabond Vol.15|Oda|ISBN0775|15|Oda|buna
+MANUAL|Geografie Anul 1|Ana Ionescu|ISBN0696|Geografie|facultate|buna
+STIINTA|Introducere in Chimie|Stephen Hawking|ISBN0373|Chimie|buna
+ISTORIE|Cultura si Societate - Medievala|Howard Zinn|ISBN0487|Medievala|buna
+STIINTA|Tratat de Chimie|Michio Kaku|ISBN0368|Chimie|buna
+STIINTA|Fizica Moderna|Erwin Schrodinger|ISBN0414|Fizica|buna
+FICTIUNE|The Way of Kings|Neal Stephenson|ISBN0007|Distopie|buna
+FICTIUNE|Recursion|Isaac Asimov|ISBN0083|Horror|deteriorata
+FICTIUNE|The Maze Runner|Isaac Asimov|ISBN0186|SF|buna
+FICTIUNE|Game of Thrones|Patrick Rothfuss|ISBN0189|Cyberpunk|buna
+AUDIOBOOK|How to Win Friends|Agatha Christie|ISBN0988|Simon Vance|758
+BIOGRAFIE|Viata lui Nelson Mandela|Malcolm Gladwell|ISBN0554|Nelson Mandela|buna
+FICTIUNE|Solaris|Cixin Liu|ISBN0112|Fantasy|deteriorata
+BENZI_DESENATE|Lucky Luke #41|Robert Kirkman|ISBN0792|Robert Kirkman|buna
+FICTIUNE|The Maze Runner|Ray Bradbury|ISBN0043|Distopie|buna
+MANGA|Bleach Vol.9|Oda|ISBN0771|9|Oda|buna
+ISTORIE|Cultura si Societate - Razboiul Rece|Niall Ferguson|ISBN0485|Razboiul Rece|buna
+MANUAL|Romana Clasa 10|Maria Popa|ISBN0705|Romana|liceu|buna
+FICTIUNE|Fahrenheit 451|Aldous Huxley|ISBN0079|Cyberpunk|buna
+ENCICLOPEDIE|Dictionar de General|Various|ISBN1043|General|buna
+TEHNICA|System Design Interview|Steve McConnell|ISBN0306|Sisteme de Operare|deteriorata
+BENZI_DESENATE|Superman #11|Art Spiegelman|ISBN0793|Art Spiegelman|buna
+FILOZOFIE|Rationalism - O Analiza|Rousseau|ISBN0645|Rationalism|buna
+MANUAL|Geografie Clasa 7|Ana Ionescu|ISBN0714|Geografie|liceu|buna
+AUDIOBOOK|The Name of the Wind|Ray Bradbury|ISBN0986|Stephen Fry|898
+STIINTA|Biologie Moderna|Richard Dawkins|ISBN0374|Biologie|buna
+BENZI_DESENATE|X-Men #37|Neil Gaiman|ISBN0824|Neil Gaiman|buna
+REVISTA|Science Today|Various|ISBN0924|87|Februarie|buna
+ISTORIE|Marile Imperii - Moderna|Tony Judt|ISBN0510|Moderna|buna
+AUDIOBOOK|Mistborn|Cixin Liu|ISBN1023|Scott Brick|1014
+MANGA|Bleach Vol.15|Miura|ISBN0738|15|Miura|buna
+MANUAL|Engleza Clasa 5|Ana Ionescu|ISBN0703|Engleza|gimnaziu|buna
+STIINTA|Fundamentele Astronomie|Stephen Hawking|ISBN0391|Astronomie|buna
+TEHNICA|Computer Vision 5th Edition|Robert Martin|ISBN0206|Algoritmi|deteriorata
+FICTIUNE|Enders Game|Isaac Asimov|ISBN0068|Distopie|deteriorata
+TEHNICA|Machine Learning 1th Edition|Peter Norvig|ISBN0330|Fizica|buna
+FICTIUNE|Recursion Vol.5|George Orwell|ISBN0124|SF|buna
+ENCICLOPEDIE|Dictionar de Geografie|Various|ISBN1055|Geografie|buna
+TEHNICA|Graph Theory|Andrew Tanenbaum|ISBN0207|Baze de Date|deteriorata
+MANGA|Jujutsu Kaisen Vol.6|Togashi|ISBN0760|6|Togashi|buna
+ENCICLOPEDIE|Dictionar de Drept|Various|ISBN1041|Drept|buna
+AUDIOBOOK|Atomic Habits|Arthur C. Clarke|ISBN1027|Richard Poe|228
+TEHNICA|Operating System Concepts 5th Edition|Ian Goodfellow|ISBN0233|Programare|buna
+TEHNICA|Natural Language Processing|Ian Goodfellow|ISBN0282|Chimie|buna
+FILOZOFIE|Introducere in Pragmatism|Camus|ISBN0630|Pragmatism|buna
+MANGA|Dragon Ball Vol.22|Arakawa|ISBN0740|22|Arakawa|buna
+BIOGRAFIE|Viata lui Warren Buffett|Robert Caro|ISBN0583|Warren Buffett|buna
+AUDIOBOOK|Dune|Arthur C. Clarke|ISBN1013|Simon Vance|993
+AUDIOBOOK|Foundation|J.R.R. Tolkien|ISBN0995|Scott Brick|504
+REVISTA|New Scientist|Various|ISBN0906|51|August|buna
+FICTIUNE|Mistborn|Margaret Atwood|ISBN0035|Romantism|buna
+BIOGRAFIE|Abraham Lincoln - O Biografie|Malcolm Gladwell|ISBN0590|Abraham Lincoln|buna
+ENCICLOPEDIE|Dictionar de Muzica|Various|ISBN1059|Muzica|buna
+TEHNICA|Computer Networks|Steve McConnell|ISBN0336|Algoritmi|buna
+BIOGRAFIE|Abraham Lincoln - O Biografie|Walter Isaacson|ISBN0601|Abraham Lincoln|buna
+TEHNICA|Computer Vision|Donald Knuth|ISBN0328|Robotica|deteriorata
+REVISTA|IEEE Spectrum|Various|ISBN0897|3|Iulie|buna
+MANGA|Vagabond Vol.28|Toriyama|ISBN0777|28|Toriyama|buna
+STIINTA|Tratat de Astronomie|Carl Sagan|ISBN0441|Astronomie|buna
+AUDIOBOOK|Man Search for Meaning|Agatha Christie|ISBN1018|Stephen Fry|156
+ENCICLOPEDIE|Dictionar de Istorie|Various|ISBN1044|Istorie|buna
+BIOGRAFIE|Julius Caesar - O Biografie|David McCullough|ISBN0555|Julius Caesar|buna
+ROMAN_GRAFIC|American Splendor|Chris Ware|ISBN0861|Chris Ware|buna
+ISTORIE|Razboaiele Antichitate|Jared Diamond|ISBN0479|Antichitate|buna
+TEHNICA|Machine Learning|Stuart Russell|ISBN0241|Fizica|buna
+TEHNICA|Database System Concepts|Steve McConnell|ISBN0278|Retele|deteriorata
+MANGA|Jujutsu Kaisen Vol.2|Ohba|ISBN0769|2|Ohba|buna
+TEHNICA|Discrete Mathematics|Andrew Tanenbaum|ISBN0339|Algoritmi|deteriorata
+FICTIUNE|The Hobbit|George Orwell|ISBN0001|Romantism|deteriorata
+AUDIOBOOK|The Time Machine|Malcolm Gladwell|ISBN0990|Duncan Steen|228
+STIINTA|Fizica Moderna|Richard Dawkins|ISBN0429|Fizica|buna
+BIOGRAFIE|Viata lui Steve Jobs|Malcolm Gladwell|ISBN0572|Steve Jobs|buna
+REVISTA|National Geographic|Various|ISBN0893|59|August|buna
+MANUAL|Fizica Clasa 2|Carmen Minca|ISBN0715|Fizica|gimnaziu|buna
+STIINTA|Fundamentele Neurologie|Erwin Schrodinger|ISBN0388|Neurologie|buna
+STIINTA|Tratat de Chimie|Neil deGrasse Tyson|ISBN0351|Chimie|buna
+ISTORIE|Razboaiele Imperiul Roman|Jared Diamond|ISBN0478|Imperiul Roman|buna
+TEHNICA|Machine Learning 2th Edition|Brian Kernighan|ISBN0227|Robotica|buna
+FILOZOFIE|Filozofia Empirism|Camus|ISBN0617|Empirism|buna
+FICTIUNE|Les Miserables Vol.3|Neil Gaiman|ISBN0085|Clasic|deteriorata
+STIINTA|Geologie Moderna|Stephen Hawking|ISBN0417|Geologie|buna
+REVISTA|BYTE Magazine|Various|ISBN0902|175|Noiembrie|buna
+STIINTA|Neurologie Aplicata|Erwin Schrodinger|ISBN0390|Neurologie|buna
+FICTIUNE|Neuromancer|Isaac Asimov|ISBN0199|Fantasy|buna
+FICTIUNE|The Maze Runner Vol.5|Suzanne Collins|ISBN0052|Cyberpunk|buna
+FILOZOFIE|Empirism - O Analiza|Sartre|ISBN0670|Empirism|buna
+AUDIOBOOK|The 48 Laws of Power|J.R.R. Tolkien|ISBN1002|Richard Poe|610
+ISTORIE|Marile Imperii - Medievala|Yuval Noah Harari|ISBN0467|Medievala|buna
+STIINTA|Tratat de Neurologie|Neil deGrasse Tyson|ISBN0425|Neurologie|buna
+ENCICLOPEDIE|Enciclopedia General|Various|ISBN1035|General|buna
+BIOGRAFIE|Warren Buffett - O Biografie|Malcolm Gladwell|ISBN0571|Warren Buffett|buna
+BIOGRAFIE|Viata lui Leonardo da Vinci|Dale Carnegie|ISBN0579|Leonardo da Vinci|buna
+AUDIOBOOK|Dune|Daniel Kahneman|ISBN1030|Stephen Fry|1046
+TEHNICA|Computer Organization and Design|Steve McConnell|ISBN0232|Fizica|buna
+DIGITAL|The Pragmatic Programmer (Digital)|William Gibson|ISBN0938|MOBI|https://biblioteca.ro/the-pragmatic-progra.mobi|4.2
+BIOGRAFIE|Napoleon Bonaparte - O Biografie|Dale Carnegie|ISBN0592|Napoleon Bonaparte|buna
+FICTIUNE|The Forever War|Stephen King|ISBN0060|Clasic|deteriorata
+FILOZOFIE|Idealism - O Analiza|Sartre|ISBN0663|Idealism|buna
+FICTIUNE|Hyperion|Brandon Sanderson|ISBN0113|Aventura|buna
+ISTORIE|Civilizatia Contemporana|Howard Zinn|ISBN0499|Contemporana|buna
+MANUAL|Chimie Clasa 7|Alexandru Stan|ISBN0688|Chimie|gimnaziu|buna
+BIOGRAFIE|Darwin - O Biografie|Malcolm Gladwell|ISBN0570|Darwin|buna
+STIINTA|Fundamentele Chimie|Erwin Schrodinger|ISBN0405|Chimie|buna
+REVISTA|Scientific American|Various|ISBN0888|184|Iulie|buna
+FICTIUNE|Project Hail Mary|Neil Gaiman|ISBN0198|SF|buna
+AUDIOBOOK|1984|Margaret Atwood|ISBN0985|Derek Perkins|670
+ISTORIE|Revolutii si Schimbari - Moderna|Niall Ferguson|ISBN0457|Moderna|buna
+ROMAN_GRAFIC|Ghost World|Emil Ferris|ISBN0858|Emil Ferris|buna
+MANGA|Bleach Vol.5|Ohba|ISBN0747|5|Ohba|buna
+ISTORIE|Marile Imperii - Medievala|Sun Tzu|ISBN0493|Medievala|buna
+FICTIUNE|Dark Matter|Neil Gaiman|ISBN0021|Fantasy|buna
+REVISTA|Wired|Various|ISBN0882|147|Mai|buna
+FICTIUNE|The Way of Kings|Victor Hugo|ISBN0119|Fantasy|buna
+MANUAL|Engleza Clasa 8|Maria Popa|ISBN0711|Engleza|liceu|buna
+MANUAL|Romana Clasa 9|Maria Popa|ISBN0701|Romana|gimnaziu|buna
+ENCICLOPEDIE|Dictionar de Medicina|Various|ISBN1033|Medicina|buna
+ISTORIE|Cultura si Societate - Al Doilea Razboi Mondial|Sun Tzu|ISBN0474|Al Doilea Razboi Mondial|buna
+ISTORIE|Civilizatia Al Doilea Razboi Mondial|Niall Ferguson|ISBN0465|Al Doilea Razboi Mondial|buna
+STIINTA|Biologie Moderna|Neil deGrasse Tyson|ISBN0407|Biologie|buna
+REVISTA|New Scientist|Various|ISBN0908|145|Februarie|buna
+ROMAN_GRAFIC|American Splendor|Craig Thompson|ISBN0880|Craig Thompson|buna
+TEHNICA|Design Patterns|Robert Martin|ISBN0325|Retele|deteriorata
+FICTIUNE|1984|Andy Weir|ISBN0031|Romantism|buna
+FICTIUNE|2001 A Space Odyssey|Alexandre Dumas|ISBN0178|SF|buna
+ROMAN_GRAFIC|Ghost World|Craig Thompson|ISBN0839|Craig Thompson|buna
+TEHNICA|Computer Vision|Robert Martin|ISBN0220|Sisteme de Operare|deteriorata
+FICTIUNE|Game of Thrones|Orson Scott Card|ISBN0123|Cyberpunk|buna
+DIGITAL|JavaScript The Good Parts (Digital)|Andrew Tanenbaum|ISBN0966|EPUB|https://biblioteca.ro/javascript-the-good-.epub|2.2
+STIINTA|Chimie Aplicata|Neil deGrasse Tyson|ISBN0360|Chimie|buna
+DIGITAL|I Robot (Digital)|Philip K. Dick|ISBN0939|MOBI|https://biblioteca.ro/i-robot-(digital).mobi|15.5
+BIOGRAFIE|Shakespeare - O Biografie|Ron Chernow|ISBN0564|Shakespeare|buna
+TEHNICA|Refactoring 5th Edition|Thomas Cormen|ISBN0238|Programare|buna
+ISTORIE|Civilizatia Medievala|Sun Tzu|ISBN0509|Medievala|buna
+MANGA|Berserk Vol.7|Arakawa|ISBN0733|7|Arakawa|buna
+BENZI_DESENATE|Superman #24|Brian K. Vaughan|ISBN0789|Brian K. Vaughan|buna
+ISTORIE|Revolutii si Schimbari - Razboiul Rece|Jared Diamond|ISBN0459|Razboiul Rece|buna
+MANGA|Jujutsu Kaisen Vol.22|Toriyama|ISBN0770|22|Toriyama|buna
+FICTIUNE|2001 A Space Odyssey|Alexandre Dumas|ISBN0188|Clasic|buna
+TEHNICA|Clean Code|Ian Goodfellow|ISBN0344|Sisteme de Operare|buna
+REVISTA|Tech Monthly|Various|ISBN0913|25|Noiembrie|buna
+FICTIUNE|Foundation|Frank Herbert|ISBN0038|Romantism|buna
+ENCICLOPEDIE|Enciclopedia General|Various|ISBN1060|General|buna
+TEHNICA|Design Patterns 5th Edition|Stuart Russell|ISBN0327|Retele|buna
+DIGITAL|Solaris (Digital)|Fyodor Dostoevsky|ISBN0932|PDF|https://biblioteca.ro/solaris-(digital).pdf|14.0
+FICTIUNE|The Way of Kings|Fyodor Dostoevsky|ISBN0059|Clasic|deteriorata
+BENZI_DESENATE|Maus #37|Todd McFarlane|ISBN0785|Todd McFarlane|buna
+REVISTA|Discovery|Various|ISBN0884|92|Decembrie|buna
+ENCICLOPEDIE|Enciclopedia Muzica|Various|ISBN1050|Muzica|buna
+MANUAL|Informatica Clasa 8|Alexandru Stan|ISBN0678|Informatica|liceu|buna
+BIOGRAFIE|Julius Caesar - O Biografie|Walter Isaacson|ISBN0593|Julius Caesar|buna
+ISTORIE|Revolutii si Schimbari - Moderna|Jared Diamond|ISBN0495|Moderna|buna
+TEHNICA|Distributed Systems 3th Edition|Kent Beck|ISBN0274|Robotica|buna
+FILOZOFIE|Gandire si Pragmatism|Hegel|ISBN0625|Pragmatism|buna
+ROMAN_GRAFIC|Persepolis|Craig Thompson|ISBN0868|Craig Thompson|buna
+FICTIUNE|The Three Body Problem Vol.4|Jules Verne|ISBN0145|Mister|buna
+MANGA|Berserk Vol.1|Togashi|ISBN0772|1|Togashi|buna
+REVISTA|National Geographic|Various|ISBN0885|21|Martie|buna
+DIGITAL|Domain Driven Design (Digital)|Steve McConnell|ISBN0949|MOBI|https://biblioteca.ro/domain-driven-design.mobi|10.7
+FICTIUNE|The Witcher|Cixin Liu|ISBN0168|Distopie|deteriorata
+ISTORIE|Cultura si Societate - Antichitate|Barbara Tuchman|ISBN0518|Antichitate|buna
+TEHNICA|Calculus 4th Edition|Donald Knuth|ISBN0332|Chimie|buna
+DIGITAL|The Hobbit (Digital)|Robert Martin|ISBN0973|PDF|https://biblioteca.ro/the-hobbit-(digital).pdf|18.6
+BENZI_DESENATE|Sandman #21|Todd McFarlane|ISBN0817|Todd McFarlane|buna
+TEHNICA|Test Driven Development|Niklaus Wirth|ISBN0226|Matematica|buna
+MANGA|Hunter x Hunter Vol.2|Ohba|ISBN0759|2|Ohba|buna
+FICTIUNE|The Hobbit Vol.1|J.K. Rowling|ISBN0046|Fantasy|buna
+AUDIOBOOK|Influence|Patrick Rothfuss|ISBN1012|Patrick Egan|1127
+REVISTA|Discovery|Various|ISBN0921|36|Iulie|buna
+FICTIUNE|Game of Thrones|Frank Herbert|ISBN0100|Romantism|buna
+FILOZOFIE|Tratat de Existentialism|Nietzsche|ISBN0638|Existentialism|buna
+REVISTA|Wired|Various|ISBN0900|98|Februarie|buna
+MANGA|Death Note Vol.26|Ohba|ISBN0761|26|Ohba|buna
+BIOGRAFIE|Viata lui Darwin|David McCullough|ISBN0535|Darwin|buna
+BENZI_DESENATE|X-Men #25|Neil Gaiman|ISBN0821|Neil Gaiman|buna
+STIINTA|Bazele Chimie|Brian Greene|ISBN0387|Chimie|buna
+TEHNICA|Code Complete 3th Edition|Brian Kernighan|ISBN0244|Robotica|buna
+FICTIUNE|Dune|Margaret Atwood|ISBN0161|Mister|deteriorata
+FICTIUNE|The Way of Kings|Patrick Rothfuss|ISBN0022|Distopie|buna
+FICTIUNE|Brave New World|Philip K. Dick|ISBN0077|Aventura|buna
+DIGITAL|JavaScript The Good Parts (Digital)|Jules Verne|ISBN0951|EPUB|https://biblioteca.ro/javascript-the-good-.epub|2.6
+ISTORIE|Marile Imperii - Razboiul Rece|Barbara Tuchman|ISBN0480|Razboiul Rece|buna
+DIGITAL|I Robot (Digital)|Jon Kleinberg|ISBN0970|PDF|https://biblioteca.ro/i-robot-(digital).pdf|19.5
+ENCICLOPEDIE|Dictionar de Stiinta|Various|ISBN1049|Stiinta|buna
+FICTIUNE|Harry Potter Vol.3|Jules Verne|ISBN0175|Horror|buna
+TEHNICA|Code Complete 4th Edition|Ian Goodfellow|ISBN0229|Algoritmi|buna
+TEHNICA|Deep Learning|Steve McConnell|ISBN0318|Matematica|deteriorata
+DIGITAL|Dune (Digital)|Andy Weir|ISBN0941|EPUB|https://biblioteca.ro/dune-(digital).epub|14.6
+FICTIUNE|Foundation|Brandon Sanderson|ISBN0029|Thriller|buna
+STIINTA|Geologie Aplicata|Erwin Schrodinger|ISBN0412|Geologie|buna
+STIINTA|Tratat de Chimie|Carl Sagan|ISBN0406|Chimie|buna
+STIINTA|Astronomie Aplicata|Neil deGrasse Tyson|ISBN0383|Astronomie|buna
+TEHNICA|System Design Interview 4th Edition|Michael Sipser|ISBN0346|AI|buna
+DIGITAL|Domain Driven Design (Digital)|Frank Herbert|ISBN0957|PDF|https://biblioteca.ro/domain-driven-design.pdf|14.1
+BENZI_DESENATE|Flash Gordon #38|Brian K. Vaughan|ISBN0827|Brian K. Vaughan|buna
+FICTIUNE|Game of Thrones|Jules Verne|ISBN0086|Cyberpunk|buna
+MANGA|Demon Slayer Vol.13|Togashi|ISBN0765|13|Togashi|buna
+BIOGRAFIE|Bill Gates - O Biografie|Malcolm Gladwell|ISBN0594|Bill Gates|buna
+DIGITAL|Operating System Concepts (Digital)|Donald Knuth|ISBN0936|MOBI|https://biblioteca.ro/operating-system-con.mobi|17.3
+DIGITAL|Design Patterns (Digital)|Arthur C. Clarke|ISBN0958|EPUB|https://biblioteca.ro/design-patterns-(dig.epub|17.1
+BENZI_DESENATE|Sandman #47|Frank Miller|ISBN0797|Frank Miller|buna
+BENZI_DESENATE|Lucky Luke #1|Brian K. Vaughan|ISBN0803|Brian K. Vaughan|buna
+FICTIUNE|Slaughterhouse Five|J.R.R. Tolkien|ISBN0102|Thriller|buna
+DIGITAL|Enders Game (Digital)|Stephen King|ISBN0979|EPUB|https://biblioteca.ro/enders-game-(digital.epub|14.0
+FICTIUNE|1984|Aldous Huxley|ISBN0185|Cyberpunk|buna
+BIOGRAFIE|Viata lui Albert Einstein|David McCullough|ISBN0568|Albert Einstein|buna
+AUDIOBOOK|Never Split the Difference|Orson Scott Card|ISBN0996|Michael Kramer|417
+ISTORIE|Civilizatia Renastere|Barbara Tuchman|ISBN0524|Renastere|buna
+ROMAN_GRAFIC|Maus II|Eddie Campbell|ISBN0836|Eddie Campbell|buna
+FILOZOFIE|Gandire si Rationalism|Descartes|ISBN0665|Rationalism|buna
+REVISTA|Scientific American|Various|ISBN0899|90|Iunie|buna
+STIINTA|Ecologie Moderna|Brian Greene|ISBN0377|Ecologie|buna
+BIOGRAFIE|Mozart - O Biografie|Malcolm Gladwell|ISBN0559|Mozart|buna
+MANUAL|Biologie Clasa 11|Elena Dumitrescu|ISBN0681|Biologie|liceu|buna
+BIOGRAFIE|Viata lui Beethoven|Malcolm Gladwell|ISBN0545|Beethoven|buna
+FILOZOFIE|Principiile Idealism|Aristotel|ISBN0649|Idealism|buna
+ROMAN_GRAFIC|Ghost World|Eddie Campbell|ISBN0866|Eddie Campbell|buna
+BIOGRAFIE|Shakespeare - O Biografie|Dale Carnegie|ISBN0587|Shakespeare|buna
+ROMAN_GRAFIC|Blankets|Charles Burns|ISBN0847|Charles Burns|buna
+ENCICLOPEDIE|Dictionar de General|Various|ISBN1032|General|buna
+TEHNICA|Natural Language Processing|Robert Martin|ISBN0281|Fizica|buna
+ENCICLOPEDIE|Dictionar de Filozofie|Various|ISBN1038|Filozofie|buna
+BENZI_DESENATE|Watchmen #37|Frank Miller|ISBN0788|Frank Miller|buna
+STIINTA|Introducere in Geologie|Richard Feynman|ISBN0382|Geologie|buna
+MANUAL|Engleza Anul 2|Ana Ionescu|ISBN0679|Engleza|facultate|buna
+BIOGRAFIE|Viata lui Beethoven|Malcolm Gladwell|ISBN0538|Beethoven|buna
+REVISTA|Tech Monthly|Various|ISBN0915|165|Aprilie|buna
+FICTIUNE|The Forever War|George Orwell|ISBN0177|Aventura|deteriorata
+FICTIUNE|The Name of the Wind Vol.5|Dan Brown|ISBN0075|SF|buna
+FICTIUNE|Upgrade|Orson Scott Card|ISBN0174|Distopie|buna
+MANUAL|Romana Clasa 2|Carmen Minca|ISBN0727|Romana|gimnaziu|buna
+TEHNICA|Domain Driven Design|Donald Knuth|ISBN0314|Baze de Date|buna
+BIOGRAFIE|Abraham Lincoln - O Biografie|Malcolm Gladwell|ISBN0576|Abraham Lincoln|buna
+BENZI_DESENATE|Avengers #36|Dave Gibbons|ISBN0818|Dave Gibbons|buna
+REVISTA|BYTE Magazine|Various|ISBN0914|24|August|buna
+DIGITAL|Deep Learning (Digital)|Martin Fowler|ISBN0972|EPUB|https://biblioteca.ro/deep-learning-(digit.epub|13.1
+AUDIOBOOK|How to Win Friends|J.K. Rowling|ISBN1024|Kate Reading|498
+REVISTA|Science Today|Various|ISBN0887|139|Noiembrie|buna
+STIINTA|Genetica Moderna|Michio Kaku|ISBN0409|Genetica|buna
+MANGA|Dragon Ball Vol.10|Ohba|ISBN0778|10|Ohba|buna
+DIGITAL|Solaris (Digital)|William Gibson|ISBN0967|EPUB|https://biblioteca.ro/solaris-(digital).epub|13.0
+FICTIUNE|Foundation|William Gibson|ISBN0011|Fantasy|buna
+ROMAN_GRAFIC|Maus II|Craig Thompson|ISBN0834|Craig Thompson|buna
+REVISTA|Scientific American|Various|ISBN0929|3|Ianuarie|buna
+STIINTA|Biologie Aplicata|Brian Greene|ISBN0449|Biologie|buna
+FICTIUNE|Recursion Vol.3|Andrzej Sapkowski|ISBN0107|Distopie|buna
+TEHNICA|Artificial Intelligence|Stuart Russell|ISBN0289|Baze de Date|buna
+STIINTA|Introducere in Fizica|Brian Greene|ISBN0415|Fizica|buna
+TEHNICA|Artificial Intelligence|Michael Sipser|ISBN0270|Sisteme de Operare|deteriorata
+TEHNICA|Linear Algebra|Ian Goodfellow|ISBN0257|Fizica|deteriorata
+BIOGRAFIE|Viata lui Beethoven|Ron Chernow|ISBN0606|Beethoven|buna
+MANUAL|Romana Clasa 10|Ioan Petrica|ISBN0723|Romana|liceu|buna
+ENCICLOPEDIE|Enciclopedia Tehnologie|Various|ISBN1046|Tehnologie|buna
+AUDIOBOOK|Outliers|Arthur C. Clarke|ISBN0982|Andrew MacMillan|748
+BIOGRAFIE|Viata lui Mozart|Robert Caro|ISBN0582|Mozart|buna
+STIINTA|Fizica Aplicata|Richard Dawkins|ISBN0416|Fizica|buna
+STIINTA|Bazele Ecologie|Erwin Schrodinger|ISBN0375|Ecologie|buna
+AUDIOBOOK|Man Search for Meaning|Frank Herbert|ISBN1025|Patrick Egan|397
+TEHNICA|Machine Learning|Michael Sipser|ISBN0231|AI|buna
+AUDIOBOOK|Slaughterhouse Five|Brandon Sanderson|ISBN1019|Patrick Egan|781
+FICTIUNE|The Way of Kings Vol.1|Fyodor Dostoevsky|ISBN0030|SF|buna
+BENZI_DESENATE|Lucky Luke #31|Brian K. Vaughan|ISBN0825|Brian K. Vaughan|buna
+ROMAN_GRAFIC|Through the Woods|Charles Burns|ISBN0844|Charles Burns|buna
+BIOGRAFIE|Viata lui Julius Caesar|Dale Carnegie|ISBN0603|Julius Caesar|buna
+MANGA|Dragon Ball Vol.25|Kishimoto|ISBN0773|25|Kishimoto|buna
+MANUAL|Engleza Anul 2|Carmen Minca|ISBN0712|Engleza|facultate|buna
+STIINTA|Introducere in Neurologie|Richard Dawkins|ISBN0397|Neurologie|buna
+TEHNICA|Distributed Systems 2th Edition|Donald Knuth|ISBN0205|Programare|deteriorata
+TEHNICA|Computer Networks 4th Edition|Peter Norvig|ISBN0326|Sisteme de Operare|buna
+FICTIUNE|Childhood End Vol.4|Orson Scott Card|ISBN0140|Distopie|buna
+TEHNICA|Machine Learning|Michael Sipser|ISBN0342|Robotica|deteriorata
+BENZI_DESENATE|Saga #39|Robert Kirkman|ISBN0810|Robert Kirkman|buna
+STIINTA|Neurologie Aplicata|Neil deGrasse Tyson|ISBN0357|Neurologie|buna
+BIOGRAFIE|Viata lui Mozart|Dale Carnegie|ISBN0607|Mozart|buna
+DIGITAL|The Art of Computer Programming (Digital)|Jules Verne|ISBN0971|MOBI|https://biblioteca.ro/the-art-of-computer-.mobi|4.1
+ISTORIE|Razboaiele Razboiul Rece|Niall Ferguson|ISBN0462|Razboiul Rece|buna
+FICTIUNE|Razboi si Pace Vol.1|Alexandre Dumas|ISBN0076|Fantasy|buna
+TEHNICA|Refactoring|Martin Fowler|ISBN0204|Sisteme de Operare|buna
+STIINTA|Introducere in Neurologie|Richard Dawkins|ISBN0363|Neurologie|buna
+REVISTA|BYTE Magazine|Various|ISBN0926|16|Noiembrie|buna
+FICTIUNE|The Name of the Wind|Philip K. Dick|ISBN0184|Thriller|buna
+FICTIUNE|Anna Karenina|Philip K. Dick|ISBN0138|Fantasy|buna
+FICTIUNE|Snow Crash Vol.2|Fyodor Dostoevsky|ISBN0146|Aventura|deteriorata
+ROMAN_GRAFIC|American Splendor|Craig Thompson|ISBN0860|Craig Thompson|buna
+TEHNICA|Computer Organization and Design|Steve McConnell|ISBN0288|Fizica|buna
+BENZI_DESENATE|X-Men #5|Brian K. Vaughan|ISBN0798|Brian K. Vaughan|buna
+TEHNICA|Introduction to Algorithms 4th Edition|Andrew Tanenbaum|ISBN0208|Programare|deteriorata

@@ -50,6 +50,18 @@ public:
     bool updateSalariu(int id, double salariu);
     bool stergeAngajat(int id);
     map<string, string> getAngajatByUsername(const string& username);
+    vector<map<string, string>> getCartiPaginat(int pagina, int perPagina,
+                                             const string& sortDupa,
+                                             const string& ordine);
+    vector<map<string, string>> getCartiPaginat(int pagina, int perPagina,
+                                             const string& sortDupa,
+                                             const string& ordine,
+                                             const string& tip,
+                                             const string& gen);
+int getTotalCartiFiltrat(const string& tip, const string& gen);
+vector<string> getTipuriDisponibile();
+vector<string> getGenuriDisponibile();
+    int getTotalCarti();
 };
 
 #endif

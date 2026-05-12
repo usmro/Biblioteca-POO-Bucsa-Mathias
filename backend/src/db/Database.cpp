@@ -408,3 +408,143 @@ bool Database::adaugaUtilizatorCuRol(const string& nume, const string& username,
     sqlite3_finalize(stmt);
     return rc == SQLITE_DONE;
 }
+
+int Database::getTotalCarti() {
+    const char* sql = "SELECT COUNT(*) FROM carti;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    int total = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW)
+        total = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return total;
+}
+
+vector<map<string, string>> Database::getCartiPaginat(
+        int pagina, int perPagina,
+        const string& sortDupa, const string& ordine) {
+
+    vector<map<string, string>> rezultat;
+
+    // Validam coloana de sortare (securitate)
+    string col = "titlu";
+    if (sortDupa == "autor") col = "autor";
+    else if (sortDupa == "tip") col = "tip";
+    else if (sortDupa == "isbn") col = "isbn";
+    else if (sortDupa == "disponibila") col = "disponibila";
+
+    string ord = (ordine == "desc") ? "DESC" : "ASC";
+    int offset = (pagina - 1) * perPagina;
+
+    string sql = "SELECT * FROM carti ORDER BY " + col + " " + ord +
+                 " LIMIT ? OFFSET ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, perPagina);
+    sqlite3_bind_int(stmt, 2, offset);
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string, string> rand;
+        rand["id"] = to_string(sqlite3_column_int(stmt, 0));
+        rand["titlu"] = (const char*)sqlite3_column_text(stmt, 1);
+        rand["autor"] = (const char*)sqlite3_column_text(stmt, 2);
+        rand["isbn"] = (const char*)sqlite3_column_text(stmt, 3);
+        rand["tip"] = (const char*)sqlite3_column_text(stmt, 4);
+        rand["extra1"] = sqlite3_column_text(stmt, 5) ?
+                         (const char*)sqlite3_column_text(stmt, 5) : "";
+        rand["disponibila"] = to_string(sqlite3_column_int(stmt, 7));
+        rezultat.push_back(rand);
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
+vector<string> Database::getTipuriDisponibile() {
+    vector<string> rezultat;
+    const char* sql = "SELECT DISTINCT tip FROM carti ORDER BY tip;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    while (sqlite3_step(stmt) == SQLITE_ROW)
+        rezultat.push_back((const char*)sqlite3_column_text(stmt, 0));
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
+vector<string> Database::getGenuriDisponibile() {
+    vector<string> rezultat;
+    const char* sql = "SELECT DISTINCT extra1 FROM carti WHERE extra1 != '' ORDER BY extra1;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        if (sqlite3_column_text(stmt, 0))
+            rezultat.push_back((const char*)sqlite3_column_text(stmt, 0));
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
+int Database::getTotalCartiFiltrat(const string& tip, const string& gen) {
+    string sql = "SELECT COUNT(*) FROM carti WHERE 1=1";
+    if (!tip.empty()) sql += " AND tip = ?";
+    if (!gen.empty()) sql += " AND extra1 = ?";
+    sql += ";";
+
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+
+    int idx = 1;
+    if (!tip.empty()) sqlite3_bind_text(stmt, idx++, tip.c_str(), -1, SQLITE_STATIC);
+    if (!gen.empty()) sqlite3_bind_text(stmt, idx++, gen.c_str(), -1, SQLITE_STATIC);
+
+    int total = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW)
+        total = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return total;
+}
+
+vector<map<string, string>> Database::getCartiPaginat(
+        int pagina, int perPagina,
+        const string& sortDupa, const string& ordine,
+        const string& tip, const string& gen) {
+
+    vector<map<string, string>> rezultat;
+
+    string col = "titlu";
+    if (sortDupa == "autor") col = "autor";
+    else if (sortDupa == "tip") col = "tip";
+    else if (sortDupa == "isbn") col = "isbn";
+    else if (sortDupa == "disponibila") col = "disponibila";
+
+    string ord = (ordine == "desc") ? "DESC" : "ASC";
+    int offset = (pagina - 1) * perPagina;
+
+    string sql = "SELECT * FROM carti WHERE 1=1";
+    if (!tip.empty()) sql += " AND tip = ?";
+    if (!gen.empty()) sql += " AND extra1 = ?";
+    sql += " ORDER BY " + col + " " + ord + " LIMIT ? OFFSET ?;";
+
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+
+    int idx = 1;
+    if (!tip.empty()) sqlite3_bind_text(stmt, idx++, tip.c_str(), -1, SQLITE_STATIC);
+    if (!gen.empty()) sqlite3_bind_text(stmt, idx++, gen.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_int(stmt, idx++, perPagina);
+    sqlite3_bind_int(stmt, idx++, offset);
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string, string> rand;
+        rand["id"] = to_string(sqlite3_column_int(stmt, 0));
+        rand["titlu"] = (const char*)sqlite3_column_text(stmt, 1);
+        rand["autor"] = (const char*)sqlite3_column_text(stmt, 2);
+        rand["isbn"] = (const char*)sqlite3_column_text(stmt, 3);
+        rand["tip"] = (const char*)sqlite3_column_text(stmt, 4);
+        rand["extra1"] = sqlite3_column_text(stmt, 5) ?
+                         (const char*)sqlite3_column_text(stmt, 5) : "";
+        rand["disponibila"] = to_string(sqlite3_column_int(stmt, 7));
+        rezultat.push_back(rand);
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
