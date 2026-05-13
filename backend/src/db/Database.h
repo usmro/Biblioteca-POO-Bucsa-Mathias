@@ -62,6 +62,12 @@ int getTotalCartiFiltrat(const string& tip, const string& gen);
 vector<string> getTipuriDisponibile();
 vector<string> getGenuriDisponibile();
     int getTotalCarti();
+    // Recenzii
+bool adaugaRecenzie(int idUtilizator, const string& isbn, int rating, const string& comentariu);
+vector<map<string, string>> getRecenzii(const string& isbn);
+
+// Recomandari
+vector<map<string, string>> getRecomandari(const string& gen, const string& tip, int limit = 10);
 };
 
 #endif

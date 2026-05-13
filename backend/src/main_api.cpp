@@ -165,6 +165,62 @@ int main() {
         return crow::response(result);
     });
 
+    // ==================== RECENZII ====================
+
+// POST /api/recenzii
+CROW_ROUTE(app, "/api/recenzii").methods("POST"_method)
+([&db](const crow::request& req) {
+    auto body = crow::json::load(req.body);
+    if (!body) return crow::response(400, "JSON invalid");
+    bool ok = db.adaugaRecenzie(
+        body["id_utilizator"].i(),
+        body["isbn"].s(),
+        body["rating"].i(),
+        body["comentariu"].s()
+    );
+    return ok ? crow::response(200, "Recenzie salvata!")
+              : crow::response(400, "Eroare la salvare!");
+});
+
+// GET /api/recenzii/:isbn
+CROW_ROUTE(app, "/api/recenzii/<string>").methods("GET"_method)
+([&db](const string& isbn) {
+    auto recenzii = db.getRecenzii(isbn);
+    crow::json::wvalue result;
+    int i = 0;
+    for (auto& r : recenzii) {
+        result[i]["id"] = r["id"];
+        result[i]["nume_utilizator"] = r["nume_utilizator"];
+        result[i]["rating"] = stoi(r["rating"]);
+        result[i]["comentariu"] = r["comentariu"];
+        result[i]["data"] = r["data"];
+        i++;
+    }
+    return crow::response(result);
+});
+
+// GET /api/recomandari?gen=&tip=
+CROW_ROUTE(app, "/api/recomandari").methods("GET"_method)
+([&db](const crow::request& req) {
+    string gen = req.url_params.get("gen") ? req.url_params.get("gen") : "";
+    string tip = req.url_params.get("tip") ? req.url_params.get("tip") : "";
+    auto recomandari = db.getRecomandari(gen, tip, 10);
+    crow::json::wvalue result;
+    int i = 0;
+    for (auto& r : recomandari) {
+        result[i]["isbn"] = r["isbn"];
+        result[i]["titlu"] = r["titlu"];
+        result[i]["autor"] = r["autor"];
+        result[i]["tip"] = r["tip"];
+        result[i]["gen"] = r["extra1"];
+        result[i]["nr_imprumuturi"] = stoi(r["nr_imprumuturi"]);
+        result[i]["rating_mediu"] = stod(r["rating_mediu"]);
+        result[i]["nr_recenzii"] = stoi(r["nr_recenzii"]);
+        i++;
+    }
+    return crow::response(result);
+});
+
     cout << "Server pornit pe http://localhost:8080" << endl;
     app.port(8080).multithreaded().run();
     return 0;

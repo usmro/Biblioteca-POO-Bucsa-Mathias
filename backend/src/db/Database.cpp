@@ -473,7 +473,10 @@ vector<string> Database::getTipuriDisponibile() {
 
 vector<string> Database::getGenuriDisponibile() {
     vector<string> rezultat;
-    const char* sql = "SELECT DISTINCT extra1 FROM carti WHERE extra1 != '' ORDER BY extra1;";
+    const char* sql = "SELECT DISTINCT extra1 FROM carti "
+                      "WHERE extra1 != '' "
+                      "AND tip IN ('FICTIUNE', 'TEHNICA', 'STIINTA', 'ISTORIE', 'MANUAL') "
+                      "ORDER BY extra1;";
     sqlite3_stmt* stmt;
     sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
     while (sqlite3_step(stmt) == SQLITE_ROW) {
@@ -544,6 +547,105 @@ vector<map<string, string>> Database::getCartiPaginat(
         rand["extra1"] = sqlite3_column_text(stmt, 5) ?
                          (const char*)sqlite3_column_text(stmt, 5) : "";
         rand["disponibila"] = to_string(sqlite3_column_int(stmt, 7));
+        rezultat.push_back(rand);
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
+bool Database::adaugaRecenzie(int idUtilizator, const string& isbn, int rating, const string& comentariu) {
+    // Daca utilizatorul a mai recenzat cartea, actualizeaza
+    string checkSql = "SELECT id FROM recenzii WHERE id_utilizator = ? AND isbn = ?;";
+    sqlite3_stmt* checkStmt;
+    sqlite3_prepare_v2(db, checkSql.c_str(), -1, &checkStmt, nullptr);
+    sqlite3_bind_int(checkStmt, 1, idUtilizator);
+    sqlite3_bind_text(checkStmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
+    bool exista = sqlite3_step(checkStmt) == SQLITE_ROW;
+    sqlite3_finalize(checkStmt);
+
+    string sql;
+    if (exista) {
+        sql = "UPDATE recenzii SET rating = ?, comentariu = ?, data = CURRENT_TIMESTAMP "
+              "WHERE id_utilizator = ? AND isbn = ?;";
+    } else {
+        sql = "INSERT INTO recenzii (rating, comentariu, id_utilizator, isbn) VALUES (?, ?, ?, ?);";
+    }
+
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, rating);
+    sqlite3_bind_text(stmt, 2, comentariu.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_int(stmt, 3, idUtilizator);
+    sqlite3_bind_text(stmt, 4, isbn.c_str(), -1, SQLITE_STATIC);
+    int rc = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE;
+}
+
+vector<map<string, string>> Database::getRecenzii(const string& isbn) {
+    vector<map<string, string>> rezultat;
+    string sql = R"(
+        SELECT r.id, u.nume, r.rating, r.comentariu, r.data
+        FROM recenzii r
+        JOIN utilizatori u ON r.id_utilizator = u.id
+        WHERE r.isbn = ?
+        ORDER BY r.data DESC;
+    )";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, isbn.c_str(), -1, SQLITE_STATIC);
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string, string> rand;
+        rand["id"] = to_string(sqlite3_column_int(stmt, 0));
+        rand["nume_utilizator"] = (const char*)sqlite3_column_text(stmt, 1);
+        rand["rating"] = to_string(sqlite3_column_int(stmt, 2));
+        rand["comentariu"] = sqlite3_column_text(stmt, 3) ?
+                             (const char*)sqlite3_column_text(stmt, 3) : "";
+        rand["data"] = (const char*)sqlite3_column_text(stmt, 4);
+        rezultat.push_back(rand);
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
+vector<map<string, string>> Database::getRecomandari(const string& gen, const string& tip, int limit) {
+    vector<map<string, string>> rezultat;
+    string sql = R"(
+        SELECT c.isbn, c.titlu, c.autor, c.tip, c.extra1,
+               COUNT(DISTINCT i.id) as nr_imprumuturi,
+               COALESCE(AVG(r.rating), 0) as rating_mediu,
+               COUNT(DISTINCT r.id) as nr_recenzii
+        FROM carti c
+        LEFT JOIN imprumuturi i ON c.isbn = i.isbn
+        LEFT JOIN recenzii r ON c.isbn = r.isbn
+        WHERE c.disponibila = 1
+    )";
+    if (!gen.empty()) sql += " AND c.extra1 = ?";
+    if (!tip.empty()) sql += " AND c.tip = ?";
+    sql += R"(
+        GROUP BY c.isbn
+        ORDER BY nr_imprumuturi DESC, rating_mediu DESC
+        LIMIT ?;
+    )";
+
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    int idx = 1;
+    if (!gen.empty()) sqlite3_bind_text(stmt, idx++, gen.c_str(), -1, SQLITE_STATIC);
+    if (!tip.empty()) sqlite3_bind_text(stmt, idx++, tip.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_int(stmt, idx, limit);
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string, string> rand;
+        rand["isbn"] = (const char*)sqlite3_column_text(stmt, 0);
+        rand["titlu"] = (const char*)sqlite3_column_text(stmt, 1);
+        rand["autor"] = (const char*)sqlite3_column_text(stmt, 2);
+        rand["tip"] = (const char*)sqlite3_column_text(stmt, 3);
+        rand["extra1"] = sqlite3_column_text(stmt, 4) ?
+                         (const char*)sqlite3_column_text(stmt, 4) : "";
+        rand["nr_imprumuturi"] = to_string(sqlite3_column_int(stmt, 5));
+        rand["rating_mediu"] = to_string(sqlite3_column_double(stmt, 6));
+        rand["nr_recenzii"] = to_string(sqlite3_column_int(stmt, 7));
         rezultat.push_back(rand);
     }
     sqlite3_finalize(stmt);
