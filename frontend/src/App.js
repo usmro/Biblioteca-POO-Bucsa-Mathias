@@ -459,7 +459,10 @@ function Imprumuturi({ user })
     {
       const res = await fetch(`${API}/imprumuturi`);
       const data = await res.json();
-      setImprumuturi(Array.isArray(data) ? data : []);
+      const aleMe = Array.isArray(data)
+        ? data.filter(imp => String(imp.id_utilizator) === String(user.id))
+        : [];
+      setImprumuturi(aleMe);
     } catch (e)
     {
       setMesaj("Eroare!");
@@ -505,24 +508,51 @@ function Imprumuturi({ user })
   );
 }
 
-function AdminCarti()
-{
+function AdminCarti() {
   const [carti, setCarti] = useState([]);
+  const [mesaj, setMesaj] = useState("");
+  const [tab, setTab] = useState("catalog");
+  const [paginaCatalog, setPaginaCatalog] = useState(1);
+  const [totalPagini, setTotalPagini] = useState(1);
+  const [totalCarti, setTotalCarti] = useState(0);
+  const [searchCatalog, setSearchCatalog] = useState("");
+  const [modCautare, setModCautare] = useState(false);
+
   const [titlu, setTitlu] = useState("");
   const [autor, setAutor] = useState("");
   const [tip, setTip] = useState("FICTIUNE");
   const [extra1, setExtra1] = useState("");
-  const [mesaj, setMesaj] = useState("");
 
-  const incarcaCarti = async () =>
-  {
-    const res = await fetch(`${API}/carti`);
+  const [queryGB, setQueryGB] = useState("");
+  const [rezultateGB, setRezultateGB] = useState([]);
+  const [cautandGB, setCautandGB] = useState(false);
+  const [importate, setImportate] = useState({});
+
+  const incarcaCarti = async (pagina = 1) => {
+    const res = await fetch(`${API}/carti?pagina=${pagina}&per_pagina=20`);
     const data = await res.json();
-    setCarti(Array.isArray(data) ? data : []);
+    setCarti(Array.isArray(data.carti) ? data.carti : []);
+    setTotalPagini(data.total_pagini || 1);
+    setTotalCarti(data.total || 0);
+    setPaginaCatalog(pagina);
   };
 
-  const adaugaCarte = async () =>
-  {
+  const cautaInCatalog = async (q) => {
+    if (!q.trim()) {
+      setModCautare(false);
+      incarcaCarti(1);
+      return;
+    }
+    setModCautare(true);
+    const res = await fetch(`${API}/carti/cauta?q=${encodeURIComponent(q)}`);
+    const data = await res.json();
+    setCarti(Array.isArray(data) ? data : []);
+    setTotalCarti(Array.isArray(data) ? data.length : 0);
+    setTotalPagini(1);
+  };
+
+  const adaugaCarte = async () => {
+    if (!titlu || !autor) { setMesaj("Titlu si autor sunt obligatorii!"); return; }
     const isbn = "ISBN" + Date.now();
     const res = await fetch(`${API}/carti`, {
       method: "POST",
@@ -531,56 +561,291 @@ function AdminCarti()
     });
     const text = await res.text();
     setMesaj(text);
-    incarcaCarti();
+    setTitlu(""); setAutor(""); setExtra1("");
+    incarcaCarti(paginaCatalog);
   };
 
-  const stergeCarte = async (isbn) =>
-  {
+  const stergeCarte = async (isbn) => {
+    if (!window.confirm("Stergi cartea din catalog?")) return;
     const res = await fetch(`${API}/carti/${isbn}`, { method: "DELETE" });
     const text = await res.text();
     setMesaj(text);
-    incarcaCarti();
+    if (modCautare) cautaInCatalog(searchCatalog);
+    else incarcaCarti(paginaCatalog);
   };
+
+  const cautaGoogleBooks = async () => {
+    if (!queryGB.trim()) return;
+    setCautandGB(true);
+    setRezultateGB([]);
+    try {
+      const q = queryGB.trim().replace(/ /g, "+");
+      const res = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${q}&maxResults=10`
+      );
+      if (res.status === 429) {
+        setMesaj("Google Books: prea multe cereri. Asteapta un minut si incearca din nou.");
+        setCautandGB(false);
+        return;
+      }
+      const data = await res.json();
+      const items = data.items || [];
+      const rezultate = items.map(item => {
+        const info = item.volumeInfo || {};
+        let isbn = "";
+        if (info.industryIdentifiers) {
+          const isbn13 = info.industryIdentifiers.find(x => x.type === "ISBN_13");
+          isbn = isbn13 ? isbn13.identifier : (info.industryIdentifiers[0]?.identifier || "");
+        }
+        return {
+          titlu: info.title || "Titlu necunoscut",
+          autor: info.authors ? info.authors[0] : "Autor necunoscut",
+          isbn: isbn || "ISBN-" + Math.floor(Math.random() * 9000 + 1000),
+          gen: info.categories ? info.categories[0] : "General",
+          descriere: info.description ? info.description.substring(0, 120) + "..." : ""
+        };
+      });
+      setRezultateGB(rezultate);
+      if (rezultate.length === 0) setMesaj("Niciun rezultat gasit.");
+    } catch (e) {
+      setMesaj("Eroare la cautare Google Books!");
+    }
+    setCautandGB(false);
+  };
+
+  const importaCarte = async (carte) => {
+    const res = await fetch(`${API}/carti`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        titlu: carte.titlu, autor: carte.autor, isbn: carte.isbn,
+        tip: "FICTIUNE", extra1: carte.gen, extra2: ""
+      })
+    });
+    const text = await res.text();
+    setImportate(prev => ({ ...prev, [carte.isbn]: true }));
+    setMesaj(`"${carte.titlu}" — ${text}`);
+  };
+
+  const tabStyle = (t) => ({
+    padding: "10px 20px", cursor: "pointer", border: "none",
+    background: tab === t ? "#e94560" : "#ddd",
+    color: tab === t ? "white" : "#333",
+    borderRadius: "5px 5px 0 0", marginRight: "5px"
+  });
 
   return (
     <div>
-      <h2 style={{ color: "#1a1a2e" }}>🔧 Admin — Gestionare Carti</h2>
-      {mesaj && <div style={{ background: "#e8f5e9", padding: "10px", borderRadius: "5px", marginBottom: "15px" }}>{mesaj}</div>}
-      <div style={{ background: "white", padding: "20px", borderRadius: "10px", marginBottom: "20px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
-        <h3>Adauga Carte Noua</h3>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-          <input value={titlu} onChange={e => setTitlu(e.target.value)} placeholder="Titlu" style={inputStyle} />
-          <input value={autor} onChange={e => setAutor(e.target.value)} placeholder="Autor" style={inputStyle} />
-          <select value={tip} onChange={e => setTip(e.target.value)} style={inputStyle}>
-            <option>FICTIUNE</option>
-            <option>TEHNICA</option>
-            <option>DIGITAL</option>
-            <option>AUDIOBOOK</option>
-            <option>MANGA</option>
-            <option>BIOGRAFIE</option>
-            <option>STIINTA</option>
-            <option>ISTORIE</option>
-            <option>MANUAL</option>
-          </select>
-          <input value={extra1} onChange={e => setExtra1(e.target.value)} placeholder="Gen/Domeniu" style={inputStyle} />
+      <h2 style={{ color: "#1a1a2e" }}>🔧 Gestionare Catalog</h2>
+
+      {mesaj && (
+        <div style={{
+          background: "#e8f5e9", padding: "10px", borderRadius: "5px",
+          marginBottom: "15px", color: "#2e7d32", display: "flex",
+          justifyContent: "space-between"
+        }}>
+          {mesaj}
+          <span style={{ cursor: "pointer" }} onClick={() => setMesaj("")}>✕</span>
         </div>
-        <button onClick={adaugaCarte} style={{ ...btnPrimary, marginTop: "10px" }}>Adauga Carte</button>
+      )}
+
+      <div style={{ marginBottom: "20px" }}>
+        <button style={tabStyle("catalog")} onClick={() => { setTab("catalog"); setModCautare(false); setSearchCatalog(""); incarcaCarti(1); }}>
+          📚 Catalog {totalCarti > 0 && `(${totalCarti})`}
+        </button>
+        <button style={tabStyle("adauga")} onClick={() => setTab("adauga")}>
+          ➕ Adauga Manual
+        </button>
+        <button style={tabStyle("google")} onClick={() => setTab("google")}>
+          🔍 Import Google Books
+        </button>
       </div>
-      <button onClick={incarcaCarti} style={btnSecondary}>Incarca Catalog</button>
-      <div style={{ marginTop: "15px" }}>
-        {carti.map((carte, i) => (
-          <div key={i} style={{ background: "white", padding: "15px", borderRadius: "8px", marginBottom: "8px", display: "flex", justifyContent: "space-between", alignItems: "center", boxShadow: "0 1px 5px rgba(0,0,0,0.1)" }}>
-            <div>
-              <strong>{carte.titlu}</strong> — {carte.autor}
-              <span style={{ marginLeft: "10px", color: "#888", fontSize: "0.85rem" }}>{carte.tip} | {carte.isbn}</span>
-            </div>
-            <button onClick={() => stergeCarte(carte.isbn)}
-              style={{ background: "#c62828", color: "white", border: "none", padding: "5px 12px", borderRadius: "5px", cursor: "pointer" }}>
-              Sterge
+
+      {/* Tab Catalog */}
+      {tab === "catalog" && (
+        <div>
+          <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
+            <input
+              value={searchCatalog}
+              onChange={e => {
+                setSearchCatalog(e.target.value);
+                if (!e.target.value) { setModCautare(false); incarcaCarti(1); }
+              }}
+              onKeyDown={e => e.key === "Enter" && cautaInCatalog(searchCatalog)}
+              placeholder="Cauta in toate cartile dupa titlu, autor sau ISBN..."
+              style={{ ...inputStyle, flex: 1 }}
+            />
+            <button onClick={() => cautaInCatalog(searchCatalog)} style={btnPrimary}>
+              Cauta
             </button>
+            {modCautare && (
+              <button onClick={() => { setSearchCatalog(""); setModCautare(false); incarcaCarti(1); }}
+                style={btnSecondary}>
+                Sterge filtru
+              </button>
+            )}
           </div>
-        ))}
-      </div>
+
+          {modCautare && (
+            <p style={{ color: "#888", marginBottom: "10px" }}>
+              {totalCarti} rezultate pentru "{searchCatalog}"
+            </p>
+          )}
+
+          {carti.map((carte, i) => (
+            <div key={i} style={{
+              background: "white", padding: "15px 20px", borderRadius: "8px",
+              marginBottom: "8px", display: "flex", justifyContent: "space-between",
+              alignItems: "center", boxShadow: "0 1px 5px rgba(0,0,0,0.1)"
+            }}>
+              <div>
+                <strong>{carte.titlu}</strong>
+                <span style={{ margin: "0 8px", color: "#aaa" }}>—</span>
+                <span style={{ color: "#555" }}>{carte.autor}</span>
+                <div style={{ marginTop: "4px", fontSize: "0.8rem", color: "#999" }}>
+                  {carte.tip} · {carte.isbn}
+                  {carte.extra1 && ` · ${carte.extra1}`}
+                  <span style={{ marginLeft: "8px", color: carte.disponibila ? "#2e7d32" : "#c62828" }}>
+                    {carte.disponibila ? "✓ Disponibila" : "✗ Imprumutata"}
+                  </span>
+                </div>
+              </div>
+              <button onClick={() => stergeCarte(carte.isbn)} style={{
+                background: "#c62828", color: "white", border: "none",
+                padding: "6px 14px", borderRadius: "5px", cursor: "pointer", whiteSpace: "nowrap"
+              }}>
+                Sterge
+              </button>
+            </div>
+          ))}
+
+          {carti.length === 0 && (
+            <p style={{ color: "#888" }}>
+              {modCautare ? `Niciun rezultat pentru "${searchCatalog}".` : "Catalogul se incarca..."}
+            </p>
+          )}
+
+          {carti.length > 0 && !modCautare && (
+            <div style={{
+              display: "flex", justifyContent: "center", alignItems: "center",
+              gap: "15px", marginTop: "20px"
+            }}>
+              <button
+                onClick={() => incarcaCarti(paginaCatalog - 1)}
+                disabled={paginaCatalog === 1}
+                style={{ ...btnSecondary, opacity: paginaCatalog === 1 ? 0.4 : 1 }}
+              >
+                ← Anterior
+              </button>
+              <span style={{ color: "#555" }}>
+                Pagina {paginaCatalog} din {totalPagini} · {totalCarti} carti total
+              </span>
+              <button
+                onClick={() => incarcaCarti(paginaCatalog + 1)}
+                disabled={paginaCatalog === totalPagini}
+                style={{ ...btnSecondary, opacity: paginaCatalog === totalPagini ? 0.4 : 1 }}
+              >
+                Urmator →
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Tab Adauga Manual */}
+      {tab === "adauga" && (
+        <div style={{
+          background: "white", padding: "25px", borderRadius: "10px",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.1)", maxWidth: "600px"
+        }}>
+          <h3 style={{ marginTop: 0 }}>Adauga Carte Manual</h3>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+            <input value={titlu} onChange={e => setTitlu(e.target.value)}
+              placeholder="Titlu *" style={inputStyle} />
+            <input value={autor} onChange={e => setAutor(e.target.value)}
+              placeholder="Autor *" style={inputStyle} />
+            <select value={tip} onChange={e => setTip(e.target.value) } style={inputStyle}>
+              <option>FICTIUNE</option>
+              <option>TEHNICA</option>
+              <option>DIGITAL</option>
+              <option>AUDIOBOOK</option>
+              <option>MANGA</option>
+              <option>BIOGRAFIE</option>
+              <option>STIINTA</option>
+              <option>ISTORIE</option>
+              <option>MANUAL</option>
+            </select>
+            <input value={extra1} onChange={e => setExtra1(e.target.value)}
+              placeholder="Gen / Domeniu" style={inputStyle} />
+          </div>
+          <button onClick={adaugaCarte} style={{ ...btnPrimary, marginTop: "15px" }}>
+            Adauga in Catalog
+          </button>
+        </div>
+      )}
+
+      {/* Tab Google Books */}
+      {tab === "google" && (
+        <div>
+          <div style={{
+            background: "white", padding: "20px", borderRadius: "10px",
+            marginBottom: "20px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)"
+          }}>
+            <h3 style={{ marginTop: 0 }}>🔍 Cauta pe Google Books</h3>
+            <div style={{ display: "flex", gap: "10px" }}>
+              <input
+                value={queryGB}
+                onChange={e => setQueryGB(e.target.value)}
+                onKeyDown={e => e.key === "Enter" && cautaGoogleBooks()}
+                placeholder="Titlu, autor sau ISBN..."
+                style={{ ...inputStyle, flex: 1 }}
+              />
+              <button onClick={cautaGoogleBooks} disabled={cautandGB}
+                style={{ ...btnPrimary, opacity: cautandGB ? 0.6 : 1 }}>
+                {cautandGB ? "Se cauta..." : "Cauta"}
+              </button>
+            </div>
+          </div>
+
+          {rezultateGB.map((carte, i) => (
+            <div key={i} style={{
+              background: "white", padding: "20px", borderRadius: "10px",
+              marginBottom: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+              display: "flex", justifyContent: "space-between",
+              alignItems: "flex-start", gap: "15px"
+            }}>
+              <div style={{ flex: 1 }}>
+                <strong style={{ fontSize: "1rem" }}>{carte.titlu}</strong>
+                <div style={{ color: "#555", marginTop: "3px" }}>{carte.autor}</div>
+                <div style={{ fontSize: "0.8rem", color: "#999", marginTop: "4px" }}>
+                  📖 {carte.gen} · ISBN: {carte.isbn}
+                </div>
+                {carte.descriere && (
+                  <div style={{ fontSize: "0.85rem", color: "#666", marginTop: "6px" }}>
+                    {carte.descriere}
+                  </div>
+                )}
+              </div>
+              <button
+                onClick={() => importaCarte(carte)}
+                disabled={importate[carte.isbn]}
+                style={{
+                  background: importate[carte.isbn] ? "#a5d6a7" : "#2e7d32",
+                  color: "white", border: "none", padding: "8px 16px",
+                  borderRadius: "5px", cursor: importate[carte.isbn] ? "default" : "pointer",
+                  whiteSpace: "nowrap", minWidth: "90px"
+                }}
+              >
+                {importate[carte.isbn] ? "✓ Importat" : "Importa"}
+              </button>
+            </div>
+          ))}
+
+          {rezultateGB.length === 0 && !cautandGB && queryGB && (
+            <p style={{ color: "#888" }}>Niciun rezultat pentru "{queryGB}".</p>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -592,15 +857,22 @@ function PanouDirector({ user })
   const [imprumuturi, setImprumuturi] = useState([]);
   const [mesaj, setMesaj] = useState("");
   const [tab, setTab] = useState("angajati");
+  const [expandat, setExpandat] = useState({});
+  const [bonus, setBonus] = useState({});
 
-  // Form angajat nou
+  const [observatii, setObservatii] = useState(() =>
+  {
+    const saved = localStorage.getItem("observatii_angajati");
+    return saved ? JSON.parse(saved) : {};
+  });
+  const [observatieTemp, setObservatieTemp] = useState({});
+
   const [numeA, setNumeA] = useState("");
   const [usernameA, setUsernameA] = useState("");
   const [parolaA, setParolaA] = useState("");
   const [rolA, setRolA] = useState("bibliotecar");
   const [salariuA, setSalariuA] = useState("");
   const [deptA, setDeptA] = useState("");
-  const [bonus, setBonus] = useState({});
 
   const incarcaAngajati = async () =>
   {
@@ -636,11 +908,19 @@ function PanouDirector({ user })
     const text = await res.text();
     setMesaj(text);
     incarcaAngajati();
+
+    setNumeA("");
+    setUsernameA("");
+    setParolaA("");
+    setRolA("bibliotecar");
+    setSalariuA("");
+    setDeptA("");
   };
 
-  const acordaBonus = async (id, salariuCurent) =>
+  const acordaBonus = async (id) =>
   {
     const bonusVal = parseFloat(bonus[id] || 0);
+    if (!bonusVal || bonusVal <= 0) { setMesaj("Introdu o suma valida!"); return; }
     const res = await fetch(`${API}/angajati/bonus`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -648,15 +928,36 @@ function PanouDirector({ user })
     });
     const text = await res.text();
     setMesaj(text);
+    setBonus(prev => ({ ...prev, [id]: "" }));
     incarcaAngajati();
   };
 
   const stergeAngajat = async (id) =>
   {
+    if (String(id) === String(user.id))
+    {
+      setMesaj("Nu te poti concedia pe tine insuti!");
+      return;
+    }
+    if (!window.confirm("Sigur vrei sa concediezi acest angajat?")) return;
     const res = await fetch(`${API}/angajati/${id}`, { method: "DELETE" });
     const text = await res.text();
     setMesaj(text);
     incarcaAngajati();
+  };
+
+  const salveazaObservatie = (id) =>
+  {
+    const nouObservatii = { ...observatii, [id]: observatieTemp[id] ?? observatii[id] ?? "" };
+    setObservatii(nouObservatii);
+    localStorage.setItem("observatii_angajati", JSON.stringify(nouObservatii));
+    setMesaj("Observatie salvata!");
+  };
+
+  const toggleExpandat = (id) =>
+  {
+    setExpandat(prev => ({ ...prev, [id]: !prev[id] }));
+    setObservatieTemp(prev => ({ ...prev, [id]: observatii[id] ?? "" }));
   };
 
   const tabStyle = (t) => ({
@@ -670,15 +971,20 @@ function PanouDirector({ user })
     <div>
       <h2 style={{ color: "#1a1a2e" }}>👔 Panou Director</h2>
 
-      {mesaj && <div style={{
-        background: "#e8f5e9", padding: "10px",
-        borderRadius: "5px", marginBottom: "15px", color: "#2e7d32"
-      }}>{mesaj}</div>}
+      {mesaj && (
+        <div style={{
+          background: "#e8f5e9", padding: "10px", borderRadius: "5px",
+          marginBottom: "15px", color: "#2e7d32", display: "flex",
+          justifyContent: "space-between", alignItems: "center"
+        }}>
+          {mesaj}
+          <span style={{ cursor: "pointer", fontWeight: "bold" }} onClick={() => setMesaj("")}>✕</span>
+        </div>
+      )}
 
-      {/* Tabs */}
       <div style={{ marginBottom: "20px" }}>
         <button style={tabStyle("angajati")} onClick={() => { setTab("angajati"); incarcaAngajati(); }}>
-          👥 Angajati
+          👥 Angajati ({angajati.length})
         </button>
         <button style={tabStyle("utilizatori")} onClick={() => { setTab("utilizatori"); incarcaUtilizatori(); }}>
           👤 Utilizatori
@@ -691,12 +997,12 @@ function PanouDirector({ user })
       {/* Tab Angajati */}
       {tab === "angajati" && (
         <div>
-          {/* Formular adaugare angajat */}
+          {/* Formular adaugare */}
           <div style={{
             background: "white", padding: "20px", borderRadius: "10px",
             marginBottom: "20px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)"
           }}>
-            <h3>Adauga Angajat Nou</h3>
+            <h3 style={{ marginTop: 0 }}>➕ Adauga Angajat Nou</h3>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "10px" }}>
               <input value={numeA} onChange={e => setNumeA(e.target.value)}
                 placeholder="Nume complet" style={inputStyle} />
@@ -719,51 +1025,138 @@ function PanouDirector({ user })
           </div>
 
           {/* Lista angajati */}
-          {angajati.map((a, i) => (
-            <div key={i} style={{
-              background: "white", padding: "20px", borderRadius: "10px",
-              marginBottom: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)"
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <div>
-                  <strong style={{ fontSize: "1.1rem" }}>{a.nume}</strong>
-                  <span style={{ marginLeft: "10px", color: "#666" }}>@{a.username}</span>
-                  <span style={{
-                    marginLeft: "10px", background: a.rol === "director" ? "#1a1a2e" : "#e94560",
-                    color: "white", padding: "2px 8px", borderRadius: "10px", fontSize: "0.8rem"
-                  }}>{a.rol}</span>
-                  <p style={{ margin: "5px 0 0 0", color: "#666" }}>
-                    💼 {a.departament} | 💰 Salariu: <strong>{parseFloat(a.salariu).toFixed(2)} lei</strong>
-                  </p>
-                </div>
-                <button onClick={() => stergeAngajat(a.id)}
-                  style={{
-                    background: "#c62828", color: "white", border: "none",
-                    padding: "5px 12px", borderRadius: "5px", cursor: "pointer"
-                  }}>
-                  Concediaza
-                </button>
-              </div>
+          {angajati.map((a, i) =>
+          {
+            const esteExpandat = expandat[a.id];
+            const bonusVal = parseFloat(bonus[a.id] || 0);
+            const salariuNou = parseFloat(a.salariu) + (bonusVal > 0 ? bonusVal : 0);
 
-              {/* Bonus */}
-              <div style={{ marginTop: "10px", display: "flex", gap: "10px", alignItems: "center" }}>
-                <input
-                  type="number"
-                  placeholder="Suma bonus (lei)"
-                  value={bonus[a.id] || ""}
-                  onChange={e => setBonus({ ...bonus, [a.id]: e.target.value })}
-                  style={{ padding: "8px", borderRadius: "5px", border: "1px solid #ddd", width: "180px" }}
-                />
-                <button onClick={() => acordaBonus(a.id, a.salariu)}
+            return (
+              <div key={i} style={{
+                background: "white", borderRadius: "10px", marginBottom: "10px",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.1)", overflow: "hidden"
+              }}>
+                {/* Header card — click pt expand */}
+                <div
+                  onClick={() => toggleExpandat(a.id)}
                   style={{
-                    background: "#2e7d32", color: "white", border: "none",
-                    padding: "8px 16px", borderRadius: "5px", cursor: "pointer"
-                  }}>
-                  Acorda Bonus
-                </button>
+                    padding: "15px 20px", cursor: "pointer", display: "flex",
+                    justifyContent: "space-between", alignItems: "center",
+                    background: esteExpandat ? "#f8f8f8" : "white",
+                    borderBottom: esteExpandat ? "1px solid #eee" : "none"
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <div style={{
+                      width: "42px", height: "42px", borderRadius: "50%",
+                      background: a.rol === "director" ? "#1a1a2e" : "#e94560",
+                      color: "white", display: "flex", alignItems: "center",
+                      justifyContent: "center", fontWeight: "bold", fontSize: "1.1rem"
+                    }}>
+                      {a.nume.charAt(0).toUpperCase()}
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: "bold", fontSize: "1rem" }}>{a.nume}</div>
+                      <div style={{ color: "#666", fontSize: "0.85rem" }}>
+                        @{a.username} &nbsp;·&nbsp; 💼 {a.departament || "—"}
+                      </div>
+                    </div>
+                    <span style={{
+                      background: a.rol === "director" ? "#1a1a2e" : "#e94560",
+                      color: "white", padding: "2px 10px", borderRadius: "10px", fontSize: "0.8rem"
+                    }}>{a.rol}</span>
+                    {observatii[a.id] && (
+                      <span style={{ fontSize: "0.8rem", color: "#888" }}>📝 are observatie</span>
+                    )}
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+                    <div style={{ textAlign: "right" }}>
+                      <div style={{ fontWeight: "bold", color: "#2e7d32", fontSize: "1rem" }}>
+                        {parseFloat(a.salariu).toLocaleString("ro-RO")} lei
+                      </div>
+                      <div style={{ fontSize: "0.75rem", color: "#999" }}>salariu lunar</div>
+                    </div>
+                    <span style={{ fontSize: "1.2rem", color: "#aaa" }}>
+                      {esteExpandat ? "▲" : "▼"}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Detalii expandate */}
+                {esteExpandat && (
+                  <div style={{ padding: "20px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+
+                    {/* Coloana stanga: bonus */}
+                    <div>
+                      <h4 style={{ marginTop: 0, color: "#1a1a2e" }}>💰 Acorda Bonus</h4>
+                      <div style={{ display: "flex", gap: "10px", alignItems: "center", marginBottom: "8px" }}>
+                        <input
+                          type="number"
+                          placeholder="Suma bonus (lei)"
+                          value={bonus[a.id] || ""}
+                          onChange={e => setBonus(prev => ({ ...prev, [a.id]: e.target.value }))}
+                          style={{ ...inputStyle, width: "160px" }}
+                        />
+                        <button
+                          onClick={() => acordaBonus(a.id)}
+                          style={{
+                            background: "#2e7d32", color: "white", border: "none",
+                            padding: "8px 16px", borderRadius: "5px", cursor: "pointer"
+                          }}
+                        >
+                          Confirma
+                        </button>
+                      </div>
+                      {bonusVal > 0 && (
+                        <div style={{ fontSize: "0.85rem", color: "#555", background: "#f1f8e9", padding: "8px", borderRadius: "5px" }}>
+                          Salariu actual: <strong>{parseFloat(a.salariu).toLocaleString("ro-RO")} lei</strong>
+                          <br />
+                          Dupa bonus: <strong style={{ color: "#2e7d32" }}>{salariuNou.toLocaleString("ro-RO")} lei</strong>
+                        </div>
+                      )}
+
+                      <div style={{ marginTop: "20px" }}>
+                        <button
+                          onClick={() => stergeAngajat(a.id)}
+                          style={{
+                            background: "#c62828", color: "white", border: "none",
+                            padding: "8px 16px", borderRadius: "5px", cursor: "pointer"
+                          }}
+                        >
+                          🔴 Concediaza angajat
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Coloana dreapta: observatii */}
+                    <div>
+                      <h4 style={{ marginTop: 0, color: "#1a1a2e" }}>📝 Observatii</h4>
+                      <textarea
+                        rows={4}
+                        placeholder="Adauga observatii despre acest angajat..."
+                        value={observatieTemp[a.id] ?? observatii[a.id] ?? ""}
+                        onChange={e => setObservatieTemp(prev => ({ ...prev, [a.id]: e.target.value }))}
+                        style={{
+                          width: "100%", padding: "10px", borderRadius: "5px",
+                          border: "1px solid #ddd", resize: "vertical",
+                          fontFamily: "inherit", fontSize: "0.9rem", boxSizing: "border-box"
+                        }}
+                      />
+                      <button
+                        onClick={() => salveazaObservatie(a.id)}
+                        style={{
+                          marginTop: "8px", background: "#1565c0", color: "white",
+                          border: "none", padding: "8px 16px", borderRadius: "5px", cursor: "pointer"
+                        }}
+                      >
+                        Salveaza observatie
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 

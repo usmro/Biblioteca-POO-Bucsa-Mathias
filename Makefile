@@ -27,5 +27,9 @@ test:
 	src/utils/Criptare.cpp src/utils/FisierHelper.cpp $(LIBS)
 	./test_runner
 
+test_imprumut: tests/test_imprumut.cpp src/modele/Imprumut.cpp
+	g++ -std=c++17 -o test_imprumut tests/test_imprumut.cpp src/modele/Imprumut.cpp
+	./test_imprumut
+
 clean:
 	rm -f app test_runner

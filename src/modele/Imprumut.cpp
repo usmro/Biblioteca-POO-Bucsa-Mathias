@@ -51,3 +51,6 @@ void Imprumut::afiseaza() const {
     }
     cout << endl;
 }
+
+Imprumut::Imprumut(int idUtilizator, string isbn, int zileLimita, time_t dataFixata)
+    : idUtilizator(idUtilizator), isbnCarte(isbn), zileLimita(zileLimita), dataImprumut(dataFixata) {}

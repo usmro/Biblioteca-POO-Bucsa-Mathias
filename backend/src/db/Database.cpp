@@ -323,7 +323,7 @@ bool Database::adaugaImprumut(int idUtilizator, const string& isbn, int zileLimi
 vector<map<string, string>> Database::getImprumuturi() {
     vector<map<string, string>> rezultat;
     const char* sql = R"(
-        SELECT i.id, u.nume, u.username, c.titlu, i.isbn,
+        SELECT i.id, i.id_utilizator, u.nume, u.username, c.titlu, i.isbn,
                i.data_imprumut, i.zile_limita, i.returnat
         FROM imprumuturi i
         JOIN utilizatori u ON i.id_utilizator = u.id
@@ -335,12 +335,13 @@ vector<map<string, string>> Database::getImprumuturi() {
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         map<string, string> rand;
         rand["id"] = to_string(sqlite3_column_int(stmt, 0));
-        rand["nume_utilizator"] = (const char*)sqlite3_column_text(stmt, 1);
-        rand["username"] = (const char*)sqlite3_column_text(stmt, 2);
-        rand["titlu_carte"] = (const char*)sqlite3_column_text(stmt, 3);
-        rand["isbn"] = (const char*)sqlite3_column_text(stmt, 4);
-        rand["data_imprumut"] = (const char*)sqlite3_column_text(stmt, 5);
-        rand["zile_limita"] = to_string(sqlite3_column_int(stmt, 6));
+        rand["id_utilizator"] = to_string(sqlite3_column_int(stmt, 1)); // adaugat
+        rand["nume_utilizator"] = (const char*)sqlite3_column_text(stmt, 2);
+        rand["username"] = (const char*)sqlite3_column_text(stmt, 3);
+        rand["titlu_carte"] = (const char*)sqlite3_column_text(stmt, 4);
+        rand["isbn"] = (const char*)sqlite3_column_text(stmt, 5);
+        rand["data_imprumut"] = (const char*)sqlite3_column_text(stmt, 6);
+        rand["zile_limita"] = to_string(sqlite3_column_int(stmt, 7));
         rezultat.push_back(rand);
     }
     sqlite3_finalize(stmt);
