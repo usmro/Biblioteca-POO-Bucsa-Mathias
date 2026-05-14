@@ -37,6 +37,7 @@ function App()
         <h1 style={{ color: "#e94560", margin: 0 }}>📚 Biblioteca Virtuala</h1>
         <div style={{ display: "flex", gap: "15px" }}>
           <button onClick={() => setPagina("carti")} style={btnNav}>Catalog</button>
+          <button onClick={() => setPagina("recomandari")} style={btnNav}>✨ Recomandari</button>
           {user && <button onClick={() => setPagina("imprumuturi")} style={btnNav}>Imprumuturile mele</button>}
           {user?.rol === "bibliotecar" && (
             <button onClick={() => setPagina("admin")} style={btnNav}>Admin Carti</button>
@@ -57,8 +58,9 @@ function App()
         {pagina === "login" && <Login setUser={setUser} setPagina={setPagina} />}
         {pagina === "imprumuturi" && user && <Imprumuturi user={user} />}
         {pagina === "admin" && user?.rol === "bibliotecar" && <AdminCarti />}
-        {pagina === "director" && user?.rol === "director" && <PanouDirector />}
+        {pagina === "director" && user?.rol === "director" && <PanouDirector user={user} />}
         {pagina === "statistici" && <Statistici />}
+        {pagina === "recomandari" && <Recomandari />}
       </div>
     </div>
   );
@@ -448,31 +450,27 @@ function Login({ setUser, setPagina })
   );
 }
 
-function Imprumuturi({ user })
-{
+function Imprumuturi({ user }) {
   const [imprumuturi, setImprumuturi] = useState([]);
   const [mesaj, setMesaj] = useState("");
+  const [formRecenzie, setFormRecenzie] = useState({});
+  const [recenziiTrimise, setRecenziiTrimise] = useState({});
 
-  const incarca = async () =>
-  {
-    try
-    {
+  const incarca = async () => {
+    try {
       const res = await fetch(`${API}/imprumuturi`);
       const data = await res.json();
       const aleMe = Array.isArray(data)
         ? data.filter(imp => String(imp.id_utilizator) === String(user.id))
         : [];
       setImprumuturi(aleMe);
-    } catch (e)
-    {
+    } catch (e) {
       setMesaj("Eroare!");
     }
   };
 
-  const returneaza = async (isbn) =>
-  {
-    try
-    {
+  const returneaza = async (isbn) => {
+    try {
       const res = await fetch(`${API}/imprumuturi/returneaza`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -481,34 +479,152 @@ function Imprumuturi({ user })
       const text = await res.text();
       setMesaj(text);
       incarca();
-    } catch (e)
-    {
+    } catch (e) {
       setMesaj("Eroare la returnare!");
     }
+  };
+
+  const trimiteRecenzie = async (isbn) => {
+    const form = formRecenzie[isbn] || {};
+    if (!form.rating) { setMesaj("Selecteaza un rating inainte sa trimiti!"); return; }
+    const res = await fetch(`${API}/recenzii`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id_utilizator: parseInt(user.id),
+        isbn,
+        rating: parseInt(form.rating),
+        comentariu: form.comentariu || ""
+      })
+    });
+    const text = await res.text();
+    setMesaj(text);
+    setRecenziiTrimise(prev => ({ ...prev, [isbn]: true }));
+  };
+
+  const stele = (isbn) => {
+    const ratingCurent = formRecenzie[isbn]?.rating || 0;
+    return (
+      <div style={{ display: "flex", gap: "4px", margin: "8px 0" }}>
+        {[1, 2, 3, 4, 5].map(i => (
+          <span
+            key={i}
+            onClick={() => setFormRecenzie(prev => ({
+              ...prev, [isbn]: { ...prev[isbn], rating: i }
+            }))}
+            style={{
+              fontSize: "2rem",
+              cursor: "pointer",
+              color: i <= ratingCurent ? "#f4c430" : "#ddd",
+              transition: "color 0.15s"
+            }}
+          >★</span>
+        ))}
+        {ratingCurent > 0 && (
+          <span style={{ alignSelf: "center", marginLeft: "8px", color: "#666", fontSize: "0.9rem" }}>
+            {ratingCurent}/5
+          </span>
+        )}
+      </div>
+    );
   };
 
   return (
     <div>
       <h2 style={{ color: "#1a1a2e" }}>📖 Imprumuturile Mele</h2>
       <button onClick={incarca} style={btnPrimary}>Incarca</button>
-      {mesaj && <div style={{ background: "#e8f5e9", padding: "10px", borderRadius: "5px", margin: "10px 0", color: "#2e7d32" }}>{mesaj}</div>}
+
+      {mesaj && (
+        <div style={{
+          background: "#e8f5e9", padding: "10px", borderRadius: "5px",
+          margin: "10px 0", color: "#2e7d32", display: "flex", justifyContent: "space-between"
+        }}>
+          {mesaj}
+          <span style={{ cursor: "pointer" }} onClick={() => setMesaj("")}>✕</span>
+        </div>
+      )}
+
       <div style={{ marginTop: "20px" }}>
         {imprumuturi.map((imp, i) => (
-          <div key={i} style={{ background: "white", padding: "20px", borderRadius: "10px", marginBottom: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div>
-              <h3 style={{ margin: "0 0 5px 0" }}>{imp.titlu_carte}</h3>
-              <p style={{ margin: 0, color: "#666" }}>Imprumutat pe: {imp.data_imprumut} | Limita: {imp.zile_limita} zile</p>
+          <div key={i} style={{
+            background: "white", padding: "20px", borderRadius: "10px",
+            marginBottom: "15px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)"
+          }}>
+            {/* Header imprumut */}
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+              <div>
+                <h3 style={{ margin: "0 0 5px 0", color: "#1a1a2e" }}>{imp.titlu_carte}</h3>
+<p style={{ margin: "4px 0", color: "#666", fontSize: "0.9rem" }}>
+  📅 Imprumutat pe: {imp.data_imprumut} &nbsp;·&nbsp; ⏰ Limita: {imp.zile_limita} zile
+</p>
+{imp.intarziat && (
+  <div style={{
+    marginTop: "8px", background: "#ffebee", padding: "8px 12px",
+    borderRadius: "5px", color: "#c62828", fontSize: "0.9rem", fontWeight: "bold"
+  }}>
+    ⚠️ Intarziat cu {imp.zile_intarziere} zile &nbsp;·&nbsp; Penalitate: {imp.penalitate.toFixed(2)} lei
+  </div>
+)}
+              </div>
+              <button onClick={() => returneaza(imp.isbn)} style={btnSecondary}>
+                Returneaza
+              </button>
             </div>
-            <button onClick={() => returneaza(imp.isbn)} style={btnSecondary}>Returneaza</button>
+
+            {/* Sectiune recenzie */}
+            <div style={{
+              marginTop: "15px", paddingTop: "15px",
+              borderTop: "1px solid #f0f0f0"
+            }}>
+              {recenziiTrimise[imp.isbn] ? (
+                <p style={{ color: "#2e7d32", margin: 0 }}>
+                  ✓ Recenzie trimisa! Multumim pentru feedback.
+                </p>
+              ) : (
+                <>
+                  <strong style={{ fontSize: "0.9rem", color: "#555" }}>
+                    Lasa o recenzie:
+                  </strong>
+                  {stele(imp.isbn)}
+                  <textarea
+                    rows={2}
+                    placeholder="Comentariu optional..."
+                    value={formRecenzie[imp.isbn]?.comentariu || ""}
+                    onChange={e => setFormRecenzie(prev => ({
+                      ...prev, [imp.isbn]: { ...prev[imp.isbn], comentariu: e.target.value }
+                    }))}
+                    style={{
+                      width: "100%", padding: "8px", borderRadius: "5px",
+                      border: "1px solid #ddd", fontFamily: "inherit",
+                      fontSize: "0.9rem", resize: "vertical", boxSizing: "border-box",
+                      marginBottom: "8px"
+                    }}
+                  />
+                  <button
+                    onClick={() => trimiteRecenzie(imp.isbn)}
+                    style={{
+                      background: formRecenzie[imp.isbn]?.rating ? "#e94560" : "#ccc",
+                      color: "white", border: "none", padding: "8px 16px",
+                      borderRadius: "5px", cursor: formRecenzie[imp.isbn]?.rating ? "pointer" : "not-allowed"
+                    }}
+                  >
+                    Trimite recenzie
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         ))}
-        {imprumuturi.length === 0 && <p style={{ color: "#666" }}>Nu ai imprumuturi active.</p>}
+        {imprumuturi.length === 0 && (
+          <p style={{ color: "#666" }}>Apasa "Incarca" pentru a vedea imprumuturile tale.</p>
+        )}
       </div>
     </div>
   );
 }
 
-function AdminCarti() {
+function AdminCarti()
+{
   const [carti, setCarti] = useState([]);
   const [mesaj, setMesaj] = useState("");
   const [tab, setTab] = useState("catalog");
@@ -528,7 +644,8 @@ function AdminCarti() {
   const [cautandGB, setCautandGB] = useState(false);
   const [importate, setImportate] = useState({});
 
-  const incarcaCarti = async (pagina = 1) => {
+  const incarcaCarti = async (pagina = 1) =>
+  {
     const res = await fetch(`${API}/carti?pagina=${pagina}&per_pagina=20`);
     const data = await res.json();
     setCarti(Array.isArray(data.carti) ? data.carti : []);
@@ -537,8 +654,10 @@ function AdminCarti() {
     setPaginaCatalog(pagina);
   };
 
-  const cautaInCatalog = async (q) => {
-    if (!q.trim()) {
+  const cautaInCatalog = async (q) =>
+  {
+    if (!q.trim())
+    {
       setModCautare(false);
       incarcaCarti(1);
       return;
@@ -551,7 +670,8 @@ function AdminCarti() {
     setTotalPagini(1);
   };
 
-  const adaugaCarte = async () => {
+  const adaugaCarte = async () =>
+  {
     if (!titlu || !autor) { setMesaj("Titlu si autor sunt obligatorii!"); return; }
     const isbn = "ISBN" + Date.now();
     const res = await fetch(`${API}/carti`, {
@@ -565,7 +685,8 @@ function AdminCarti() {
     incarcaCarti(paginaCatalog);
   };
 
-  const stergeCarte = async (isbn) => {
+  const stergeCarte = async (isbn) =>
+  {
     if (!window.confirm("Stergi cartea din catalog?")) return;
     const res = await fetch(`${API}/carti/${isbn}`, { method: "DELETE" });
     const text = await res.text();
@@ -574,26 +695,31 @@ function AdminCarti() {
     else incarcaCarti(paginaCatalog);
   };
 
-  const cautaGoogleBooks = async () => {
+  const cautaGoogleBooks = async () =>
+  {
     if (!queryGB.trim()) return;
     setCautandGB(true);
     setRezultateGB([]);
-    try {
+    try
+    {
       const q = queryGB.trim().replace(/ /g, "+");
       const res = await fetch(
         `https://www.googleapis.com/books/v1/volumes?q=${q}&maxResults=10`
       );
-      if (res.status === 429) {
+      if (res.status === 429)
+      {
         setMesaj("Google Books: prea multe cereri. Asteapta un minut si incearca din nou.");
         setCautandGB(false);
         return;
       }
       const data = await res.json();
       const items = data.items || [];
-      const rezultate = items.map(item => {
+      const rezultate = items.map(item =>
+      {
         const info = item.volumeInfo || {};
         let isbn = "";
-        if (info.industryIdentifiers) {
+        if (info.industryIdentifiers)
+        {
           const isbn13 = info.industryIdentifiers.find(x => x.type === "ISBN_13");
           isbn = isbn13 ? isbn13.identifier : (info.industryIdentifiers[0]?.identifier || "");
         }
@@ -607,13 +733,15 @@ function AdminCarti() {
       });
       setRezultateGB(rezultate);
       if (rezultate.length === 0) setMesaj("Niciun rezultat gasit.");
-    } catch (e) {
+    } catch (e)
+    {
       setMesaj("Eroare la cautare Google Books!");
     }
     setCautandGB(false);
   };
 
-  const importaCarte = async (carte) => {
+  const importaCarte = async (carte) =>
+  {
     const res = await fetch(`${API}/carti`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -667,7 +795,8 @@ function AdminCarti() {
           <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
             <input
               value={searchCatalog}
-              onChange={e => {
+              onChange={e =>
+              {
                 setSearchCatalog(e.target.value);
                 if (!e.target.value) { setModCautare(false); incarcaCarti(1); }
               }}
@@ -764,7 +893,7 @@ function AdminCarti() {
               placeholder="Titlu *" style={inputStyle} />
             <input value={autor} onChange={e => setAutor(e.target.value)}
               placeholder="Autor *" style={inputStyle} />
-            <select value={tip} onChange={e => setTip(e.target.value) } style={inputStyle}>
+            <select value={tip} onChange={e => setTip(e.target.value)} style={inputStyle}>
               <option>FICTIUNE</option>
               <option>TEHNICA</option>
               <option>DIGITAL</option>
@@ -1362,6 +1491,243 @@ function Statistici()
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function Recomandari({ user })
+{
+  const [recomandari, setRecomandari] = useState([]);
+  const [genuri, setGenuri] = useState([]);
+  const [tipuri, setTipuri] = useState([]);
+  const [genSelectat, setGenSelectat] = useState("");
+  const [tipSelectat, setTipSelectat] = useState("");
+  const [incarcat, setIncarcat] = useState(false);
+  const [recenzii, setRecenzii] = useState({});
+  const [formRecenzie, setFormRecenzie] = useState({});
+  const [mesaj, setMesaj] = useState("");
+
+  useState(() =>
+  {
+    fetch(`${API}/genuri`).then(r => r.json()).then(d => setGenuri(Array.isArray(d) ? d : []));
+    fetch(`${API}/tipuri`).then(r => r.json()).then(d => setTipuri(Array.isArray(d) ? d : []));
+  }, []);
+
+  const incarcaRecomandari = async () =>
+  {
+    const params = new URLSearchParams();
+    if (genSelectat) params.append("gen", genSelectat);
+    if (tipSelectat) params.append("tip", tipSelectat);
+    const res = await fetch(`${API}/recomandari?${params}`);
+    const data = await res.json();
+    setRecomandari(Array.isArray(data) ? data : []);
+    setIncarcat(true);
+  };
+
+  const incarcaRecenzii = async (isbn) =>
+  {
+    if (recenzii[isbn]) return;
+    const res = await fetch(`${API}/recenzii/${isbn}`);
+    const data = await res.json();
+    setRecenzii(prev => ({ ...prev, [isbn]: Array.isArray(data) ? data : [] }));
+  };
+
+  const trimiteRecenzie = async (isbn) =>
+  {
+    const form = formRecenzie[isbn] || {};
+    if (!form.rating) { setMesaj("Selecteaza un rating!"); return; }
+    const res = await fetch(`${API}/recenzii`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id_utilizator: parseInt(user.id),
+        isbn,
+        rating: parseInt(form.rating),
+        comentariu: form.comentariu || ""
+      })
+    });
+    const text = await res.text();
+    setMesaj(text);
+    // Reincarca recenziile pentru cartea asta
+    setRecenzii(prev => ({ ...prev, [isbn]: null }));
+    setTimeout(() => incarcaRecenzii(isbn), 300);
+  };
+
+  const stele = (rating, interactiv = false, isbn = "") =>
+  {
+    return [1, 2, 3, 4, 5].map(i => (
+      <span
+        key={i}
+        onClick={() => interactiv && setFormRecenzie(prev => ({
+          ...prev, [isbn]: { ...prev[isbn], rating: i }
+        }))}
+        style={{
+          fontSize: interactiv ? "1.8rem" : "1rem",
+          cursor: interactiv ? "pointer" : "default",
+          color: i <= rating ? "#f4c430" : "#ddd"
+        }}
+      >★</span>
+    ));
+  };
+
+  return (
+    <div>
+      <h2 style={{ color: "#1a1a2e" }}>✨ Recomandari</h2>
+
+      {mesaj && (
+        <div style={{
+          background: "#e8f5e9", padding: "10px", borderRadius: "5px",
+          marginBottom: "15px", color: "#2e7d32", display: "flex", justifyContent: "space-between"
+        }}>
+          {mesaj}
+          <span style={{ cursor: "pointer" }} onClick={() => setMesaj("")}>✕</span>
+        </div>
+      )}
+
+      {/* Filtre */}
+      <div style={{
+        background: "white", padding: "20px", borderRadius: "10px",
+        marginBottom: "20px", boxShadow: "0 2px 10px rgba(0,0,0,0.1)"
+      }}>
+        <h3 style={{ marginTop: 0 }}>Ce vrei sa citesti?</h3>
+        <div style={{ display: "flex", gap: "15px", alignItems: "center", flexWrap: "wrap" }}>
+          <select
+            value={genSelectat}
+            onChange={e => setGenSelectat(e.target.value)}
+            style={{ ...inputStyle, minWidth: "200px" }}
+          >
+            <option value="">Orice gen</option>
+            {genuri.map((g, i) => <option key={i} value={g}>{g}</option>)}
+          </select>
+          <select
+            value={tipSelectat}
+            onChange={e => setTipSelectat(e.target.value)}
+            style={{ ...inputStyle, minWidth: "200px" }}
+          >
+            <option value="">Orice tip</option>
+            {tipuri.map((t, i) => <option key={i} value={t}>{t}</option>)}
+          </select>
+          <button onClick={incarcaRecomandari} style={btnPrimary}>
+            ✨ Recomanda-mi o carte
+          </button>
+          {(genSelectat || tipSelectat) && (
+            <button onClick={() => { setGenSelectat(""); setTipSelectat(""); }}
+              style={btnSecondary}>
+              Reseteaza filtre
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Rezultate */}
+      {incarcat && recomandari.length === 0 && (
+        <p style={{ color: "#888" }}>Nicio carte disponibila pentru filtrele selectate.</p>
+      )}
+
+      {recomandari.map((carte, i) => (
+        <div key={i} style={{
+          background: "white", borderRadius: "10px", marginBottom: "15px",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.1)", overflow: "hidden"
+        }}>
+          {/* Header carte */}
+          <div style={{ padding: "20px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+              <div style={{ flex: 1 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "5px" }}>
+                  <span style={{
+                    background: "#1a1a2e", color: "white",
+                    padding: "2px 10px", borderRadius: "10px", fontSize: "0.75rem"
+                  }}>#{i + 1}</span>
+                  <strong style={{ fontSize: "1.1rem" }}>{carte.titlu}</strong>
+                </div>
+                <div style={{ color: "#555", marginBottom: "8px" }}>{carte.autor}</div>
+                <div style={{ fontSize: "0.85rem", color: "#999" }}>
+                  {carte.tip} {carte.gen && `· ${carte.gen}`}
+                </div>
+              </div>
+              <div style={{ textAlign: "right", minWidth: "120px" }}>
+                <div style={{ fontSize: "1.2rem" }}>
+                  {stele(Math.round(carte.rating_mediu))}
+                </div>
+                <div style={{ fontSize: "0.8rem", color: "#888", marginTop: "3px" }}>
+                  {carte.rating_mediu > 0 ? carte.rating_mediu.toFixed(1) : "Fara rating"}
+                  {carte.nr_recenzii > 0 && ` (${carte.nr_recenzii} recenzii)`}
+                </div>
+                <div style={{ fontSize: "0.8rem", color: "#e94560", marginTop: "4px" }}>
+                  📖 {carte.nr_imprumuturi} imprumuturi
+                </div>
+              </div>
+            </div>
+
+            {/* Buton recenzii */}
+            <button
+              onClick={() => incarcaRecenzii(carte.isbn)}
+              style={{
+                background: "none", border: "1px solid #ddd", padding: "5px 12px",
+                borderRadius: "5px", cursor: "pointer", fontSize: "0.85rem",
+                marginTop: "10px", color: "#555"
+              }}
+            >
+              💬 Vezi recenzii
+            </button>
+          </div>
+
+          {/* Recenzii */}
+          {recenzii[carte.isbn] && (
+            <div style={{ borderTop: "1px solid #f0f0f0", padding: "20px", background: "#fafafa" }}>
+
+              {/* Lista recenzii existente */}
+              {recenzii[carte.isbn].length === 0 && (
+                <p style={{ color: "#aaa", margin: "0 0 15px 0" }}>Nicio recenzie inca. Fii primul!</p>
+              )}
+              {recenzii[carte.isbn].map((r, j) => (
+                <div key={j} style={{
+                  background: "white", padding: "12px", borderRadius: "8px",
+                  marginBottom: "8px", boxShadow: "0 1px 3px rgba(0,0,0,0.05)"
+                }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
+                    <strong style={{ fontSize: "0.9rem" }}>{r.nume_utilizator}</strong>
+                    <div>
+                      {stele(parseInt(r.rating))}
+                      <span style={{ fontSize: "0.75rem", color: "#aaa", marginLeft: "8px" }}>{r.data}</span>
+                    </div>
+                  </div>
+                  {r.comentariu && <p style={{ margin: 0, color: "#555", fontSize: "0.9rem" }}>{r.comentariu}</p>}
+                </div>
+              ))}
+
+              {/* Form adauga recenzie */}
+              {user && user.rol === "utilizator" && (
+                <div style={{ marginTop: "15px", borderTop: "1px solid #eee", paddingTop: "15px" }}>
+                  <strong style={{ fontSize: "0.9rem" }}>Adauga recenzie:</strong>
+                  <div style={{ margin: "8px 0" }}>
+                    {stele(formRecenzie[carte.isbn]?.rating || 0, true, carte.isbn)}
+                  </div>
+                  <textarea
+                    rows={2}
+                    placeholder="Comentariu (optional)..."
+                    value={formRecenzie[carte.isbn]?.comentariu || ""}
+                    onChange={e => setFormRecenzie(prev => ({
+                      ...prev, [carte.isbn]: { ...prev[carte.isbn], comentariu: e.target.value }
+                    }))}
+                    style={{
+                      width: "100%", padding: "8px", borderRadius: "5px",
+                      border: "1px solid #ddd", fontFamily: "inherit",
+                      fontSize: "0.9rem", resize: "vertical", boxSizing: "border-box"
+                    }}
+                  />
+                  <button
+                    onClick={() => trimiteRecenzie(carte.isbn)}
+                    style={{ ...btnPrimary, marginTop: "8px" }}
+                  >
+                    Trimite recenzie
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

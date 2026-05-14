@@ -40,19 +40,32 @@ int main() {
     });
 
     // ==================== IMPRUMUTURI ====================
-    CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
+CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 ([&db]() {
     auto imprumuturi = db.getImprumuturi();
     crow::json::wvalue result;
     int i = 0;
     for (auto& imp : imprumuturi) {
+        // Calculeaza zilele intarziere
+        struct tm tm = {};
+        strptime(imp["data_imprumut"].c_str(), "%Y-%m-%d %H:%M:%S", &tm);
+        time_t dataImp = mktime(&tm);
+        time_t acum = time(nullptr);
+        int zileScurse = (int)(difftime(acum, dataImp) / 86400);
+        int zileLimita = stoi(imp["zile_limita"]);
+        int intarziere = max(0, zileScurse - zileLimita);
+        double penalitate = intarziere * 0.5;
+
         result[i]["id"] = imp["id"];
-        result[i]["id_utilizator"] = imp["id_utilizator"]; // adaugat
+        result[i]["id_utilizator"] = imp["id_utilizator"];
         result[i]["nume_utilizator"] = imp["nume_utilizator"];
         result[i]["titlu_carte"] = imp["titlu_carte"];
         result[i]["isbn"] = imp["isbn"];
         result[i]["data_imprumut"] = imp["data_imprumut"];
         result[i]["zile_limita"] = imp["zile_limita"];
+        result[i]["zile_intarziere"] = intarziere;
+        result[i]["penalitate"] = penalitate;
+        result[i]["intarziat"] = intarziere > 0;
         i++;
     }
     return crow::response(result);
