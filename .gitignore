@@ -1,3 +1,17 @@
+# Binare compilate
+backend/api
 app
 test_runner
 *.o
+
+# Frontend build generat
+frontend/build/
+frontend/node_modules/
+
+# Logs
+/tmp/biblioteca.log
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

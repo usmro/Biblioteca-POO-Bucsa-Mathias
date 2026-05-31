@@ -1,0 +1,7138 @@
+[
+  {
+    "titlu": "21 Lessons for the 21st Century",
+    "autor": "Yuval Noah Harari",
+    "isbn": "9780525512172",
+    "tip": "AUDIOBOOK",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "A New Earth",
+    "autor": "Eckhart Tolle",
+    "isbn": "9780452289963",
+    "tip": "AUDIOBOOK",
+    "extra1": "Spiritualitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "A New Earth",
+    "autor": "Eckhart Tolle",
+    "isbn": "9780452289963-701",
+    "tip": "AUDIOBOOK",
+    "extra1": "Spiritualitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Random Walk Down Wall Street",
+    "autor": "Burton Malkiel",
+    "isbn": "9780393330338",
+    "tip": "AUDIOBOOK",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "Atomic Habits",
+    "autor": "James Clear",
+    "isbn": "9780735211292",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Blink",
+    "autor": "Malcolm Gladwell",
+    "isbn": "9780316010665",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Blink",
+    "autor": "Malcolm Gladwell",
+    "isbn": "9780316010665-711",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Born a Crime",
+    "autor": "Trevor Noah",
+    "isbn": "9780399588174",
+    "tip": "AUDIOBOOK",
+    "extra1": "Biografie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Built to Last",
+    "autor": "Jim Collins",
+    "isbn": "9780060516406",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Daring Greatly",
+    "autor": "Brené Brown",
+    "isbn": "9781592408412",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "David and Goliath",
+    "autor": "Malcolm Gladwell",
+    "isbn": "9780316204361",
+    "tip": "AUDIOBOOK",
+    "extra1": "Sociologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Deep Work",
+    "autor": "Cal Newport",
+    "isbn": "9781455586691",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Digital Minimalism",
+    "autor": "Cal Newport",
+    "isbn": "9780525536512",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Drive",
+    "autor": "Daniel Pink",
+    "isbn": "9781594484803",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Educated",
+    "autor": "Tara Westover",
+    "isbn": "9780399590504",
+    "tip": "AUDIOBOOK",
+    "extra1": "Biografie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Emotional Intelligence",
+    "autor": "Daniel Goleman",
+    "isbn": "9780553383713",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Everything Is F*cked",
+    "autor": "Mark Manson",
+    "isbn": "9780062888464",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Flow",
+    "autor": "Mihaly Csikszentmihalyi",
+    "isbn": "9780061339202",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Flow",
+    "autor": "Mihaly Csikszentmihalyi",
+    "isbn": "9780061339202-703",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Good to Great",
+    "autor": "Jim Collins",
+    "isbn": "9780066620992",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Good to Great",
+    "autor": "Jim Collins",
+    "isbn": "9780066620992-688",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Grit",
+    "autor": "Angela Duckworth",
+    "isbn": "9781501111105",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Homo Deus",
+    "autor": "Yuval Noah Harari",
+    "isbn": "9780062464316",
+    "tip": "AUDIOBOOK",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "How to Win Friends and Influence People",
+    "autor": "Dale Carnegie",
+    "isbn": "9780671027032",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Influence",
+    "autor": "Robert Cialdini",
+    "isbn": "9780062937650-698",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Influence: The Psychology of Persuasion",
+    "autor": "Robert B. Cialdini",
+    "isbn": "9780062937650",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Into the Wild",
+    "autor": "Jon Krakauer",
+    "isbn": "9780385486804",
+    "tip": "AUDIOBOOK",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Leaders Eat Last",
+    "autor": "Simon Sinek",
+    "isbn": "9781591848011",
+    "tip": "AUDIOBOOK",
+    "extra1": "Leadership",
+    "extra2": ""
+  },
+  {
+    "titlu": "Man's Search for Meaning",
+    "autor": "Viktor E. Frankl",
+    "isbn": "9780807014271",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Man's Search for Meaning",
+    "autor": "Viktor Frankl",
+    "isbn": "9780807014271-702",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Mindset",
+    "autor": "Carol Dweck",
+    "isbn": "9780345472328",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Never Split the Difference",
+    "autor": "Chris Voss",
+    "isbn": "9780062407801",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Outliers",
+    "autor": "Malcolm Gladwell",
+    "isbn": "9780316017930",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pre-Suasion",
+    "autor": "Robert Cialdini",
+    "isbn": "9781501109805",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Predictably Irrational",
+    "autor": "Dan Ariely",
+    "isbn": "9780061353246",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Quiet",
+    "autor": "Susan Cain",
+    "isbn": "9780307352149-708",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Quiet: The Power of Introverts",
+    "autor": "Susan Cain",
+    "isbn": "9780307352149",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rich Dad Poor Dad",
+    "autor": "Robert T. Kiyosaki",
+    "isbn": "9781612680194",
+    "tip": "AUDIOBOOK",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rich Dad Poor Dad",
+    "autor": "Robert Kiyosaki",
+    "isbn": "9781612680194-685",
+    "tip": "AUDIOBOOK",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rising Strong",
+    "autor": "Brené Brown",
+    "isbn": "9780812995848",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sapiens: A Brief History of Humankind",
+    "autor": "Yuval Noah Harari",
+    "isbn": "9780062316097",
+    "tip": "AUDIOBOOK",
+    "extra1": "Istorie",
+    "extra2": ""
+  },
+  {
+    "titlu": "So Good They Can't Ignore You",
+    "autor": "Cal Newport",
+    "isbn": "9781455509126",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Start with Why",
+    "autor": "Simon Sinek",
+    "isbn": "9781591846444",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Start with Why",
+    "autor": "Simon Sinek",
+    "isbn": "9781591846444-691",
+    "tip": "AUDIOBOOK",
+    "extra1": "Leadership",
+    "extra2": ""
+  },
+  {
+    "titlu": "The 7 Habits of Highly Effective People",
+    "autor": "Stephen R. Covey",
+    "isbn": "9780743269513",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The 7 Habits of Highly Effective People",
+    "autor": "Stephen Covey",
+    "isbn": "9781982137274",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Happiness",
+    "autor": "Dalai Lama",
+    "isbn": "9781594488894",
+    "tip": "AUDIOBOOK",
+    "extra1": "Spiritualitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Coddling of the American Mind",
+    "autor": "Jonathan Haidt",
+    "isbn": "9780735224896",
+    "tip": "AUDIOBOOK",
+    "extra1": "Sociologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Gifts of Imperfection",
+    "autor": "Brené Brown",
+    "isbn": "9781592858491",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Glass Castle",
+    "autor": "Jeannette Walls",
+    "isbn": "9780743247542",
+    "tip": "AUDIOBOOK",
+    "extra1": "Biografie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hard Thing About Hard Things",
+    "autor": "Ben Horowitz",
+    "isbn": "9780062273223",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hard Thing About Hard Things",
+    "autor": "Ben Horowitz",
+    "isbn": "9780062273208",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Infinite Game",
+    "autor": "Simon Sinek",
+    "isbn": "9780735213500",
+    "tip": "AUDIOBOOK",
+    "extra1": "Leadership",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Intelligent Investor",
+    "autor": "Benjamin Graham",
+    "isbn": "9780060555665",
+    "tip": "AUDIOBOOK",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Lean Startup",
+    "autor": "Eric Ries",
+    "isbn": "9780307887894",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Lean Startup",
+    "autor": "Eric Ries",
+    "isbn": "9780307887894-686",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Power of Now",
+    "autor": "Eckhart Tolle",
+    "isbn": "9781577314806",
+    "tip": "AUDIOBOOK",
+    "extra1": "Spiritualitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Power of Now",
+    "autor": "Eckhart Tolle",
+    "isbn": "9781577314806-700",
+    "tip": "AUDIOBOOK",
+    "extra1": "Spiritualitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Psychology of Money",
+    "autor": "Morgan Housel",
+    "isbn": "9780857197689",
+    "tip": "AUDIOBOOK",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Righteous Mind",
+    "autor": "Jonathan Haidt",
+    "isbn": "9780307377906",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Subtle Art of Not Giving a F*ck",
+    "autor": "Mark Manson",
+    "isbn": "9780062457714",
+    "tip": "AUDIOBOOK",
+    "extra1": "Dezvoltare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Tipping Point",
+    "autor": "Malcolm Gladwell",
+    "isbn": "9780316346627",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Tipping Point",
+    "autor": "Malcolm Gladwell",
+    "isbn": "9780316346627-710",
+    "tip": "AUDIOBOOK",
+    "extra1": "Sociologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Think and Grow Rich",
+    "autor": "Napoleon Hill",
+    "isbn": "9781585424337",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Thinking in Bets",
+    "autor": "Annie Duke",
+    "isbn": "9780735216358",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Thinking in Systems",
+    "autor": "Donella Meadows",
+    "isbn": "9781603580557",
+    "tip": "AUDIOBOOK",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "Thinking, Fast and Slow",
+    "autor": "Daniel Kahneman",
+    "isbn": "9780374533557",
+    "tip": "AUDIOBOOK",
+    "extra1": "Psihologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "To Sell Is Human",
+    "autor": "Daniel Pink",
+    "isbn": "9781594631900",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Zero to One",
+    "autor": "Peter Thiel",
+    "isbn": "9780804139021",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Zero to One",
+    "autor": "Peter Thiel",
+    "isbn": "9780804139021-687",
+    "tip": "AUDIOBOOK",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Asterix and the Gauls",
+    "autor": "René Goscinny",
+    "isbn": "9780752866536",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Umor",
+    "extra2": ""
+  },
+  {
+    "titlu": "Asterix and the Golden Sickle",
+    "autor": "René Goscinny",
+    "isbn": "9780752847429",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Umor",
+    "extra2": ""
+  },
+  {
+    "titlu": "Asterix at the Olympic Games",
+    "autor": "René Goscinny",
+    "isbn": "9780752847405",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Umor",
+    "extra2": ""
+  },
+  {
+    "titlu": "Batman: The Long Halloween",
+    "autor": "Jeph Loeb",
+    "isbn": "9781401232597",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "Batman: Year One",
+    "autor": "Frank Miller",
+    "isbn": "9781401207526",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "Daredevil: Born Again",
+    "autor": "Frank Miller",
+    "isbn": "9780871359247",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "Identity Crisis",
+    "autor": "Brad Meltzer",
+    "isbn": "9781401204587",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "Kingdom Come",
+    "autor": "Mark Waid",
+    "isbn": "9781401243029",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "Lucky Luke: Jesse James",
+    "autor": "Morris",
+    "isbn": "9781905460496",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Western",
+    "extra2": ""
+  },
+  {
+    "titlu": "Spider-Man: Blue",
+    "autor": "Jeph Loeb",
+    "isbn": "9780785113218",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Dark Knight Returns",
+    "autor": "Frank Miller",
+    "isbn": "9781563893421",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "Tintin in Tibet",
+    "autor": "Hergé",
+    "isbn": "9780316358460",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Tintin: The Black Island",
+    "autor": "Hergé",
+    "isbn": "9780316358200",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "X-Men: Days of Future Past",
+    "autor": "Chris Claremont",
+    "isbn": "9780785163138",
+    "tip": "BENZI_DESENATE",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Promised Land",
+    "autor": "Barack Obama",
+    "isbn": "9781524763169",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Alexander Hamilton",
+    "autor": "Ron Chernow",
+    "isbn": "9780143034759",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Bad Blood",
+    "autor": "John Carreyrou",
+    "isbn": "9780525431992",
+    "tip": "BIOGRAFIE",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Becoming",
+    "autor": "Michelle Obama",
+    "isbn": "9781524763138",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Behind the Curve",
+    "autor": "Lee McIntyre",
+    "isbn": "9780262538985",
+    "tip": "BIOGRAFIE",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "Benjamin Franklin",
+    "autor": "Walter Isaacson",
+    "isbn": "9780743223133",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Born to Run",
+    "autor": "Christopher McDougall",
+    "isbn": "9780307279187",
+    "tip": "BIOGRAFIE",
+    "extra1": "Sport",
+    "extra2": ""
+  },
+  {
+    "titlu": "Churchill: Walking with Destiny",
+    "autor": "Andrew Roberts",
+    "isbn": "9780670027781",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Educated",
+    "autor": "Tara Westover",
+    "isbn": "9780399590504-877",
+    "tip": "BIOGRAFIE",
+    "extra1": "Memorialistica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Einstein: His Life and Universe",
+    "autor": "Walter Isaacson",
+    "isbn": "9780743264747",
+    "tip": "BIOGRAFIE",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "Elon Musk",
+    "autor": "Walter Isaacson",
+    "isbn": "9781982181284",
+    "tip": "BIOGRAFIE",
+    "extra1": "Tehnologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Flash Boys",
+    "autor": "Michael Lewis",
+    "isbn": "9780393244663",
+    "tip": "BIOGRAFIE",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "Grant",
+    "autor": "Ron Chernow",
+    "isbn": "9781594205019",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Grinding It Out",
+    "autor": "Ray Kroc",
+    "isbn": "9780312929510",
+    "tip": "BIOGRAFIE",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hillbilly Elegy",
+    "autor": "J.D. Vance",
+    "isbn": "9780062300546",
+    "tip": "BIOGRAFIE",
+    "extra1": "Memorialistica",
+    "extra2": ""
+  },
+  {
+    "titlu": "I Am Malala",
+    "autor": "Malala Yousafzai",
+    "isbn": "9780316322423",
+    "tip": "BIOGRAFIE",
+    "extra1": "Educatie",
+    "extra2": ""
+  },
+  {
+    "titlu": "I Know Why the Caged Bird Sings",
+    "autor": "Maya Angelou",
+    "isbn": "9780345514400",
+    "tip": "BIOGRAFIE",
+    "extra1": "Literatura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Just Kids",
+    "autor": "Patti Smith",
+    "isbn": "9780060936228",
+    "tip": "BIOGRAFIE",
+    "extra1": "Arta",
+    "extra2": ""
+  },
+  {
+    "titlu": "Kitchen Confidential",
+    "autor": "Anthony Bourdain",
+    "isbn": "9780060934910",
+    "tip": "BIOGRAFIE",
+    "extra1": "Gastronomie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Leonardo da Vinci",
+    "autor": "Walter Isaacson",
+    "isbn": "9781501139154",
+    "tip": "BIOGRAFIE",
+    "extra1": "Arta",
+    "extra2": ""
+  },
+  {
+    "titlu": "Liar's Poker",
+    "autor": "Michael Lewis",
+    "isbn": "9780140143459",
+    "tip": "BIOGRAFIE",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "Long Walk to Freedom",
+    "autor": "Nelson Mandela",
+    "isbn": "9780316548182",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Made in America",
+    "autor": "Sam Walton",
+    "isbn": "9780553562835",
+    "tip": "BIOGRAFIE",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "My Brilliant Career",
+    "autor": "Miles Franklin",
+    "isbn": "9781877008023",
+    "tip": "BIOGRAFIE",
+    "extra1": "Literatura",
+    "extra2": ""
+  },
+  {
+    "titlu": "My Experiments with Truth",
+    "autor": "Mahatma Gandhi",
+    "isbn": "9780486245935",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "My Own Life",
+    "autor": "Oliver Sacks",
+    "isbn": "9780385353410",
+    "tip": "BIOGRAFIE",
+    "extra1": "Medicina",
+    "extra2": ""
+  },
+  {
+    "titlu": "Napoleon",
+    "autor": "Andrew Roberts",
+    "isbn": "9780670025329",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "No Filter",
+    "autor": "Sarah Frier",
+    "isbn": "9781982126803",
+    "tip": "BIOGRAFIE",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Open",
+    "autor": "Andre Agassi",
+    "isbn": "9781400075423",
+    "tip": "BIOGRAFIE",
+    "extra1": "Sport",
+    "extra2": ""
+  },
+  {
+    "titlu": "Personal Memoirs of U.S. Grant",
+    "autor": "Ulysses S. Grant",
+    "isbn": "9780140437010",
+    "tip": "BIOGRAFIE",
+    "extra1": "Razboi",
+    "extra2": ""
+  },
+  {
+    "titlu": "Shoe Dog",
+    "autor": "Phil Knight",
+    "isbn": "9781501135927",
+    "tip": "BIOGRAFIE",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Steve Jobs",
+    "autor": "Walter Isaacson",
+    "isbn": "9781451648539",
+    "tip": "BIOGRAFIE",
+    "extra1": "Tehnologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Surely You're Joking, Mr. Feynman!",
+    "autor": "Richard Feynman",
+    "isbn": "9780393316049",
+    "tip": "BIOGRAFIE",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Fielding",
+    "autor": "Chad Harbach",
+    "isbn": "9780316126687",
+    "tip": "BIOGRAFIE",
+    "extra1": "Sport",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Autobiography of Benjamin Franklin",
+    "autor": "Benjamin Franklin",
+    "isbn": "9780486290737",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Autobiography of Malcolm X",
+    "autor": "Malcolm X",
+    "isbn": "9780345350688",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Big Short",
+    "autor": "Michael Lewis",
+    "isbn": "9780393338829",
+    "tip": "BIOGRAFIE",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Diary of Frida Kahlo",
+    "autor": "Frida Kahlo",
+    "isbn": "9780810959590",
+    "tip": "BIOGRAFIE",
+    "extra1": "Arta",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Diary of a Young Girl",
+    "autor": "Anne Frank",
+    "isbn": "9780553296983",
+    "tip": "BIOGRAFIE",
+    "extra1": "Razboi",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Everything Store",
+    "autor": "Brad Stone",
+    "isbn": "9780316219266",
+    "tip": "BIOGRAFIE",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Glass Castle",
+    "autor": "Jeannette Walls",
+    "isbn": "9780743247542-876",
+    "tip": "BIOGRAFIE",
+    "extra1": "Memorialistica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Immortal Life of Henrietta Lacks",
+    "autor": "Rebecca Skloot",
+    "isbn": "9781400052189",
+    "tip": "BIOGRAFIE",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Innovators",
+    "autor": "Walter Isaacson",
+    "isbn": "9781476708706",
+    "tip": "BIOGRAFIE",
+    "extra1": "Tehnologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Man Who Mistook His Wife for a Hat",
+    "autor": "Oliver Sacks",
+    "isbn": "9780684853949",
+    "tip": "BIOGRAFIE",
+    "extra1": "Medicina",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Smartest Guys in the Room",
+    "autor": "Bethany McLean",
+    "isbn": "9781591840534",
+    "tip": "BIOGRAFIE",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Story of My Experiments",
+    "autor": "Mahatma Gandhi",
+    "isbn": "9780807059098",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Washington: A Life",
+    "autor": "Ron Chernow",
+    "isbn": "9781594202667",
+    "tip": "BIOGRAFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "When Breath Becomes Air",
+    "autor": "Paul Kalanithi",
+    "isbn": "9780812988406",
+    "tip": "BIOGRAFIE",
+    "extra1": "Medicina",
+    "extra2": ""
+  },
+  {
+    "titlu": "When Genius Failed",
+    "autor": "Roger Lowenstein",
+    "isbn": "9780375758256",
+    "tip": "BIOGRAFIE",
+    "extra1": "Finante",
+    "extra2": ""
+  },
+  {
+    "titlu": "Wild",
+    "autor": "Cheryl Strayed",
+    "isbn": "9780307476074",
+    "tip": "BIOGRAFIE",
+    "extra1": "Memorialistica",
+    "extra2": ""
+  },
+  {
+    "titlu": "21 Lessons for the 21st Century",
+    "autor": "Yuval Noah Harari",
+    "isbn": "9780525512172-755",
+    "tip": "DIGITAL",
+    "extra1": "Societate",
+    "extra2": ""
+  },
+  {
+    "titlu": "AWS in Action",
+    "autor": "Andreas Wittig",
+    "isbn": "9781617295119",
+    "tip": "DIGITAL",
+    "extra1": "Cloud",
+    "extra2": "link_aws"
+  },
+  {
+    "titlu": "Ansible for DevOps",
+    "autor": "Jeff Geerling",
+    "isbn": "9780986393426",
+    "tip": "DIGITAL",
+    "extra1": "DevOps",
+    "extra2": "link_ansible"
+  },
+  {
+    "titlu": "Automate the Boring Stuff with Python",
+    "autor": "Al Sweigart",
+    "isbn": "9781593279929",
+    "tip": "DIGITAL",
+    "extra1": "Python",
+    "extra2": "link_abs"
+  },
+  {
+    "titlu": "Blockchain Revolution",
+    "autor": "Don Tapscott",
+    "isbn": "9781101980132",
+    "tip": "DIGITAL",
+    "extra1": "Blockchain",
+    "extra2": ""
+  },
+  {
+    "titlu": "Data Structures and Algorithms in Python",
+    "autor": "Michael T. Goodrich",
+    "isbn": "9781118290279",
+    "tip": "DIGITAL",
+    "extra1": "Algoritmi",
+    "extra2": "link_dsa"
+  },
+  {
+    "titlu": "Deep Work",
+    "autor": "Cal Newport",
+    "isbn": "9781455586691-749",
+    "tip": "DIGITAL",
+    "extra1": "Productivitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "Digital Minimalism",
+    "autor": "Cal Newport",
+    "isbn": "9780525536512-748",
+    "tip": "DIGITAL",
+    "extra1": "Tehnologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Django for Beginners",
+    "autor": "William S. Vincent",
+    "isbn": "9781983172663",
+    "tip": "DIGITAL",
+    "extra1": "Web",
+    "extra2": "link_django"
+  },
+  {
+    "titlu": "FastAPI",
+    "autor": "Bill Lubanovic",
+    "isbn": "9781098135508",
+    "tip": "DIGITAL",
+    "extra1": "Web",
+    "extra2": "link_fastapi"
+  },
+  {
+    "titlu": "Flask Web Development",
+    "autor": "Miguel Grinberg",
+    "isbn": "9781491991732",
+    "tip": "DIGITAL",
+    "extra1": "Web",
+    "extra2": "link_flask"
+  },
+  {
+    "titlu": "Google Cloud Platform in Action",
+    "autor": "JJ Geewax",
+    "isbn": "9781617293948",
+    "tip": "DIGITAL",
+    "extra1": "Cloud",
+    "extra2": "link_gcp"
+  },
+  {
+    "titlu": "Hacking with Swift",
+    "autor": "Paul Hudson",
+    "isbn": "9781973579489",
+    "tip": "DIGITAL",
+    "extra1": "Mobile",
+    "extra2": "link_hws"
+  },
+  {
+    "titlu": "Homo Deus",
+    "autor": "Yuval Noah Harari",
+    "isbn": "9780062464316-754",
+    "tip": "DIGITAL",
+    "extra1": "Viitor",
+    "extra2": ""
+  },
+  {
+    "titlu": "Human Compatible",
+    "autor": "Stuart Russell",
+    "isbn": "9780525558613",
+    "tip": "DIGITAL",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Introduction to Machine Learning with Python",
+    "autor": "Andreas Müller",
+    "isbn": "9781449369415",
+    "tip": "DIGITAL",
+    "extra1": "AI",
+    "extra2": "link_ml"
+  },
+  {
+    "titlu": "Kotlin Programming: The Big Nerd Ranch Guide",
+    "autor": "Josh Skeen",
+    "isbn": "9780135161318",
+    "tip": "DIGITAL",
+    "extra1": "Mobile",
+    "extra2": "link_kotlin"
+  },
+  {
+    "titlu": "Learn Git in a Month of Lunches",
+    "autor": "Rick Umali",
+    "isbn": "9781617292415",
+    "tip": "DIGITAL",
+    "extra1": "DevOps",
+    "extra2": "link_git"
+  },
+  {
+    "titlu": "Life 3.0",
+    "autor": "Max Tegmark",
+    "isbn": "9781101970317",
+    "tip": "DIGITAL",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Natural Language Processing with Python",
+    "autor": "Steven Bird",
+    "isbn": "9780596516499",
+    "tip": "DIGITAL",
+    "extra1": "AI",
+    "extra2": "link_nlp"
+  },
+  {
+    "titlu": "Platform Revolution",
+    "autor": "Geoffrey Parker",
+    "isbn": "9780393354355",
+    "tip": "DIGITAL",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "Python Crash Course",
+    "autor": "Eric Matthes",
+    "isbn": "9781718502703",
+    "tip": "DIGITAL",
+    "extra1": "Python",
+    "extra2": "link_py"
+  },
+  {
+    "titlu": "React Design Patterns and Best Practices",
+    "autor": "Michele Bertoli",
+    "isbn": "9781789530551",
+    "tip": "DIGITAL",
+    "extra1": "JavaScript",
+    "extra2": "link_react"
+  },
+  {
+    "titlu": "SQL Cookbook",
+    "autor": "Anthony Molinaro",
+    "isbn": "9780596009762",
+    "tip": "DIGITAL",
+    "extra1": "Baze de Date",
+    "extra2": "link_sql"
+  },
+  {
+    "titlu": "So Good They Can't Ignore You",
+    "autor": "Cal Newport",
+    "isbn": "9781455509126-750",
+    "tip": "DIGITAL",
+    "extra1": "Cariera",
+    "extra2": ""
+  },
+  {
+    "titlu": "Superintelligence",
+    "autor": "Nick Bostrom",
+    "isbn": "9780198739838",
+    "tip": "DIGITAL",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "TensorFlow 2 Pocket Reference",
+    "autor": "KC Tung",
+    "isbn": "9781492089988",
+    "tip": "DIGITAL",
+    "extra1": "AI",
+    "extra2": "link_tf"
+  },
+  {
+    "titlu": "Terraform in Practice",
+    "autor": "Rosemary Wang",
+    "isbn": "9781617296428",
+    "tip": "DIGITAL",
+    "extra1": "Cloud",
+    "extra2": "link_tf"
+  },
+  {
+    "titlu": "The Age of Surveillance Capitalism",
+    "autor": "Shoshana Zuboff",
+    "isbn": "9781610395694",
+    "tip": "DIGITAL",
+    "extra1": "Societate",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Innovator's Dilemma",
+    "autor": "Clayton Christensen",
+    "isbn": "9780062060242",
+    "tip": "DIGITAL",
+    "extra1": "Business",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Master Algorithm",
+    "autor": "Pedro Domingos",
+    "isbn": "9780465065707",
+    "tip": "DIGITAL",
+    "extra1": "ML",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Nature of Code",
+    "autor": "Daniel Shiffman",
+    "isbn": "9780985930806",
+    "tip": "DIGITAL",
+    "extra1": "Programare",
+    "extra2": "link_noc"
+  },
+  {
+    "titlu": "The Second Machine Age",
+    "autor": "Erik Brynjolfsson",
+    "isbn": "9780393350647",
+    "tip": "DIGITAL",
+    "extra1": "Economie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Self-Taught Computer Scientist",
+    "autor": "Cory Althoff",
+    "isbn": "9781119724414",
+    "tip": "DIGITAL",
+    "extra1": "Programare",
+    "extra2": "link_stcs"
+  },
+  {
+    "titlu": "The Shallows",
+    "autor": "Nicholas Carr",
+    "isbn": "9780393339758",
+    "tip": "DIGITAL",
+    "extra1": "Tehnologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Think Complexity",
+    "autor": "Allen B. Downey",
+    "isbn": "9781492040200",
+    "tip": "DIGITAL",
+    "extra1": "Algoritmi",
+    "extra2": "link_tc"
+  },
+  {
+    "titlu": "Think Python",
+    "autor": "Allen B. Downey",
+    "isbn": "9781491939369",
+    "tip": "DIGITAL",
+    "extra1": "Python",
+    "extra2": "link_tp"
+  },
+  {
+    "titlu": "TypeScript Deep Dive",
+    "autor": "Basarat Ali Syed",
+    "isbn": "9781980078029",
+    "tip": "DIGITAL",
+    "extra1": "JavaScript",
+    "extra2": "link_ts"
+  },
+  {
+    "titlu": "Vue.js: Up and Running",
+    "autor": "Callum Macrae",
+    "isbn": "9781491997246",
+    "tip": "DIGITAL",
+    "extra1": "JavaScript",
+    "extra2": "link_vue"
+  },
+  {
+    "titlu": "Weapons of Math Destruction",
+    "autor": "Cathy O'Neil",
+    "isbn": "9780553418811",
+    "tip": "DIGITAL",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Encyclopedia of Mathematics",
+    "autor": "Various Authors",
+    "isbn": "9781402006265",
+    "tip": "ENCICLOPEDIE",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Encyclopedia of Science and Technology",
+    "autor": "Various Authors",
+    "isbn": "9780071441438",
+    "tip": "ENCICLOPEDIE",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "Encyclopedia of Space",
+    "autor": "Various Authors",
+    "isbn": "9781742571621",
+    "tip": "ENCICLOPEDIE",
+    "extra1": "Astronomie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Encyclopedia of World History",
+    "autor": "Various Authors",
+    "isbn": "9780544152939",
+    "tip": "ENCICLOPEDIE",
+    "extra1": "Istorie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Oxford Medical Dictionary",
+    "autor": "Various Authors",
+    "isbn": "9780198714682",
+    "tip": "ENCICLOPEDIE",
+    "extra1": "Medicina",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Illustrated Encyclopedia of the Universe",
+    "autor": "Various Authors",
+    "isbn": "9780823040308",
+    "tip": "ENCICLOPEDIE",
+    "extra1": "Astronomie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Oxford Encyclopedia of Philosophy",
+    "autor": "Various Authors",
+    "isbn": "9780195279689",
+    "tip": "ENCICLOPEDIE",
+    "extra1": "Filozofie",
+    "extra2": ""
+  },
+  {
+    "titlu": "World Encyclopedia of Animals",
+    "autor": "Various Authors",
+    "isbn": "9781842157442",
+    "tip": "ENCICLOPEDIE",
+    "extra1": "Natura",
+    "extra2": ""
+  },
+  {
+    "titlu": "1984",
+    "autor": "George Orwell",
+    "isbn": "9780451524935",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "1Q84",
+    "autor": "Haruki Murakami",
+    "isbn": "9780307593313",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "20,000 Leagues Under the Sea",
+    "autor": "Jules Verne",
+    "isbn": "9780486440750",
+    "tip": "FICTIUNE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "20,000 Leagues Under the Sea",
+    "autor": "Jules Verne",
+    "isbn": "9780140440393",
+    "tip": "FICTIUNE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "2001: A Space Odyssey",
+    "autor": "Arthur C. Clarke",
+    "isbn": "9780451457998",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "2001: A Space Odyssey",
+    "autor": "Arthur C. Clarke",
+    "isbn": "9780451457998-664",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Clash of Kings",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553381696",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Clash of Kings",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553381696-630",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Dance with Dragons",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553801514",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Dance with Dragons",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553385953",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Farewell to Arms",
+    "autor": "Ernest Hemingway",
+    "isbn": "9780684801469",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Farewell to Arms",
+    "autor": "Ernest Hemingway",
+    "isbn": "9780684801469-617",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Feast for Crows",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553801507",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Feast for Crows",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553382068",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Game of Thrones",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553381689",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Game of Thrones",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553381689-629",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Man Called Ove",
+    "autor": "Fredrik Backman",
+    "isbn": "9781476738024",
+    "tip": "FICTIUNE",
+    "extra1": "Contemporary",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Portrait of the Artist as a Young Man",
+    "autor": "James Joyce",
+    "isbn": "9780142437346",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Storm of Swords",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553381702",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Storm of Swords",
+    "autor": "George R.R. Martin",
+    "isbn": "9780553381700",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Tale of Two Cities",
+    "autor": "Charles Dickens",
+    "isbn": "9780141439600",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Thousand Splendid Suns",
+    "autor": "Khaled Hosseini",
+    "isbn": "9781594483073",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Thousand Splendid Suns",
+    "autor": "Khaled Hosseini",
+    "isbn": "9781594483073-603",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Wizard of Earthsea",
+    "autor": "Ursula K. Le Guin",
+    "isbn": "9780547722023",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Adela",
+    "autor": "Garabet Ibraileanu",
+    "isbn": "9789736692529",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Adventures of Huckleberry Finn",
+    "autor": "Mark Twain",
+    "isbn": "9780142437179",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Adventures of Tom Sawyer",
+    "autor": "Mark Twain",
+    "isbn": "9780486400778",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "All the Light We Cannot See",
+    "autor": "Anthony Doerr",
+    "isbn": "9781476746586",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "All the Light We Cannot See",
+    "autor": "Anthony Doerr",
+    "isbn": "9781476746586-607",
+    "tip": "FICTIUNE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "American Gods",
+    "autor": "Neil Gaiman",
+    "isbn": "9780380789030",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "American Gods",
+    "autor": "Neil Gaiman",
+    "isbn": "9780380789030-643",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "American Psycho",
+    "autor": "Bret Easton Ellis",
+    "isbn": "9780679735779",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Amintiri din copilarie",
+    "autor": "Ion Creanga",
+    "isbn": "9789736692635",
+    "tip": "FICTIUNE",
+    "extra1": "Memorialistica",
+    "extra2": ""
+  },
+  {
+    "titlu": "And Then There Were None",
+    "autor": "Agatha Christie",
+    "isbn": "9780312330873",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "And Then There Were None",
+    "autor": "Agatha Christie",
+    "isbn": "9780062073488",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Angels and Demons",
+    "autor": "Dan Brown",
+    "isbn": "9780671027360",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Angels and Demons",
+    "autor": "Dan Brown",
+    "isbn": "9780671027360-577",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Animal Farm",
+    "autor": "George Orwell",
+    "isbn": "9780451526342",
+    "tip": "FICTIUNE",
+    "extra1": "Satira",
+    "extra2": ""
+  },
+  {
+    "titlu": "Anna Karenina",
+    "autor": "Leo Tolstoy",
+    "isbn": "9780143035008",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Anxious People",
+    "autor": "Fredrik Backman",
+    "isbn": "9781501160837",
+    "tip": "FICTIUNE",
+    "extra1": "Contemporary",
+    "extra2": ""
+  },
+  {
+    "titlu": "Around the World in Eighty Days",
+    "autor": "Jules Verne",
+    "isbn": "9780140440405",
+    "tip": "FICTIUNE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Assassin's Apprentice",
+    "autor": "Robin Hobb",
+    "isbn": "9780553573398",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Atlas Shrugged",
+    "autor": "Ayn Rand",
+    "isbn": "9780452011876",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Atonement",
+    "autor": "Ian McEwan",
+    "isbn": "9780385721790",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "Baltagul",
+    "autor": "Mihail Sadoveanu",
+    "isbn": "9789736692444",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Beloved",
+    "autor": "Toni Morrison",
+    "isbn": "9781400033416",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "Beloved",
+    "autor": "Toni Morrison",
+    "isbn": "9781400033416-622",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Bietul Ioanide",
+    "autor": "George Calinescu",
+    "isbn": "9789736692437",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Big Magic",
+    "autor": "Elizabeth Gilbert",
+    "isbn": "9781594634727",
+    "tip": "FICTIUNE",
+    "extra1": "Inspirational",
+    "extra2": ""
+  },
+  {
+    "titlu": "Blood Meridian",
+    "autor": "Cormac McCarthy",
+    "isbn": "9780679728757",
+    "tip": "FICTIUNE",
+    "extra1": "Western",
+    "extra2": ""
+  },
+  {
+    "titlu": "Brave New World",
+    "autor": "Aldous Huxley",
+    "isbn": "9780060850524",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Cat's Cradle",
+    "autor": "Kurt Vonnegut",
+    "isbn": "9780385333481",
+    "tip": "FICTIUNE",
+    "extra1": "Satira",
+    "extra2": ""
+  },
+  {
+    "titlu": "Cel mai iubit dintre pamanteni Vol. 1",
+    "autor": "Marin Preda",
+    "isbn": "9789737366695",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Cel mai iubit dintre pamanteni Vol. 2",
+    "autor": "Marin Preda",
+    "isbn": "9789737366701",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Cezar Petrescu: Intunecare",
+    "autor": "Cezar Petrescu",
+    "isbn": "9789736692581",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Childhood's End",
+    "autor": "Arthur C. Clarke",
+    "isbn": "9780345347954",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Childhood's End",
+    "autor": "Arthur C. Clarke",
+    "isbn": "9780345347954-665",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Children of Dune",
+    "autor": "Frank Herbert",
+    "isbn": "9780441104000",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Children of Dune",
+    "autor": "Frank Herbert",
+    "isbn": "9780593098240",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ciocoii vechi si noi",
+    "autor": "Nicolae Filimon",
+    "isbn": "9789736692475",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Concert din muzica de Bach",
+    "autor": "Hortensia Papadat-Bengescu",
+    "isbn": "9789736692550",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Conversations with Friends",
+    "autor": "Sally Rooney",
+    "isbn": "9780571333134",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "Craii de Curtea-Veche",
+    "autor": "Mateiu Caragiale",
+    "isbn": "9789736692567",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Crime and Punishment",
+    "autor": "Fyodor Dostoevsky",
+    "isbn": "9780486415871",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dark Places",
+    "autor": "Gillian Flynn",
+    "isbn": "9780307341570",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "David Copperfield",
+    "autor": "Charles Dickens",
+    "isbn": "9780140439441",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death on the Nile",
+    "autor": "Agatha Christie",
+    "isbn": "9780062074003",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death on the Nile",
+    "autor": "Agatha Christie",
+    "isbn": "9780062073570",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death's End",
+    "autor": "Liu Cixin",
+    "isbn": "9780765386700",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death's End",
+    "autor": "Liu Cixin",
+    "isbn": "9780765386632",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Demian",
+    "autor": "Hermann Hesse",
+    "isbn": "9780060931001",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Do Androids Dream of Electric Sheep?",
+    "autor": "Philip K. Dick",
+    "isbn": "9780345404473",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Don Quixote",
+    "autor": "Miguel de Cervantes",
+    "isbn": "9780060934347",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dracula",
+    "autor": "Bram Stoker",
+    "isbn": "9780141439846",
+    "tip": "FICTIUNE",
+    "extra1": "Horror",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dune",
+    "autor": "Frank Herbert",
+    "isbn": "9780441013593",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dune Messiah",
+    "autor": "Frank Herbert",
+    "isbn": "9780441172696",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dune Messiah",
+    "autor": "Frank Herbert",
+    "isbn": "9780593098233",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "East of Eden",
+    "autor": "John Steinbeck",
+    "isbn": "9780140186390",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "East of Eden",
+    "autor": "John Steinbeck",
+    "isbn": "9780140186390-619",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Eat Pray Love",
+    "autor": "Elizabeth Gilbert",
+    "isbn": "9780143038412",
+    "tip": "FICTIUNE",
+    "extra1": "Memorialistica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Elantris",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765350374",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Elantris",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765350374-641",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Eldest",
+    "autor": "Christopher Paolini",
+    "isbn": "9780375826825",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Eleanor Oliphant Is Completely Fine",
+    "autor": "Gail Honeyman",
+    "isbn": "9780735220683",
+    "tip": "FICTIUNE",
+    "extra1": "Contemporary",
+    "extra2": ""
+  },
+  {
+    "titlu": "Emma",
+    "autor": "Jane Austen",
+    "isbn": "9780141439587",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ender's Game",
+    "autor": "Orson Scott Card",
+    "isbn": "9780812550702",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Enigma Otiliei",
+    "autor": "George Calinescu",
+    "isbn": "9789736692420",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Eragon",
+    "autor": "Christopher Paolini",
+    "isbn": "9780375826696",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fahrenheit 451",
+    "autor": "Ray Bradbury",
+    "isbn": "9781451673319",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ficciones",
+    "autor": "Jorge Luis Borges",
+    "isbn": "9780802130303",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Flowers for Algernon",
+    "autor": "Daniel Keyes",
+    "isbn": "9780156030304",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "For Whom the Bell Tolls",
+    "autor": "Ernest Hemingway",
+    "isbn": "9780684803357",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "For Whom the Bell Tolls",
+    "autor": "Ernest Hemingway",
+    "isbn": "9780684803357-618",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Foucault's Pendulum",
+    "autor": "Umberto Eco",
+    "isbn": "9780156032971",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Foundation",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553293357",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Foundation and Empire",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553293371",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Foundation and Empire",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553293371-661",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Frankenstein",
+    "autor": "Mary Shelley",
+    "isbn": "9780486282114",
+    "tip": "FICTIUNE",
+    "extra1": "Horror",
+    "extra2": ""
+  },
+  {
+    "titlu": "Frankenstein",
+    "autor": "Mary Shelley",
+    "isbn": "9780486282114-672",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fratii Jderi Vol. 1",
+    "autor": "Mihail Sadoveanu",
+    "isbn": "9789736692468",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Germinal",
+    "autor": "Émile Zola",
+    "isbn": "9780140447422",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "God Emperor of Dune",
+    "autor": "Frank Herbert",
+    "isbn": "9780593098257",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Gone Girl",
+    "autor": "Gillian Flynn",
+    "isbn": "9780307588364",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Gone Girl",
+    "autor": "Gillian Flynn",
+    "isbn": "9780307588371",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Good Omens",
+    "autor": "Terry Pratchett",
+    "isbn": "9780060853983",
+    "tip": "FICTIUNE",
+    "extra1": "Umor",
+    "extra2": ""
+  },
+  {
+    "titlu": "Good Omens",
+    "autor": "Terry Pratchett",
+    "isbn": "9780060853976",
+    "tip": "FICTIUNE",
+    "extra1": "Comedie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Great Expectations",
+    "autor": "Charles Dickens",
+    "isbn": "9780141439563",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Groapa",
+    "autor": "Eugen Barbu",
+    "isbn": "9789736692598",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Guards! Guards!",
+    "autor": "Terry Pratchett",
+    "isbn": "9780062225740",
+    "tip": "FICTIUNE",
+    "extra1": "Comedie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hanu Ancutei",
+    "autor": "Mihail Sadoveanu",
+    "isbn": "9789736692451",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Harap-Alb",
+    "autor": "Ion Creanga",
+    "isbn": "9789736692611",
+    "tip": "FICTIUNE",
+    "extra1": "Basm",
+    "extra2": ""
+  },
+  {
+    "titlu": "Harry Potter and the Chamber of Secrets",
+    "autor": "J.K. Rowling",
+    "isbn": "9780439064873",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Harry Potter and the Deathly Hallows",
+    "autor": "J.K. Rowling",
+    "isbn": "9780545010221",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Harry Potter and the Goblet of Fire",
+    "autor": "J.K. Rowling",
+    "isbn": "9780439139595",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Harry Potter and the Half-Blood Prince",
+    "autor": "J.K. Rowling",
+    "isbn": "9780439784542",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Harry Potter and the Order of the Phoenix",
+    "autor": "J.K. Rowling",
+    "isbn": "9780439358064",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Harry Potter and the Philosopher's Stone",
+    "autor": "J.K. Rowling",
+    "isbn": "9780590353427",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Harry Potter and the Prisoner of Azkaban",
+    "autor": "J.K. Rowling",
+    "isbn": "9780439136358",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "His Dark Materials: Northern Lights",
+    "autor": "Philip Pullman",
+    "isbn": "9780440418566",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "His Dark Materials: The Amber Spyglass",
+    "autor": "Philip Pullman",
+    "isbn": "9780440418580",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "His Dark Materials: The Subtle Knife",
+    "autor": "Philip Pullman",
+    "isbn": "9780440418573",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Homegoing",
+    "autor": "Yaa Gyasi",
+    "isbn": "9781101971062",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hyperion",
+    "autor": "Dan Simmons",
+    "isbn": "9780553283686",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hyperion",
+    "autor": "Dan Simmons",
+    "isbn": "9780553283686-675",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "I, Robot",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553294385",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "I, Robot",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553294385-659",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "In the Name of the Rose",
+    "autor": "Umberto Eco",
+    "isbn": "9780156001311",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "In the Woods",
+    "autor": "Tana French",
+    "isbn": "9780143113492",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Inferno",
+    "autor": "Dan Brown",
+    "isbn": "9780307947284",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Inferno",
+    "autor": "Dan Brown",
+    "isbn": "9780385537858",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Interview with the Vampire",
+    "autor": "Anne Rice",
+    "isbn": "9780345337665",
+    "tip": "FICTIUNE",
+    "extra1": "Horror",
+    "extra2": ""
+  },
+  {
+    "titlu": "Invisible Man",
+    "autor": "Ralph Ellison",
+    "isbn": "9780679732761",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ion",
+    "autor": "Liviu Rebreanu",
+    "isbn": "9789731361123",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Jane Eyre",
+    "autor": "Charlotte Bronte",
+    "isbn": "9780141441146",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Jonathan Livingston Seagull",
+    "autor": "Richard Bach",
+    "isbn": "9780743278904",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Jonathan Strange & Mr Norrell",
+    "autor": "Susanna Clarke",
+    "isbn": "9781582344164",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Journey to the Center of the Earth",
+    "autor": "Jules Verne",
+    "isbn": "9780486440880",
+    "tip": "FICTIUNE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Journey to the Center of the Earth",
+    "autor": "Jules Verne",
+    "isbn": "9780140440394",
+    "tip": "FICTIUNE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Kafka on the Shore",
+    "autor": "Haruki Murakami",
+    "isbn": "9781400079278",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "La Tiganci si alte povestiri",
+    "autor": "Mircea Eliade",
+    "isbn": "9789736692505",
+    "tip": "FICTIUNE",
+    "extra1": "Povestiri",
+    "extra2": ""
+  },
+  {
+    "titlu": "Les Misérables",
+    "autor": "Victor Hugo",
+    "isbn": "9780451419439",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Life of Pi",
+    "autor": "Yann Martel",
+    "isbn": "9780156027328",
+    "tip": "FICTIUNE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Life of Pi",
+    "autor": "Yann Martel",
+    "isbn": "9780156027328-604",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Life, the Universe and Everything",
+    "autor": "Douglas Adams",
+    "isbn": "9780345391827",
+    "tip": "FICTIUNE",
+    "extra1": "SF Umor",
+    "extra2": ""
+  },
+  {
+    "titlu": "Lolita",
+    "autor": "Vladimir Nabokov",
+    "isbn": "9780679723165",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Lord of the Flies",
+    "autor": "William Golding",
+    "isbn": "9780399501487",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Love in the Time of Cholera",
+    "autor": "Gabriel García Márquez",
+    "isbn": "9780307389732",
+    "tip": "FICTIUNE",
+    "extra1": "Realism Magic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Madame Bovary",
+    "autor": "Gustave Flaubert",
+    "isbn": "9780140449129",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Maitreyi",
+    "autor": "Mircea Eliade",
+    "isbn": "9789736692482",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Memoirs of a Geisha",
+    "autor": "Arthur Golden",
+    "isbn": "9780679781585",
+    "tip": "FICTIUNE",
+    "extra1": "Istoric",
+    "extra2": ""
+  },
+  {
+    "titlu": "Mistborn: The Final Empire",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765311788",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Mistborn: The Final Empire",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765350381",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Moby Dick",
+    "autor": "Herman Melville",
+    "isbn": "9780142437247",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Morometii Vol. 1",
+    "autor": "Marin Preda",
+    "isbn": "9789737366671",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Morometii Vol. 2",
+    "autor": "Marin Preda",
+    "isbn": "9789737366688",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Mort",
+    "autor": "Terry Pratchett",
+    "isbn": "9780062225757",
+    "tip": "FICTIUNE",
+    "extra1": "Comedie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Mrs Dalloway",
+    "autor": "Virginia Woolf",
+    "isbn": "9780156628709",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Murder on the Orient Express",
+    "autor": "Agatha Christie",
+    "isbn": "9780062073501",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Murder on the Orient Express",
+    "autor": "Agatha Christie",
+    "isbn": "9780062073501-580",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Name of the Rose",
+    "autor": "Umberto Eco",
+    "isbn": "9780151446476",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Neuromancer",
+    "autor": "William Gibson",
+    "isbn": "9780441569595",
+    "tip": "FICTIUNE",
+    "extra1": "Cyberpunk",
+    "extra2": ""
+  },
+  {
+    "titlu": "Neuromancer",
+    "autor": "William Gibson",
+    "isbn": "9780441569595-677",
+    "tip": "FICTIUNE",
+    "extra1": "Cyberpunk",
+    "extra2": ""
+  },
+  {
+    "titlu": "Never Let Me Go",
+    "autor": "Kazuo Ishiguro",
+    "isbn": "9781400078776",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "No Country for Old Men",
+    "autor": "Cormac McCarthy",
+    "isbn": "9780307387134",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "No Country for Old Men",
+    "autor": "Cormac McCarthy",
+    "isbn": "9780307387134-594",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Noaptea de Sanziene",
+    "autor": "Mircea Eliade",
+    "isbn": "9789736692499",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Normal People",
+    "autor": "Sally Rooney",
+    "isbn": "9781984822185",
+    "tip": "FICTIUNE",
+    "extra1": "Contemporary",
+    "extra2": ""
+  },
+  {
+    "titlu": "Normal People",
+    "autor": "Sally Rooney",
+    "isbn": "9781984822185-627",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "Norwegian Wood",
+    "autor": "Haruki Murakami",
+    "isbn": "9780375704024",
+    "tip": "FICTIUNE",
+    "extra1": "Contemporary",
+    "extra2": ""
+  },
+  {
+    "titlu": "Notes from Underground",
+    "autor": "Fyodor Dostoevsky",
+    "isbn": "9780486270531",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Nunta in cer",
+    "autor": "Mircea Eliade",
+    "isbn": "9789736692604",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Oathbringer",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765326379",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Oathbringer",
+    "autor": "Brandon Sanderson",
+    "isbn": "9781250297143",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Of Mice and Men",
+    "autor": "John Steinbeck",
+    "isbn": "9780140177398",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Of Mice and Men",
+    "autor": "John Steinbeck",
+    "isbn": "9780140177398-621",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Old Man's War",
+    "autor": "John Scalzi",
+    "isbn": "9780765348272",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Oliver Twist",
+    "autor": "Charles Dickens",
+    "isbn": "9780141439693",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Hundred Years of Solitude",
+    "autor": "Gabriel García Márquez",
+    "isbn": "9780060883287",
+    "tip": "FICTIUNE",
+    "extra1": "Realism Magic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Origin",
+    "autor": "Dan Brown",
+    "isbn": "9780385514231",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pachinko",
+    "autor": "Min Jin Lee",
+    "isbn": "9781455563920",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "Padurea de argint",
+    "autor": "Vasile Voiculescu",
+    "isbn": "9789736692512",
+    "tip": "FICTIUNE",
+    "extra1": "Povestiri",
+    "extra2": ""
+  },
+  {
+    "titlu": "Padurea spanzuratilor",
+    "autor": "Liviu Rebreanu",
+    "isbn": "9789731361130",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Patul lui Procust",
+    "autor": "Camil Petrescu",
+    "isbn": "9789736692543",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pere Goriot",
+    "autor": "Honoré de Balzac",
+    "isbn": "9780140443852",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Povestiri",
+    "autor": "Ion Creanga",
+    "isbn": "9789736692628",
+    "tip": "FICTIUNE",
+    "extra1": "Povestiri",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pride and Prejudice",
+    "autor": "Jane Austen",
+    "isbn": "9780141439518",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Project Hail Mary",
+    "autor": "Andy Weir",
+    "isbn": "9780593135204",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Project Hail Mary",
+    "autor": "Andy Weir",
+    "isbn": "9780593135204-681",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rascoala",
+    "autor": "Liviu Rebreanu",
+    "isbn": "9789736692413",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ready Player One",
+    "autor": "Ernest Cline",
+    "isbn": "9780307887436",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rebecca",
+    "autor": "Daphne du Maurier",
+    "isbn": "9781907970108",
+    "tip": "FICTIUNE",
+    "extra1": "Gothic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rebecca",
+    "autor": "Daphne du Maurier",
+    "isbn": "9780380730407",
+    "tip": "FICTIUNE",
+    "extra1": "Suspense",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rendezvous with Rama",
+    "autor": "Arthur C. Clarke",
+    "isbn": "9780553287899",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rendezvous with Rama",
+    "autor": "Arthur C. Clarke",
+    "isbn": "9780553287899-663",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rhythm of War",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765326386",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rhythm of War",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765326386-640",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Royal Assassin",
+    "autor": "Robin Hobb",
+    "isbn": "9780553573404",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Scrisori catre Fanny",
+    "autor": "Mihai Eminescu",
+    "isbn": "9789736692574",
+    "tip": "FICTIUNE",
+    "extra1": "Epistolar",
+    "extra2": ""
+  },
+  {
+    "titlu": "Second Foundation",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553293364",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Second Foundation",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553293388",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sense and Sensibility",
+    "autor": "Jane Austen",
+    "isbn": "9780141439662",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sharp Objects",
+    "autor": "Gillian Flynn",
+    "isbn": "9780307341556",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Shogun",
+    "autor": "James Clavell",
+    "isbn": "9780440178002",
+    "tip": "FICTIUNE",
+    "extra1": "Istoric",
+    "extra2": ""
+  },
+  {
+    "titlu": "Siddhartha",
+    "autor": "Hermann Hesse",
+    "isbn": "9780553208849",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Slaughterhouse-Five",
+    "autor": "Kurt Vonnegut",
+    "isbn": "9780385333849",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Slaughterhouse-Five",
+    "autor": "Kurt Vonnegut",
+    "isbn": "9780440180296",
+    "tip": "FICTIUNE",
+    "extra1": "Anti-razboi",
+    "extra2": ""
+  },
+  {
+    "titlu": "Snow Crash",
+    "autor": "Neal Stephenson",
+    "isbn": "9780553380958",
+    "tip": "FICTIUNE",
+    "extra1": "Cyberpunk",
+    "extra2": ""
+  },
+  {
+    "titlu": "Snow Crash",
+    "autor": "Neal Stephenson",
+    "isbn": "9780553380958-678",
+    "tip": "FICTIUNE",
+    "extra1": "Cyberpunk",
+    "extra2": ""
+  },
+  {
+    "titlu": "Song of Solomon",
+    "autor": "Toni Morrison",
+    "isbn": "9781400033423",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Speaker for the Dead",
+    "autor": "Orson Scott Card",
+    "isbn": "9780812550757",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sputnik Sweetheart",
+    "autor": "Haruki Murakami",
+    "isbn": "9780375726019",
+    "tip": "FICTIUNE",
+    "extra1": "Contemporary",
+    "extra2": ""
+  },
+  {
+    "titlu": "Steppenwolf",
+    "autor": "Hermann Hesse",
+    "isbn": "9780312278670",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The ABC Murders",
+    "autor": "Agatha Christie",
+    "isbn": "9780062073563",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Adventures of Sherlock Holmes",
+    "autor": "Arthur Conan Doyle",
+    "isbn": "9780192837523",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Alchemist",
+    "autor": "Paulo Coelho",
+    "isbn": "9780062315007",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Alchemist",
+    "autor": "Paulo Coelho",
+    "isbn": "9780062315007-599",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Aleph",
+    "autor": "Jorge Luis Borges",
+    "isbn": "9780142437889",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Amber Spyglass",
+    "autor": "Philip Pullman",
+    "isbn": "9780440238157",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Book Thief",
+    "autor": "Markus Zusak",
+    "isbn": "9780375842207",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Book Thief",
+    "autor": "Markus Zusak",
+    "isbn": "9780375842207-606",
+    "tip": "FICTIUNE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Brothers Karamazov",
+    "autor": "Fyodor Dostoevsky",
+    "isbn": "9780374528379",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Castle",
+    "autor": "Franz Kafka",
+    "isbn": "9780805209969",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Catcher in the Rye",
+    "autor": "J.D. Salinger",
+    "isbn": "9780316769174",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Caves of Steel",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553293395",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Caves of Steel",
+    "autor": "Isaac Asimov",
+    "isbn": "9780553293395-660",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Count of Monte Cristo",
+    "autor": "Alexandre Dumas",
+    "isbn": "9780140449266",
+    "tip": "FICTIUNE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Crying of Lot 49",
+    "autor": "Thomas Pynchon",
+    "isbn": "9780060913076",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Da Vinci Code",
+    "autor": "Dan Brown",
+    "isbn": "9780307474278",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Da Vinci Code",
+    "autor": "Dan Brown",
+    "isbn": "9780385504201",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Dark Forest",
+    "autor": "Liu Cixin",
+    "isbn": "9780765386694",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Dark Forest",
+    "autor": "Liu Cixin",
+    "isbn": "9780765377081",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Dispossessed",
+    "autor": "Ursula K. Le Guin",
+    "isbn": "9780061054884",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Fall",
+    "autor": "Albert Camus",
+    "isbn": "9780679720225",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Fall of Hyperion",
+    "autor": "Dan Simmons",
+    "isbn": "9780553288208",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Fall of Hyperion",
+    "autor": "Dan Simmons",
+    "isbn": "9780553288208-676",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Fellowship of the Ring",
+    "autor": "J.R.R. Tolkien",
+    "isbn": "9780618346257",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Final Empire",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765311788-637",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Fountainhead",
+    "autor": "Ayn Rand",
+    "isbn": "9780451191151",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Girl Who Kicked the Hornet's Nest",
+    "autor": "Stieg Larsson",
+    "isbn": "9780307949523",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Girl Who Kicked the Hornet's Nest",
+    "autor": "Stieg Larsson",
+    "isbn": "9780307949516",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Girl Who Played with Fire",
+    "autor": "Stieg Larsson",
+    "isbn": "9780307949509",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Girl Who Played with Fire",
+    "autor": "Stieg Larsson",
+    "isbn": "9780307949509-571",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Girl with the Dragon Tattoo",
+    "autor": "Stieg Larsson",
+    "isbn": "9780307949486",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Girl with the Dragon Tattoo",
+    "autor": "Stieg Larsson",
+    "isbn": "9780307949486-570",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Golden Compass",
+    "autor": "Philip Pullman",
+    "isbn": "9780440238133",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Golden Compass",
+    "autor": "Philip Pullman",
+    "isbn": "9780375823459",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Goldfinch",
+    "autor": "Donna Tartt",
+    "isbn": "9780316055437",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Grapes of Wrath",
+    "autor": "John Steinbeck",
+    "isbn": "9780143039433",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Grapes of Wrath",
+    "autor": "John Steinbeck",
+    "isbn": "9780143039433-620",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Great Gatsby",
+    "autor": "F. Scott Fitzgerald",
+    "isbn": "9780743273565",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Handmaid's Tale",
+    "autor": "Margaret Atwood",
+    "isbn": "9780385490818",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hero of Ages",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765316899",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hero of Ages",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765316899-636",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hitchhiker's Guide to the Galaxy",
+    "autor": "Douglas Adams",
+    "isbn": "9780345391803",
+    "tip": "FICTIUNE",
+    "extra1": "SF Umor",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hobbit",
+    "autor": "J.R.R. Tolkien",
+    "isbn": "9780547928227",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hound of the Baskervilles",
+    "autor": "Arthur Conan Doyle",
+    "isbn": "9780451528018",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hunchback of Notre-Dame",
+    "autor": "Victor Hugo",
+    "isbn": "9780140443530",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Idiot",
+    "autor": "Fyodor Dostoevsky",
+    "isbn": "9780140447927",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Invisible Man",
+    "autor": "H.G. Wells",
+    "isbn": "9780486270715",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Kite Runner",
+    "autor": "Khaled Hosseini",
+    "isbn": "9781594631931",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Kite Runner",
+    "autor": "Khaled Hosseini",
+    "isbn": "9781594480003",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Little Prince",
+    "autor": "Antoine de Saint-Exupéry",
+    "isbn": "9780156012195",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Lovely Bones",
+    "autor": "Alice Sebold",
+    "isbn": "9780316666343",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Magic Mountain",
+    "autor": "Thomas Mann",
+    "isbn": "9780679772873",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Man in the High Castle",
+    "autor": "Philip K. Dick",
+    "isbn": "9780547572482",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Martian",
+    "autor": "Andy Weir",
+    "isbn": "9780553418026",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Martian",
+    "autor": "Andy Weir",
+    "isbn": "9780553418026-680",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Metamorphosis",
+    "autor": "Franz Kafka",
+    "isbn": "9780486290300",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Midnight Library",
+    "autor": "Matt Haig",
+    "isbn": "9780525559474",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Murder of Roger Ackroyd",
+    "autor": "Agatha Christie",
+    "isbn": "9780062073556",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Name of God Is Mercy",
+    "autor": "Pope Francis",
+    "isbn": "9780812998276",
+    "tip": "FICTIUNE",
+    "extra1": "Religios",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Name of the Rose",
+    "autor": "Umberto Eco",
+    "isbn": "9780544176560",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Name of the Wind",
+    "autor": "Patrick Rothfuss",
+    "isbn": "9780756404741",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Night Circus",
+    "autor": "Erin Morgenstern",
+    "isbn": "9780307744432",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Nightingale",
+    "autor": "Kristin Hannah",
+    "isbn": "9780312577223",
+    "tip": "FICTIUNE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Nightingale",
+    "autor": "Kristin Hannah",
+    "isbn": "9780312577223-608",
+    "tip": "FICTIUNE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Old Man and the Sea",
+    "autor": "Ernest Hemingway",
+    "isbn": "9780684801223",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Picture of Dorian Gray",
+    "autor": "Oscar Wilde",
+    "isbn": "9780141439570",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Pillars of the Earth",
+    "autor": "Ken Follett",
+    "isbn": "9780451166890",
+    "tip": "FICTIUNE",
+    "extra1": "Istoric",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Plague",
+    "autor": "Albert Camus",
+    "isbn": "9780679720219",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Red and the Black",
+    "autor": "Stendhal",
+    "isbn": "9780140447644",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Remains of the Day",
+    "autor": "Kazuo Ishiguro",
+    "isbn": "9780679731726",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Restaurant at the End of the Universe",
+    "autor": "Douglas Adams",
+    "isbn": "9780345391810",
+    "tip": "FICTIUNE",
+    "extra1": "SF Umor",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Return of the King",
+    "autor": "J.R.R. Tolkien",
+    "isbn": "9780618346271",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Road",
+    "autor": "Cormac McCarthy",
+    "isbn": "9780307387899",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Road",
+    "autor": "Cormac McCarthy",
+    "isbn": "9780307387899-596",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Scarlet Letter",
+    "autor": "Nathaniel Hawthorne",
+    "isbn": "9780142437261",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Secret History",
+    "autor": "Donna Tartt",
+    "isbn": "9781400031702",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Secret History",
+    "autor": "Donna Tartt",
+    "isbn": "9781400031702-589",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Shadow of the Wind",
+    "autor": "Carlos Ruiz Zafón",
+    "isbn": "9780143034902",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Shadow of the Wind",
+    "autor": "Carlos Ruiz Zafón",
+    "isbn": "9780143126393",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Silence of the Lambs",
+    "autor": "Thomas Harris",
+    "isbn": "9780312924584",
+    "tip": "FICTIUNE",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Silmarillion",
+    "autor": "J.R.R. Tolkien",
+    "isbn": "9780618391110",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Stranger",
+    "autor": "Albert Camus",
+    "isbn": "9780679720201",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Subtle Knife",
+    "autor": "Philip Pullman",
+    "isbn": "9780440238140",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Sun Also Rises",
+    "autor": "Ernest Hemingway",
+    "isbn": "9780743297332",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Sun Also Rises",
+    "autor": "Ernest Hemingway",
+    "isbn": "9780743297332-616",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Testaments",
+    "autor": "Margaret Atwood",
+    "isbn": "9780385543781",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Three Musketeers",
+    "autor": "Alexandre Dumas",
+    "isbn": "9780192833556",
+    "tip": "FICTIUNE",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Three-Body Problem",
+    "autor": "Liu Cixin",
+    "isbn": "9780765382030",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Time Machine",
+    "autor": "H.G. Wells",
+    "isbn": "9780486284729",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Time Machine",
+    "autor": "H.G. Wells",
+    "isbn": "9780486284729-667",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Trial",
+    "autor": "Franz Kafka",
+    "isbn": "9780805209990",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Two Towers",
+    "autor": "J.R.R. Tolkien",
+    "isbn": "9780618346264",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The War of the Worlds",
+    "autor": "H.G. Wells",
+    "isbn": "9780486295060",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The War of the Worlds",
+    "autor": "H.G. Wells",
+    "isbn": "9780486295060-666",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Way of Kings",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765326355",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Well of Ascension",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765316882",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Well of Ascension",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765316882-635",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Wind-Up Bird Chronicle",
+    "autor": "Haruki Murakami",
+    "isbn": "9780679775430",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Wise Man's Fear",
+    "autor": "Patrick Rothfuss",
+    "isbn": "9780756404734",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Wise Man's Fear",
+    "autor": "Patrick Rothfuss",
+    "isbn": "9780756407919",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Zahir",
+    "autor": "Paulo Coelho",
+    "isbn": "9780061116827",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Things Fall Apart",
+    "autor": "Chinua Achebe",
+    "isbn": "9780385474542",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "To Kill a Mockingbird",
+    "autor": "Harper Lee",
+    "isbn": "9780061743528",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "To the Lighthouse",
+    "autor": "Virginia Woolf",
+    "isbn": "9780156907392",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ubik",
+    "autor": "Philip K. Dick",
+    "isbn": "9780547440484",
+    "tip": "FICTIUNE",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ultima noapte de dragoste",
+    "autor": "Camil Petrescu",
+    "isbn": "9789736692536",
+    "tip": "FICTIUNE",
+    "extra1": "Roman",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ulysses",
+    "autor": "James Joyce",
+    "isbn": "9780199535675",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Veronika Decides to Die",
+    "autor": "Paulo Coelho",
+    "isbn": "9780061724879",
+    "tip": "FICTIUNE",
+    "extra1": "Filosofic",
+    "extra2": ""
+  },
+  {
+    "titlu": "War and Peace",
+    "autor": "Leo Tolstoy",
+    "isbn": "9780140447934",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Warbreaker",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765320308",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Warbreaker",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765360038",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "We",
+    "autor": "Yevgeny Zamyatin",
+    "isbn": "9780140185852",
+    "tip": "FICTIUNE",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Where the Crawdads Sing",
+    "autor": "Delia Owens",
+    "isbn": "9780735224292",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Where the Crawdads Sing",
+    "autor": "Delia Owens",
+    "isbn": "9780735224292-611",
+    "tip": "FICTIUNE",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Words of Radiance",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765326362",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Words of Radiance",
+    "autor": "Brandon Sanderson",
+    "isbn": "9780765326362-638",
+    "tip": "FICTIUNE",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Wuthering Heights",
+    "autor": "Emily Bronte",
+    "isbn": "9780141439556",
+    "tip": "FICTIUNE",
+    "extra1": "Clasic",
+    "extra2": ""
+  },
+  {
+    "titlu": "A History of Western Philosophy",
+    "autor": "Bertrand Russell",
+    "isbn": "9780671201586",
+    "tip": "FILOZOFIE",
+    "extra1": "Istorie",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Theory of Justice",
+    "autor": "John Rawls",
+    "isbn": "9780674000780",
+    "tip": "FILOZOFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Treatise of Human Nature",
+    "autor": "David Hume",
+    "isbn": "9780140432442",
+    "tip": "FILOZOFIE",
+    "extra1": "Empirism",
+    "extra2": ""
+  },
+  {
+    "titlu": "An Enquiry Concerning Human Understanding",
+    "autor": "David Hume",
+    "isbn": "9780199549900",
+    "tip": "FILOZOFIE",
+    "extra1": "Empirism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Being and Nothingness",
+    "autor": "Jean-Paul Sartre",
+    "isbn": "9780671867805",
+    "tip": "FILOZOFIE",
+    "extra1": "Existentialism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Being and Time",
+    "autor": "Martin Heidegger",
+    "isbn": "9780061612008",
+    "tip": "FILOZOFIE",
+    "extra1": "Existentialism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Beyond Good and Evil",
+    "autor": "Friedrich Nietzsche",
+    "isbn": "9780140449235",
+    "tip": "FILOZOFIE",
+    "extra1": "Etica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Critique of Practical Reason",
+    "autor": "Immanuel Kant",
+    "isbn": "9780521599627",
+    "tip": "FILOZOFIE",
+    "extra1": "Etica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Critique of Pure Reason",
+    "autor": "Immanuel Kant",
+    "isbn": "9780521657297",
+    "tip": "FILOZOFIE",
+    "extra1": "Idealism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Discourse on the Method",
+    "autor": "René Descartes",
+    "isbn": "9781420948318",
+    "tip": "FILOZOFIE",
+    "extra1": "Rationalism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Discourses",
+    "autor": "Epictetus",
+    "isbn": "9780486453903",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ego Is the Enemy",
+    "autor": "Ryan Holiday",
+    "isbn": "9781591847816",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Either/Or",
+    "autor": "Søren Kierkegaard",
+    "isbn": "9780691020419",
+    "tip": "FILOZOFIE",
+    "extra1": "Existentialism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Ethics",
+    "autor": "Baruch Spinoza",
+    "isbn": "9780140435719",
+    "tip": "FILOZOFIE",
+    "extra1": "Rationalism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fear and Trembling",
+    "autor": "Søren Kierkegaard",
+    "isbn": "9780140444490",
+    "tip": "FILOZOFIE",
+    "extra1": "Existentialism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Groundwork for the Metaphysics of Morals",
+    "autor": "Immanuel Kant",
+    "isbn": "9781107401068",
+    "tip": "FILOZOFIE",
+    "extra1": "Etica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Language, Truth and Logic",
+    "autor": "A.J. Ayer",
+    "isbn": "9780486200101",
+    "tip": "FILOZOFIE",
+    "extra1": "Analitic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Letters from a Stoic",
+    "autor": "Seneca",
+    "isbn": "9780140442106",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Leviathan",
+    "autor": "Thomas Hobbes",
+    "isbn": "9780140431957",
+    "tip": "FILOZOFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Meditations",
+    "autor": "Marcus Aurelius",
+    "isbn": "9780140449334",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Nicomachean Ethics",
+    "autor": "Aristotle",
+    "isbn": "9780872204645",
+    "tip": "FILOZOFIE",
+    "extra1": "Etica",
+    "extra2": ""
+  },
+  {
+    "titlu": "On Liberty",
+    "autor": "John Stuart Mill",
+    "isbn": "9780140432077",
+    "tip": "FILOZOFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "On the Shortness of Life",
+    "autor": "Seneca",
+    "isbn": "9780143036327",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pensées",
+    "autor": "Blaise Pascal",
+    "isbn": "9780140446456",
+    "tip": "FILOZOFIE",
+    "extra1": "Religie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Phenomenology of Spirit",
+    "autor": "G.W.F. Hegel",
+    "isbn": "9780198245971",
+    "tip": "FILOZOFIE",
+    "extra1": "Idealim",
+    "extra2": ""
+  },
+  {
+    "titlu": "Philosophical Investigations",
+    "autor": "Ludwig Wittgenstein",
+    "isbn": "9781405159289",
+    "tip": "FILOZOFIE",
+    "extra1": "Analitic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Philosophy: A Very Short Introduction",
+    "autor": "Edward Craig",
+    "isbn": "9780192853585",
+    "tip": "FILOZOFIE",
+    "extra1": "Populara",
+    "extra2": ""
+  },
+  {
+    "titlu": "Politics",
+    "autor": "Aristotle",
+    "isbn": "9780140444216",
+    "tip": "FILOZOFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sophie's World",
+    "autor": "Jostein Gaarder",
+    "isbn": "9780374530716",
+    "tip": "FILOZOFIE",
+    "extra1": "Populara",
+    "extra2": ""
+  },
+  {
+    "titlu": "Stillness Is the Key",
+    "autor": "Ryan Holiday",
+    "isbn": "9780525538585",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Tao Te Ching",
+    "autor": "Lao Tzu",
+    "isbn": "9780061142666",
+    "tip": "FILOZOFIE",
+    "extra1": "Taoism",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Allegory of the Cave",
+    "autor": "Plato",
+    "isbn": "9780140440386",
+    "tip": "FILOZOFIE",
+    "extra1": "Epistemologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Apology",
+    "autor": "Plato",
+    "isbn": "9780872200494",
+    "tip": "FILOZOFIE",
+    "extra1": "Etica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Living",
+    "autor": "Epictetus",
+    "isbn": "9780061286254",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Book of Chuang Tzu",
+    "autor": "Chuang Tzu",
+    "isbn": "9780140455373",
+    "tip": "FILOZOFIE",
+    "extra1": "Taoism",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Daily Stoic",
+    "autor": "Ryan Holiday",
+    "isbn": "9780735211735",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Metaphysics",
+    "autor": "Aristotle",
+    "isbn": "9780140446197",
+    "tip": "FILOZOFIE",
+    "extra1": "Metafizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Myth of Sisyphus",
+    "autor": "Albert Camus",
+    "isbn": "9780679733737",
+    "tip": "FILOZOFIE",
+    "extra1": "Existentialism",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Nicomachean Ethics",
+    "autor": "Aristotle",
+    "isbn": "9780140449495",
+    "tip": "FILOZOFIE",
+    "extra1": "Etica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Obstacle Is the Way",
+    "autor": "Ryan Holiday",
+    "isbn": "9781591846352",
+    "tip": "FILOZOFIE",
+    "extra1": "Stoicism",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Phaedo",
+    "autor": "Plato",
+    "isbn": "9780872200647",
+    "tip": "FILOZOFIE",
+    "extra1": "Metafizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Prince",
+    "autor": "Niccolò Machiavelli",
+    "isbn": "9780486272740",
+    "tip": "FILOZOFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Problems of Philosophy",
+    "autor": "Bertrand Russell",
+    "isbn": "9780195002119",
+    "tip": "FILOZOFIE",
+    "extra1": "Analitic",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Republic",
+    "autor": "Plato",
+    "isbn": "9780140455113",
+    "tip": "FILOZOFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Social Contract",
+    "autor": "Jean-Jacques Rousseau",
+    "isbn": "9780140442014",
+    "tip": "FILOZOFIE",
+    "extra1": "Politica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Story of Philosophy",
+    "autor": "Will Durant",
+    "isbn": "9780671739164",
+    "tip": "FILOZOFIE",
+    "extra1": "Populara",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Structure of Scientific Revolutions",
+    "autor": "Thomas Kuhn",
+    "isbn": "9780226458120",
+    "tip": "FILOZOFIE",
+    "extra1": "Epistemologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Symposium",
+    "autor": "Plato",
+    "isbn": "9780140449273",
+    "tip": "FILOZOFIE",
+    "extra1": "Etica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The World as Will and Representation",
+    "autor": "Arthur Schopenhauer",
+    "isbn": "9780486217611",
+    "tip": "FILOZOFIE",
+    "extra1": "Pesimism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Thus Spoke Zarathustra",
+    "autor": "Friedrich Nietzsche",
+    "isbn": "9780140441185",
+    "tip": "FILOZOFIE",
+    "extra1": "Existentialism",
+    "extra2": ""
+  },
+  {
+    "titlu": "Tractatus Logico-Philosophicus",
+    "autor": "Ludwig Wittgenstein",
+    "isbn": "9780415255622",
+    "tip": "FILOZOFIE",
+    "extra1": "Analitic",
+    "extra2": ""
+  },
+  {
+    "titlu": "Utilitarianism",
+    "autor": "John Stuart Mill",
+    "isbn": "9780872206052",
+    "tip": "FILOZOFIE",
+    "extra1": "Etica",
+    "extra2": ""
+  },
+  {
+    "titlu": "1776",
+    "autor": "David McCullough",
+    "isbn": "9780743226721",
+    "tip": "ISTORIE",
+    "extra1": "America",
+    "extra2": ""
+  },
+  {
+    "titlu": "A History of God",
+    "autor": "Karen Armstrong",
+    "isbn": "9780345384560",
+    "tip": "ISTORIE",
+    "extra1": "Religie",
+    "extra2": ""
+  },
+  {
+    "titlu": "A People's History of the United States",
+    "autor": "Howard Zinn",
+    "isbn": "9780060838652",
+    "tip": "ISTORIE",
+    "extra1": "America",
+    "extra2": ""
+  },
+  {
+    "titlu": "Caesar's Gallic Wars",
+    "autor": "Julius Caesar",
+    "isbn": "9780140440737",
+    "tip": "ISTORIE",
+    "extra1": "Antica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Caste",
+    "autor": "Isabel Wilkerson",
+    "isbn": "9780593230251",
+    "tip": "ISTORIE",
+    "extra1": "America",
+    "extra2": ""
+  },
+  {
+    "titlu": "D-Day: The Battle for Normandy",
+    "autor": "Antony Beevor",
+    "isbn": "9780670020614",
+    "tip": "ISTORIE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "Endurance: Shackleton's Incredible Voyage",
+    "autor": "Alfred Lansing",
+    "isbn": "9780465062881",
+    "tip": "ISTORIE",
+    "extra1": "Explorare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Galileo's Daughter",
+    "autor": "Dava Sobel",
+    "isbn": "9780140280555",
+    "tip": "ISTORIE",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "Guns, Germs, and Steel",
+    "autor": "Jared Diamond",
+    "isbn": "9780393317558",
+    "tip": "ISTORIE",
+    "extra1": "Civilizatii",
+    "extra2": ""
+  },
+  {
+    "titlu": "In the Kingdom of Ice",
+    "autor": "Hampton Sides",
+    "isbn": "9780385535373",
+    "tip": "ISTORIE",
+    "extra1": "Explorare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Into Thin Air",
+    "autor": "Jon Krakauer",
+    "isbn": "9780385494786",
+    "tip": "ISTORIE",
+    "extra1": "Explorare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Into the Wild",
+    "autor": "Jon Krakauer",
+    "isbn": "9780385486804-806",
+    "tip": "ISTORIE",
+    "extra1": "Explorare",
+    "extra2": ""
+  },
+  {
+    "titlu": "John Adams",
+    "autor": "David McCullough",
+    "isbn": "9780743223362",
+    "tip": "ISTORIE",
+    "extra1": "America",
+    "extra2": ""
+  },
+  {
+    "titlu": "Longitude",
+    "autor": "Dava Sobel",
+    "isbn": "9780802713124",
+    "tip": "ISTORIE",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "Paris 1919",
+    "autor": "Margaret MacMillan",
+    "isbn": "9780375760525",
+    "tip": "ISTORIE",
+    "extra1": "WW1",
+    "extra2": ""
+  },
+  {
+    "titlu": "SPQR: A History of Ancient Rome",
+    "autor": "Mary Beard",
+    "isbn": "9780871404237",
+    "tip": "ISTORIE",
+    "extra1": "Antica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sapiens in the History of Violence",
+    "autor": "Yuval Noah Harari",
+    "isbn": "9780062316097-453",
+    "tip": "ISTORIE",
+    "extra1": "Moderna",
+    "extra2": ""
+  },
+  {
+    "titlu": "Stalingrad",
+    "autor": "Antony Beevor",
+    "isbn": "9780670879502",
+    "tip": "ISTORIE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of War",
+    "autor": "Sun Tzu",
+    "isbn": "9780981313702",
+    "tip": "ISTORIE",
+    "extra1": "Strategie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Battle of Midway",
+    "autor": "Craig L. Symonds",
+    "isbn": "9780199874590",
+    "tip": "ISTORIE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Borgias",
+    "autor": "Paul Strathern",
+    "isbn": "9781848872561",
+    "tip": "ISTORIE",
+    "extra1": "Medievala",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Crusades",
+    "autor": "Thomas Asbridge",
+    "isbn": "9780743285476",
+    "tip": "ISTORIE",
+    "extra1": "Medievala",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Great Influenza",
+    "autor": "John Barry",
+    "isbn": "9780143036494",
+    "tip": "ISTORIE",
+    "extra1": "Medicina",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Guns of August",
+    "autor": "Barbara Tuchman",
+    "isbn": "9780345386236",
+    "tip": "ISTORIE",
+    "extra1": "WW1",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Histories",
+    "autor": "Herodotus",
+    "isbn": "9780140441536",
+    "tip": "ISTORIE",
+    "extra1": "Antica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The History of the Decline and Fall of the Roman Empire",
+    "autor": "Edward Gibbon",
+    "isbn": "9780140437645",
+    "tip": "ISTORIE",
+    "extra1": "Antica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hot Zone",
+    "autor": "Richard Preston",
+    "isbn": "9780385495226",
+    "tip": "ISTORIE",
+    "extra1": "Medicina",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Making of the Atomic Bomb",
+    "autor": "Richard Rhodes",
+    "isbn": "9780684813783",
+    "tip": "ISTORIE",
+    "extra1": "Stiinta",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Medici",
+    "autor": "Paul Strathern",
+    "isbn": "9781846097683",
+    "tip": "ISTORIE",
+    "extra1": "Medievala",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Peloponnesian War",
+    "autor": "Thucydides",
+    "isbn": "9780140440393-793",
+    "tip": "ISTORIE",
+    "extra1": "Antica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Perfect Storm",
+    "autor": "Sebastian Junger",
+    "isbn": "9780393337013",
+    "tip": "ISTORIE",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Plantagenets",
+    "autor": "Dan Jones",
+    "isbn": "9780143124924",
+    "tip": "ISTORIE",
+    "extra1": "Medievala",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Race for Timbuktu",
+    "autor": "Frank Kryza",
+    "isbn": "9780060564483",
+    "tip": "ISTORIE",
+    "extra1": "Explorare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Republic of Rome",
+    "autor": "Cicero",
+    "isbn": "9780140449167",
+    "tip": "ISTORIE",
+    "extra1": "Antica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Rise and Fall of the Third Reich",
+    "autor": "William L. Shirer",
+    "isbn": "9781451651492",
+    "tip": "ISTORIE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Second World War",
+    "autor": "Antony Beevor",
+    "isbn": "9780316023757",
+    "tip": "ISTORIE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Silk Roads",
+    "autor": "Peter Frankopan",
+    "isbn": "9781101912379",
+    "tip": "ISTORIE",
+    "extra1": "Asia",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Splendid and the Vile",
+    "autor": "Erik Larson",
+    "isbn": "9780385348713",
+    "tip": "ISTORIE",
+    "extra1": "WW2",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Warmth of Other Suns",
+    "autor": "Isabel Wilkerson",
+    "isbn": "9780679763888",
+    "tip": "ISTORIE",
+    "extra1": "America",
+    "extra2": ""
+  },
+  {
+    "titlu": "Truman",
+    "autor": "David McCullough",
+    "isbn": "9780671869205",
+    "tip": "ISTORIE",
+    "extra1": "America",
+    "extra2": ""
+  },
+  {
+    "titlu": "20th Century Boys Vol. 1",
+    "autor": "Naoki Urasawa",
+    "isbn": "9781421523972",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Attack on Titan Vol. 1",
+    "autor": "Hajime Isayama",
+    "isbn": "9781612620244",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Attack on Titan Vol. 2",
+    "autor": "Hajime Isayama",
+    "isbn": "9781612620251",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Attack on Titan Vol. 2",
+    "autor": "Hajime Isayama",
+    "isbn": "9781612620251-854",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Attack on Titan Vol. 3",
+    "autor": "Hajime Isayama",
+    "isbn": "9781612620268",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Attack on Titan Vol. 3",
+    "autor": "Hajime Isayama",
+    "isbn": "9781612620268-855",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Attack on Titan Vol. 4",
+    "autor": "Hajime Isayama",
+    "isbn": "9781612620275",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Attack on Titan Vol. 5",
+    "autor": "Hajime Isayama",
+    "isbn": "9781612620282",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Berserk Vol. 1",
+    "autor": "Kentaro Miura",
+    "isbn": "9781593070205",
+    "tip": "MANGA",
+    "extra1": "Dark Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Berserk Vol. 2",
+    "autor": "Kentaro Miura",
+    "isbn": "9781593070212",
+    "tip": "MANGA",
+    "extra1": "Dark Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Bleach Vol. 1",
+    "autor": "Tite Kubo",
+    "isbn": "9781591164418",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Bleach Vol. 2",
+    "autor": "Tite Kubo",
+    "isbn": "9781591164425",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Bleach Vol. 3",
+    "autor": "Tite Kubo",
+    "isbn": "9781591164432",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Chainsaw Man Vol. 1",
+    "autor": "Tatsuki Fujimoto",
+    "isbn": "9781974709946",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Chainsaw Man Vol. 2",
+    "autor": "Tatsuki Fujimoto",
+    "isbn": "9781974709953",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death Note Vol. 1",
+    "autor": "Tsugumi Ohba",
+    "isbn": "9781421501697",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death Note Vol. 2",
+    "autor": "Tsugumi Ohba",
+    "isbn": "9781421501710",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death Note Vol. 2",
+    "autor": "Tsugumi Ohba",
+    "isbn": "9781421501703",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death Note Vol. 3",
+    "autor": "Tsugumi Ohba",
+    "isbn": "9781421501727",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death Note Vol. 3",
+    "autor": "Tsugumi Ohba",
+    "isbn": "9781421501710-857",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death Note Vol. 4",
+    "autor": "Tsugumi Ohba",
+    "isbn": "9781421506104",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death Note Vol. 5",
+    "autor": "Tsugumi Ohba",
+    "isbn": "9781421506111",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "Demon Slayer Vol. 1",
+    "autor": "Koyoharu Gotouge",
+    "isbn": "9781974700523",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Demon Slayer Vol. 2",
+    "autor": "Koyoharu Gotouge",
+    "isbn": "9781974700530",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Demon Slayer Vol. 3",
+    "autor": "Koyoharu Gotouge",
+    "isbn": "9781974700547",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dragon Ball Vol. 1",
+    "autor": "Akira Toriyama",
+    "isbn": "9781569319208",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dragon Ball Vol. 2",
+    "autor": "Akira Toriyama",
+    "isbn": "9781569319215",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dragon Ball Vol. 3",
+    "autor": "Akira Toriyama",
+    "isbn": "9781569319222",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dragon Ball Vol. 4",
+    "autor": "Akira Toriyama",
+    "isbn": "9781569319239",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Dragon Ball Z Vol. 1",
+    "autor": "Akira Toriyama",
+    "isbn": "9781569319031-358",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fruits Basket Vol. 1",
+    "autor": "Natsuki Takaya",
+    "isbn": "9781591823001",
+    "tip": "MANGA",
+    "extra1": "Romance",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fullmetal Alchemist Vol. 1",
+    "autor": "Hiromu Arakawa",
+    "isbn": "9781591169208",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fullmetal Alchemist Vol. 2",
+    "autor": "Hiromu Arakawa",
+    "isbn": "9781591169215",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fullmetal Alchemist Vol. 2",
+    "autor": "Hiromu Arakawa",
+    "isbn": "9781591169215-852",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fullmetal Alchemist Vol. 3",
+    "autor": "Hiromu Arakawa",
+    "isbn": "9781591169222",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fullmetal Alchemist Vol. 3",
+    "autor": "Hiromu Arakawa",
+    "isbn": "9781591169222-853",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fullmetal Alchemist Vol. 4",
+    "autor": "Hiromu Arakawa",
+    "isbn": "9781591169239",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hunter x Hunter Vol. 1",
+    "autor": "Yoshihiro Togashi",
+    "isbn": "9781591162551",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hunter x Hunter Vol. 2",
+    "autor": "Yoshihiro Togashi",
+    "isbn": "9781591162568",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Jujutsu Kaisen Vol. 1",
+    "autor": "Gege Akutami",
+    "isbn": "9781974709755",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Jujutsu Kaisen Vol. 2",
+    "autor": "Gege Akutami",
+    "isbn": "9781974709762",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Jujutsu Kaisen Vol. 3",
+    "autor": "Gege Akutami",
+    "isbn": "9781974709779",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Monster Vol. 1",
+    "autor": "Naoki Urasawa",
+    "isbn": "9781591167754",
+    "tip": "MANGA",
+    "extra1": "Thriller",
+    "extra2": ""
+  },
+  {
+    "titlu": "My Hero Academia Vol. 1",
+    "autor": "Kohei Horikoshi",
+    "isbn": "9781421582696",
+    "tip": "MANGA",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "My Hero Academia Vol. 2",
+    "autor": "Kohei Horikoshi",
+    "isbn": "9781421582702",
+    "tip": "MANGA",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "My Hero Academia Vol. 3",
+    "autor": "Kohei Horikoshi",
+    "isbn": "9781421582719",
+    "tip": "MANGA",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 1",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9781569319000",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 1",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9781569319000-847",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 2",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9780782231069",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 2",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9781569319017-848",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 3",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9781569319024-352",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 3",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9781569319024-849",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 4",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9781591161462",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 5",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9781591161479",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Naruto Vol. 6",
+    "autor": "Masashi Kishimoto",
+    "isbn": "9781591161486",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "No Game No Life Vol. 1",
+    "autor": "Yuu Kamiya",
+    "isbn": "9780316385176",
+    "tip": "MANGA",
+    "extra1": "Isekai",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Piece Vol. 1",
+    "autor": "Eiichiro Oda",
+    "isbn": "9781569319017",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Piece Vol. 1",
+    "autor": "Eiichiro Oda",
+    "isbn": "9781591163374",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Piece Vol. 2",
+    "autor": "Eiichiro Oda",
+    "isbn": "9781569319024",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Piece Vol. 2",
+    "autor": "Eiichiro Oda",
+    "isbn": "9781591163381",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Piece Vol. 3",
+    "autor": "Eiichiro Oda",
+    "isbn": "9781569319031",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Piece Vol. 3",
+    "autor": "Eiichiro Oda",
+    "isbn": "9781591163398",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Piece Vol. 4",
+    "autor": "Eiichiro Oda",
+    "isbn": "9781569319048",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Piece Vol. 5",
+    "autor": "Eiichiro Oda",
+    "isbn": "9781569319055",
+    "tip": "MANGA",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Punch Man Vol. 1",
+    "autor": "ONE",
+    "isbn": "9781421585413",
+    "tip": "MANGA",
+    "extra1": "Comedie",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Punch Man Vol. 2",
+    "autor": "ONE",
+    "isbn": "9781421585420",
+    "tip": "MANGA",
+    "extra1": "Comedie",
+    "extra2": ""
+  },
+  {
+    "titlu": "One Punch Man Vol. 3",
+    "autor": "ONE",
+    "isbn": "9781421585437",
+    "tip": "MANGA",
+    "extra1": "Comedie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Overlord Vol. 1",
+    "autor": "Kugane Maruyama",
+    "isbn": "9780316272247",
+    "tip": "MANGA",
+    "extra1": "Isekai",
+    "extra2": ""
+  },
+  {
+    "titlu": "Re:Zero Vol. 1",
+    "autor": "Tappei Nagatsuki",
+    "isbn": "9780316315302",
+    "tip": "MANGA",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Spy x Family Vol. 1",
+    "autor": "Tatsuya Endo",
+    "isbn": "9781974716340",
+    "tip": "MANGA",
+    "extra1": "Comedie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Spy x Family Vol. 2",
+    "autor": "Tatsuya Endo",
+    "isbn": "9781974716357",
+    "tip": "MANGA",
+    "extra1": "Comedie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sword Art Online Vol. 1",
+    "autor": "Reki Kawahara",
+    "isbn": "9780316371247",
+    "tip": "MANGA",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "That Time I Got Reincarnated Vol. 1",
+    "autor": "Fuse",
+    "isbn": "9781642750010",
+    "tip": "MANGA",
+    "extra1": "Isekai",
+    "extra2": ""
+  },
+  {
+    "titlu": "Tokyo Ghoul Vol. 1",
+    "autor": "Sui Ishida",
+    "isbn": "9781421580371",
+    "tip": "MANGA",
+    "extra1": "Horror",
+    "extra2": ""
+  },
+  {
+    "titlu": "Tokyo Ghoul Vol. 2",
+    "autor": "Sui Ishida",
+    "isbn": "9781421580388",
+    "tip": "MANGA",
+    "extra1": "Horror",
+    "extra2": ""
+  },
+  {
+    "titlu": "Tokyo Revengers Vol. 1",
+    "autor": "Ken Wakui",
+    "isbn": "9781632366443",
+    "tip": "MANGA",
+    "extra1": "Actiune",
+    "extra2": ""
+  },
+  {
+    "titlu": "Vinland Saga Vol. 1",
+    "autor": "Makoto Yukimura",
+    "isbn": "9781935429142",
+    "tip": "MANGA",
+    "extra1": "Istoric",
+    "extra2": ""
+  },
+  {
+    "titlu": "Abstract Algebra",
+    "autor": "David S. Dummit",
+    "isbn": "9780471433347",
+    "tip": "MANUAL",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "An Introduction to Quantum Computing",
+    "autor": "Phillip Kaye",
+    "isbn": "9780198570004",
+    "tip": "MANUAL",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Calculus: Early Transcendentals",
+    "autor": "James Stewart",
+    "isbn": "9781285741550",
+    "tip": "MANUAL",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Campbell Biology",
+    "autor": "Jane Reece",
+    "isbn": "9780321558237",
+    "tip": "MANUAL",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Chemistry: The Central Science",
+    "autor": "Theodore Brown",
+    "isbn": "9780321696724",
+    "tip": "MANUAL",
+    "extra1": "Chimie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Discrete Mathematics and Its Applications",
+    "autor": "Kenneth Rosen",
+    "isbn": "9780073383095",
+    "tip": "MANUAL",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fundamentals of Physics",
+    "autor": "David Halliday",
+    "isbn": "9781118230718",
+    "tip": "MANUAL",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Genetics: From Genes to Genomes",
+    "autor": "Leland Hartwell",
+    "isbn": "9780073525266",
+    "tip": "MANUAL",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Introduction to Probability",
+    "autor": "Dimitri Bertsekas",
+    "isbn": "9781886529237",
+    "tip": "MANUAL",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Linear Algebra and Its Applications",
+    "autor": "Gilbert Strang",
+    "isbn": "9780030105678",
+    "tip": "MANUAL",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Macroeconomics",
+    "autor": "Gregory Mankiw",
+    "isbn": "9781319106058",
+    "tip": "MANUAL",
+    "extra1": "Economie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Microeconomics",
+    "autor": "Paul Krugman",
+    "isbn": "9781319065072",
+    "tip": "MANUAL",
+    "extra1": "Economie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Modern Physics",
+    "autor": "Paul Tipler",
+    "isbn": "9781429250788",
+    "tip": "MANUAL",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Molecular Biology of the Cell",
+    "autor": "Bruce Alberts",
+    "isbn": "9780393884821",
+    "tip": "MANUAL",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Organic Chemistry",
+    "autor": "Paula Bruice",
+    "isbn": "9780321863003",
+    "tip": "MANUAL",
+    "extra1": "Chimie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Physics for Scientists and Engineers",
+    "autor": "Raymond Serway",
+    "isbn": "9781133947271",
+    "tip": "MANUAL",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Principles of Economics",
+    "autor": "N. Gregory Mankiw",
+    "isbn": "9781305585126",
+    "tip": "MANUAL",
+    "extra1": "Economie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Real Analysis",
+    "autor": "Walter Rudin",
+    "isbn": "9780070542358",
+    "tip": "MANUAL",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Statistics",
+    "autor": "David Freedman",
+    "isbn": "9780393929720",
+    "tip": "MANUAL",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "University Physics",
+    "autor": "Hugh Young",
+    "isbn": "9780321973610",
+    "tip": "MANUAL",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Bone Vol. 1",
+    "autor": "Jeff Smith",
+    "isbn": "9780439706407",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "From Hell",
+    "autor": "Alan Moore",
+    "isbn": "9781603090421",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Mister",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fun Home",
+    "autor": "Alison Bechdel",
+    "isbn": "9780618871711",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Autobiografie",
+    "extra2": ""
+  },
+  {
+    "titlu": "March Book 1",
+    "autor": "John Lewis",
+    "isbn": "9781603093002",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Biografie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Maus",
+    "autor": "Art Spiegelman",
+    "isbn": "9780679748403",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Holocaust",
+    "extra2": ""
+  },
+  {
+    "titlu": "Maus II",
+    "autor": "Art Spiegelman",
+    "isbn": "9780679748410",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Holocaust",
+    "extra2": ""
+  },
+  {
+    "titlu": "Persepolis",
+    "autor": "Marjane Satrapi",
+    "isbn": "9780375714573",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Autobiografie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Persepolis 2",
+    "autor": "Marjane Satrapi",
+    "isbn": "9780375422300",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Autobiografie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Preacher Vol. 1",
+    "autor": "Garth Ennis",
+    "isbn": "9781401240455",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Aventura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Saga Vol. 1",
+    "autor": "Brian K. Vaughan",
+    "isbn": "9781607066019",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Saga Vol. 2",
+    "autor": "Brian K. Vaughan",
+    "isbn": "9781607066927",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Saga Vol. 3",
+    "autor": "Brian K. Vaughan",
+    "isbn": "9781607067764",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "SF",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sandman Vol. 1: Preludes & Nocturnes",
+    "autor": "Neil Gaiman",
+    "isbn": "9781401284770",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Sandman Vol. 2: The Doll's House",
+    "autor": "Neil Gaiman",
+    "isbn": "9781401230982",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Fantasy",
+    "extra2": ""
+  },
+  {
+    "titlu": "Superman: Red Son",
+    "autor": "Mark Millar",
+    "isbn": "9781401201913",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "This One Summer",
+    "autor": "Mariko Tamaki",
+    "isbn": "9781596439566",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Drama",
+    "extra2": ""
+  },
+  {
+    "titlu": "V for Vendetta",
+    "autor": "Alan Moore",
+    "isbn": "9781401208417",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Watchmen",
+    "autor": "Alan Moore",
+    "isbn": "9780930289232",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Superhero",
+    "extra2": ""
+  },
+  {
+    "titlu": "Y: The Last Man Vol. 1",
+    "autor": "Brian K. Vaughan",
+    "isbn": "9781563899843",
+    "tip": "ROMAN_GRAFIC",
+    "extra1": "Distopie",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Brief History of Time",
+    "autor": "Stephen Hawking",
+    "isbn": "9780553380163",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Briefer History of Time",
+    "autor": "Stephen Hawking",
+    "isbn": "9780553385465",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Short History of Nearly Everything",
+    "autor": "Bill Bryson",
+    "isbn": "9780767908184",
+    "tip": "STIINTA",
+    "extra1": "Populara",
+    "extra2": ""
+  },
+  {
+    "titlu": "Astrophysics for People in a Hurry",
+    "autor": "Neil deGrasse Tyson",
+    "isbn": "9780393609394",
+    "tip": "STIINTA",
+    "extra1": "Astronomie",
+    "extra2": ""
+  },
+  {
+    "titlu": "At Home",
+    "autor": "Bill Bryson",
+    "isbn": "9780767919388",
+    "tip": "STIINTA",
+    "extra1": "Populara",
+    "extra2": ""
+  },
+  {
+    "titlu": "Black Holes and Baby Universes",
+    "autor": "Stephen Hawking",
+    "isbn": "9780553374131",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Chaos: Making a New Science",
+    "autor": "James Gleick",
+    "isbn": "9780143113454",
+    "tip": "STIINTA",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Climbing Mount Improbable",
+    "autor": "Richard Dawkins",
+    "isbn": "9780393316827",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Collapse",
+    "autor": "Jared Diamond",
+    "isbn": "9780143117001",
+    "tip": "STIINTA",
+    "extra1": "Ecologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Cosmos",
+    "autor": "Carl Sagan",
+    "isbn": "9780345539434",
+    "tip": "STIINTA",
+    "extra1": "Astronomie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Death by Black Hole",
+    "autor": "Neil deGrasse Tyson",
+    "isbn": "9780393330168",
+    "tip": "STIINTA",
+    "extra1": "Astronomie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Entangled Life",
+    "autor": "Merlin Sheldrake",
+    "isbn": "9780525510314",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fermat's Last Theorem",
+    "autor": "Simon Singh",
+    "isbn": "9780385493628",
+    "tip": "STIINTA",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Genome",
+    "autor": "Matt Ridley",
+    "isbn": "9780060932909",
+    "tip": "STIINTA",
+    "extra1": "Genetica",
+    "extra2": ""
+  },
+  {
+    "titlu": "How to Change Your Mind",
+    "autor": "Michael Pollan",
+    "isbn": "9781594204210",
+    "tip": "STIINTA",
+    "extra1": "Neurologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Incognito: The Secret Lives of the Brain",
+    "autor": "David Eagleman",
+    "isbn": "9780307389923",
+    "tip": "STIINTA",
+    "extra1": "Neurologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Michio Kaku: The Future of the Mind",
+    "autor": "Michio Kaku",
+    "isbn": "9780307473349",
+    "tip": "STIINTA",
+    "extra1": "Neurologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Other Minds: The Octopus",
+    "autor": "Peter Godfrey-Smith",
+    "isbn": "9780374227357",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pale Blue Dot",
+    "autor": "Carl Sagan",
+    "isbn": "9780345376596",
+    "tip": "STIINTA",
+    "extra1": "Astronomie",
+    "extra2": ""
+  },
+  {
+    "titlu": "Physics of the Future",
+    "autor": "Michio Kaku",
+    "isbn": "9780307473332",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Prime Obsession",
+    "autor": "John Derbyshire",
+    "isbn": "9780452285255",
+    "tip": "STIINTA",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "QED: The Strange Theory of Light",
+    "autor": "Richard Feynman",
+    "isbn": "9780691125756",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Reality Is Not What It Seems",
+    "autor": "Carlo Rovelli",
+    "isbn": "9780735213920",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Seven Brief Lessons on Physics",
+    "autor": "Carlo Rovelli",
+    "isbn": "9780399184413",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Six Easy Pieces",
+    "autor": "Richard Feynman",
+    "isbn": "9780465025275",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Blind Watchmaker",
+    "autor": "Richard Dawkins",
+    "isbn": "9780393315707",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Body",
+    "autor": "Bill Bryson",
+    "isbn": "9780385539302",
+    "tip": "STIINTA",
+    "extra1": "Medicina",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Brain That Changes Itself",
+    "autor": "Norman Doidge",
+    "isbn": "9780143113102",
+    "tip": "STIINTA",
+    "extra1": "Neurologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Code Book",
+    "autor": "Simon Singh",
+    "isbn": "9780385495325",
+    "tip": "STIINTA",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Demon-Haunted World",
+    "autor": "Carl Sagan",
+    "isbn": "9780345409461",
+    "tip": "STIINTA",
+    "extra1": "Scepticism",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Descent of Man",
+    "autor": "Charles Darwin",
+    "isbn": "9781077870901",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Double Helix",
+    "autor": "James Watson",
+    "isbn": "9780743216302",
+    "tip": "STIINTA",
+    "extra1": "Genetica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Elegant Universe",
+    "autor": "Brian Greene",
+    "isbn": "9780393338102",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Emperor of All Maladies",
+    "autor": "Siddhartha Mukherjee",
+    "isbn": "9781439107959",
+    "tip": "STIINTA",
+    "extra1": "Medicina",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Fabric of the Cosmos",
+    "autor": "Brian Greene",
+    "isbn": "9780375727207",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Feynman Lectures on Physics Vol. 1",
+    "autor": "Richard Feynman",
+    "isbn": "9780465023820",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Feynman Lectures on Physics Vol. 2",
+    "autor": "Richard Feynman",
+    "isbn": "9780465023821",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Gene: An Intimate History",
+    "autor": "Siddhartha Mukherjee",
+    "isbn": "9781476733524",
+    "tip": "STIINTA",
+    "extra1": "Genetica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The God Delusion",
+    "autor": "Richard Dawkins",
+    "isbn": "9780618918249",
+    "tip": "STIINTA",
+    "extra1": "Filosofie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Grand Design",
+    "autor": "Stephen Hawking",
+    "isbn": "9780553805376",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Greatest Show on Earth",
+    "autor": "Richard Dawkins",
+    "isbn": "9781416594789",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Hidden Life of Trees",
+    "autor": "Peter Wohlleben",
+    "isbn": "9781771642484",
+    "tip": "STIINTA",
+    "extra1": "Ecologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Ice at the End of the World",
+    "autor": "Jon Gertner",
+    "isbn": "9781400067503",
+    "tip": "STIINTA",
+    "extra1": "Climatologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Lost City of the Monkey God",
+    "autor": "Douglas Preston",
+    "isbn": "9781455540006",
+    "tip": "STIINTA",
+    "extra1": "Arheologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Man Who Knew Infinity",
+    "autor": "Robert Kanigel",
+    "isbn": "9781476763491",
+    "tip": "STIINTA",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Music of the Primes",
+    "autor": "Marcus du Sautoy",
+    "isbn": "9780062064011",
+    "tip": "STIINTA",
+    "extra1": "Matematica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Omnivore's Dilemma",
+    "autor": "Michael Pollan",
+    "isbn": "9780143038580",
+    "tip": "STIINTA",
+    "extra1": "Ecologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Order of Time",
+    "autor": "Carlo Rovelli",
+    "isbn": "9780735216105",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Origin of Species",
+    "autor": "Charles Darwin",
+    "isbn": "9780140432053",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Red Queen",
+    "autor": "Matt Ridley",
+    "isbn": "9780060556570",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Selfish Gene",
+    "autor": "Richard Dawkins",
+    "isbn": "9780199291151",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Sixth Extinction",
+    "autor": "Elizabeth Kolbert",
+    "isbn": "9781250062185",
+    "tip": "STIINTA",
+    "extra1": "Ecologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Structure of DNA",
+    "autor": "Francis Crick",
+    "isbn": "9780671552978",
+    "tip": "STIINTA",
+    "extra1": "Genetica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Uninhabitable Earth",
+    "autor": "David Wallace-Wells",
+    "isbn": "9780525576709",
+    "tip": "STIINTA",
+    "extra1": "Climatologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Universe in a Nutshell",
+    "autor": "Stephen Hawking",
+    "isbn": "9780553802023",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Vital Question",
+    "autor": "Nick Lane",
+    "isbn": "9780393088816",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "What Is Life?",
+    "autor": "Erwin Schrödinger",
+    "isbn": "9781107604667",
+    "tip": "STIINTA",
+    "extra1": "Fizica",
+    "extra2": ""
+  },
+  {
+    "titlu": "Your Inner Fish",
+    "autor": "Neil Shubin",
+    "isbn": "9780307277459",
+    "tip": "STIINTA",
+    "extra1": "Biologie",
+    "extra2": ""
+  },
+  {
+    "titlu": "A Philosophy of Software Design",
+    "autor": "John Ousterhout",
+    "isbn": "9781732102200",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Accelerate",
+    "autor": "Nicole Forsgren",
+    "isbn": "9781942788331",
+    "tip": "TEHNICA",
+    "extra1": "Management",
+    "extra2": ""
+  },
+  {
+    "titlu": "Algorithm Design",
+    "autor": "Jon Kleinberg",
+    "isbn": "9780321295354",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "Algorithms",
+    "autor": "Robert Sedgewick",
+    "isbn": "9780321573513",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "Android Programming: The Big Nerd Ranch Guide",
+    "autor": "Bill Phillips",
+    "isbn": "9780135245125",
+    "tip": "TEHNICA",
+    "extra1": "Mobile",
+    "extra2": ""
+  },
+  {
+    "titlu": "Artificial Intelligence: A Modern Approach",
+    "autor": "Stuart Russell",
+    "isbn": "9780136042594",
+    "tip": "TEHNICA",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Artificial Intelligence: A Modern Approach",
+    "autor": "Stuart Russell",
+    "isbn": "9780136042594-724",
+    "tip": "TEHNICA",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Automate the Boring Stuff with Python",
+    "autor": "Al Sweigart",
+    "isbn": "9781593275990",
+    "tip": "TEHNICA",
+    "extra1": "Python",
+    "extra2": ""
+  },
+  {
+    "titlu": "Building Microservices",
+    "autor": "Sam Newman",
+    "isbn": "9781491950357",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Building Microservices",
+    "autor": "Sam Newman",
+    "isbn": "9781491950357-741",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "C Programming Language",
+    "autor": "Brian Kernighan",
+    "isbn": "9780131103627",
+    "tip": "TEHNICA",
+    "extra1": "C",
+    "extra2": ""
+  },
+  {
+    "titlu": "C++ Concurrency in Action",
+    "autor": "Anthony Williams",
+    "isbn": "9781617294693",
+    "tip": "TEHNICA",
+    "extra1": "C++",
+    "extra2": ""
+  },
+  {
+    "titlu": "C++ Primer",
+    "autor": "Stanley Lippman",
+    "isbn": "9780321714114",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Clean Architecture",
+    "autor": "Robert C. Martin",
+    "isbn": "9780134494166",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Clean Code",
+    "autor": "Robert C. Martin",
+    "isbn": "9780132350884",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Code",
+    "autor": "Charles Petzold",
+    "isbn": "9780735611313",
+    "tip": "TEHNICA",
+    "extra1": "Hardware",
+    "extra2": ""
+  },
+  {
+    "titlu": "Code Complete",
+    "autor": "Steve McConnell",
+    "isbn": "9780735619678",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Compilers: Principles, Techniques",
+    "autor": "Alfred V. Aho",
+    "isbn": "9780321486813",
+    "tip": "TEHNICA",
+    "extra1": "Compilatoare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Compilers: Principles, Techniques",
+    "autor": "Alfred Aho",
+    "isbn": "9780321486813-717",
+    "tip": "TEHNICA",
+    "extra1": "Compilatoare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Computer Architecture",
+    "autor": "John Hennessy",
+    "isbn": "9780123838728",
+    "tip": "TEHNICA",
+    "extra1": "Hardware",
+    "extra2": ""
+  },
+  {
+    "titlu": "Computer Networks",
+    "autor": "Andrew Tanenbaum",
+    "isbn": "9780132126953",
+    "tip": "TEHNICA",
+    "extra1": "Retele",
+    "extra2": ""
+  },
+  {
+    "titlu": "Computer Networks",
+    "autor": "Andrew Tanenbaum",
+    "isbn": "9780132126953-719",
+    "tip": "TEHNICA",
+    "extra1": "Retele",
+    "extra2": ""
+  },
+  {
+    "titlu": "Computer Organization and Design",
+    "autor": "David Patterson",
+    "isbn": "9780124077263",
+    "tip": "TEHNICA",
+    "extra1": "Hardware",
+    "extra2": ""
+  },
+  {
+    "titlu": "Computer Organization and Design",
+    "autor": "David Patterson",
+    "isbn": "9780124077263-722",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Continuous Delivery",
+    "autor": "Jez Humble",
+    "isbn": "9780321601919",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "Cracking the Coding Interview",
+    "autor": "Gayle L. McDowell",
+    "isbn": "9780984782857",
+    "tip": "TEHNICA",
+    "extra1": "Interviuri",
+    "extra2": ""
+  },
+  {
+    "titlu": "Cryptography and Network Security",
+    "autor": "William Stallings",
+    "isbn": "9780134444284",
+    "tip": "TEHNICA",
+    "extra1": "Securitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "Cryptography and Network Security",
+    "autor": "William Stallings",
+    "isbn": "9780134444284-723",
+    "tip": "TEHNICA",
+    "extra1": "Securitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "Database Internals",
+    "autor": "Alex Petrov",
+    "isbn": "9781492040347",
+    "tip": "TEHNICA",
+    "extra1": "Baze de Date",
+    "extra2": ""
+  },
+  {
+    "titlu": "Database System Concepts",
+    "autor": "Abraham Silberschatz",
+    "isbn": "9780073523323",
+    "tip": "TEHNICA",
+    "extra1": "Baze de date",
+    "extra2": ""
+  },
+  {
+    "titlu": "Deep Learning",
+    "autor": "Ian Goodfellow",
+    "isbn": "9780262035613",
+    "tip": "TEHNICA",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Deep Learning",
+    "autor": "Ian Goodfellow",
+    "isbn": "9780262035613-726",
+    "tip": "TEHNICA",
+    "extra1": "ML",
+    "extra2": ""
+  },
+  {
+    "titlu": "Design Patterns",
+    "autor": "Erich Gamma",
+    "isbn": "9780201633610",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Designing Data-Intensive Applications",
+    "autor": "Martin Kleppmann",
+    "isbn": "9781449373320",
+    "tip": "TEHNICA",
+    "extra1": "Sisteme",
+    "extra2": ""
+  },
+  {
+    "titlu": "Designing Data-Intensive Applications",
+    "autor": "Martin Kleppmann",
+    "isbn": "9781449373320-740",
+    "tip": "TEHNICA",
+    "extra1": "Distributed",
+    "extra2": ""
+  },
+  {
+    "titlu": "Docker Deep Dive",
+    "autor": "Nigel Poulton",
+    "isbn": "9781521822807",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "Docker Deep Dive",
+    "autor": "Nigel Poulton",
+    "isbn": "9781521822807-736",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "Domain-Driven Design",
+    "autor": "Eric Evans",
+    "isbn": "9780321125217",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Effective C++",
+    "autor": "Scott Meyers",
+    "isbn": "9780321334879",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Effective C++",
+    "autor": "Scott Meyers",
+    "isbn": "9780321334879-744",
+    "tip": "TEHNICA",
+    "extra1": "C++",
+    "extra2": ""
+  },
+  {
+    "titlu": "Effective Modern C++",
+    "autor": "Scott Meyers",
+    "isbn": "9781491903995",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Effective Modern C++",
+    "autor": "Scott Meyers",
+    "isbn": "9781491903995-746",
+    "tip": "TEHNICA",
+    "extra1": "C++",
+    "extra2": ""
+  },
+  {
+    "titlu": "Eloquent JavaScript",
+    "autor": "Marijn Haverbeke",
+    "isbn": "9781593279509",
+    "tip": "TEHNICA",
+    "extra1": "JavaScript",
+    "extra2": ""
+  },
+  {
+    "titlu": "Eloquent JavaScript",
+    "autor": "Marijn Haverbeke",
+    "isbn": "9781593279509-733",
+    "tip": "TEHNICA",
+    "extra1": "JavaScript",
+    "extra2": ""
+  },
+  {
+    "titlu": "Fluent Python",
+    "autor": "Luciano Ramalho",
+    "isbn": "9781491946008",
+    "tip": "TEHNICA",
+    "extra1": "Python",
+    "extra2": ""
+  },
+  {
+    "titlu": "Game Programming Patterns",
+    "autor": "Robert Nystrom",
+    "isbn": "9780990582908",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Grokking the System Design Interview",
+    "autor": "Design Gurus",
+    "isbn": "9798703036755",
+    "tip": "TEHNICA",
+    "extra1": "Interviuri",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hacking: The Art of Exploitation",
+    "autor": "Jon Erickson",
+    "isbn": "9781593271442",
+    "tip": "TEHNICA",
+    "extra1": "Securitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hands-On Machine Learning",
+    "autor": "Aurélien Géron",
+    "isbn": "9781492032649",
+    "tip": "TEHNICA",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Hands-On Machine Learning",
+    "autor": "Aurélien Géron",
+    "isbn": "9781492032649-727",
+    "tip": "TEHNICA",
+    "extra1": "ML",
+    "extra2": ""
+  },
+  {
+    "titlu": "Head First Design Patterns",
+    "autor": "Eric Freeman",
+    "isbn": "9780596007126",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "High Performance MySQL",
+    "autor": "Baron Schwartz",
+    "isbn": "9781449314286",
+    "tip": "TEHNICA",
+    "extra1": "Baze de Date",
+    "extra2": ""
+  },
+  {
+    "titlu": "Implementing Domain-Driven Design",
+    "autor": "Vaughn Vernon",
+    "isbn": "9780321834577",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Information Theory, Inference, and Learning Algorithms",
+    "autor": "David MacKay",
+    "isbn": "9780521642989",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "Introduction to Algorithms",
+    "autor": "Thomas H. Cormen",
+    "isbn": "9780262033848",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "JavaScript: The Good Parts",
+    "autor": "Douglas Crockford",
+    "isbn": "9780596517748",
+    "tip": "TEHNICA",
+    "extra1": "JavaScript",
+    "extra2": ""
+  },
+  {
+    "titlu": "JavaScript: The Good Parts",
+    "autor": "Douglas Crockford",
+    "isbn": "9780596517748-731",
+    "tip": "TEHNICA",
+    "extra1": "JavaScript",
+    "extra2": ""
+  },
+  {
+    "titlu": "Kubernetes in Action",
+    "autor": "Marko Luksa",
+    "isbn": "9781617293726",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "Kubernetes in Action",
+    "autor": "Marko Luksa",
+    "isbn": "9781617293726-737",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "Learning Python",
+    "autor": "Mark Lutz",
+    "isbn": "9781449355739",
+    "tip": "TEHNICA",
+    "extra1": "Python",
+    "extra2": ""
+  },
+  {
+    "titlu": "Learning Python",
+    "autor": "Mark Lutz",
+    "isbn": "9781449355739-730",
+    "tip": "TEHNICA",
+    "extra1": "Python",
+    "extra2": ""
+  },
+  {
+    "titlu": "Learning React",
+    "autor": "Alex Banks",
+    "isbn": "9781492051725",
+    "tip": "TEHNICA",
+    "extra1": "JavaScript",
+    "extra2": ""
+  },
+  {
+    "titlu": "Linux Command Line",
+    "autor": "William Shotts",
+    "isbn": "9781593273897",
+    "tip": "TEHNICA",
+    "extra1": "Sisteme",
+    "extra2": ""
+  },
+  {
+    "titlu": "Machine Learning",
+    "autor": "Tom M. Mitchell",
+    "isbn": "9780070428072",
+    "tip": "TEHNICA",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Microservices Patterns",
+    "autor": "Chris Richardson",
+    "isbn": "9781617294549",
+    "tip": "TEHNICA",
+    "extra1": "Arhitectura",
+    "extra2": ""
+  },
+  {
+    "titlu": "Modern Operating Systems",
+    "autor": "Andrew Tanenbaum",
+    "isbn": "9780136006633",
+    "tip": "TEHNICA",
+    "extra1": "Sisteme",
+    "extra2": ""
+  },
+  {
+    "titlu": "Modern Operating Systems",
+    "autor": "Andrew Tanenbaum",
+    "isbn": "9780136006633-720",
+    "tip": "TEHNICA",
+    "extra1": "OS",
+    "extra2": ""
+  },
+  {
+    "titlu": "MongoDB: The Definitive Guide",
+    "autor": "Shannon Bradshaw",
+    "isbn": "9781491954461",
+    "tip": "TEHNICA",
+    "extra1": "Baze de Date",
+    "extra2": ""
+  },
+  {
+    "titlu": "More Effective C++",
+    "autor": "Scott Meyers",
+    "isbn": "9780201633719",
+    "tip": "TEHNICA",
+    "extra1": "C++",
+    "extra2": ""
+  },
+  {
+    "titlu": "Node.js Design Patterns",
+    "autor": "Mario Casciaro",
+    "isbn": "9781839214110",
+    "tip": "TEHNICA",
+    "extra1": "JavaScript",
+    "extra2": ""
+  },
+  {
+    "titlu": "Operating System Concepts",
+    "autor": "Abraham Silberschatz",
+    "isbn": "9781118063330",
+    "tip": "TEHNICA",
+    "extra1": "Sisteme",
+    "extra2": ""
+  },
+  {
+    "titlu": "Operating System Concepts",
+    "autor": "Abraham Silberschatz",
+    "isbn": "9781118063330-718",
+    "tip": "TEHNICA",
+    "extra1": "OS",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pattern Recognition and Machine Learning",
+    "autor": "Christopher Bishop",
+    "isbn": "9780387310732",
+    "tip": "TEHNICA",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pattern Recognition and Machine Learning",
+    "autor": "Christopher Bishop",
+    "isbn": "9780387310732-725",
+    "tip": "TEHNICA",
+    "extra1": "ML",
+    "extra2": ""
+  },
+  {
+    "titlu": "PostgreSQL: Up and Running",
+    "autor": "Regina Obe",
+    "isbn": "9781491963418",
+    "tip": "TEHNICA",
+    "extra1": "Baze de Date",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pro Git",
+    "autor": "Scott Chacon",
+    "isbn": "9781484200773",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "Pro Git",
+    "autor": "Scott Chacon",
+    "isbn": "9781484200773-735",
+    "tip": "TEHNICA",
+    "extra1": "Git",
+    "extra2": ""
+  },
+  {
+    "titlu": "Programming Pearls",
+    "autor": "Jon Bentley",
+    "isbn": "9780201657883",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "Programming Rust",
+    "autor": "Jim Blandy",
+    "isbn": "9781492052548",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Python Cookbook",
+    "autor": "David Beazley",
+    "isbn": "9781449340377",
+    "tip": "TEHNICA",
+    "extra1": "Python",
+    "extra2": ""
+  },
+  {
+    "titlu": "Python Crash Course",
+    "autor": "Eric Matthes",
+    "isbn": "9781593279288",
+    "tip": "TEHNICA",
+    "extra1": "Python",
+    "extra2": ""
+  },
+  {
+    "titlu": "Redis in Action",
+    "autor": "Josiah Carlson",
+    "isbn": "9781617290855",
+    "tip": "TEHNICA",
+    "extra1": "Baze de Date",
+    "extra2": ""
+  },
+  {
+    "titlu": "Refactoring",
+    "autor": "Martin Fowler",
+    "isbn": "9780201485677",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Refactoring: 2nd Edition",
+    "autor": "Martin Fowler",
+    "isbn": "9780134757599",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Rust Programming Language",
+    "autor": "Steve Klabnik",
+    "isbn": "9781718500044",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Site Reliability Engineering",
+    "autor": "Niall Richard Murphy",
+    "isbn": "9781491929124",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "Site Reliability Engineering",
+    "autor": "Betsy Beyer",
+    "isbn": "9781491929124-739",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "Software Engineering at Google",
+    "autor": "Titus Winters",
+    "isbn": "9781492082798",
+    "tip": "TEHNICA",
+    "extra1": "Management",
+    "extra2": ""
+  },
+  {
+    "titlu": "Staff Engineer",
+    "autor": "Will Larson",
+    "isbn": "9781736417911",
+    "tip": "TEHNICA",
+    "extra1": "Management",
+    "extra2": ""
+  },
+  {
+    "titlu": "Structure and Interpretation of Computer Programs",
+    "autor": "Harold Abelson",
+    "isbn": "9780262510875",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "Structure and Interpretation of Computer Programs",
+    "autor": "Harold Abelson",
+    "isbn": "9780262510875-713",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "System Design Interview",
+    "autor": "Alex Xu",
+    "isbn": "9798664653403",
+    "tip": "TEHNICA",
+    "extra1": "Interviuri",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Computer Programming Vol. 1",
+    "autor": "Donald Knuth",
+    "isbn": "9780201896831-714",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Computer Programming Vol. 2",
+    "autor": "Donald Knuth",
+    "isbn": "9780201896848-715",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Computer Programming Vol. 3",
+    "autor": "Donald Knuth",
+    "isbn": "9780201896855-716",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Computer Programming Vol.1",
+    "autor": "Donald Knuth",
+    "isbn": "9780201896831",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Computer Programming Vol.2",
+    "autor": "Donald Knuth",
+    "isbn": "9780201896848",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Art of Computer Programming Vol.3",
+    "autor": "Donald Knuth",
+    "isbn": "9780201896855",
+    "tip": "TEHNICA",
+    "extra1": "Algoritmi",
+    "extra2": ""
+  },
+  {
+    "titlu": "The C Programming Language",
+    "autor": "Brian Kernighan",
+    "isbn": "9780131101630",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The C++ Programming Language",
+    "autor": "Bjarne Stroustrup",
+    "isbn": "9780321563842",
+    "tip": "TEHNICA",
+    "extra1": "C++",
+    "extra2": ""
+  },
+  {
+    "titlu": "The DevOps Handbook",
+    "autor": "Gene Kim",
+    "isbn": "9781942788003",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Elements of Statistical Learning",
+    "autor": "Trevor Hastie",
+    "isbn": "9780387848570",
+    "tip": "TEHNICA",
+    "extra1": "AI",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Go Programming Language",
+    "autor": "Alan Donovan",
+    "isbn": "9780134190440",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Linux Command Line",
+    "autor": "William Shotts",
+    "isbn": "9781593273910",
+    "tip": "TEHNICA",
+    "extra1": "Linux",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Linux Programming Interface",
+    "autor": "Michael Kerrisk",
+    "isbn": "9781593272203",
+    "tip": "TEHNICA",
+    "extra1": "Sisteme",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Mythical Man-Month",
+    "autor": "Frederick Brooks",
+    "isbn": "9780201835953",
+    "tip": "TEHNICA",
+    "extra1": "Management",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Phoenix Project",
+    "autor": "Gene Kim",
+    "isbn": "9781942788294",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Phoenix Project",
+    "autor": "Gene Kim",
+    "isbn": "9781942788294-738",
+    "tip": "TEHNICA",
+    "extra1": "DevOps",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Pragmatic Programmer",
+    "autor": "Andrew Hunt",
+    "isbn": "9780135957059",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Pragmatic Programmer 2nd Edition",
+    "autor": "David Thomas",
+    "isbn": "9780135957059-265",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Swift Programming Language",
+    "autor": "Apple Inc.",
+    "isbn": "9781491927052",
+    "tip": "TEHNICA",
+    "extra1": "Programare",
+    "extra2": ""
+  },
+  {
+    "titlu": "The Web Application Hacker's Handbook",
+    "autor": "Dafydd Stuttard",
+    "isbn": "9781118026472",
+    "tip": "TEHNICA",
+    "extra1": "Securitate",
+    "extra2": ""
+  },
+  {
+    "titlu": "You Don't Know JS",
+    "autor": "Kyle Simpson",
+    "isbn": "9781491950357-732",
+    "tip": "TEHNICA",
+    "extra1": "JavaScript",
+    "extra2": ""
+  },
+  {
+    "titlu": "You Don't Know JS: Scope & Closures",
+    "autor": "Kyle Simpson",
+    "isbn": "9781449335588",
+    "tip": "TEHNICA",
+    "extra1": "JavaScript",
+    "extra2": ""
+  },
+  {
+    "titlu": "iOS Programming: The Big Nerd Ranch Guide",
+    "autor": "Christian Keur",
+    "isbn": "9780135264027",
+    "tip": "TEHNICA",
+    "extra1": "Mobile",
+    "extra2": ""
+  }
+]

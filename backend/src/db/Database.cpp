@@ -3,7 +3,11 @@
 #include <sstream>
 #include <iomanip>
 #include <iostream>
+#include <mutex>
 using namespace std;
+
+// Mutex global: garantează că adaugaImprumut e atomică indiferent de threading SQLite
+static mutex mtx_imprumut;
 
 Database::Database(const string& caleFisier) : caleFisier(caleFisier), db(nullptr) {}
 
@@ -72,11 +76,41 @@ void Database::initializeazaTabelele() {
 
     )";
     
+    const char* sqlRecenzii = R"(
+        CREATE TABLE IF NOT EXISTS recenzii (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id_utilizator INTEGER NOT NULL,
+            isbn TEXT NOT NULL,
+            rating INTEGER NOT NULL CHECK(rating BETWEEN 1 AND 5),
+            comentariu TEXT DEFAULT '',
+            data DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY(id_utilizator) REFERENCES utilizatori(id),
+            FOREIGN KEY(isbn) REFERENCES carti(isbn)
+        );
+    )";
+
+    const char* sqlWaitlist = R"(
+        CREATE TABLE IF NOT EXISTS waitlist (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id_utilizator INTEGER NOT NULL,
+            isbn TEXT NOT NULL,
+            data_intrare DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY(id_utilizator) REFERENCES utilizatori(id),
+            FOREIGN KEY(isbn) REFERENCES carti(isbn),
+            UNIQUE(id_utilizator, isbn)
+        );
+    )";
+
     char* errMsg;
     sqlite3_exec(db, sqlCarti, nullptr, nullptr, &errMsg);
     sqlite3_exec(db, sqlUtilizatori, nullptr, nullptr, &errMsg);
     sqlite3_exec(db, sqlImprumuturi, nullptr, nullptr, &errMsg);
     sqlite3_exec(db, sqlAngajati, nullptr, nullptr, &errMsg);
+    sqlite3_exec(db, sqlRecenzii, nullptr, nullptr, &errMsg);
+    sqlite3_exec(db, sqlWaitlist, nullptr, nullptr, &errMsg);
+    // Safe migrations: ignorăm eroarea dacă coloana există deja
+    sqlite3_exec(db, "ALTER TABLE carti ADD COLUMN descriere TEXT DEFAULT '';", nullptr, nullptr, nullptr);
+    sqlite3_exec(db, "ALTER TABLE imprumuturi ADD COLUMN data_returnare DATETIME DEFAULT NULL;", nullptr, nullptr, nullptr);
     cout << "[DB] Tabele initializate." << endl;
 }
 
@@ -119,6 +153,221 @@ vector<map<string, string>> Database::getCarti() {
     }
     sqlite3_finalize(stmt);
     return rezultat;
+}
+
+// ==================== WAITLIST ====================
+
+bool Database::areImprumutActiv(int idUtilizator, const string& isbn) {
+    const char* sql = "SELECT COUNT(*) FROM imprumuturi WHERE id_utilizator = ? AND isbn = ? AND returnat = 0;";
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) != SQLITE_OK) return false;
+    sqlite3_bind_int(stmt, 1, idUtilizator);
+    sqlite3_bind_text(stmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
+    int count = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW) count = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return count > 0;
+}
+
+bool Database::adaugaWaitlist(int idUtilizator, const string& isbn) {
+    string sql = "INSERT OR IGNORE INTO waitlist (id_utilizator, isbn) VALUES (?, ?);";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, idUtilizator);
+    sqlite3_bind_text(stmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
+    int rc = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE;
+}
+
+bool Database::stergeWaitlist(int idUtilizator, const string& isbn) {
+    string sql = "DELETE FROM waitlist WHERE id_utilizator = ? AND isbn = ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, idUtilizator);
+    sqlite3_bind_text(stmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
+    int rc = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE;
+}
+
+vector<map<string,string>> Database::getWaitlistPentruIsbn(const string& isbn) {
+    vector<map<string,string>> rezultat;
+    string sql = R"(
+        SELECT w.id_utilizator, u.nume, w.data_intrare
+        FROM waitlist w
+        JOIN utilizatori u ON w.id_utilizator = u.id
+        WHERE w.isbn = ?
+        ORDER BY w.data_intrare;
+    )";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, isbn.c_str(), -1, SQLITE_STATIC);
+    int pozitie = 1;
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string,string> rand;
+        rand["id_utilizator"] = to_string(sqlite3_column_int(stmt, 0));
+        rand["nume"] = (const char*)sqlite3_column_text(stmt, 1);
+        rand["data_intrare"] = (const char*)sqlite3_column_text(stmt, 2);
+        rand["pozitie"] = to_string(pozitie++);
+        rezultat.push_back(rand);
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
+vector<map<string,string>> Database::getWaitlistUtilizator(int idUtilizator) {
+    vector<map<string,string>> rezultat;
+    string sql = R"(
+        SELECT w.isbn, c.titlu, c.autor, w.data_intrare, c.disponibila,
+               (SELECT COUNT(*) FROM waitlist w2
+                WHERE w2.isbn = w.isbn AND w2.data_intrare <= w.data_intrare) as pozitie
+        FROM waitlist w
+        JOIN carti c ON w.isbn = c.isbn
+        WHERE w.id_utilizator = ?
+        ORDER BY w.data_intrare;
+    )";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, idUtilizator);
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string,string> rand;
+        rand["isbn"]        = (const char*)sqlite3_column_text(stmt, 0);
+        rand["titlu"]       = (const char*)sqlite3_column_text(stmt, 1);
+        rand["autor"]       = (const char*)sqlite3_column_text(stmt, 2);
+        rand["data_intrare"]= (const char*)sqlite3_column_text(stmt, 3);
+        rand["disponibila"] = to_string(sqlite3_column_int(stmt, 4));
+        rand["pozitie"]     = to_string(sqlite3_column_int(stmt, 5));
+        rezultat.push_back(rand);
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
+}
+
+bool Database::esteInWaitlist(int idUtilizator, const string& isbn) {
+    string sql = "SELECT id FROM waitlist WHERE id_utilizator = ? AND isbn = ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, idUtilizator);
+    sqlite3_bind_text(stmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
+    bool exista = sqlite3_step(stmt) == SQLITE_ROW;
+    sqlite3_finalize(stmt);
+    return exista;
+}
+
+int Database::getPozitieWaitlist(int idUtilizator, const string& isbn) {
+    string sql = R"(
+        SELECT COUNT(*) FROM waitlist
+        WHERE isbn = ? AND data_intrare <= (
+            SELECT data_intrare FROM waitlist WHERE id_utilizator = ? AND isbn = ?
+        );
+    )";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, isbn.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_int(stmt, 2, idUtilizator);
+    sqlite3_bind_text(stmt, 3, isbn.c_str(), -1, SQLITE_STATIC);
+    int poz = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW) poz = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return poz;
+}
+
+// ==================== STATISTICI UTILIZATOR ====================
+
+int Database::countImprumuturiUtilizator(int id) {
+    const char* sql = "SELECT COUNT(*) FROM imprumuturi WHERE id_utilizator = ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, id);
+    int total = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW) total = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return total;
+}
+
+int Database::countImprumuturiActive(int id) {
+    const char* sql = "SELECT COUNT(*) FROM imprumuturi WHERE id_utilizator = ? AND returnat = 0;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, id);
+    int total = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW) total = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return total;
+}
+
+int Database::countRecenziiUtilizator(int id) {
+    const char* sql = "SELECT COUNT(*) FROM recenzii WHERE id_utilizator = ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, id);
+    int total = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW) total = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return total;
+}
+
+int Database::countGenuriBorrowedUtilizator(int id) {
+    const char* sql = R"(
+        SELECT COUNT(DISTINCT c.extra1) FROM imprumuturi i
+        JOIN carti c ON i.isbn = c.isbn
+        WHERE i.id_utilizator = ? AND c.extra1 != '';
+    )";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, id);
+    int total = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW) total = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return total;
+}
+
+int Database::countTipuriBorrowedUtilizator(int id) {
+    const char* sql = R"(
+        SELECT COUNT(DISTINCT c.tip) FROM imprumuturi i
+        JOIN carti c ON i.isbn = c.isbn
+        WHERE i.id_utilizator = ?;
+    )";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, id);
+    int total = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW) total = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return total;
+}
+
+double Database::getRatingMediuDat(int id) {
+    const char* sql = "SELECT AVG(rating) FROM recenzii WHERE id_utilizator = ?;";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, id);
+    double avg = 0.0;
+    if (sqlite3_step(stmt) == SQLITE_ROW && sqlite3_column_type(stmt, 0) != SQLITE_NULL)
+        avg = sqlite3_column_double(stmt, 0);
+    sqlite3_finalize(stmt);
+    return avg;
+}
+
+string Database::getGenFavorit(int id) {
+    const char* sql = R"(
+        SELECT c.extra1, COUNT(*) as cnt
+        FROM imprumuturi i
+        JOIN carti c ON i.isbn = c.isbn
+        WHERE i.id_utilizator = ? AND c.extra1 != ''
+        GROUP BY c.extra1
+        ORDER BY cnt DESC
+        LIMIT 1;
+    )";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, id);
+    string gen = "";
+    if (sqlite3_step(stmt) == SQLITE_ROW && sqlite3_column_text(stmt, 0))
+        gen = (const char*)sqlite3_column_text(stmt, 0);
+    sqlite3_finalize(stmt);
+    return gen;
 }
 
 vector<map<string, string>> Database::cautaCarti(const string& query) {
@@ -177,7 +426,10 @@ vector<map<string, string>> Database::getAngajati() {
         rand["nume"] = (const char*)sqlite3_column_text(stmt, 1);
         rand["username"] = (const char*)sqlite3_column_text(stmt, 2);
         rand["rol"] = (const char*)sqlite3_column_text(stmt, 3);
-        rand["salariu"] = to_string(sqlite3_column_double(stmt, 4));
+        // Format cu 2 zecimale (evitam "4000.000000")
+        char salBuf[32];
+        snprintf(salBuf, sizeof(salBuf), "%.2f", sqlite3_column_double(stmt, 4));
+        rand["salariu"] = salBuf;
         rand["departament"] = (const char*)sqlite3_column_text(stmt, 5);
         rezultat.push_back(rand);
     }
@@ -240,6 +492,18 @@ bool Database::stergeCarteByIsbn(const string& isbn) {
     sqlite3_stmt* stmt;
     sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
     sqlite3_bind_text(stmt, 1, isbn.c_str(), -1, SQLITE_STATIC);
+    int rc = sqlite3_step(stmt);
+    int affected = sqlite3_changes(db);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE && affected > 0;
+}
+
+bool Database::updateDescriere(const string& isbn, const string& descriere) {
+    string sql = "UPDATE carti SET descriere = ? WHERE isbn = ?;";
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr) != SQLITE_OK) return false;
+    sqlite3_bind_text(stmt, 1, descriere.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
     int rc = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
     return rc == SQLITE_DONE;
@@ -307,17 +571,40 @@ bool Database::stergeUtilizator(int id) {
 }
 
 bool Database::adaugaImprumut(int idUtilizator, const string& isbn, int zileLimita) {
-    string sql = "INSERT INTO imprumuturi (id_utilizator, isbn, zile_limita) VALUES (?, ?, ?);";
+    // lock_guard: serializează complet toate încercările de împrumut
+    lock_guard<mutex> guard(mtx_imprumut);
+
     sqlite3_stmt* stmt;
-    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+
+    // 1. Citește disponibila direct din DB (nu ne bazăm pe sqlite3_changes care
+    //    poate fi corupt de alte thread-uri care fac SELECTuri pe aceeași conexiune)
+    const char* sqlCheck = "SELECT disponibila FROM carti WHERE isbn = ?;";
+    sqlite3_prepare_v2(db, sqlCheck, -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, isbn.c_str(), -1, SQLITE_STATIC);
+    int rc = sqlite3_step(stmt);
+    int disponibila = (rc == SQLITE_ROW) ? sqlite3_column_int(stmt, 0) : 0;
+    sqlite3_finalize(stmt);
+
+    if (disponibila == 0)
+        return false;  // Cartea e deja luată
+
+    // 2. Marchează cartea ca indisponibilă (suntem singurul thread care a trecut de check)
+    const char* sqlUpd = "UPDATE carti SET disponibila = 0 WHERE isbn = ?;";
+    sqlite3_prepare_v2(db, sqlUpd, -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, isbn.c_str(), -1, SQLITE_STATIC);
+    sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+
+    // 3. Inserează împrumutul
+    const char* sqlIns = "INSERT INTO imprumuturi (id_utilizator, isbn, zile_limita) VALUES (?, ?, ?);";
+    sqlite3_prepare_v2(db, sqlIns, -1, &stmt, nullptr);
     sqlite3_bind_int(stmt, 1, idUtilizator);
     sqlite3_bind_text(stmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_int(stmt, 3, zileLimita);
-    int rc = sqlite3_step(stmt);
+    rc = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
-    if (rc == SQLITE_DONE)
-        return updateDisponibilitate(isbn, false);
-    return false;
+
+    return rc == SQLITE_DONE;
 }
 
 vector<map<string, string>> Database::getImprumuturi() {
@@ -373,7 +660,8 @@ vector<map<string, string>> Database::getImprumuturiUtilizator(int idUtilizator)
 }
 
 bool Database::returneazaImprumut(int idUtilizator, const string& isbn) {
-    string sql = "UPDATE imprumuturi SET returnat = 1 WHERE id_utilizator = ? AND isbn = ? AND returnat = 0;";
+    string sql = "UPDATE imprumuturi SET returnat = 1, data_returnare = CURRENT_TIMESTAMP "
+                 "WHERE id_utilizator = ? AND isbn = ? AND returnat = 0;";
     sqlite3_stmt* stmt;
     sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
     sqlite3_bind_int(stmt, 1, idUtilizator);
@@ -383,6 +671,35 @@ bool Database::returneazaImprumut(int idUtilizator, const string& isbn) {
     if (rc == SQLITE_DONE)
         return updateDisponibilitate(isbn, true);
     return false;
+}
+
+vector<map<string, string>> Database::getIstoricImprumuturiUtilizator(int idUtilizator) {
+    vector<map<string, string>> rezultat;
+    string sql = R"(
+        SELECT i.id, c.titlu, i.isbn, i.data_imprumut, i.zile_limita,
+               i.returnat, COALESCE(i.data_returnare, '') as data_returnare
+        FROM imprumuturi i
+        JOIN carti c ON i.isbn = c.isbn
+        WHERE i.id_utilizator = ?
+        ORDER BY i.data_imprumut DESC;
+    )";
+    sqlite3_stmt* stmt;
+    sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr);
+    sqlite3_bind_int(stmt, 1, idUtilizator);
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string, string> rand;
+        rand["id"]              = to_string(sqlite3_column_int(stmt, 0));
+        rand["titlu"]           = (const char*)sqlite3_column_text(stmt, 1);
+        rand["isbn"]            = (const char*)sqlite3_column_text(stmt, 2);
+        rand["data_imprumut"]   = (const char*)sqlite3_column_text(stmt, 3);
+        rand["zile_limita"]     = to_string(sqlite3_column_int(stmt, 4));
+        rand["returnat"]        = to_string(sqlite3_column_int(stmt, 5));
+        rand["data_returnare"]  = sqlite3_column_text(stmt, 6)
+                                  ? (const char*)sqlite3_column_text(stmt, 6) : "";
+        rezultat.push_back(rand);
+    }
+    sqlite3_finalize(stmt);
+    return rezultat;
 }
 
 string sha256Local(const string& str) {
@@ -487,10 +804,11 @@ vector<string> Database::getGenuriDisponibile() {
     return rezultat;
 }
 
-int Database::getTotalCartiFiltrat(const string& tip, const string& gen) {
+int Database::getTotalCartiFiltrat(const string& tip, const string& gen, bool disponibilDoar) {
     string sql = "SELECT COUNT(*) FROM carti WHERE 1=1";
     if (!tip.empty()) sql += " AND tip = ?";
     if (!gen.empty()) sql += " AND extra1 = ?";
+    if (disponibilDoar) sql += " AND disponibila = 1";
     sql += ";";
 
     sqlite3_stmt* stmt;
@@ -510,7 +828,8 @@ int Database::getTotalCartiFiltrat(const string& tip, const string& gen) {
 vector<map<string, string>> Database::getCartiPaginat(
         int pagina, int perPagina,
         const string& sortDupa, const string& ordine,
-        const string& tip, const string& gen) {
+        const string& tip, const string& gen,
+        bool disponibilDoar) {
 
     vector<map<string, string>> rezultat;
 
@@ -526,6 +845,7 @@ vector<map<string, string>> Database::getCartiPaginat(
     string sql = "SELECT * FROM carti WHERE 1=1";
     if (!tip.empty()) sql += " AND tip = ?";
     if (!gen.empty()) sql += " AND extra1 = ?";
+    if (disponibilDoar) sql += " AND disponibila = 1";
     sql += " ORDER BY " + col + " " + ord + " LIMIT ? OFFSET ?;";
 
     sqlite3_stmt* stmt;
@@ -650,4 +970,87 @@ vector<map<string, string>> Database::getRecomandari(const string& gen, const st
     }
     sqlite3_finalize(stmt);
     return rezultat;
+}
+
+map<string,string> Database::getCarteDupaIsbn(const string& isbn) {
+    map<string,string> result;
+    const char* sql = R"(
+        SELECT isbn, titlu, autor, tip,
+               COALESCE(extra1,'') as extra1,
+               COALESCE(extra2,'') as extra2,
+               disponibila,
+               COALESCE(descriere,'') as descriere
+        FROM carti WHERE isbn = ?;
+    )";
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) != SQLITE_OK) return result;
+    sqlite3_bind_text(stmt, 1, isbn.c_str(), -1, SQLITE_STATIC);
+    if (sqlite3_step(stmt) == SQLITE_ROW) {
+        auto col = [&](int i) -> string {
+            auto* v = sqlite3_column_text(stmt, i);
+            return v ? (const char*)v : "";
+        };
+        result["isbn"]        = col(0);
+        result["titlu"]       = col(1);
+        result["autor"]       = col(2);
+        result["tip"]         = col(3);
+        result["extra1"]      = col(4);
+        result["extra2"]      = col(5);
+        result["disponibila"] = to_string(sqlite3_column_int(stmt, 6));
+        result["descriere"]   = col(7);
+    }
+    sqlite3_finalize(stmt);
+    return result;
+}
+
+vector<map<string,string>> Database::getCartiSimilare(const string& isbn, int limit) {
+    vector<map<string,string>> result;
+    const char* sql = R"(
+        SELECT c.isbn, c.titlu, c.autor, c.tip,
+               COALESCE(c.extra1,'') as extra1,
+               c.disponibila
+        FROM carti c
+        WHERE c.isbn != ?
+          AND (
+            c.autor = (SELECT autor FROM carti WHERE isbn = ?)
+            OR (c.extra1 = (SELECT extra1 FROM carti WHERE isbn = ?) AND c.extra1 != '')
+          )
+        ORDER BY
+            CASE WHEN c.autor = (SELECT autor FROM carti WHERE isbn = ?) THEN 0 ELSE 1 END,
+            RANDOM()
+        LIMIT ?;
+    )";
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) != SQLITE_OK) return result;
+    sqlite3_bind_text(stmt, 1, isbn.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 3, isbn.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 4, isbn.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_int(stmt, 5, limit);
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        map<string,string> row;
+        auto col = [&](int i) -> string {
+            auto* v = sqlite3_column_text(stmt, i);
+            return v ? (const char*)v : "";
+        };
+        row["isbn"]        = col(0);
+        row["titlu"]       = col(1);
+        row["autor"]       = col(2);
+        row["tip"]         = col(3);
+        row["extra1"]      = col(4);
+        row["disponibila"] = to_string(sqlite3_column_int(stmt, 5));
+        result.push_back(row);
+    }
+    sqlite3_finalize(stmt);
+    return result;
+}
+
+bool Database::downgradeRolUtilizator(const string& username) {
+    string sql = "UPDATE utilizatori SET rol = 'utilizator' WHERE username = ? AND rol != 'utilizator';";
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(db, sql.c_str(), -1, &stmt, nullptr) != SQLITE_OK) return false;
+    sqlite3_bind_text(stmt, 1, username.c_str(), -1, SQLITE_STATIC);
+    int rc = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    return rc == SQLITE_DONE;
 }

@@ -5,7 +5,24 @@
 #include "api/CartiAPI.h"
 #include <map>
 #include <algorithm>
+#include <fstream>
+#include <mutex>
+#include <ctime>
 using namespace std;
+
+// ─── Logger simplu în fișier ──────────────────────────────────────────────────
+static mutex log_mtx;
+static void logAPI(const string& msg) {
+    lock_guard<mutex> g(log_mtx);
+    ofstream f("/tmp/biblioteca.log", ios::app);
+    time_t t = time(nullptr);
+    char buf[32];
+    strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", localtime(&t));
+    f << "[" << buf << "] " << msg << "\n";
+}
+// ──────────────────────────────────────────────────────────────────────────────
+
+static const int MAX_IMPRUMUTURI_ACTIVE = 5;
 
 int main() {
     crow::App<crow::CORSHandler> app;
@@ -43,6 +60,7 @@ int main() {
 CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 ([&db]() {
     auto imprumuturi = db.getImprumuturi();
+    if (imprumuturi.empty()) return crow::response(200, "[]");
     crow::json::wvalue result;
     int i = 0;
     for (auto& imp : imprumuturi) {
@@ -75,18 +93,54 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
     ([&db](const crow::request& req) {
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
-        bool ok = db.adaugaImprumut(body["id_utilizator"].i(), body["isbn"].s(), body["zile_limita"].i());
+        int idUser = body["id_utilizator"].i();
+        string isbn = body["isbn"].s();
+        int zile = body["zile_limita"].i();
+        // Verifică existența cărții
+        auto carte = db.getCarteDupaIsbn(isbn);
+        if (carte.empty()) return crow::response(404, "Cartea nu exista in catalog!");
+        // Verifică limita de împrumuturi active
+        if (db.countImprumuturiActive(idUser) >= MAX_IMPRUMUTURI_ACTIVE)
+            return crow::response(400, "Ai atins limita de " + to_string(MAX_IMPRUMUTURI_ACTIVE) + " carti imprumutate simultan!");
+        bool ok = db.adaugaImprumut(idUser, isbn, zile);
+        if (ok) {
+            logAPI("BORROW user=" + to_string(idUser) + " isbn=" + isbn);
+            db.stergeWaitlist(idUser, isbn);  // scoate din WL dacă era în coadă
+        }
         return ok ? crow::response(200, "Imprumut inregistrat!")
-                  : crow::response(400, "Eroare la imprumut!");
+                  : crow::response(409, "Cartea nu mai este disponibila!");
     });
 
     CROW_ROUTE(app, "/api/imprumuturi/returneaza").methods("PUT"_method)
     ([&db](const crow::request& req) {
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
-        bool ok = db.returneazaImprumut(body["id_utilizator"].i(), body["isbn"].s());
+        int idUser = body["id_utilizator"].i();
+        string isbn = body["isbn"].s();
+        bool ok = db.returneazaImprumut(idUser, isbn);
+        if (ok) logAPI("RETURN user=" + to_string(idUser) + " isbn=" + isbn);
         return ok ? crow::response(200, "Carte returnata!")
                   : crow::response(400, "Eroare la returnare!");
+    });
+
+    // Istoricul complet al împrumuturilor unui utilizator (active + returnate)
+    CROW_ROUTE(app, "/api/imprumuturi/utilizator/<int>").methods("GET"_method)
+    ([&db](int idUtilizator) {
+        auto istoric = db.getIstoricImprumuturiUtilizator(idUtilizator);
+        if (istoric.empty()) return crow::response(200, "[]");
+        crow::json::wvalue result;
+        int i = 0;
+        for (auto& imp : istoric) {
+            result[i]["id"]             = imp["id"];
+            result[i]["titlu"]          = imp["titlu"];
+            result[i]["isbn"]           = imp["isbn"];
+            result[i]["data_imprumut"]  = imp["data_imprumut"];
+            result[i]["zile_limita"]    = imp["zile_limita"];
+            result[i]["returnat"]       = imp["returnat"] == "1";
+            result[i]["data_returnare"] = imp["data_returnare"];
+            i++;
+        }
+        return crow::response(result);
     });
 
     // ==================== ANGAJATI ====================
@@ -133,11 +187,52 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
         return crow::response(404, "Angajat negasit!");
     });
 
+    CROW_ROUTE(app, "/api/angajati/<int>/salariu").methods("PUT"_method)
+    ([&db](const crow::request& req, int id) {
+        auto body = crow::json::load(req.body);
+        if (!body) return crow::response(400, "JSON invalid");
+        bool ok = db.updateSalariu(id, body["salariu"].d());
+        return ok ? crow::response(200, "Salariu actualizat!")
+                  : crow::response(400, "Eroare la actualizare salariu!");
+    });
+
     CROW_ROUTE(app, "/api/angajati/<int>").methods("DELETE"_method)
-    ([&db](int id) {
+    ([&db](const crow::request& req, int id) {
+        string caller = req.url_params.get("caller") ? req.url_params.get("caller") : "";
+
+        // Find the angajat being deleted
+        auto angajati = db.getAngajati();
+        string targetUsername;
+        string targetRol;
+        for (auto& a : angajati) {
+            if (a["id"] == to_string(id)) {
+                targetUsername = a["username"];
+                targetRol = a["rol"];
+                break;
+            }
+        }
+
+        if (targetUsername.empty()) return crow::response(404, "Angajat negasit!");
+
+        // Prevent self-deletion
+        if (!caller.empty() && caller == targetUsername)
+            return crow::response(403, "Nu te poti concedia pe tine insuti!");
+
+        // Prevent deleting the last director
+        if (targetRol == "director") {
+            int nrDirectori = 0;
+            for (auto& a : angajati) if (a["rol"] == "director") nrDirectori++;
+            if (nrDirectori <= 1)
+                return crow::response(403, "Nu poti sterge singurul director!");
+        }
+
         bool ok = db.stergeAngajat(id);
-        return ok ? crow::response(200, "Angajat sters!")
-                  : crow::response(400, "Eroare!");
+        if (ok) {
+            // Downgrade the role in utilizatori so they can no longer log in as staff
+            db.downgradeRolUtilizator(targetUsername);
+        }
+        return ok ? crow::response(200, "Angajat concediat!")
+                  : crow::response(400, "Eroare la stergere!");
     });
 
     // ==================== STATISTICI ====================
@@ -233,6 +328,155 @@ CROW_ROUTE(app, "/api/recomandari").methods("GET"_method)
     }
     return crow::response(result);
 });
+
+    // ==================== WAITLIST ====================
+
+    CROW_ROUTE(app, "/api/waitlist").methods("POST"_method)
+    ([&db](const crow::request& req) {
+        auto body = crow::json::load(req.body);
+        if (!body) return crow::response(400, "JSON invalid");
+        int idUser = body["id_utilizator"].i();
+        string isbn = body["isbn"].s();
+        if (db.areImprumutActiv(idUser, isbn))
+            return crow::response(400, "Ai deja aceasta carte imprumutata!");
+        bool ok = db.adaugaWaitlist(idUser, isbn);
+        return ok ? crow::response(200, "Adaugat in lista de asteptare!")
+                  : crow::response(400, "Esti deja in lista sau eroare!");
+    });
+
+    CROW_ROUTE(app, "/api/waitlist").methods("DELETE"_method)
+    ([&db](const crow::request& req) {
+        auto body = crow::json::load(req.body);
+        if (!body) return crow::response(400, "JSON invalid");
+        bool ok = db.stergeWaitlist(body["id_utilizator"].i(), body["isbn"].s());
+        return ok ? crow::response(200, "Sters din lista de asteptare!")
+                  : crow::response(400, "Eroare!");
+    });
+
+    CROW_ROUTE(app, "/api/waitlist/utilizator/<int>").methods("GET"_method)
+    ([&db](int idUtilizator) {
+        auto lista = db.getWaitlistUtilizator(idUtilizator);
+        if (lista.empty()) return crow::response(200, "[]");
+        crow::json::wvalue result;
+        int i = 0;
+        for (auto& w : lista) {
+            result[i]["isbn"]        = w["isbn"];
+            result[i]["titlu"]       = w["titlu"];
+            result[i]["autor"]       = w["autor"];
+            result[i]["data_intrare"]= w["data_intrare"];
+            result[i]["disponibila"] = w["disponibila"] == "1";
+            result[i]["pozitie"]     = stoi(w["pozitie"]);
+            i++;
+        }
+        return crow::response(result);
+    });
+
+    CROW_ROUTE(app, "/api/waitlist/carte/<string>").methods("GET"_method)
+    ([&db](const string& isbn) {
+        auto lista = db.getWaitlistPentruIsbn(isbn);
+        crow::json::wvalue result;
+        int i = 0;
+        for (auto& w : lista) {
+            result[i]["id_utilizator"] = stoi(w["id_utilizator"]);
+            result[i]["nume"] = w["nume"];
+            result[i]["data_intrare"] = w["data_intrare"];
+            result[i]["pozitie"] = stoi(w["pozitie"]);
+            i++;
+        }
+        return crow::response(result);
+    });
+
+    // ==================== DETALII CARTE ====================
+
+    CROW_ROUTE(app, "/api/carte/<string>").methods("GET"_method)
+    ([&db](const string& isbn) {
+        auto carte = db.getCarteDupaIsbn(isbn);
+        if (carte.empty()) return crow::response(404, "Cartea nu a fost gasita");
+
+        auto similare = db.getCartiSimilare(isbn, 8);
+        auto recenzii = db.getRecenzii(isbn);
+
+        crow::json::wvalue result;
+        result["carte"]["isbn"]        = carte["isbn"];
+        result["carte"]["titlu"]       = carte["titlu"];
+        result["carte"]["autor"]       = carte["autor"];
+        result["carte"]["tip"]         = carte["tip"];
+        result["carte"]["extra1"]      = carte["extra1"];
+        result["carte"]["extra2"]      = carte["extra2"];
+        result["carte"]["disponibila"] = (carte["disponibila"] == "1");
+        result["carte"]["descriere"]   = carte["descriere"];
+
+        int i = 0;
+        for (auto& s : similare) {
+            result["similare"][i]["isbn"]        = s["isbn"];
+            result["similare"][i]["titlu"]       = s["titlu"];
+            result["similare"][i]["autor"]       = s["autor"];
+            result["similare"][i]["tip"]         = s["tip"];
+            result["similare"][i]["extra1"]      = s["extra1"];
+            result["similare"][i]["disponibila"] = (s["disponibila"] == "1");
+            i++;
+        }
+
+        i = 0;
+        for (auto& r : recenzii) {
+            result["recenzii"][i]["rating"]     = stoi(r["rating"]);
+            result["recenzii"][i]["comentariu"] = r["comentariu"];
+            result["recenzii"][i]["username"]   = r["username"];
+            result["recenzii"][i]["data"]       = r["data"];
+            i++;
+        }
+
+        return crow::response(result);
+    });
+
+    // ==================== BADGES ====================
+
+    CROW_ROUTE(app, "/api/badges/<int>").methods("GET"_method)
+    ([&db](int idUtilizator) {
+        int totalImp = db.countImprumuturiUtilizator(idUtilizator);
+        int totalRec = db.countRecenziiUtilizator(idUtilizator);
+        int genuri   = db.countGenuriBorrowedUtilizator(idUtilizator);
+        int tipuri   = db.countTipuriBorrowedUtilizator(idUtilizator);
+
+        struct Badge { string id, titlu, descriere, icon; bool castigat; };
+        vector<Badge> badges = {
+            {"prima_carte",     "Prima Carte",     "Ai imprumutat prima ta carte",      "🔖", totalImp >= 1},
+            {"cititor_inrainat","Cititor Inrainat", "Ai imprumutat 5 carti",             "📚", totalImp >= 5},
+            {"explorator",      "Explorator",      "Ai citit din 3 genuri diferite",    "🌍", genuri   >= 3},
+            {"prima_recenzie",  "Prima Recenzie",  "Ai scris prima ta recenzie",        "⭐", totalRec >= 1},
+            {"critic_literar",  "Critic Literar",  "Ai scris 5 recenzii",               "💬", totalRec >= 5},
+            {"ecletic",         "Ecletic",         "Ai citit 3 tipuri diferite",        "🎭", tipuri   >= 3},
+            {"bibliofil",       "Bibliofil",       "Ai imprumutat 10 carti",            "📖", totalImp >= 10},
+            {"maestru",         "Maestru al Cartii","Ai imprumutat 20 de carti",        "🏆", totalImp >= 20},
+        };
+
+        crow::json::wvalue result;
+        int i = 0;
+        for (auto& b : badges) {
+            result[i]["id"]        = b.id;
+            result[i]["titlu"]     = b.titlu;
+            result[i]["descriere"] = b.descriere;
+            result[i]["icon"]      = b.icon;
+            result[i]["castigat"]  = b.castigat;
+            i++;
+        }
+        return crow::response(result);
+    });
+
+    // ==================== STATISTICI UTILIZATOR ====================
+
+    CROW_ROUTE(app, "/api/statistici/utilizator/<int>").methods("GET"_method)
+    ([&db](int idUtilizator) {
+        crow::json::wvalue result;
+        result["total_imprumuturi"]  = db.countImprumuturiUtilizator(idUtilizator);
+        result["imprumuturi_active"] = db.countImprumuturiActive(idUtilizator);
+        result["total_recenzii"]     = db.countRecenziiUtilizator(idUtilizator);
+        result["rating_mediu_dat"]   = db.getRatingMediuDat(idUtilizator);
+        result["gen_favorit"]        = db.getGenFavorit(idUtilizator);
+        result["genuri_distincte"]   = db.countGenuriBorrowedUtilizator(idUtilizator);
+        result["tipuri_distincte"]   = db.countTipuriBorrowedUtilizator(idUtilizator);
+        return crow::response(result);
+    });
 
     cout << "Server pornit pe http://localhost:8080" << endl;
     app.port(8080).multithreaded().run();

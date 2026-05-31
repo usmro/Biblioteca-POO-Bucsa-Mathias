@@ -6,14 +6,16 @@ void registerCartiRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
     ([&db](const crow::request& req) {
         int pagina = 1, perPagina = 20;
         string sortDupa = "titlu", ordine = "asc", tip = "", gen = "";
+        bool disponibilDoar = false;
         if (req.url_params.get("pagina")) pagina = stoi(req.url_params.get("pagina"));
         if (req.url_params.get("per_pagina")) perPagina = stoi(req.url_params.get("per_pagina"));
         if (req.url_params.get("sort")) sortDupa = req.url_params.get("sort");
         if (req.url_params.get("ordine")) ordine = req.url_params.get("ordine");
         if (req.url_params.get("tip")) tip = req.url_params.get("tip");
         if (req.url_params.get("gen")) gen = req.url_params.get("gen");
-        auto carti = db.getCartiPaginat(pagina, perPagina, sortDupa, ordine, tip, gen);
-        auto total = db.getTotalCartiFiltrat(tip, gen);
+        if (req.url_params.get("disponibil")) disponibilDoar = string(req.url_params.get("disponibil")) == "1";
+        auto carti = db.getCartiPaginat(pagina, perPagina, sortDupa, ordine, tip, gen, disponibilDoar);
+        auto total = db.getTotalCartiFiltrat(tip, gen, disponibilDoar);
         crow::json::wvalue result;
         result["total"] = total;
         result["pagina"] = pagina;
@@ -67,7 +69,7 @@ void registerCartiRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
     ([&db](const string& isbn) {
         bool ok = db.stergeCarteByIsbn(isbn);
         return ok ? crow::response(200, "Carte stearsa!")
-                  : crow::response(400, "Eroare!");
+                  : crow::response(404, "Cartea nu a fost gasita!");
     });
 
     CROW_ROUTE(app, "/api/tipuri").methods("GET"_method)
@@ -86,5 +88,19 @@ void registerCartiRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
         int i = 0;
         for (auto& gen : genuri) result[i++] = gen;
         return crow::response(result);
+    });
+
+    // Actualizează descrierea unei cărți (folosit după adăugare manuală)
+    CROW_ROUTE(app, "/api/carti/descriere").methods("PUT"_method)
+    ([&db](const crow::request& req) {
+        auto body = crow::json::load(req.body);
+        if (!body) return crow::response(400, "JSON invalid");
+        string isbn = body["isbn"].s();
+        string descriere = body["descriere"].s();
+        if (isbn.empty() || descriere.empty())
+            return crow::response(400, "ISBN si descriere sunt obligatorii");
+        bool ok = db.updateDescriere(isbn, descriere);
+        return ok ? crow::response(200, "Descriere salvata!")
+                  : crow::response(400, "Eroare la salvare!");
     });
 }

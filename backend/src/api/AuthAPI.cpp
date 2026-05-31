@@ -2,7 +2,20 @@
 #include <openssl/sha.h>
 #include <sstream>
 #include <iomanip>
+#include <fstream>
+#include <mutex>
+#include <ctime>
 using namespace std;
+
+static mutex auth_log_mtx;
+static void logAuth(const string& msg) {
+    lock_guard<mutex> g(auth_log_mtx);
+    ofstream f("/tmp/biblioteca.log", ios::app);
+    time_t t = time(nullptr);
+    char buf[32];
+    strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", localtime(&t));
+    f << "[" << buf << "] " << msg << "\n";
+}
 
 static string sha256(const string& str) {
     unsigned char hash[SHA256_DIGEST_LENGTH];
@@ -31,7 +44,11 @@ void registerAuthRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
         auto user = db.getUtilizatorByUsername(body["username"].s());
         if (user.empty()) return crow::response(401, "Utilizator negasit!");
         string hash = sha256(body["parola"].s());
-        if (hash != user["parola_hash"]) return crow::response(401, "Parola incorecta!");
+        if (hash != user["parola_hash"]) {
+            logAuth("LOGIN_FAIL username=" + string(body["username"].s()));
+            return crow::response(401, "Parola incorecta!");
+        }
+        logAuth("LOGIN username=" + user["username"] + " rol=" + user["rol"]);
         crow::json::wvalue result;
         result["id"] = user["id"];
         result["nume"] = user["nume"];
