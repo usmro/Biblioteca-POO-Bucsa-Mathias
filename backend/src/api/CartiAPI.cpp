@@ -1,5 +1,16 @@
 #include "CartiAPI.h"
+#include "JWT.h"
 using namespace std;
+
+#define AUTH(req, rolNecesar) \
+    map<string,string> _jwt_claims; \
+    try { \
+        _jwt_claims = JWT::fromRequest(req.get_header_value("Authorization")); \
+    } catch (const exception& e) { \
+        return crow::response(401, string("Neautentificat: ") + e.what()); \
+    } \
+    if (!JWT::areRole(_jwt_claims, rolNecesar)) \
+        return crow::response(403, "Acces interzis!");
 
 void registerCartiRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
     CROW_ROUTE(app, "/api/carti").methods("GET"_method)
@@ -54,6 +65,7 @@ void registerCartiRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
 
     CROW_ROUTE(app, "/api/carti").methods("POST"_method)
     ([&db](const crow::request& req) {
+        AUTH(req, "bibliotecar");
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         bool ok = db.adaugaCarte(
@@ -66,7 +78,8 @@ void registerCartiRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
     });
 
     CROW_ROUTE(app, "/api/carti/<string>").methods("DELETE"_method)
-    ([&db](const string& isbn) {
+    ([&db](const crow::request& req, const string& isbn) {
+        AUTH(req, "bibliotecar");
         bool ok = db.stergeCarteByIsbn(isbn);
         return ok ? crow::response(200, "Carte stearsa!")
                   : crow::response(404, "Cartea nu a fost gasita!");
@@ -93,6 +106,7 @@ void registerCartiRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
     // Actualizează descrierea unei cărți (folosit după adăugare manuală)
     CROW_ROUTE(app, "/api/carti/descriere").methods("PUT"_method)
     ([&db](const crow::request& req) {
+        AUTH(req, "bibliotecar");
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         string isbn = body["isbn"].s();

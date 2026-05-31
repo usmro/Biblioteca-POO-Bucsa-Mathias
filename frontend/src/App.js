@@ -7,6 +7,20 @@ import {
 
 const API = "http://localhost:8080/api";
 
+// ─── Helper fetch cu JWT automat ──────────────────────────────────────────────
+const authFetch = (url, options = {}) => {
+  const token = localStorage.getItem("token");
+  return fetch(url, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...(token ? { "Authorization": `Bearer ${token}` } : {}),
+      ...(options.headers || {}),
+    },
+  });
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
 const CHART_COLORS = [
   "#6c63ff","#ff6584","#10b981","#f59e0b","#3b82f6",
   "#8b5cf6","#ec4899","#14b8a6","#f97316","#06b6d4",
@@ -334,7 +348,7 @@ function Sidebar({ pagina, setPagina, user, setUser, darkMode, setDarkMode }) {
             </div>
             <button
               className="btn btn-ghost btn-sm btn-full"
-              onClick={() => { setUser(null); go("acasa"); }}
+              onClick={() => { localStorage.removeItem("token"); setUser(null); go("acasa"); }}
             >
               Deconectare
             </button>
@@ -492,7 +506,7 @@ function Carti({ user, toast }) {
         .then(data => { if (Array.isArray(data)) setWaitlistSet(new Set(data.map(w => w.isbn))); })
         .catch(() => {});
       // Folosim endpoint-ul user-specific în loc de lista globală
-      fetch(`${API}/imprumuturi/utilizator/${user.id}`)
+      authFetch(`${API}/imprumuturi/utilizator/${user.id}`)
         .then(r => r.text())
         .then(raw => {
           const data = raw === "[]" ? [] : JSON.parse(raw);
@@ -558,7 +572,7 @@ function Carti({ user, toast }) {
   const imprumuta = async (isbn) => {
     if (!user) { toast("Trebuie să fii autentificat!", "warning"); return; }
     try {
-      const res = await fetch(`${API}/imprumuturi`, {
+      const res = await authFetch(`${API}/imprumuturi`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id_utilizator: parseInt(user.id), isbn, zile_limita: 14 })
@@ -576,7 +590,7 @@ function Carti({ user, toast }) {
     if (!user) { toast("Trebuie să fii autentificat!", "warning"); return; }
     const inQueue = waitlistSet.has(isbn);
     try {
-      const res = await fetch(`${API}/waitlist`, {
+      const res = await authFetch(`${API}/waitlist`, {
         method: inQueue ? "DELETE" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id_utilizator: parseInt(user.id), isbn })
@@ -776,6 +790,7 @@ function Login({ setUser, setPagina, toast }) {
       });
       if (res.ok) {
         const data = await res.json();
+        if (data.token) localStorage.setItem("token", data.token);
         setUser(data);
         toast(`Bun venit, ${data.nume}!`, "success");
         setPagina("carti");
@@ -852,7 +867,7 @@ function Imprumuturi({ user, toast }) {
   const incarca = async () => {
     try {
       // Împrumuturi active (globale, filtrate după user)
-      const res = await fetch(`${API}/imprumuturi`);
+      const res = await authFetch(`${API}/imprumuturi`);
       const raw = await res.text();
       const data = raw === "[]" ? [] : JSON.parse(raw);
       const aleMe = Array.isArray(data)
@@ -861,7 +876,7 @@ function Imprumuturi({ user, toast }) {
       setImprumuturi(aleMe);
 
       // Isoric complet al utilizatorului
-      const resH = await fetch(`${API}/imprumuturi/utilizator/${user.id}`);
+      const resH = await authFetch(`${API}/imprumuturi/utilizator/${user.id}`);
       const rawH = await resH.text();
       const dataH = rawH === "[]" ? [] : JSON.parse(rawH);
       setIstoric(Array.isArray(dataH) ? dataH : []);
@@ -884,7 +899,7 @@ function Imprumuturi({ user, toast }) {
 
   const returneaza = async (isbn) => {
     try {
-      const res = await fetch(`${API}/imprumuturi/returneaza`, {
+      const res = await authFetch(`${API}/imprumuturi/returneaza`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id_utilizator: parseInt(user.id), isbn })
@@ -900,7 +915,7 @@ function Imprumuturi({ user, toast }) {
   const trimiteRecenzie = async (isbn) => {
     const form = formRecenzie[isbn] || {};
     if (!form.rating) { toast("Selectează un rating!", "warning"); return; }
-    const res = await fetch(`${API}/recenzii`, {
+    const res = await authFetch(`${API}/recenzii`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id_utilizator: parseInt(user.id), isbn, rating: parseInt(form.rating), comentariu: form.comentariu || "" })
@@ -1088,7 +1103,7 @@ function AdminCarti({ toast }) {
   const [importate, setImportate] = useState({});
 
   const incarcaCarti = async (pagina = 1) => {
-    const res = await fetch(`${API}/carti?pagina=${pagina}&per_pagina=20`);
+    const res = await authFetch(`${API}/carti??pagina=${pagina}&per_pagina=20`);
     const data = await res.json();
     setCarti(Array.isArray(data.carti) ? data.carti : []);
     setTotalPagini(data.total_pagini || 1);
@@ -1163,7 +1178,7 @@ function AdminCarti({ toast }) {
 
       if (desc.length > 80) {
         // Trimite descrierea la backend
-        await fetch(`${API}/carti/descriere`, {
+        await authFetch(`${API}/carti/descriere`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ isbn, descriere: desc })
@@ -1194,7 +1209,7 @@ function AdminCarti({ toast }) {
 
   const stergeCarte = async (isbn) => {
     if (!window.confirm("Ștergi cartea din catalog?")) return;
-    const res = await fetch(`${API}/carti/${isbn}`, { method: "DELETE" });
+    const res = await authFetch(`${API}/carti/${isbn}`, { method: "DELETE" });
     const text = await res.text();
     toast(text, res.ok ? "success" : "error");
     if (modCautare) cautaInCatalog(searchCatalog);
@@ -1373,17 +1388,17 @@ function PanouDirector({ user, toast }) {
   const [parolaA, setParolaA] = useState(""); const [rolA, setRolA] = useState("bibliotecar");
   const [salariuA, setSalariuA] = useState(""); const [deptA, setDeptA] = useState("");
 
-  const incarcaUtilizatori = async () => { const r = await fetch(`${API}/utilizatori`); const d = await r.json(); setUtilizatori(Array.isArray(d) ? d : []); };
-  const incarcaImprumuturi = async () => { const r = await fetch(`${API}/imprumuturi`); const d = await r.json(); setImprumuturi(Array.isArray(d) ? d : []); };
+  const incarcaUtilizatori = async () => { const r = await authFetch(`${API}/utilizatori`); const d = await r.json(); setUtilizatori(Array.isArray(d) ? d : []); };
+  const incarcaImprumuturi = async () => { const r = await authFetch(`${API}/imprumuturi`); const d = await r.json(); setImprumuturi(Array.isArray(d) ? d : []); };
 
   const reloadAngajati = async () => {
-    const r = await fetch(`${API}/angajati`);
+    const r = await authFetch(`${API}/angajati`);
     const d = await r.json();
     setAngajati(Array.isArray(d) ? d : []);
   };
 
   const adaugaAngajat = async () => {
-    const res = await fetch(`${API}/angajati`, {
+    const res = await authFetch(`${API}/angajati`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nume: numeA, username: usernameA, parola: parolaA, rol: rolA, salariu: parseFloat(salariuA), departament: deptA })
@@ -1397,7 +1412,7 @@ function PanouDirector({ user, toast }) {
   const acordaBonus = async (id) => {
     const bonusVal = parseFloat(bonus[id] || 0);
     if (!bonusVal || bonusVal <= 0) { toast("Introdu o sumă validă!", "warning"); return; }
-    const res = await fetch(`${API}/angajati/bonus`, {
+    const res = await authFetch(`${API}/angajati/bonus`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: String(id), bonus: bonusVal })
@@ -1414,7 +1429,7 @@ function PanouDirector({ user, toast }) {
       return;
     }
     if (!window.confirm(`Sigur vrei să concediezi angajatul "${angajatUsername}"?`)) return;
-    const res = await fetch(`${API}/angajati/${id}?caller=${encodeURIComponent(user.username)}`, { method: "DELETE" });
+    const res = await authFetch(`${API}/angajati/${id}?caller=${encodeURIComponent(user.username)}`, { method: "DELETE" });
     const text = await res.text();
     toast(text, res.ok ? "success" : "error");
     reloadAngajati();
@@ -1723,7 +1738,7 @@ function Recomandari({ user, toast }) {
     if (!user) { toast("Trebuie să fii autentificat!", "warning"); return; }
     const form = formRecenzie[isbn] || {};
     if (!form.rating) { toast("Selectează un rating!", "warning"); return; }
-    const res = await fetch(`${API}/recenzii`, {
+    const res = await authFetch(`${API}/recenzii`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id_utilizator: parseInt(user.id), isbn, rating: parseInt(form.rating), comentariu: form.comentariu || "" })

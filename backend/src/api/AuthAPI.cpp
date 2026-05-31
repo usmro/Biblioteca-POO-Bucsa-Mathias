@@ -1,4 +1,5 @@
 #include "AuthAPI.h"
+#include "JWT.h"
 #include <openssl/sha.h>
 #include <sstream>
 #include <iomanip>
@@ -49,11 +50,13 @@ void registerAuthRoutes(crow::App<crow::CORSHandler>& app, Database& db) {
             return crow::response(401, "Parola incorecta!");
         }
         logAuth("LOGIN username=" + user["username"] + " rol=" + user["rol"]);
+        string token = JWT::createToken(stoi(user["id"]), user["username"], user["rol"]);
         crow::json::wvalue result;
-        result["id"] = user["id"];
-        result["nume"] = user["nume"];
+        result["id"]       = user["id"];
+        result["nume"]     = user["nume"];
         result["username"] = user["username"];
-        result["rol"] = user["rol"];
+        result["rol"]      = user["rol"];
+        result["token"]    = token;
         return crow::response(result);
     });
 }

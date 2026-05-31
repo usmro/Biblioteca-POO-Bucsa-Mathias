@@ -3,12 +3,27 @@
 #include "db/Database.h"
 #include "api/AuthAPI.h"
 #include "api/CartiAPI.h"
+#include "api/JWT.h"
 #include <map>
 #include <algorithm>
 #include <fstream>
 #include <mutex>
 #include <ctime>
 using namespace std;
+
+// ─── Macro autentificare ───────────────────────────────────────────────────────
+// Utilizare: AUTH(req, "bibliotecar")  sau  AUTH(req, "") pentru orice user logat
+// Dacă eșuează, returnează automat 401/403.
+#define AUTH(req, rolNecesar) \
+    map<string,string> _jwt_claims; \
+    try { \
+        _jwt_claims = JWT::fromRequest(req.get_header_value("Authorization")); \
+    } catch (const exception& e) { \
+        return crow::response(401, string("Neautentificat: ") + e.what()); \
+    } \
+    if (!JWT::areRole(_jwt_claims, rolNecesar)) \
+        return crow::response(403, "Acces interzis!");
+// ─────────────────────────────────────────────────────────────────────────────
 
 // ─── Logger simplu în fișier ──────────────────────────────────────────────────
 static mutex log_mtx;
@@ -41,7 +56,8 @@ int main() {
 
     // ==================== UTILIZATORI ====================
     CROW_ROUTE(app, "/api/utilizatori").methods("GET"_method)
-    ([&db]() {
+    ([&db](const crow::request& req) {
+        AUTH(req, "director");
         auto utilizatori = db.getUtilizatori();
         crow::json::wvalue result;
         int i = 0;
@@ -58,7 +74,8 @@ int main() {
 
     // ==================== IMPRUMUTURI ====================
 CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
-([&db]() {
+([&db](const crow::request& req) {
+    AUTH(req, "bibliotecar");  // doar bibliotecar/director vede TOATE
     auto imprumuturi = db.getImprumuturi();
     if (imprumuturi.empty()) return crow::response(200, "[]");
     crow::json::wvalue result;
@@ -91,6 +108,7 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 
     CROW_ROUTE(app, "/api/imprumuturi").methods("POST"_method)
     ([&db](const crow::request& req) {
+        AUTH(req, "");   // orice user logat
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         int idUser = body["id_utilizator"].i();
@@ -113,6 +131,7 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 
     CROW_ROUTE(app, "/api/imprumuturi/returneaza").methods("PUT"_method)
     ([&db](const crow::request& req) {
+        AUTH(req, "");
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         int idUser = body["id_utilizator"].i();
@@ -125,7 +144,8 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 
     // Istoricul complet al împrumuturilor unui utilizator (active + returnate)
     CROW_ROUTE(app, "/api/imprumuturi/utilizator/<int>").methods("GET"_method)
-    ([&db](int idUtilizator) {
+    ([&db](const crow::request& req, int idUtilizator) {
+        AUTH(req, "");
         auto istoric = db.getIstoricImprumuturiUtilizator(idUtilizator);
         if (istoric.empty()) return crow::response(200, "[]");
         crow::json::wvalue result;
@@ -145,7 +165,8 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 
     // ==================== ANGAJATI ====================
     CROW_ROUTE(app, "/api/angajati").methods("GET"_method)
-    ([&db]() {
+    ([&db](const crow::request& req) {
+        AUTH(req, "bibliotecar");
         auto angajati = db.getAngajati();
         crow::json::wvalue result;
         int i = 0;
@@ -163,6 +184,7 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 
     CROW_ROUTE(app, "/api/angajati").methods("POST"_method)
     ([&db](const crow::request& req) {
+        AUTH(req, "director");
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         bool ok = db.adaugaAngajat(body["nume"].s(), body["username"].s(),
@@ -173,6 +195,7 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 
     CROW_ROUTE(app, "/api/angajati/bonus").methods("PUT"_method)
     ([&db](const crow::request& req) {
+        AUTH(req, "director");
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         auto angajati = db.getAngajati();
@@ -189,6 +212,7 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 
     CROW_ROUTE(app, "/api/angajati/<int>/salariu").methods("PUT"_method)
     ([&db](const crow::request& req, int id) {
+        AUTH(req, "director");
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         bool ok = db.updateSalariu(id, body["salariu"].d());
@@ -198,7 +222,8 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 
     CROW_ROUTE(app, "/api/angajati/<int>").methods("DELETE"_method)
     ([&db](const crow::request& req, int id) {
-        string caller = req.url_params.get("caller") ? req.url_params.get("caller") : "";
+        AUTH(req, "director");
+        string caller = _jwt_claims["username"];  // din token, nu din URL
 
         // Find the angajat being deleted
         auto angajati = db.getAngajati();
@@ -278,6 +303,7 @@ CROW_ROUTE(app, "/api/imprumuturi").methods("GET"_method)
 // POST /api/recenzii
 CROW_ROUTE(app, "/api/recenzii").methods("POST"_method)
 ([&db](const crow::request& req) {
+    AUTH(req, "");
     auto body = crow::json::load(req.body);
     if (!body) return crow::response(400, "JSON invalid");
     bool ok = db.adaugaRecenzie(
@@ -333,6 +359,7 @@ CROW_ROUTE(app, "/api/recomandari").methods("GET"_method)
 
     CROW_ROUTE(app, "/api/waitlist").methods("POST"_method)
     ([&db](const crow::request& req) {
+        AUTH(req, "");
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         int idUser = body["id_utilizator"].i();
@@ -346,6 +373,7 @@ CROW_ROUTE(app, "/api/recomandari").methods("GET"_method)
 
     CROW_ROUTE(app, "/api/waitlist").methods("DELETE"_method)
     ([&db](const crow::request& req) {
+        AUTH(req, "");
         auto body = crow::json::load(req.body);
         if (!body) return crow::response(400, "JSON invalid");
         bool ok = db.stergeWaitlist(body["id_utilizator"].i(), body["isbn"].s());
