@@ -866,20 +866,29 @@ function Imprumuturi({ user, toast }) {
 
   const incarca = async () => {
     try {
-      // Împrumuturi active (globale, filtrate după user)
-      const res = await authFetch(`${API}/imprumuturi`);
-      const raw = await res.text();
-      const data = raw === "[]" ? [] : JSON.parse(raw);
-      const aleMe = Array.isArray(data)
-        ? data.filter(imp => String(imp.id_utilizator) === String(user.id))
-        : [];
-      setImprumuturi(aleMe);
-
-      // Isoric complet al utilizatorului
+      // Istoricul complet al utilizatorului (active + returnate)
       const resH = await authFetch(`${API}/imprumuturi/utilizator/${user.id}`);
       const rawH = await resH.text();
       const dataH = rawH === "[]" ? [] : JSON.parse(rawH);
-      setIstoric(Array.isArray(dataH) ? dataH : []);
+      const istoricComplet = Array.isArray(dataH) ? dataH : [];
+      setIstoric(istoricComplet);
+
+      // Imprumuturile active = cele cu returnat=false din istoric
+      // Calculam intarzierea si penalitatea in frontend
+      const acum = Date.now();
+      const active = istoricComplet.filter(i => !i.returnat).map(imp => {
+        const dataImp = new Date(imp.data_imprumut).getTime();
+        const zileScurse = Math.floor((acum - dataImp) / 86400000);
+        const zileIntarziere = Math.max(0, zileScurse - parseInt(imp.zile_limita));
+        return {
+          ...imp,
+          titlu_carte: imp.titlu,
+          zile_intarziere: zileIntarziere,
+          penalitate: zileIntarziere * 0.5,
+          intarziat: zileIntarziere > 0
+        };
+      });
+      setImprumuturi(active);
 
       // Notificări waitlist: cărți pe care userul le așteaptă și sunt acum disponibile
       const resWL = await fetch(`${API}/waitlist/utilizator/${user.id}`);
