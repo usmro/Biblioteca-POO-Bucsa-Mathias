@@ -306,12 +306,12 @@ CROW_ROUTE(app, "/api/recenzii").methods("POST"_method)
     AUTH(req, "");
     auto body = crow::json::load(req.body);
     if (!body) return crow::response(400, "JSON invalid");
-    bool ok = db.adaugaRecenzie(
-        body["id_utilizator"].i(),
-        body["isbn"].s(),
-        body["rating"].i(),
-        body["comentariu"].s()
-    );
+    int idUser = body["id_utilizator"].i();
+    string isbn = body["isbn"].s();
+    // Verifica ca userul a imprumuat cartea cel putin o data
+    if (!db.aImprumutVreodata(idUser, isbn))
+        return crow::response(403, "Poti recenza doar cartile pe care le-ai imprumuat!");
+    bool ok = db.adaugaRecenzie(idUser, isbn, body["rating"].i(), body["comentariu"].s());
     return ok ? crow::response(200, "Recenzie salvata!")
               : crow::response(400, "Eroare la salvare!");
 });

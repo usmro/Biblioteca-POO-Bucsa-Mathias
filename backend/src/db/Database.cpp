@@ -169,6 +169,19 @@ bool Database::areImprumutActiv(int idUtilizator, const string& isbn) {
     return count > 0;
 }
 
+bool Database::aImprumutVreodata(int idUtilizator, const string& isbn) {
+    // Verifica daca userul a imprumuat cartea vreodata (activ SAU returnat)
+    const char* sql = "SELECT COUNT(*) FROM imprumuturi WHERE id_utilizator = ? AND isbn = ?;";
+    sqlite3_stmt* stmt;
+    if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) != SQLITE_OK) return false;
+    sqlite3_bind_int(stmt, 1, idUtilizator);
+    sqlite3_bind_text(stmt, 2, isbn.c_str(), -1, SQLITE_STATIC);
+    int count = 0;
+    if (sqlite3_step(stmt) == SQLITE_ROW) count = sqlite3_column_int(stmt, 0);
+    sqlite3_finalize(stmt);
+    return count > 0;
+}
+
 bool Database::adaugaWaitlist(int idUtilizator, const string& isbn) {
     string sql = "INSERT OR IGNORE INTO waitlist (id_utilizator, isbn) VALUES (?, ?);";
     sqlite3_stmt* stmt;

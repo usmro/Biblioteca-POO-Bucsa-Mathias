@@ -1711,11 +1711,52 @@ function Recomandari({ user, toast }) {
   const [incarcat, setIncarcat] = useState(false);
   const [recenzii, setRecenzii] = useState({});
   const [formRecenzie, setFormRecenzie] = useState({});
+  const [selectedIsbn, setSelectedIsbn] = useState(null);
+  const [borrowedSet, setBorrowedSet] = useState(new Set());
+  const [waitlistSet, setWaitlistSet] = useState(new Set());
 
   useEffect(() => {
     fetch(`${API}/genuri`).then(r => r.json()).then(d => setGenuri(Array.isArray(d) ? d : []));
     fetch(`${API}/tipuri`).then(r => r.json()).then(d => setTipuri(Array.isArray(d) ? d : []));
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      authFetch(`${API}/imprumuturi/utilizator/${user.id}`)
+        .then(r => r.text()).then(raw => {
+          const data = raw === "[]" ? [] : JSON.parse(raw);
+          if (Array.isArray(data)) setBorrowedSet(new Set(data.filter(i => !i.returnat).map(i => i.isbn)));
+        }).catch(() => {});
+      authFetch(`${API}/waitlist/utilizator/${user.id}`)
+        .then(r => r.text()).then(raw => {
+          const data = raw === "[]" ? [] : JSON.parse(raw);
+          if (Array.isArray(data)) setWaitlistSet(new Set(data.map(w => w.isbn)));
+        }).catch(() => {});
+    }
+  }, [user]);
+
+  const imprumuta = async (isbn) => {
+    if (!user) { toast("Trebuie să fii autentificat!", "warning"); return; }
+    const res = await authFetch(`${API}/imprumuturi`, {
+      method: "POST",
+      body: JSON.stringify({ id_utilizator: parseInt(user.id), isbn, zile_limita: 14 })
+    });
+    const text = await res.text();
+    toast(text, res.ok ? "success" : "error");
+    if (res.ok) setBorrowedSet(prev => new Set([...prev, isbn]));
+  };
+
+  const toggleWaitlist = async (isbn) => {
+    if (!user) { toast("Trebuie să fii autentificat!", "warning"); return; }
+    const inQueue = waitlistSet.has(isbn);
+    const res = await authFetch(`${API}/waitlist`, {
+      method: inQueue ? "DELETE" : "POST",
+      body: JSON.stringify({ id_utilizator: parseInt(user.id), isbn })
+    });
+    const text = await res.text();
+    toast(text, res.ok ? "success" : "error");
+    if (res.ok) setWaitlistSet(prev => { const s = new Set(prev); inQueue ? s.delete(isbn) : s.add(isbn); return s; });
+  };
 
   const incarcaRecomandari = async () => {
     const params = new URLSearchParams();
@@ -1787,6 +1828,19 @@ function Recomandari({ user, toast }) {
         <div className="empty-state"><div className="empty-icon">🔍</div><p>Nicio carte disponibilă pentru filtrele selectate.</p></div>
       )}
 
+      {selectedIsbn && (
+        <BookDetailModal
+          isbn={selectedIsbn}
+          user={user}
+          waitlistSet={waitlistSet}
+          borrowedSet={borrowedSet}
+          onClose={() => setSelectedIsbn(null)}
+          onBorrow={(isbn) => { imprumuta(isbn); setSelectedIsbn(null); }}
+          onToggleWaitlist={toggleWaitlist}
+          onOpenSimilar={(isbn) => setSelectedIsbn(isbn)}
+        />
+      )}
+
       {recomandari.map((carte, i) => (
         <div key={i} className="recom-card">
           <div className="recom-header">
@@ -1794,7 +1848,11 @@ function Recomandari({ user, toast }) {
               <div style={{ flex: 1 }}>
                 <div className="flex-center gap-2 mb-3">
                   <span className="tag tag-type">#{i+1}</span>
-                  <strong style={{ fontSize: "1rem" }}>{carte.titlu}</strong>
+                  <strong
+                    style={{ fontSize: "1rem", cursor: "pointer", color: "var(--primary)" }}
+                    onClick={() => setSelectedIsbn(carte.isbn)}
+                    title="Click pentru detalii și împrumut"
+                  >{carte.titlu} ↗</strong>
                 </div>
                 <div className="text-muted text-sm mb-3">{carte.autor}</div>
                 <div className="text-xs text-muted">{carte.tip}{carte.gen && ` · ${carte.gen}`}</div>
@@ -1808,7 +1866,12 @@ function Recomandari({ user, toast }) {
                 <div className="text-xs mt-2" style={{ color: "var(--primary)" }}>📖 {carte.nr_imprumuturi} împrumuturi</div>
               </div>
             </div>
-            <button className="btn btn-ghost btn-sm mt-3" onClick={() => incarcaRecenzii(carte.isbn)}>💬 Vezi recenzii</button>
+            <div className="flex-center gap-2 mt-3">
+              <button className="btn btn-primary btn-sm" onClick={() => setSelectedIsbn(carte.isbn)}>
+                📖 Detalii &amp; Împrumut
+              </button>
+              <button className="btn btn-ghost btn-sm" onClick={() => incarcaRecenzii(carte.isbn)}>💬 Recenzii</button>
+            </div>
           </div>
 
           {recenzii[carte.isbn] && (

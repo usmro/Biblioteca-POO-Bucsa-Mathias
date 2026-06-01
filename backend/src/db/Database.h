@@ -83,6 +83,7 @@ bool downgradeRolUtilizator(const string& username);
 
 // Waitlist
 bool areImprumutActiv(int idUtilizator, const string& isbn);
+bool aImprumutVreodata(int idUtilizator, const string& isbn);
 bool adaugaWaitlist(int idUtilizator, const string& isbn);
 bool stergeWaitlist(int idUtilizator, const string& isbn);
 vector<map<string,string>> getWaitlistPentruIsbn(const string& isbn);
