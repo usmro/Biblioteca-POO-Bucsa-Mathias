@@ -1083,6 +1083,32 @@ function Imprumuturi({ user, toast }) {
                   {imp.returnat ? "Returnat" : "Activ"}
                 </span>
               </div>
+              {/* Formular recenzie pentru carti citite (returnate) */}
+              {imp.returnat && (
+                <>
+                  <hr className="divider" />
+                  <div>
+                    {recenziiTrimise[imp.isbn] ? (
+                      <p className="text-sm" style={{ color: "var(--success)" }}>✓ Recenzie trimisă! Mulțumim.</p>
+                    ) : (
+                      <>
+                        <strong className="text-sm">Lasă o recenzie:</strong>
+                        <Stars isbn={imp.isbn} />
+                        <textarea
+                          className="textarea" rows={2} placeholder="Comentariu opțional..."
+                          value={formRecenzie[imp.isbn]?.comentariu || ""}
+                          onChange={e => setFormRecenzie(prev => ({ ...prev, [imp.isbn]: { ...prev[imp.isbn], comentariu: e.target.value } }))}
+                        />
+                        <button
+                          className="btn btn-primary btn-sm mt-2"
+                          onClick={() => trimiteRecenzie(imp.isbn)}
+                          disabled={!formRecenzie[imp.isbn]?.rating}
+                        >Trimite recenzia</button>
+                      </>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </>
@@ -1899,17 +1925,10 @@ function Recomandari({ user, toast }) {
                 </div>
               ))}
 
-              {user && user.rol === "utilizator" && (
-                <div className="mt-3">
-                  <strong className="text-sm">Adaugă recenzie:</strong>
-                  <div className="mt-2 mb-2">
-                    <Stars rating={formRecenzie[carte.isbn]?.rating || 0} interactiv isbn={carte.isbn} />
-                  </div>
-                  <textarea className="textarea" rows={2} placeholder="Comentariu (opțional)..."
-                    value={formRecenzie[carte.isbn]?.comentariu || ""}
-                    onChange={e => setFormRecenzie(prev => ({ ...prev, [carte.isbn]: { ...prev[carte.isbn], comentariu: e.target.value } }))} />
-                  <button className="btn btn-primary btn-sm mt-2" onClick={() => trimiteRecenzie(carte.isbn)}>Trimite recenzia</button>
-                </div>
+              {user && (
+                <p className="text-xs text-muted mt-2" style={{ fontStyle: "italic" }}>
+                  💡 Poți adăuga o recenzie din secțiunea <strong>Împrumuturile mele</strong>, după ce ai citit cartea.
+                </p>
               )}
             </div>
           )}
