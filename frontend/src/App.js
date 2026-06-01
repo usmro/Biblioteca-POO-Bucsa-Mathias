@@ -1745,7 +1745,6 @@ function Recomandari({ user, toast }) {
   const [tipSelectat, setTipSelectat] = useState("");
   const [incarcat, setIncarcat] = useState(false);
   const [recenzii, setRecenzii] = useState({});
-  const [formRecenzie, setFormRecenzie] = useState({});
   const [selectedIsbn, setSelectedIsbn] = useState(null);
   const [borrowedSet, setBorrowedSet] = useState(new Set());
   const [waitlistSet, setWaitlistSet] = useState(new Set());
@@ -1810,29 +1809,10 @@ function Recomandari({ user, toast }) {
     setRecenzii(prev => ({ ...prev, [isbn]: Array.isArray(data) ? data : [] }));
   };
 
-  const trimiteRecenzie = async (isbn) => {
-    if (!user) { toast("Trebuie să fii autentificat!", "warning"); return; }
-    const form = formRecenzie[isbn] || {};
-    if (!form.rating) { toast("Selectează un rating!", "warning"); return; }
-    const res = await authFetch(`${API}/recenzii`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id_utilizator: parseInt(user.id), isbn, rating: parseInt(form.rating), comentariu: form.comentariu || "" })
-    });
-    const text = await res.text();
-    toast(text, res.ok ? "success" : "error");
-    setRecenzii(prev => ({ ...prev, [isbn]: null }));
-    setTimeout(() => incarcaRecenzii(isbn), 300);
-  };
-
-  const Stars = ({ rating, interactiv = false, isbn = "" }) => (
+  const Stars = ({ rating }) => (
     <div className="stars">
       {[1,2,3,4,5].map(i => (
-        <span
-          key={i}
-          className={`star ${interactiv ? "" : "readonly"} ${i <= rating ? "filled" : ""}`}
-          onClick={() => interactiv && setFormRecenzie(prev => ({ ...prev, [isbn]: { ...prev[isbn], rating: i } }))}
-        >★</span>
+        <span key={i} className={`star readonly ${i <= rating ? "filled" : ""}`}>★</span>
       ))}
     </div>
   );
